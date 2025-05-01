@@ -64,3 +64,19 @@ h1:focus {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
     text-align: start;
 }
+
+.caution{
+    border: 1px solid yellow;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+.warning{
+    color:red;
+    border: 1px solid red;
+    border-radius: 3px;
+}
+
+ul {
+    list-style-type:none;
+}
