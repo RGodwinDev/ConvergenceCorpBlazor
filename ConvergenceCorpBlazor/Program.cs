@@ -21,7 +21,7 @@ app.UseHttpsRedirection();
 
 app.UseAntiforgery();
 
-app.MapStaticAssets();
+//app.MapStaticAssets(); dotnet 9 feature
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
