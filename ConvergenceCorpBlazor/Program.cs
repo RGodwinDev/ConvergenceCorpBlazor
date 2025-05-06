@@ -26,7 +26,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 
-//app.UseHttpsRedirection(); //redirects traffic to https if possible
+app.UseHttpsRedirection(); //redirects traffic to https if possible
 
 //app.MapStaticAssets(); dotnet 9 feature. using dotnet 8s UseStaticFiles instead
 app.UseStaticFiles();
