@@ -1,4 +1,5 @@
 using ConvergenceCorpBlazor.Components;
+using static Microsoft.AspNetCore.Http.StatusCodes;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -6,23 +7,32 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-WebApplication app = builder.Build();
+//redirects traffic to https
+/*
+builder.Services.AddHttpsRedirection(options =>{
+    options.RedirectStatusCode = Status308PermanentRedirect;
+    options.HttpsPort = 443;
+});
+*/
+
+WebApplication app = builder.Build(); //initialize the webapp
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    //app.UseHsts(); //HTTP Strict Transport Security Protocol
 }
 
-app.UseHttpsRedirection();
 
+//app.UseHttpsRedirection(); //redirects traffic to https if possible
 
-app.UseAntiforgery();
-
-//app.MapStaticAssets(); dotnet 9 feature
+//app.MapStaticAssets(); dotnet 9 feature. using dotnet 8s UseStaticFiles instead
+app.UseStaticFiles();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
+
+app.UseAntiforgery();
 
 app.Run();
