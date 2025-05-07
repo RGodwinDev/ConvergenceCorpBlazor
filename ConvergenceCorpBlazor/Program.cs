@@ -1,11 +1,15 @@
 using ConvergenceCorpBlazor.Components;
-using static Microsoft.AspNetCore.Http.StatusCodes;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+/*
+builder.Services.AddAuthentication(
+    CertificateAuthenticationDefaults.AuthenticationScheme
+).AddCertificate();
+*/
 
 //redirects traffic to https
 /*
@@ -25,8 +29,8 @@ if (!app.Environment.IsDevelopment())
     //app.UseHsts(); //HTTP Strict Transport Security Protocol
 }
 
-
-app.UseHttpsRedirection(); //redirects traffic to https if possible
+//app.UseAuthentication();
+//app.UseHttpsRedirection(); //redirects traffic to https if possible EDIT: REMOVED so cloudflare can redirect, not origin server
 
 //app.MapStaticAssets(); dotnet 9 feature. using dotnet 8s UseStaticFiles instead
 app.UseStaticFiles();
