@@ -5,21 +5,24 @@
 <h1>Convergence Groups!</h1>
 <p>Run a group? Message me on discord with what time(s) you run!</p>
 <div>
-    <p>
-        This list of groups is what I've gathered myself.<br>
+    <p class="caution">
+        Note: This list of groups is what I've gathered myself.<br>
         The groups shown here might decide to run at different times or days without notice, or even not at all.
     </p>
 </div>
 
+<div class="tab">
+<button class="tablinks" onclick="openTab(event, 'NA')" id="defaultOpen">NA</button>
+<button class="tablinks" onclick="openTab(event, 'EU')">EU</button>
+</div>
 
+<div id="NA" class="tabcontent">
 NA Times in Eastern/Pacific
 <ul>
     <li>
         Monday
         <ul>
-            <li> 
-                11/8am - <a href="twitch.tv/DarensWithS">twitch.tv/DarensWithS</a> 
-            </li>
+            <li>11/8am - <a href="twitch.tv/DarensWithS">twitch.tv/DarensWithS</a></li>
         </ul>
     </li>
     <li>
@@ -31,9 +34,7 @@ NA Times in Eastern/Pacific
     <li>
         Thursday
         <ul>
-            <li>
-                4/1pm - The Silverwastes Anonymous [SAS]
-            </li>
+            <li>4/1pm - The Silverwastes Anonymous [SAS]</li>
         </ul>
     </li>
     <li>
@@ -44,33 +45,91 @@ NA Times in Eastern/Pacific
                 8/5pm - The Astral Light Of Tyria [STAR]
             </li>
             -->
-            <li>
-                9/6pm - The Sleepiest Warriors [SLPY] - <a href="twitch.tv/projektdyad">twitch.tv/projektdyad</a>
-            </li>
+            <li>9/6pm - The Sleepiest Warriors [SLPY] - <a href="twitch.tv/projektdyad">twitch.tv/projektdyad</a></li>
         </ul>
     </li>
     <li>
         Saturday
         <ul>
-            <li>
-                2pm/11am - Convergence Corp [CC] - <a href="https://discord.gg/HyVZqAuAQ2">Discord</a>
-            </li>
+            <li>2pm/11am - Convergence Corp [CC] - <a href="https://discord.gg/HyVZqAuAQ2">Discord</a></li>
         </ul>
     </li>
     <li>
         Sunday
         <ul>
-            <li>
-                2pm/11am - Ownly [FUN]
-            </li>
+            <li>2pm/11am - Ownly [FUN]</li>
         </ul>
     </li>
     <li>
         During the week
         <ul>
-            <li>
-                8/5am - Godlyarms [GDAM], they do CMs in parts throughout the week.
-            </li>
+            <li>8/5am - Godlyarms [GDAM], they do CMs in parts throughout the week.</li>
         </ul>
     </li>
 </ul>
+</div>
+
+<div id="EU" class="tabcontent">
+    EU Times in UTC-0
+<ul>
+    <li>
+        Monday
+        <ul>
+        </ul>
+    </li>
+    <li>
+        Tuesday
+    </li>
+    <li>
+        Wednesday
+    </li>
+    <li>
+        Thursday
+        <ul>
+        </ul>
+    </li>
+    <li>
+        Friday
+        <ul>
+        </ul>
+    </li>
+    <li>
+        Saturday
+        <ul>
+        </ul>
+    </li>
+    <li>
+        Sunday
+        <ul>
+        </ul>
+    </li>
+    <li>
+        During the week
+        <ul>
+        </ul>
+    </li>
+</ul>
+</div>
+
+<script>
+
+function openTab(evt, tabName){
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; ++i){
+        tabcontent[i].style.display = "none";
+    }
+
+
+    tablinks = document.getElementsByClassName("tablinks");
+    for(i = 0; i < tablinks.length; ++i){
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+//opens the tab with defaultOpen id
+document.getElementById("defaultOpen").click();
+</script>
