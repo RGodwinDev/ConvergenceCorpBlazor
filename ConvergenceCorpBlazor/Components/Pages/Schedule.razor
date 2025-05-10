@@ -12,11 +12,12 @@
 </div>
 
 <div class="tab">
-<button class="tablinks" onclick="openTab(event, 'NA')" id="defaultOpen">NA</button>
+<button class="tablinks active" onclick="openTab(event, 'NA')" id ="defaultOpen">NA</button> <!-- id defaultOpen is deprecated -->
 <button class="tablinks" onclick="openTab(event, 'EU')">EU</button>
 </div>
 
-<div id="NA" class="tabcontent">
+<!--NA is the default, if you wanna change default, just change it to display:none, and another to display:block -->
+<div id="NA" class="tabcontent" style="display:block;">
 NA Times in Eastern/Pacific
 <ul>
     <li>
@@ -48,7 +49,7 @@ NA Times in Eastern/Pacific
             <li>
                 9/6pm - The Sleepiest Warriors [SLPY] - 
                 <a href="https://twitch.tv/projektdyad">twitch.tv/projektdyad</a> - 
-                <a href="https://projektdyad.com">https://projektdyad.com</a>
+                <a href="https://projektdyad.com">projektdyad.com</a>
             </li>
         </ul>
     </li>
@@ -73,7 +74,7 @@ NA Times in Eastern/Pacific
 </ul>
 </div>
 
-<div id="EU" class="tabcontent">
+<div id="EU" class="tabcontent" style="display:none;">
     EU Times in UTC-0
 <ul>
     <li>
@@ -132,8 +133,8 @@ function openTab(evt, tabName){
 
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
-}
 
-//opens the tab with defaultOpen id
-document.getElementById("defaultOpen").click();
+    //opens the tab with defaultOpen id
+    //document.getElementById("defaultOpen").click();
+}
 </script>
