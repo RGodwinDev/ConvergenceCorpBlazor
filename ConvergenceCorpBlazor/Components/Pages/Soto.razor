@@ -6,11 +6,61 @@
 
 <div>
     <h1>Secrets of the Obscure</h1>
-    <TwoMinPhase/>
-    <Split />
-    <Demonknight />
-    <Dreadwing />
-    <Hellsister />
-    <Sorrow />
-    <Umbriel />
+
+    <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'TwoMinCollapsible')">Two Minute Phase</button>
+    <div id="TwoMinCollapsible" class="collapsiblecontent" style="display:none;">
+        <TwoMinPhase/>
+    </div>
+    <br>
+    
+    <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'SplitCollapsible')">Split Phase</button>
+    <div id="SplitCollapsible" class="collapsiblecontent" style="display:none;">
+        <Split />
+    </div>
+    <br>
+
+    <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'DKCollapsible')">Demon Knight</button>
+    <div id="DKCollapsible" class="collapsiblecontent" style="display:none;">
+        <Demonknight />
+    </div>
+    <br>
+
+    <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'DWCollapsible')">Dreadwing</button>
+    <div id="DWCollapsible" class="collapsiblecontent" style="display:none;">
+        <Dreadwing />
+    </div>
+    <br>
+
+    <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'HSCollapsible')">Hell Sister</button>
+    <div id="HSCollapsible" class="collapsiblecontent" style="display:none;">
+        <Hellsister />
+    </div>
+    <br>
+
+    <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'SorrowCollapsible')">Sorrow</button>
+    <div id="SorrowCollapsible" class="collapsiblecontent" style="display:none;">
+        <Sorrow />
+    </div>
+    <br>
+
+    <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'UmbCollapsible')">Umbriel</button>
+    <div id="UmbCollapsible" class="collapsiblecontent" style="display:none;">
+        <Umbriel />
+    </div>
+    <br>
+
 </div>
+
+<script>
+    function openCollapsible(evt, name){
+        var ele = document.getElementById(name);
+        if(ele.style.display == "none"){
+            ele.style.display = "block";
+            evt.target.classList.toggle("active");
+        }
+        else{
+            ele.style.display = "none";
+            evt.target.classList.toggle("active");
+        }
+    }
+</script>

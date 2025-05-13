@@ -80,3 +80,15 @@ h1:focus {
 ul {
     list-style-type:none;
 }
+
+.collapsiblecontent {
+    padding:0;
+}
+
+.collapsiblebutton:after {
+    content: "\2193";
+}
+
+.collapsiblebutton.active:after{
+    content: "\2191";
+}
