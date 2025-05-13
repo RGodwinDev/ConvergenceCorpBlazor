@@ -85,6 +85,18 @@ ul {
     padding:0;
 }
 
+.collapsiblebutton{
+    color:white;
+    background-color: darkred;
+    padding:10px;
+    text-align: left;
+    font-size: 20px;
+    width: 50%;
+    border:none;
+}
+.collapsiblebutton.active{
+    color:orange;
+}
 .collapsiblebutton:after {
     content: "\2193";
 }
