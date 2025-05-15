@@ -1,5 +1,6 @@
 @page "/soto"
 @using ConvergenceCorpBlazor.Components.Pages.SotOGuide
+@rendermode InteractiveServer
 
 <PageTitle>CC | SotO!</PageTitle>
 
@@ -7,10 +8,10 @@
 <div>
     <h1>Secrets of the Obscure</h1>
 
-    <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'TwoMinCollapsible')">Two Minute Phase</button>
-    <div id="TwoMinCollapsible" class="collapsiblecontent" style="display:none;">
-        <TwoMinPhase/>
-    </div>
+    <button type="button" class="collapsiblebutton @(this.Collapsed ? "" : "active")" @onclick="@Toggle">
+        Two Minute Phase 
+    </button>
+    <TwoMinPhase Collapsed="@Collapsed"/>
     <br>
     
     <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'SplitCollapsible')">Split Phase</button>
@@ -48,7 +49,6 @@
         <Umbriel />
     </div>
     <br>
-
 </div>
 
 <script>
@@ -64,3 +64,11 @@
         }
     }
 </script>
+
+@code {
+    public bool Collapsed = false;
+
+    private void Toggle(){
+        Collapsed = !Collapsed;
+    }
+}

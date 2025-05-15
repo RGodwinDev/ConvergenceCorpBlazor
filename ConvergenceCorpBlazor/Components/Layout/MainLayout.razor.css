@@ -13,11 +13,6 @@ main {
     color: white;
     float:left;
 }
-footer{
-    background-color: black;
-    color:darkgrey;
-    box-shadow: 0 50vh 0 50vh #000;
-}
 
 .sidebar{
     background-color:darkred;
