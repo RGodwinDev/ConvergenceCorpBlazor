@@ -98,9 +98,9 @@ ul {
     color:orange;
 }
 .collapsiblebutton:after {
-    content: "\2193";
+    content: " +";
 }
 
 .collapsiblebutton.active:after{
-    content: "\2191";
+    content: " -";
 }
