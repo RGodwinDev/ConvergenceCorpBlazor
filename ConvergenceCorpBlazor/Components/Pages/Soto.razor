@@ -9,7 +9,7 @@
     <h1>Secrets of the Obscure</h1>
 
     <button type="button" class="collapsiblebutton @(this.Collapsed ? "" : "active")" @onclick="@Toggle">
-        Two Minute Phase 
+        First Two Minutes
     </button>
     <TwoMinPhase Collapsed="@Collapsed"/>
     <br>
@@ -66,7 +66,7 @@
 </script>
 
 @code {
-    public bool Collapsed = false;
+    public bool Collapsed = true;
 
     private void Toggle(){
         Collapsed = !Collapsed;
