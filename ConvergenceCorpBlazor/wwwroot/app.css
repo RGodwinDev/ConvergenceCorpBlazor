@@ -104,3 +104,27 @@ ul {
 .collapsiblebutton.active:after{
     content: " -";
 }
+
+
+
+.coreborder{
+    border: 1px solid red;
+}
+.hotborder{
+    border: 1px solid green;
+}
+.pofborder{
+    border: 1px solid purple;
+}
+.ibsborder{
+    border: 1px solid blue;
+}
+.eodborder{
+    border: 1px solid cyan;
+}
+.sotoborder{
+    border: 1px solid gold;
+}
+.jwborder{
+    border: 1px solid darkblue;
+}
