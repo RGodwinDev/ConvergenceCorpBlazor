@@ -80,6 +80,9 @@ h1:focus {
 ul {
     list-style-type:none;
 }
+li {
+    margin-bottom:10px;
+}
 
 .collapsiblecontent {
     padding:0;
