@@ -39,7 +39,6 @@ main {
 @media (min-width: 1000px){
     .rightbar{
         display: block;
-        width:200px;
         margin-left:5px;
     }
 }
