@@ -5,6 +5,11 @@
 <PageTitle>CC | JW!</PageTitle>
 <div>
     <h1>Janthir Wilds</h1>
+    <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'PreCollapsible')">Pre Phase</button>
+    <div id="PreCollapsible" class="collapsiblecontent" style="display:none;">
+        <JWPre />
+    </div>
+    <br>
     <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'DolyakCollapsible')">Dolyak Escort</button>
     <div id="DolyakCollapsible" class="collapsiblecontent" style="display:none;">
         <Dolyak />
@@ -13,6 +18,11 @@
     <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'ThumperCollapsible')">Thumper</button>
     <div id="ThumperCollapsible" class="collapsiblecontent" style="display:none;">
         <Thumper />
+    </div>
+    <br>
+    <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'JWSharedCollapsible')">Shared Boss Mechanics</button>
+    <div id="JWSharedCollapsible" class="collapsiblecontent" style="display:none;">
+        <JWShared />
     </div>
     <br>
     <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'DecimaCollapsible')">Final Boss: Decima, the Stormsinger</button>
