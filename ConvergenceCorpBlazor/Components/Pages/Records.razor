@@ -197,3 +197,12 @@
         <td></td>
     </tr>
 </table>
+@localTime.ToShortTimeString()
+
+@code{
+    DateTime utcTime = DateTime.UtcNow;
+    TimeZoneInfo estZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+
+    //save times as utc time, convert with this. replace DateTime.Now with the desired time.
+    DateTime localTime = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.Local);
+}
