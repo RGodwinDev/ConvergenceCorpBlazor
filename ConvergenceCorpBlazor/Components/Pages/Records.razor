@@ -1,5 +1,5 @@
 @page "/Records"
-
+@rendermode InteractiveServer
 <PageTitle>CC | Records!</PageTitle>
 <h3>Records!</h3>
 <p>
@@ -46,9 +46,9 @@
     </tr>
     <tr>
         <td>Hell Sister</td>
-        <td>16:06.040</td>
+        <td>13:51.560</td>
         <td class="recDate">6/5/2025</td>
-        <td>#2</td>
+        <td></td>
         <td></td>
         <td></td>
     </tr>
@@ -58,7 +58,7 @@
         <td class="recDate">6/5/2025</td>
         <td></td>
         <td></td>
-        <td></td>
+        <td>Skein Gang[SG]</td>
     </tr>
     <tr>
         <td>Umbriel</td>
@@ -197,12 +197,3 @@
         <td></td>
     </tr>
 </table>
-@localTime.ToShortTimeString()
-
-@code{
-    DateTime utcTime = DateTime.UtcNow;
-    TimeZoneInfo estZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
-
-    //save times as utc time, convert with this. replace DateTime.Now with the desired time.
-    DateTime localTime = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.Local);
-}
