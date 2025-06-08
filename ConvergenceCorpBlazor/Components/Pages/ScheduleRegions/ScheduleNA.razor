@@ -81,3 +81,21 @@ NA Times in Eastern/Pacific
         </ul>
     </li>
 </ul>
+
+
+<div id="changeme">
+    @a.ToString("MM/dd/yy H:mm:ss zzz")
+</div>
+@a.ToLocalTime() server time?
+@code{
+    //      6/8/2025 12:15am UTC
+    DateTime a = new DateTime(2025,6,8,0,15,0,DateTimeKind.Utc);
+}
+
+<script>
+    var c = document.getElementById("changeme");
+    console.log(c.innerText);
+    var x = new Date(c.innerText);
+    console.log(x);
+    c.innerText = x.toLocaleString();
+</script>
