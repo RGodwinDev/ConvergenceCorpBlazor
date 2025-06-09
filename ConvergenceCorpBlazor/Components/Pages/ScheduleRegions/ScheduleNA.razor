@@ -5,11 +5,11 @@ NA Times in Eastern/Pacific
         Monday
         <ul>
             <li>
-                11/8am - 
+                <span class="time">@darenstime.ToString("MM/dd/yy H:mm:ss zzz")</span> - 
                 <a href="https://twitch.tv/DarensWithS">twitch.tv/DarensWithS</a>
             </li>
             <li>
-                5:30/2:30pm - Ownly [FUN] - 
+                <span class="time">@ownlytime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Ownly [FUN] - 
                 <a href="https://discord.gg/vQ5asNhZYB">Discord</a>
             </li>
         </ul>
@@ -21,7 +21,7 @@ NA Times in Eastern/Pacific
         Wednesday
         <ul>
             <li>
-                10/7pm - Unfit Heroes Heroing Heroically [UHHH] - Hella Crates
+                <span class="time">@hellatime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Unfit Heroes Heroing Heroically [UHHH] - Hella Crates
             </li>
         </ul>
     </li>
@@ -29,7 +29,7 @@ NA Times in Eastern/Pacific
         Thursday
         <ul>
             <li>
-                4/1pm - The Silverwastes Anonymous [SAS] - 
+                <span class="time">@sastime.ToString("MM/dd/yy H:mm:ss zzz")</span> - The Silverwastes Anonymous [SAS] - 
                 <a href="https://twitch.tv/jmdhouse05">twitch.tv/jmdhouse05</a> - 
                 <a href="https://discord.gg/sasgw2">Discord</a>
             </li>
@@ -39,7 +39,7 @@ NA Times in Eastern/Pacific
         Friday
         <ul>
             <li>
-                9/6pm - The Sleepiest Warriors [SLPY] - 
+                <span class="time">@slpytime.ToString("MM/dd/yy H:mm:ss zzz")</span> - The Sleepiest Warriors [SLPY] - 
                 <a href="https://twitch.tv/projektdyad">twitch.tv/projektdyad</a> - 
                 <a href="https://projektdyad.com">projektdyad.com</a>
             </li>
@@ -49,11 +49,11 @@ NA Times in Eastern/Pacific
         Saturday
         <ul>
             <li>
-                2pm/11am - Convergence Corp [CC] - 
+                <span class="time">@cctime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Convergence Corp [CC] - 
                 <a href="https://discord.gg/HyVZqAuAQ2">Discord</a>
             </li>
             <li>
-                6:30/3:30pm - Cabaret Velour [LILY] -
+                <span class="time">@lilytime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Cabaret Velour [LILY] -
                 <a href="https://twitch.tv/lilyvelour">twitch.tv/lilyvelour</a> - 
                 <a href="https://discord.gg/lilyvelour">Discord</a>
             </li>
@@ -68,7 +68,7 @@ NA Times in Eastern/Pacific
         Sunday
         <ul>
             <li> <!-- https://discord.gg/Kcf62kejz6 perma link for STAR-->
-                6/3pm - The Astral Light Of Tyria [STAR] - 
+                <span class="time">@startime.ToString("MM/dd/yy H:mm:ss zzz")</span> - The Astral Light Of Tyria [STAR] - 
                 <a href="https://discord.gg/ytbVsRgv9j">Discord</a>
             </li>
         </ul>
@@ -77,26 +77,28 @@ NA Times in Eastern/Pacific
         During the week
         <ul>
             <li>
-                8/5am - Godlyarms [GDAM], they do CMs in parts throughout the week.
+                <span class="time">@godlytime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Godlyarms [GDAM], they do CMs in parts throughout the week.
             </li>
         </ul>
     </li>
 </ul>
 
-
-<div id="changeme">
-    @a.ToString("MM/dd/yy H:mm:ss zzz")
-</div>
-@a.ToLocalTime() server time?
 @code{
     //      6/8/2025 12:15am UTC
-    DateTime a = new DateTime(2025,6,8,0,15,0,DateTimeKind.Utc);
+    DateTime darenstime = new DateTime(2025,6,7,15,00,00,DateTimeKind.Utc);
+    DateTime ownlytime = new DateTime(2025,6,7,20,30,00,DateTimeKind.Utc);
+    DateTime hellatime = new DateTime(2025,6,7,02,00,00,DateTimeKind.Utc);
+    DateTime sastime = new DateTime(2025,6,7,8,00,00,DateTimeKind.Utc);
+    DateTime slpytime = new DateTime(2025,6,7,7,00,00,DateTimeKind.Utc);
+    DateTime cctime = new DateTime(2025,6,7,18,00,00,DateTimeKind.Utc);
+    DateTime lilytime = new DateTime(2025,6,7,22,30,0,DateTimeKind.Utc);
+    DateTime startime = new DateTime(2025,6,7,22,00,0,DateTimeKind.Utc);
+    DateTime godlytime = new DateTime(2025,6,7,13,00,0,DateTimeKind.Utc);
 }
 
 <script>
-    var c = document.getElementById("changeme");
-    console.log(c.innerText);
-    var x = new Date(c.innerText);
-    console.log(x);
-    c.innerText = x.toLocaleString();
+    var times = document.getElementsByClassName("time");
+    for(var time of times){
+        time.innerText = new Date(time.innerText).toLocaleTimeString();
+    }
 </script>
