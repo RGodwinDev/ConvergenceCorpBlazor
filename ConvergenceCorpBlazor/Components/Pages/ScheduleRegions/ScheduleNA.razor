@@ -5,11 +5,11 @@ Times should be in your own timezone! Be careful of day differences if youre sea
         Monday
         <ul>
             <li>
-                <span class="time">@darenstime.ToString("MM/dd/yy H:mm:ss zzz")</span> - 
+                <span class="NAtime">@darenstime.ToString("MM/dd/yy H:mm:ss zzz")</span> - 
                 <a href="https://twitch.tv/DarensWithS">twitch.tv/DarensWithS</a>
             </li>
             <li>
-                <span class="time">@ownlytime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Ownly [FUN] - 
+                <span class="NAtime">@ownlytime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Ownly [FUN] - 
                 <a href="https://discord.gg/vQ5asNhZYB">Discord</a>
             </li>
         </ul>
@@ -21,7 +21,7 @@ Times should be in your own timezone! Be careful of day differences if youre sea
         Wednesday
         <ul>
             <li>
-                <span class="time">@hellatime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Unfit Heroes Heroing Heroically [UHHH] - Hella Crates
+                <span class="NAtime">@hellatime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Unfit Heroes Heroing Heroically [UHHH] - Hella Crates
             </li>
         </ul>
     </li>
@@ -29,7 +29,7 @@ Times should be in your own timezone! Be careful of day differences if youre sea
         Thursday
         <ul>
             <li>
-                <span class="time">@sastime.ToString("MM/dd/yy H:mm:ss zzz")</span> - The Silverwastes Anonymous [SAS] - 
+                <span class="NAtime">@sastime.ToString("MM/dd/yy H:mm:ss zzz")</span> - The Silverwastes Anonymous [SAS] - 
                 <a href="https://twitch.tv/jmdhouse05">twitch.tv/jmdhouse05</a> - 
                 <a href="https://discord.gg/sasgw2">Discord</a>
             </li>
@@ -39,7 +39,7 @@ Times should be in your own timezone! Be careful of day differences if youre sea
         Friday
         <ul>
             <li>
-                <span class="time">@slpytime.ToString("MM/dd/yy H:mm:ss zzz")</span> - The Sleepiest Warriors [SLPY] - 
+                <span class="NAtime">@slpytime.ToString("MM/dd/yy H:mm:ss zzz")</span> - The Sleepiest Warriors [SLPY] - 
                 <a href="https://twitch.tv/projektdyad">twitch.tv/projektdyad</a> - 
                 <a href="https://projektdyad.com">projektdyad.com</a>
             </li>
@@ -49,11 +49,11 @@ Times should be in your own timezone! Be careful of day differences if youre sea
         Saturday
         <ul>
             <li>
-                <span class="time">@cctime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Convergence Corp [CC] - 
+                <span class="NAtime">@cctime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Convergence Corp [CC] - 
                 <a href="https://discord.gg/HyVZqAuAQ2">Discord</a>
             </li>
             <li>
-                <span class="time">@lilytime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Cabaret Velour [LILY] -
+                <span class="NAtime">@lilytime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Cabaret Velour [LILY] -
                 <a href="https://twitch.tv/lilyvelour">twitch.tv/lilyvelour</a> - 
                 <a href="https://discord.gg/lilyvelour">Discord</a>
             </li>
@@ -68,7 +68,7 @@ Times should be in your own timezone! Be careful of day differences if youre sea
         Sunday
         <ul>
             <li> <!-- https://discord.gg/Kcf62kejz6 perma link for STAR-->
-                <span class="time">@startime.ToString("MM/dd/yy H:mm:ss zzz")</span> - The Astral Light Of Tyria [STAR] - 
+                <span class="NAtime">@startime.ToString("MM/dd/yy H:mm:ss zzz")</span> - The Astral Light Of Tyria [STAR] - 
                 <a href="https://discord.gg/ytbVsRgv9j">Discord</a>
             </li>
         </ul>
@@ -77,7 +77,7 @@ Times should be in your own timezone! Be careful of day differences if youre sea
         During the week
         <ul>
             <li>
-                <span class="time">@godlytime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Godlyarms [GDAM], they do CMs in parts throughout the week.
+                <span class="NAtime">@godlytime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Godlyarms [GDAM], they do CMs in parts throughout the week.
             </li>
         </ul>
     </li>
@@ -97,7 +97,7 @@ Times should be in your own timezone! Be careful of day differences if youre sea
 }
 
 <script>
-    var times = document.getElementsByClassName("time");
+    var times = document.getElementsByClassName("NAtime");
     for(var time of times){
         time.innerText = new Date(time.innerText).toLocaleTimeString();
     }

@@ -37,3 +37,14 @@
         </ul>
     </li>
 </ul>
+
+@code{
+    //no china times :(
+}
+
+<script>
+    var times = document.getElementsByClassName("CNtime");
+    for(var time of times){
+        time.innerText = new Date(time.innerText).toLocaleTimeString();
+    }
+</script>
