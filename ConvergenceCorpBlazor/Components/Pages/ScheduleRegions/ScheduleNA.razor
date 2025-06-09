@@ -99,6 +99,9 @@ Times should be in your own timezone! Be careful of day differences if youre sea
 <script>
     var times = document.getElementsByClassName("NAtime");
     for(var time of times){
-        time.innerText = new Date(time.innerText).toLocaleTimeString();
+        time.innerText = new Date(time.innerText).toLocaleTimeString([], {
+            hour:'numeric',
+            minute:'2-digit'
+        });
     }
 </script>
