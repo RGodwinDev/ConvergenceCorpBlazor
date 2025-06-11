@@ -19,7 +19,18 @@ builder.Services.AddHttpsRedirection(options =>{
 });
 */
 
+//Localization service
+builder.Services.AddLocalization();
+string[] supportedCultures = new[] { "en-US" }; //add more localization options here
+RequestLocalizationOptions localizationOptions = new RequestLocalizationOptions()
+    .SetDefaultCulture(supportedCultures[0])
+    .AddSupportedCultures(supportedCultures)
+    .AddSupportedUICultures(supportedCultures);
+
+
 WebApplication app = builder.Build(); //initialize the webapp
+
+app.UseRequestLocalization(localizationOptions);
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
