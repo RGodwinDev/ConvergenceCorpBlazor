@@ -4,14 +4,14 @@
 <section>
     <h1>Addons</h1>
     <p class="warning">
-        WARNING: MODIFYING GUILD WARS 2 THROUGH ANY 3RD PARTY TOOLS IS NOT SUPPORTED BY ARENANET OR NCSOFT.<br>
-        DO NOT CONTACT SUPPORT ABOUT GAME CLIENT ISSUES WHILE USING THESE TOOLS. THERE IS NO HELP OR WARRANTY.<br>
+        WARNING: MODIFYING GUILD WARS 2 THROUGH ANY 3RD PARTY TOOLS IS NOT SUPPORTED BY ARENANET OR NCSOFT.
+        DO NOT CONTACT SUPPORT ABOUT GAME CLIENT ISSUES WHILE USING THESE TOOLS. THERE IS NO HELP OR WARRANTY.
         THIS IS ENTIRELY AT YOUR OWN RISK AND YOU ASSUME ALL RESPONSIBILITY.
     </p>
     <p>
-        There are no official addons for Guild Wars 2.<br>
-        There are no required addons for Convergences in Guild Wars 2.<br>
-        There are no addons made specifically for Convergences.<br>
+        There are no official addons for Guild Wars 2.
+        There are no required addons for Convergences in Guild Wars 2.
+        There are no addons made specifically for Convergences.
         Some are more useful than others, but most are built around being used in an addon manager.
     </p>
 
@@ -36,45 +36,66 @@
     <h4>Convergence logging with arcdps</h4>
     <div class="caution">
         <h5>Caution:</h5>
-        These convergence logs will NOT be nice.<br>
-        You should become familiar with where your logs save to and how to use <a href="https://github.com/baaron4/GW2-Elite-Insights-Parser">Elite Insights</a> on your own computer.<br>
-        They won't upload to <a href="https://gw2wingman.nevermindcreations.de/">gw2wingman</a>.<br>
-        They're too big for <a href="https://dps.report">dps.report</a> to process.<br>
-        They will also come in multiple parts, as convergences don't keep you in combat for the whole fight.<br>
-        It's generally a bad decision to try and log convergences if you don't have experience handling logs.<br>
+        <p>
+            These convergence logs will NOT be nice.
+            You should become familiar with where your logs save to and how to use <a href="https://github.com/baaron4/GW2-Elite-Insights-Parser">Elite Insights</a> on your own computer.
+            They won't upload to <a href="https://gw2wingman.nevermindcreations.de/">gw2wingman</a>.
+            They're too big for <a href="https://dps.report">dps.report</a> to process.
+            They will also come in multiple parts, as convergences don't keep you in combat for the whole fight.
+             It's generally a bad decision to try and log convergences if you don't have experience handling logs.
+        </p>
     </div>
-    Any mob in the world can be tracked and logged when you enter combat with it.<br>
-    Raid and Strike bosses are automatically tracked.<br>
-    Others aren't because noone really cares.<br> 
-    For everything else, you need to manually input their mob ids.<br>
-    To find this, with arcdps active, click on the mob and press alt+shift+S.<br>
-    The window that pops up will have the ID in the top left. name (1234).<br>
-    <image src="/images/arc/arcNPCID50.png" alt="NPC Name and ID in ArcDPS" style="width:500px; max-width:100%;"/><br>
-    From there, alt+shift+T brings up the arcdps options. <br>
-    Click the logging tab, and at the bottom right you can add new ids to track.<br>
-    For most mobs, uncheck the gadget checkbox and click apply.<br>
-    <image src="/images/arc/arcAdditionalLogging50.png" alt="Logging location in ArcDPS options" style="width:500px; max-width:100%;"/><br>
-    <br>
-    For Convergences, these are the IDs:<br>
+    <figure style="max-width:500px;float:right;">
+        <image src="/images/arc/arcNPCID.png" alt="NPC Name and ID in ArcDPS" style="width:100%;"/>
+        <figcaption>Alt+Shift+S a selected NPC to get its Name and ID</figcaption>
+    </figure>
+    <p>
+        Any mob in the world can be tracked and logged when you enter combat with it.
+        Raid and Strike bosses are automatically tracked.
+        Others aren't because noone really cares. 
+        For everything else, you need to manually input their mob ids.
+        To find this, with arcdps active, click on the mob and press alt+shift+S.
+        The window that pops up will have the ID in the top left. name (1234).
+    </p>
+    <p>
+        From there, alt+shift+T brings up the arcdps options. 
+        Click the logging tab, and at the bottom right you can add new ids to track.
+        For most mobs, uncheck the gadget checkbox and click apply.
+    </p>
+    <figure style="max-width:500px;float:right;clear:right;">
+        <image src="/images/arc/ArcLogging.png" alt="Logging location in ArcDPS options" style="width:100%;"/>
+        <figcaption>Click Logging and add IDs in the bottom right.</figcaption>
+    </figure>
+    <p>
+    For Convergences, these are the IDs:
+    </p>
     <ul>
         <li>
             <h4>Secrets of the Obscure</h4>
-            <ul>
-                <li>Demon Knight - 26142(CM)</li>
-                <li>Dreadwing - 26106(CM)</li>
-                <li>Hell Sister - 26146(CM)</li>
-                <li>Sorrow - 26126(CM)</li>
-                <li>Umbriel - 26196(normal) - 26681(CM)</li>
-            </ul>
+            <dl>
+                <dt>Demon Knight</dt>
+                <dd>26142(CM)</dd>
+                <dt>Dreadwing</dt>
+                <dd>26106(CM)</dd>
+                <dt>Hell Sister</dt> 
+                <dd>26146(CM)</dd>
+                <dt>Sorrow</dt>
+                <dd>26126(CM)</dd>
+                <dt>Umbriel</dt>
+                <dd>26196(normal) | 26681(CM)</dd>
+            </dl>
         </li>
         
         <li>
             <h4>Janthir Wilds</h4>
-            <ul>
-                <li>Decima - 26720(normal & CM)</li>
-                <li>Greer - 26889(normal & CM)</li> <!-- number is correct, i didn't have it entered into arc lol-->
-                <li>Ura - 27017(CM)</li>
-            </ul>
+            <dl >
+                <dt>Decima</dt>
+                <dd>26720(normal & CM)</dd>
+                <dt>Greer</dt>
+                <dd>26889(normal & CM)</dd>
+                <dt>Ura</dt>
+                <dd>27017(normal & CM)</dd>
+            </dl>
         </li>
     </ul>
 </section>
