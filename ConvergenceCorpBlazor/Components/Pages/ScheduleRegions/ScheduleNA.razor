@@ -1,5 +1,5 @@
 @rendermode InteractiveServer
-Times should be in your own timezone! Be careful of day differences if youre sea/aus.
+Current time: <span id="NACurTime">@curTime.ToString("MM/dd/yy H:mm:ss zzz")</span>! Be careful of day differences if youre sea/aus.
 <ul>
     <li>
         Monday
@@ -94,6 +94,7 @@ Times should be in your own timezone! Be careful of day differences if youre sea
     DateTime lilytime =     new DateTime(2025,6,14,22,30,00,DateTimeKind.Utc);
     DateTime startime =     new DateTime(2025,6,8,22,00,00,DateTimeKind.Utc);
     DateTime godlytime =    new DateTime(2025,6,7,13,00,00,DateTimeKind.Utc);
+    DateTime curTime =      DateTime.Now;
 }
 
 <script>
@@ -104,4 +105,10 @@ Times should be in your own timezone! Be careful of day differences if youre sea
             minute:'2-digit'
         });
     }
+    var curtime = document.getElementById("NACurTime");
+    curtime.innerText = new Date(curtime.innerText).toLocaleTimeString([],{
+        hour:'numeric',
+        minute:'2-digit',
+        timeZoneName:'short'
+    });
 </script>
