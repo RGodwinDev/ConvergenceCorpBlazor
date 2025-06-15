@@ -1,4 +1,6 @@
- Times should be in your own timezone!
+<p>
+    Current time: <span id="CNCurTime">@CNCurTime.ToString("MM/dd/yy H:mm:ss zzz")</span>!
+</p>
 <ul>
     <li>
         Monday
@@ -40,6 +42,7 @@
 
 @code{
     //no china times :(
+    DateTime CNCurTime =    DateTime.Now;
 }
 
 <script>
@@ -50,4 +53,10 @@
             minute:'2-digit'
         });
     }
+    var CNCurTime = document.getElementById("CNCurTime");
+    CNCurTime.innerText = new Date(CNCurTime.innerText).toLocaleTimeString([], {
+        hour:'numeric',
+        minute:'2-digit',
+        timeZoneName:'short'
+    });
 </script>

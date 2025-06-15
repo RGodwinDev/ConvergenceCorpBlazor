@@ -1,5 +1,8 @@
 @rendermode InteractiveServer
-    Times should be in your own timezone!
+<p>
+    Current time: <span class="time" id="EUCurTime">@EUCurTime.ToString("MM/dd/yy H:mm:ss zzz")</span>!
+</p>
+    
 <ul>
     <li>
         Monday
@@ -16,7 +19,7 @@
         Thursday
         <ul>
             <li>
-                <span class="EUtime">@cutetime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Cruel Unending Tyrannic Entity [CUTE]
+                <span class="EUtime time">@cutetime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Cruel Unending Tyrannic Entity [CUTE]
             </li>
         </ul>
     </li>
@@ -29,7 +32,7 @@
         Saturday
         <ul>
             <li>
-                <span class="EUtime">@skeintime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Skein Gang [SG] - <a href="https://discord.gg/skeingang">Discord</a>
+                <span class="EUtime time">@skeintime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Skein Gang [SG] - <a href="https://discord.gg/skeingang">Discord</a>
             </li>
         </ul>
     </li>
@@ -48,6 +51,7 @@
 @code{
     DateTime cutetime =     new DateTime(2025,6,12,18,00,00,DateTimeKind.Utc);
     DateTime skeintime =    new DateTime(2025,6,14,18,30,00,DateTimeKind.Utc);
+    DateTime EUCurTime =    DateTime.Now;
 }
 
 
@@ -59,4 +63,10 @@
             minute:'2-digit'
         });
     }
+    var EUCurTime = document.getElementById("EUCurTime");
+    EUCurTime.innerText = new Date(EUCurTime.innerText).toLocaleTimeString([], {
+        hour:'numeric',
+        minute:'2-digit',
+        timeZoneName:'short'
+    });
 </script>
