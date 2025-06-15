@@ -1,0 +1,11 @@
+#ForeshockFigures{
+    flex-direction:column;
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+@media(min-width: 1400px){
+    #ForeshockFigures{
+        flex-direction: row;
+    }
+}

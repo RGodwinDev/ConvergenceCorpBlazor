@@ -17,6 +17,33 @@
     They go away after losing 25% of their hp each phase.
     Gree and Reeg both use several of the same skills that Greer uses.
 </p>
+<!-- Gree skill IDs:
+    Cage of Decay           75682
+-->
+<!-- Reeg skill IDs:
+    Enfeebling Miasma       75994,75919
+    Blob of Blight          76031
+-->
+<!-- Greer skill IDs:
+    Rain of Spores          76001
+    Sweep the Mold          75968
+    Noxious Blight          75966,75774,75559
+    Cage of Decay           75873,75750,75685,75554
+    Rake the Rot            75868,75696,75681
+    Rot Eruption            75866       //failed green?
+    Seeds of Decay          75707,75534
+    Ripples of Rot          75688,75519
+    Eruption of Rot         75607,75541
+    Blob of Blight          75591,75551
+
+    unsure if convergence or raid
+    Enfeebling Miasma       75749,75702               //raid version, based on description
+    Invulnerable Barrier    75982
+    Infectious Rot          75979
+    Stomp the Growth        75827,75782         //convergences have "stomp the convergence"
+    The World Ends in Decay 75665
+    Empowering Blast        75542,75516               //gree or reeg might shoot this? unlikely in convergence.
+-->
 
 <h5>Breakbar</h5>
 <p>
@@ -48,7 +75,7 @@
             <li>
                 <h5 style="color:rgb(255,255,0);">Noxious Blight</h5>
                 <p>
-                    Large purple aoes, don't stand inside.
+                    Large purple pools of corruption, don't stand inside.
                     Standing inside corrupts two boons into conditions every tick.
                 </p>
                 <figure style="float:none;max-width:600px;">
@@ -108,7 +135,8 @@
             <li>
                 <h5 style="color:rgb(0, 0, 255);">Sweep the Mold</h5>
                 <p>
-                    Greer raises his left arm to the right and sweeps it across the ground infront of himself.
+                    Greer raises his left arm to the right and sweeps it across the ground in a 60-degree cone, damaging, bleeding, poisoning, and knocking back players.
+                    Sets up <span style="color:rgb(0,100,255);">Rake the Rot</span>.
                 </p>
             </li>
             <li>
@@ -116,6 +144,7 @@
                 <p>
                     Follows <span style="color:rgb(0,0,255);">Sweep the Mold</span>, but only sometimes.
                     Greer raises his left arm to the left and and rakes it across the ground in front of himself.
+                    Sets up <span style="color:rgb(0,200,255);">Stomp the Convergence</span>.
                 </p>
             </li>
             <li>
@@ -180,7 +209,9 @@
             <li>
                 <h5 style="">Seeds of Decay</h5>
                 <p>
-                    Still figuring this one out.
+                    The shattered fragments of Greer's armor rain down on the arena.
+                    Smaller pieces explode on impact, but larger fragments transform into titanspawn, ready to help Greer in the fight. 
+                    I believe this happens upon breaking Greer's breakbar.
                 </p>
             </li>
         </ul>
