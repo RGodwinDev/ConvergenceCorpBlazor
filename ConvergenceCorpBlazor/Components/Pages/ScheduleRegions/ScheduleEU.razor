@@ -1,8 +1,4 @@
-@rendermode InteractiveServer
-<p>
-    Current time: <span class="time" id="EUCurTime">@EUCurTime.ToString("MM/dd/yy H:mm:ss zzz")</span>!
-</p>
-    
+@rendermode InteractiveServer    
 <ul>
     <li>
         Monday
@@ -51,10 +47,7 @@
 @code{
     DateTime cutetime =     new DateTime(2025,6,12,18,00,00,DateTimeKind.Utc);
     DateTime skeintime =    new DateTime(2025,6,14,18,30,00,DateTimeKind.Utc);
-    DateTime EUCurTime =    DateTime.Now;
 }
-
-
 <script>
     var times = document.getElementsByClassName("EUtime");
     for(var time of times){
@@ -63,10 +56,4 @@
             minute:'2-digit'
         });
     }
-    var EUCurTime = document.getElementById("EUCurTime");
-    EUCurTime.innerText = new Date(EUCurTime.innerText).toLocaleTimeString([], {
-        hour:'numeric',
-        minute:'2-digit',
-        timeZoneName:'short'
-    });
 </script>

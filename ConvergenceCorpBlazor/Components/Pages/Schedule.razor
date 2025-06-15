@@ -16,7 +16,9 @@
         I'm not on EU/CN. Any groups on there are just what I've been told.
     </p>
 </div>
-
+<p>
+    Current time: <span id="CurTime" class="time"></span>!
+</p>
 <div class="tab">
 <button type="button" class="tablinks active" onclick="openTab(event, 'NA')" id ="defaultOpen">NA</button> <!-- id defaultOpen is deprecated -->
 <button type="button" class="tablinks" onclick="openTab(event, 'EU')">EU</button>
@@ -54,6 +56,19 @@ function openTab(evt, tabName){
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
 }
+
+function updateDateTime(){
+    const now = new Date();
+    var curtime = document.getElementById("CurTime");
+    const currentDateTime = now.toLocaleTimeString([], {
+        hour:'numeric',
+          minute:'2-digit',
+          timeZoneName:'short'
+    });
+    curtime.innerText = currentDateTime;
+}
+updateDateTime();
+setInterval(updateDateTime, 10000);
 </script>
 
     
