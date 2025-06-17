@@ -1,5 +1,5 @@
-<section>
-<h3>Greer, the Blightbringer</h3>
+<section id="Greer">
+<h2>Greer, the Blightbringer</h2>
 <p>Poison | Area Control | Boon Corruption</p>
 
 <h4>Strategy</h4>
@@ -21,28 +21,32 @@
     Cage of Decay           75682
 -->
 <!-- Reeg skill IDs:
-    Enfeebling Miasma       75994,75919
-    Blob of Blight          76031
+    Enfeebling Miasma       75994,75919,75288
+    Blob of Blight          76031,74881
 -->
 <!-- Greer skill IDs:
-    Rain of Spores          76001
-    Sweep the Mold          75968
-    Noxious Blight          75966,75774,75559
-    Cage of Decay           75873,75750,75685,75554
-    Rake the Rot            75868,75696,75681
-    Rot Eruption            75866       //failed green?
-    Seeds of Decay          75707,75534
-    Ripples of Rot          75688,75519
-    Eruption of Rot         75607,75541
-    Blob of Blight          75591,75551
+    Rain of Spores          76001,75289
+    Sweep the Mold          75968,75210,75070,74804
+    Noxious Blight          75966,75774,75559,75481,75103,75026,74843,74829
+    Cage of Decay           75873,75750,75685,75554,75025,74917,74773
+    Rake the Rot            75868,75696,75681,75195,75036
+    Rot Eruption            75866,75434,75251       //failed green?
+    Seeds of Decay          75707,75534,75416,75343,75082,74792
+    Ripples of Rot          75688,75519,75123
+    Eruption of Rot         75607,75541,75491,75414,75182,75037,74132
+    Blob of Blight          75591,75551,75294,75089
+    Rot the World           75499,75425,75287
+    Scattering Sporeblast   75477,75330 
 
     unsure if convergence or raid
-    Enfeebling Miasma       75749,75702               //raid version, based on description
-    Invulnerable Barrier    75982
-    Infectious Rot          75979
-    Stomp the Growth        75827,75782         //convergences have "stomp the convergence"
+    Enfeebling Miasma       75749,75702,74851                         //raid version, based on description, says 3 cones instead of in a spiral pattern
+    Invulnerable Barrier    75982,75042
+    Infectious Rot          75979,75506,74900
+    Stomp the Growth        75827,75782,75248,74710                   //convergences have "stomp the convergence"
     The World Ends in Decay 75665
-    Empowering Blast        75542,75516               //gree or reeg might shoot this? unlikely in convergence.
+    Empowering Blast        75542,75516,75154,75046             //gree or reeg might shoot this? unlikely in convergence.
+    Wave of Corruption      75417,74867
+    Plague Rot              74883
 -->
 
 <h5>Breakbar</h5>
@@ -96,6 +100,7 @@
                 <p>
                     Greer spawns several purple/gold orbs that chase the furthest people from him.
                     The orbs emit smaller orbs in all directions.
+                    If the big orb hits a player, it becomes stationary and continues to fire smaller orbs for several seconds.
                 </p>
                 <figure style="float:none;max-width:800px;">
                     <image src="/images/JW/Greer/GreerBoB50.png" alt="Blob of Blight" style="width:100%;"/>
@@ -107,9 +112,8 @@
             <li>
                 <h5 style="color:rgb(132, 0, 255)">Scattering Sporeblast</h5>
                 <p>
-                    Greer aims with his left arm and blasts several spores at players.
+                    Greer aims with his left arm and blasts several spores in a cone in front of him. Players in this cone will be directly targeted.
                 </p>
-                
             </li>
             <li>
                 <h5 style="color:rgb(179,79,234);">Rain of Spores</h5>

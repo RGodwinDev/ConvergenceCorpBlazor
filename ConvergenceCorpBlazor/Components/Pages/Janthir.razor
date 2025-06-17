@@ -9,53 +9,12 @@
 </HeadContent>
 <div>
     <h1>Janthir Wilds</h1>
-    <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'PreCollapsible')">Preparations</button>
-    <div id="PreCollapsible" class="collapsiblecontent" style="display:none;">
-        <JWPre />
-    </div>
-    <br>
-    <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'DolyakCollapsible')">Dolyak Escort</button>
-    <div id="DolyakCollapsible" class="collapsiblecontent" style="display:none;">
-        <Dolyak />
-    </div>
-    <br>
-    <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'ThumperCollapsible')">Thumper</button>
-    <div id="ThumperCollapsible" class="collapsiblecontent" style="display:none;">
-        <Thumper />
-    </div>
-    <br>
-    <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'JWSharedCollapsible')">Shared Boss Mechanics</button>
-    <div id="JWSharedCollapsible" class="collapsiblecontent" style="display:none;">
-        <JWShared />
-    </div>
-    <br>
-    <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'DecimaCollapsible')">Final Boss: Decima, the Stormsinger</button>
-    <div id="DecimaCollapsible" class="collapsiblecontent" style="display:none;">
-        <Decima />
-    </div>
-    <br>
-    <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'GreerCollapsible')">Final Boss: Greer, the Blightbringer</button>
-    <div id="GreerCollapsible" class="collapsiblecontent" style="display:none;">
-        <Greer />
-    </div>
-    <br>
-    <button type="button" class="collapsiblebutton" onclick="openCollapsible(event, 'UraCollapsible')">Final Boss: Ura, the Steamshrieker</button>
-    <div id="UraCollapsible" class="collapsiblecontent" style="display:none;">
-        <Ura />
-    </div>
-    <br>
+    <JWPre />
+    <Dolyak />
+    <Building/>
+    <Thumper />
+    <JWShared />
+    <Decima />
+    <Greer />
+    <Ura />
 </div>
-
-<script>
-    function openCollapsible(evt, name){
-        var ele = document.getElementById(name);
-        if(ele.style.display == "none"){
-            ele.style.display = "block";
-            evt.target.classList.toggle("active");
-        }
-        else{
-            ele.style.display = "none";
-            evt.target.classList.toggle("active");
-        }
-    }
-</script>
