@@ -1,0 +1,54 @@
+.raptor{
+    color:rgb(255,100,100);
+}
+.raptor > a{
+    color:rgb(255,100,100);
+}
+.springer{
+    color:rgb(255,255,0);
+}
+.springer > a{
+    color:rgb(255,255,0);
+}
+.skimmer{
+    color:rgb(122,143,239);
+}
+.skimmer > a{
+    color:rgb(122,143,239);
+}
+.jackal{
+    color:rgb(150,228,255);
+}
+.jackal > a{
+    color:rgb(150,228,255);
+}
+.beetle{
+    color:rgb(221,144,73);
+}
+.beetle > a{
+    color:rgb(221,144,73);
+}
+.griffon{
+    color:rgb(160,137,255);
+}
+.griffon > a{
+    color:rgb(160,137,255);
+}
+.skyscale{
+    color:rgb(255,182,255);
+}
+.skyscale > a{
+    color:rgb(255,182,255);
+}
+.turtle{
+    color:rgb(0,241,113);
+}
+.turtle > a{
+    color:rgb(0,241,113);
+}
+.warclaw{
+    color:rgb(165,230,219);
+}
+.warclaw > a{
+    color:rgb(165,230,219);
+}
