@@ -1,0 +1,13 @@
+ol{
+    list-style:decimal;
+}
+li{
+    margin:0px;
+}
+
+#toc{
+    font-size:14px;
+    width:fit-content;
+    padding:10px;
+    background-color:rgb(55,55,55);
+}
