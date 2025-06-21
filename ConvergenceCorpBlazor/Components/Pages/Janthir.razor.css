@@ -5,9 +5,30 @@ li{
     margin:0px;
 }
 
-#toc{
+#jwtoc{
     font-size:14px;
     width:fit-content;
     padding:10px;
     background-color:rgb(55,55,55);
+}
+
+#jwgreedectoc{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+}
+
+#greandec{
+    width:60%;
+    max-width:1000px;
+    height:fit-content;
+}
+
+@media(max-width: 1300px){
+    #jwgreedectoc{
+        flex-direction:column;
+    }
+    #greandec{
+        width:100%;
+    }
 }
