@@ -60,10 +60,11 @@ function openTab(evt, tabName){
 function updateDateTime(){
     const now = new Date();
     var curtime = document.getElementById("CurTime");
-    const currentDateTime = now.toLocaleTimeString([], {
+    const currentDateTime = now.toLocaleString([], {
+        weekday:'long',
         hour:'numeric',
-          minute:'2-digit',
-          timeZoneName:'short'
+        minute:'2-digit',
+        timeZoneName:'short'
     });
     curtime.innerText = currentDateTime;
 }
