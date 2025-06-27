@@ -2,3 +2,6 @@ td{
     padding-right:10px;
     border:solid whitesmoke 1px;
 }
+section{
+    overflow-x:scroll;
+}
