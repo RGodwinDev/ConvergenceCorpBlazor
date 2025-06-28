@@ -2,6 +2,9 @@ td{
     padding-right:10px;
     border:solid whitesmoke 1px;
 }
-section{
-    overflow-x:scroll;
+
+@media(max-width:640px){
+    section{
+        overflow-x:scroll;
+    }
 }
