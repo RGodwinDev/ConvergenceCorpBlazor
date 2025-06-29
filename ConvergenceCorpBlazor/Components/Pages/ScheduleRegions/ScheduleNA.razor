@@ -124,7 +124,7 @@
         });
 
         //get the day
-        var listname = '#NA'+ d.toLocaleString([], {weekday:'long'});
+        var listname = '#NA'+ d.toLocaleString([],{locale:'en-US', weekday:'long'});
         //move to the correct day
         document.querySelector(listname).append(time.parentElement);
     }
