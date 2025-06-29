@@ -9,33 +9,33 @@
     -->
     <li>
         Monday
-        <ul id="NAMon">
+        <ul id="NAMonday">
             
         </ul>
     </li>
     <li>
         Tuesday
-        <ul id="NATue"></ul>
+        <ul id="NATuesday"></ul>
     </li>
     <li>
         Wednesday
-        <ul id="NAWed"></ul>
+        <ul id="NAWednesday"></ul>
     </li>
     <li>
         Thursday
-        <ul id="NAThur"></ul>
+        <ul id="NAThursday"></ul>
     </li>
     <li>
         Friday
-        <ul id="NAFri"></ul>
+        <ul id="NAFriday"></ul>
     </li>
     <li>
         Saturday
-        <ul id="NASat"></ul>
+        <ul id="NASaturday"></ul>
     </li>
     <li>
         Sunday
-        <ul id="NASun"></ul>
+        <ul id="NASunday"></ul>
     </li>
     <li>
         <span class="NAtime time">@ownlytime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Ownly [FUN] - 
@@ -89,7 +89,7 @@
         During the week
         <ul>
             <li>
-                <span class="Anytime time">@godlytime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Godlyarms [GDAM], they do CMs in parts throughout the week.
+                <span class="NAAnytime time">@godlytime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Godlyarms [GDAM], they do CMs in parts throughout the week.
             </li>
         </ul>
     </li>
@@ -112,58 +112,30 @@
 }
 
 <script>
+
     var times = document.getElementsByClassName("NAtime");
     for(var time of times){
+        //get the date
         let d = new Date(time.innerText);
-        time.parentElement.classList.add(d.toLocaleString([],{
-            weekday:'long'
-        }));
+        //convert the time
         time.innerText = d.toLocaleString([], {
             hour:'numeric',
             minute:'2-digit'
         });
+
+        //get the day
+        var listname = '#NA'+ d.toLocaleString([], {weekday:'long'});
+        //move to the correct day
+        document.querySelector(listname).append(time.parentElement);
     }
-    var anytimes = document.getElementsByClassName("Anytime");
+
+
+    var anytimes = document.getElementsByClassName("NAAnytime");
     for(var any of anytimes){
+        //convert the time
         any.innerText = new Date(any.innerText).toLocaleString([], {
             hour:'numeric',
             minute:'2-digit'
         });
-    }
-
-    var mondays = document.querySelectorAll('.Monday');
-    var monlist = document.querySelector('#NAMon');
-    for (var mon of mondays){
-        monlist.append(mon);
-    }
-    var tuesdays = document.querySelectorAll('.Tuesday');
-    var tuelist = document.querySelector('#NATue');
-    for (var tue of tuesdays){
-        tuelist.append(tue);
-    }
-    var wednesdays = document.querySelectorAll('.Wednesday');
-    var wedlist = document.querySelector('#NAWed');
-    for (var wed of wednesdays){
-        wedlist.append(wed);
-    }
-    var thursdays = document.querySelectorAll('.Thursday');
-    var thurlist = document.querySelector('#NAThur');
-    for (var thur of thursdays){
-        thurlist.append(thur);
-    }
-    var fridays = document.querySelectorAll('.Friday');
-    var frilist = document.querySelector('#NAFri');
-    for (var fri of fridays){
-        frilist.append(fri);
-    }
-    var saturdays = document.querySelectorAll('.Saturday');
-    var satlist = document.querySelector('#NASat');
-    for(var sats of saturdays){
-        satlist.append(sats);
-    }
-    var sundays = document.querySelectorAll('.Sunday');
-    var sunlist = document.querySelector('#NASun');
-    for (var sun of sundays){
-        sunlist.append(sun);
     }
 </script>

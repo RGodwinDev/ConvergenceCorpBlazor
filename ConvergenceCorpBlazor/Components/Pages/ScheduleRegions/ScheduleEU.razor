@@ -2,45 +2,52 @@
 <ul>
     <li>
         Monday
-        <ul>
+        <ul id="EUMonday">
         </ul>
     </li>
     <li>
         Tuesday
+        <ul id="EUTuesday"></ul>
     </li>
     <li>
         Wednesday
-        <ul>
-            <li>
-                <span class="EUtime time">@cutetime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Cruel Unending Tyrannic Entity [CUTE] <image src="/images/JW/Janthir_Wilds_logo.png" alt="jw logo" style="width:50px;"/>
-            </li>
+        <ul id="EUWednesday">
+            
         </ul>
     </li>
     <li>
         Thursday
-        <ul>
-            <li>
-                <span class="EUtime time">@cutetime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Cruel Unending Tyrannic Entity [CUTE] <image src="/images/SotO/Secrets_of_the_Obscure_logo.png" alt="soto logo" style="width:50px;" />
-            </li>
+        <ul id="EUThursday">
+            
         </ul>
     </li>
     <li>
         Friday
-        <ul>
+        <ul id="EUFriday">
         </ul>
     </li>
     <li>
         Saturday
-        <ul>
-            <li>
-                <span class="EUtime time">@skeintime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Skein Gang [SG] - <a href="https://discord.gg/skeingang">Discord</a>
-            </li>
+        <ul id="EUSaturday">
+            
         </ul>
     </li>
     <li>
         Sunday
-        <ul>
+        <ul id="EUSunday">
         </ul>
+    </li>
+    <li>
+        <span class="EUtime time">@cutetimeTue.ToString("MM/dd/yy H:mm:ss zzz")</span> - Cruel Unending Tyrannic Entity [CUTE] <image src="/images/JW/Janthir_Wilds_logo.png" alt="jw logo" style="width:50px;"/>
+    </li>
+    <li>
+        <span class="EUtime time">@cutetimeThur.ToString("MM/dd/yy H:mm:ss zzz")</span> - Cruel Unending Tyrannic Entity [CUTE] <image src="/images/SotO/Secrets_of_the_Obscure_logo.png" alt="soto logo" style="width:50px;" />
+    </li>
+    <li>
+        <span class="EUtime time">@skeintime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Skein Gang [SG] - <a href="https://discord.gg/skeingang">Discord</a>
+    </li>
+    <li>
+        <span class="EUtime time">@odntime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Orden der Nebel [ODN] (every 2 weeks)
     </li>
     <li>
         During the week
@@ -50,15 +57,35 @@
 </ul>
 
 @code{
-    DateTime cutetime =     new DateTime(2025,6,12,18,00,00,DateTimeKind.Utc);
+    DateTime cutetimeTue =     new DateTime(2025,6,10,18,00,00,DateTimeKind.Utc);
+    DateTime cutetimeThur = new DateTime(2025,6,12,18,00,00,DateTimeKind.Utc);
     DateTime skeintime =    new DateTime(2025,6,14,18,30,00,DateTimeKind.Utc);
+    DateTime odntime = new DateTime(2025,6,15,14,00,00,DateTimeKind.Utc);
 }
 <script>
     var times = document.getElementsByClassName("EUtime");
     for(var time of times){
-        time.innerText = new Date(time.innerText).toLocaleTimeString([], {
+        //get the date
+        let d = new Date(time.innerText);
+        //convert the time
+        time.innerText = d.toLocaleString([], {
+            hour:'numeric',
+            minute:'2-digit'
+        });
+
+        //get the day
+        var listname = '#EU'+ d.toLocaleString([], {weekday:'long'});
+        //move to the correct day
+        document.querySelector(listname).append(time.parentElement);
+    }
+    var anytimes = document.getElementsByClassName("EUAnytime");
+    for(var any of anytimes){
+        //convert the time
+        any.innerText = new Date(any.innerText).toLocaleString([], {
             hour:'numeric',
             minute:'2-digit'
         });
     }
+
+
 </script>
