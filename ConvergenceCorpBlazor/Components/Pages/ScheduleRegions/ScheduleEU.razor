@@ -74,7 +74,7 @@
         });
 
         //get the day
-        var listname = '#EU'+ d.toLocaleString([],{locale:'en-US',weekday:'long'});
+        var listname = '#EU'+ d.toLocaleString('en-US',{weekday:'long'});
         //move to the correct day
         document.querySelector(listname).append(time.parentElement);
     }
