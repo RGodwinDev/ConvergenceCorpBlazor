@@ -1,0 +1,20 @@
+<p>
+    <image src="/images/JW/Janthir_Wilds_logo.png" alt="jw logo" style="width:50px;"/>
+    Janthir Wilds Public Convergence times
+</p>
+<p>
+<span class="jwtimes">2015-03-25 00:00:00 UTC-0</span>, <span class="jwtimes">2015-03-25 03:00:00 UTC-0</span>, 
+<span class="jwtimes">2015-03-25 06:00:00 UTC-0</span>, <span class="jwtimes">2015-03-25 9:00:00 UTC-0</span>, 
+<span class="jwtimes">2015-03-25 12:00:00 UTC-0</span>, <span class="jwtimes">2015-03-25 15:00:00 UTC-0</span>, 
+<span class="jwtimes">2015-03-25 18:00:00 UTC-0</span>, <span class="jwtimes">2015-03-25 21:00:00 UTC-0</span>
+</p>
+
+<script>
+    var jwtimes = document.getElementsByClassName('jwtimes');
+    for(var jt of jwtimes){
+        jt.innerText = new Date(jt.innerText).toLocaleString([], {
+            hour:'numeric',
+            minute:'2-digit'
+        });
+    }
+</script>

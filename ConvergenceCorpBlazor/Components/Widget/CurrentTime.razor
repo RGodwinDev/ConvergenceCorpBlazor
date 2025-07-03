@@ -1,0 +1,19 @@
+<p>
+    Current time: <span id="CurTime" class="time"></span>!
+</p>
+
+<script>
+    function updateDateTime(){
+        const now = new Date();
+        var curtime = document.getElementById("CurTime");
+        const currentDateTime = now.toLocaleString([], {
+            weekday:'long',
+            hour:'numeric',
+            minute:'2-digit',
+            timeZoneName:'short'
+        });
+        curtime.innerText = currentDateTime;
+    }
+    updateDateTime();
+    setInterval(updateDateTime, 10000);
+</script>
