@@ -10,3 +10,15 @@
     width:100%;
     height:100%;
 }
+
+@media(max-width:1031px){
+    #VoEHeader{
+        display:none;
+    }
+}
+/*headless gap between these atm*/
+@media(min-width:640px){
+    #VoEMobileHeader{
+        display:none;
+    }
+}
