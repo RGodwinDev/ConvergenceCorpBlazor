@@ -38,21 +38,97 @@
 <h2>Features</h2>
 <h3>Elite Specializations & Combat Updates</h3>
 <p>Each class will get a new elite specialization, unlocking new playstyles, traits, and utility skills.</p>
-<ul>
-    <li>
+<div class="carousel">
+    <div class="slide">
         <image src="/images/VoE/Elite-Specializations/Spec1Icon.png" style="width:100px;" />
-        <h4>Mesmer Troubadour</h4>
-    </li>
-    <li>
+        <h4>Troubadour</h4>
+        <h5><image src="https://render.guildwars2.com/file/E43730AD49A903C3A1B4F27E41DE04EA51A775EC/156636.png" style=""/>Mesmer</h5>
+    </div>
+    <div class="slide">
         <image src="/images/VoE/Elite-Specializations/Spec4Icon.png" style="width:100px" />
-        <h4>Thief Antiquary</h4>
-    </li>
-    <li>
+        <h4>Antiquary</h4>
+        <h5><image src="https://render.guildwars2.com/file/F9EC00E23F630D6DB20CDA985592EC010E2A5705/156641.png" style=""/>Thief</h5>
+    </div>
+    <div class="slide">
         <image src="/images/VoE/Elite-Specializations/Spec7Icon.png" style="width:100px;" />
-        <h4>Elementalist Evoker</h4>
-    </li>
-</ul>
-<p>There is a beta test week coming August 20-27th.</p>
+        <h4>Evoker</h4>
+        <h5><image src="https://render.guildwars2.com/file/77B793123251931AFF9FCA24C07E0F704BC4DA49/156630.png" style=""/>Elementalist</h5>
+    </div>
+    <div class="slide">
+        <image src="/images/VoE/Elite-Specializations/Spec8Icon.png" style="width:100px;" />
+        <h4>Galeshot</h4>
+        <h5><image src="https://render.guildwars2.com/file/49B10316B424F4E20139EB5E51ADCF24A8724E9B/156640.png" style=""/>Ranger</h5>
+    </div>
+    <!--
+    <div class="slide">
+        <image src="/images/VoE/Elite-Specializations/Spec5Icon.png" style="width:100px;"/>
+        <h4>-</h4>
+        <h5>-</h5>
+    </div>
+    <div class="slide">
+        <image src="/images/VoE/Elite-Specializations/Spec6Icon.png" style="width:100px;"/>
+        <h4>-</h4>
+        <h5>-</h5>
+    </div>
+    <div class="slide">
+        <image src="/images/VoE/Elite-Specializations/Spec9Icon.png" style="width:100px;"/>
+        <h4>-</h4>
+        <h5>-</h5>
+    </div>
+    <div class="slide">
+        <image src="/images/VoE/Elite-Specializations/Spec3Icon.png" style="width:100px;"/>
+        <h4>-</h4>
+        <h5>-</h5>
+    </div>
+    <div class="slide">
+        <image src="/images/VoE/Elite-Specializations/Spec2Icon.png" style="width:100px;"/>
+        <h4>-</h4>
+        <h5>-</h5>
+    </div>
+    -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<div style="text-align:center;max-width:1000px;">
+    <span class="dot" onclick="currentSlide(1)"><image src="/images/VoE/Elite-Specializations/Spec1Icon.png" style="width:30px;height:30px;"/></span>
+    <span class="dot" onclick="currentSlide(2)"><image src="/images/VoE/Elite-Specializations/Spec4Icon.png" style="width:30px;height:30px;"/></span>
+    <span class="dot" onclick="currentSlide(3)"><image src="/images/VoE/Elite-Specializations/Spec7Icon.png" style="width:30px;height:30px;"/></span>
+    <span class="dot" onclick="currentSlide(4)"><image src="/images/VoE/Elite-Specializations/Spec8Icon.png" style="width:30px;height:30px;"/></span>
+    <!--
+    <span class="dot" onclick="currentSlide(5)"><image src="/images/VoE/Elite-Specializations/Spec1Icon.png" style="width:20px;height:20px;"/></span>
+    <span class="dot" onclick="currentSlide(6)"><image src="/images/VoE/Elite-Specializations/Spec1Icon.png" style="width:20px;height:20px;"/></span>
+    <span class="dot" onclick="currentSlide(7)"><image src="/images/VoE/Elite-Specializations/Spec1Icon.png" style="width:20px;height:20px;"/></span>
+    <span class="dot" onclick="currentSlide(8)"><image src="/images/VoE/Elite-Specializations/Spec1Icon.png" style="width:20px;height:20px;"/></span>
+    <span class="dot" onclick="currentSlide(9)"><image src="/images/VoE/Elite-Specializations/Spec1Icon.png" style="width:20px;height:20px;"/></span>
+    -->
+</div>
+<script>
+    var slideIndex = 1;
+    function plusSlides(n){
+        showSlides(slideIndex += n);
+    }
+    function currentSlide(n){ 
+        showSlides(slideIndex = n);
+    }
+    function showSlides(n){
+        let i;
+        var slides = document.getElementsByClassName("slide");
+        var dots = document.getElementsByClassName("dot");
+        if(n > slides.length){slideIndex=1;}
+        if(n < 1){slideIndex = slides.length;}
+        for(i = 0; i < slides.length; ++i){
+            slides[i].style.display = "none";
+        }
+        for(i = 0; i < dots.length; ++i){
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }
+    showSlides(slideIndex);
+</script>
+<p>There is an open beta week for elite specs coming August 20-27th.</p>
+<image src="/images/VoE/Elite-Specializations/VoEspecreleasecalander.jpg" alt="spec release schedule" style="width:100%" />
 <h3>Skimmer Mastery</h3>
 <p>The Skimmer will get new masteries, allowing you to hover, dive, and soar faster than before!</p>
 <image src="/images/VoE/Skimmer1.png" style="width:600px;max-width:100%;" />
@@ -90,7 +166,7 @@
 <image src="/images/VoE/VoEHomestead.jpg" alt="Homestead" style="width:100%;" />
 <h3>Fashion Templates</h3>
 <p>
-    Similar to build and equipment templates, fashion templates allow you to save the aesthetics of your armor, weapons, accessories and dyes.
+    Similar to build and equipment templates, fashion templates allow you to save the aesthetics of your armor, back pieces, outfits and dyes.
 </p>
 <p>
     This will be a core feature, no expansion required.
