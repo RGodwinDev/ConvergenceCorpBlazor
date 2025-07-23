@@ -16,7 +16,18 @@
     max-width:1000px;
     position:relative;
 }
-
+#espec-carousel{
+}
+.espec-carousel-icon{
+    width:100px;
+    margin:10px 0px 0px 30px;
+}
+.espec-name{
+    margin-left:30px;
+}
+.profession{
+    margin-left:30px;
+}
 .slide{
     display:none;
 }
