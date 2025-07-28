@@ -15,12 +15,11 @@ li{
 #jwgreedectoc{
     display:flex;
     flex-direction:row;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 #greandec{
-    width:60%;
-    max-width:1000px;
+    width:65%;
     height:fit-content;
 }
 
