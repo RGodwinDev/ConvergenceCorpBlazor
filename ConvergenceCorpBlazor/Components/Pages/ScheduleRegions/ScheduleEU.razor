@@ -50,6 +50,10 @@
         <span class="EUtime time">@odntime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Orden der Nebel [ODN] (every 2 weeks)
     </li>
     <li>
+        <span class="EUtime time">@chivalrytime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Mook Chivalry - 
+        <a href="https://www.twitch.tv/mookchivalry">Twitch</a>
+    </li>
+    <li>
         During the week
         <ul>
         </ul>
@@ -57,10 +61,12 @@
 </ul>
 
 @code{
+    DateTime chivalrytime = new DateTime(2025,6,9,13,00,00,DateTimeKind.Utc);
     DateTime cutetimeWed =     new DateTime(2025,6,11,18,00,00,DateTimeKind.Utc);
     DateTime cutetimeThur = new DateTime(2025,6,12,18,00,00,DateTimeKind.Utc);
     DateTime skeintime =    new DateTime(2025,6,14,18,30,00,DateTimeKind.Utc);
     DateTime odntime = new DateTime(2025,6,15,14,00,00,DateTimeKind.Utc);
+    
 }
 <script>
     var times = document.getElementsByClassName("EUtime");
