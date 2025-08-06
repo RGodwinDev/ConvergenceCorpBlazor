@@ -1,4 +1,5 @@
 @page "/records"
+@rendermode InteractiveServer
 <PageTitle>Records | Convergence Corp!</PageTitle>
 <HeadContent>
     <meta name="description" content="Tracking the best Convergence CM times!"/>
@@ -24,7 +25,7 @@
     <tr style="text-align:center;">
         <th>Boss</th>
         <th>Time</th>
-        <th class="recDate">Date</th>
+        <th>Date</th>
         <th></th>
         <th>Commander</th>
         <th>Guild</th>
@@ -143,43 +144,43 @@
     </tr>
     <tr>
         <td>Demon Knight</td>
-        <td>9:54.880</td>
-        <td class="recDate">-</td>
+        <td>9:53.880</td>
+        <td class="recDate">12/9/2024</td>
         <td></td>
         <td>Mike</td>
-        <td></td>
+        <td>Void Lounge [VL]</td>
     </tr>
     <tr>
         <td>Dreadwing</td>
         <td>10:20.640</td>
-        <td class="recDate">-</td>
+        <td class="recDate">9/9/2024</td>
         <td></td>
         <td>Mike</td>
-        <td></td>
+        <td>Void Lounge [VL]</td>
     </tr>
     <tr>
         <td>Hell Sister</td>
         <td>11:59.640</td>
-        <td class="recDate">-</td>
+        <td class="recDate">12/9/2024</td>
         <td></td>
         <td>Mike</td>
-        <td></td>
+        <td>Void Lounge [VL]</td>
     </tr>
     <tr>
         <td>Sorrow</td>
         <td>10:53.080</td>
-        <td class="recDate">-</td>
+        <td class="recDate">11/4/2024</td>
         <td></td>
         <td>Mike</td>
-        <td></td>
+        <td>Void Lounge [VL]</td>
     </tr>
     <tr>
         <td>Umbriel</td>
         <td>12:08.000</td>
-        <td class="recDate">-</td>
+        <td class="recDate">12/23/2024</td>
         <td></td>
         <td>Mike</td>
-        <td></td>
+        <td>Void Lounge [VL]</td>
     </tr>
     <tr>
         <td>Janthir Wilds</td>
@@ -195,7 +196,7 @@
         <td class="recDate">7/28/2025</td>
         <td></td>
         <td>Mike</td>
-        <td></td>
+        <td>Void Lounge [VL]</td>
     </tr>
     <tr>
         <td>Greer</td>
@@ -203,7 +204,7 @@
         <td class="recDate">8/4/2025</td>
         <td></td>
         <td>Mike</td>
-        <td></td>
+        <td>Void Lounge [VL]</td>
     </tr>
     <tr>
         <td>Ura</td>
@@ -211,7 +212,18 @@
         <td class="recDate">8/4/2025</td>
         <td></td>
         <td>Mike</td>
-        <td></td>
+        <td>Void Lounge [VL]</td>
     </tr>
 </table>
 </section>
+
+<script>
+    var x = document.getElementsByClassName("recDate");
+    for(var y of x){
+        let d = new Date(y.innerText);
+        let z = d.toLocaleDateString();
+        if(z != "Invalid Date"){
+            y.innerText = d.toLocaleDateString();
+        }
+    }
+</script>
