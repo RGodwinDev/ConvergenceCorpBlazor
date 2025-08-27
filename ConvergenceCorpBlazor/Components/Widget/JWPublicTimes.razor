@@ -3,16 +3,17 @@
     Janthir Wilds Public Convergence times
 </p>
 <p>
-<span class="jwtimes">2015-03-25 00:00:00 UTC-0</span>, <span class="jwtimes">2015-03-25 03:00:00 UTC-0</span>, 
-<span class="jwtimes">2015-03-25 06:00:00 UTC-0</span>, <span class="jwtimes">2015-03-25 9:00:00 UTC-0</span>, 
-<span class="jwtimes">2015-03-25 12:00:00 UTC-0</span>, <span class="jwtimes">2015-03-25 15:00:00 UTC-0</span>, 
-<span class="jwtimes">2015-03-25 18:00:00 UTC-0</span>, <span class="jwtimes">2015-03-25 21:00:00 UTC-0</span>
+<span class="jwtimes time">2015-03-25 00:00:00 UTC-0</span>, <span class="jwtimes time">2015-03-25 03:00:00 UTC-0</span>, 
+<span class="jwtimes time">2015-03-25 06:00:00 UTC-0</span>, <span class="jwtimes time">2015-03-25 9:00:00 UTC-0</span>, 
+<span class="jwtimes time">2015-03-25 12:00:00 UTC-0</span>, <span class="jwtimes time">2015-03-25 15:00:00 UTC-0</span>, 
+<span class="jwtimes time">2015-03-25 18:00:00 UTC-0</span>, <span class="jwtimes time">2015-03-25 21:00:00 UTC-0</span>
 </p>
 
 <script>
     var jwtimes = document.getElementsByClassName('jwtimes');
     for(var jt of jwtimes){
-        jt.innerText = new Date(jt.innerText).toLocaleString([], {
+        let jwnewdate = new Date(jt.innerText);
+        jt.innerText = jwnewdate.toLocaleString([], {
             hour:'numeric',
             minute:'2-digit'
         });

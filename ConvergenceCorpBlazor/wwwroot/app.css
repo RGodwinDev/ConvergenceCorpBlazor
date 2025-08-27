@@ -107,8 +107,10 @@ li {
 .collapsiblebutton.active:after{
     content: " -";
 }
-
-
+.time{
+    color:rgb(255, 166, 0);
+    font-weight:bold;
+}
 
 .coreborder{
     border: 1px solid red;
