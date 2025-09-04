@@ -15,9 +15,7 @@
     width:100%;
     height:fit-content;
     position:relative;
-}
-#espec-carousel{
-    aspect-ratio: 16/9;
+    aspect-ratio:16/9;
 }
 .espec-carousel-icon{
     width:100px;
@@ -25,6 +23,13 @@
 }
 
 .slide{
+    display:none;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    height:100%;
+    width:100%;
+}
+.HSslide{
     display:none;
     background-repeat: no-repeat;
     background-size:100% 100%;

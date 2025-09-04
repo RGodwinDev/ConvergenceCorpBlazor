@@ -41,7 +41,7 @@
 <h2>Features</h2>
 <h3>Elite Specializations & Combat Updates</h3>
 <p>A new elite specialization for each class, unlocking new playstyles, traits, and utility skills.</p>
-<div id="espec-carousel" class="carousel">
+<div class="carousel">
     <div class="slide" style="background-image:url(/images/VoE/Elite-Specializations/troubadour-background.jpg);"></div>
     <div class="slide" style="background-image:url(/images/VoE/Elite-Specializations/galeshot-background.jpg);"></div>
     <div class="slide" style="background-image:url(/images/VoE/Elite-Specializations/luminary-background.jpg);"></div>
@@ -237,12 +237,55 @@
 </p>
 <h3>New Homestead</h3>
 <p>
-    If you own Janthir Wilds and Visions of Eternity, you will unlock a new Castoran homestead!
-    The new layouts feature lets you save the layout of your homestead decorations.
-    The layout can be used to swap between maps and shared with other players. 
+    If you own Janthir Wilds and Visions of Eternity, you will be able to unlock a new Castoran homestead!
+    Tour around Comosus Isle on a ley line trail emanating from the nearby rock formation!
+    Your new homestead includes a three-story suite that is fully furnished including a kitchen, bedroom, and dining room.
+    If you'd prefer a blank canvas, the entire house and decorations can be removed and placed in your decorations inventory.
 </p>
-<p>This requires owning Janthir Wilds</p>
-<image src="/images/VoE/VoEHomestead.jpg" alt="Homestead" style="width:100%;" />
+<p>
+    The new layouts feature lets you save the layout of your homestead in an XML file.
+    The layout can be used to swap between the JW and VoE homestead maps and can be shared with other players!
+    Advanced users will be able to edit these XML files with a text editor, allowing modular editing of the layouts.
+    Loading a layout will place only the decorations you own, but it will tell you what you're missing.
+</p>
+<p>
+    A new decorating skill, Place Duplicate, will be added to the decoration tools. 
+    Place Duplicate will allow you to duplicate an already-placed decoration exactly where it is (assuming you have more in your inventory).
+    This will make it easier to align multiple items together, especially walls of structures and fences.
+</p>
+
+<div class="carousel">
+    <div class="HSslide" style="background-image:url(/images/VoE/Homestead/VoEHomestead.jpg);" alt="voe homestead front"/>
+    <div class="HSslide" style="background-image:url(/images/VoE/Homestead/VoEHomesteadDay.jpg);" alt="voe homestead day"/>
+    <div class="HSslide" style="background-image:url(/images/VoE/Homestead/VoEHomesteadNight.jpg);" alt="voe homestead night"/>
+    <div class="HSslide" style="background-image:url(/images/VoE/Homestead/VoEHomesteadHouse.jpg);" alt="voe homestead sideview"/>
+    <div class="HSslide" style="background-image:url(/images/VoE/Homestead/VoEHomesteadBeach.jpg);" alt="voe homestead beach"/>
+    <div class="HSslide" style="background-image:url(/images/VoE/Homestead/VoEHomesteadBedroom.jpg);" alt="voe homestead bedroom"/>
+    <div class="HSslide" style="background-image:url(/images/VoE/Homestead/VoEHomesteadUnderground.jpg);" alt="voe homestead underground"/>
+    <a class="prev" onclick="HSplusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="HSplusSlides(1)">&#10095;</a>
+</div>
+<script>
+    var HSslideIndex = 1;
+    function HSplusSlides(n){
+        HSshowSlides(HSslideIndex += n);
+    }
+    function HScurrentSlide(n){ 
+        HSshowSlides(HSslideIndex = n);
+    }
+    function HSshowSlides(n){
+        let i;
+        var slides = document.getElementsByClassName("HSslide");
+        if(n > slides.length){HSslideIndex=1;}
+        if(n < 1){HSslideIndex = slides.length;}
+        for(i = 0; i < slides.length; ++i){
+            slides[i].style.display = "none";
+        }
+        slides[HSslideIndex-1].style.display = "block";
+    }
+    HSshowSlides(HSslideIndex);
+</script>
+
 <h3>Fashion Templates</h3>
 <p>
     Similar to build and equipment templates, fashion templates allow you to save the aesthetics of your armor, back pieces, outfits and dyes.
@@ -384,6 +427,16 @@
         "Elite Specialization Highlights | Guild wars 2: Visions of Eternity"
         <a href="https://www.youtube.com/watch?v=Pq8nu-9CIp4">https://www.youtube.com/watch?v=Pq8nu-9CIp4</a>
         (August 13th, 2025).
+    </li>
+    <li>
+        The Guild Wars 2 Team. "Home Improvement: A New Homestead Arrives With Guild Wars 2: Visions of Eternity".
+        <a href="https://www.guildwars2.com/en/news/a-new-homestead-arrives-with-guild-wars-2-visions-of-eternity/">https://www.guildwars2.com/en/news/a-new-homestead-arrives-with-guild-wars-2-visions-of-eternity/</a>
+        (September 3rd, 2025).
+    </li>
+    <li>
+        Alessio Palumbo. "Guild Wars 2: Visions of Eternity Q&A on Homesteads and the New Elite Specs".
+        <a href="https://wccftech.com/guild-wars-2-visions-of-eternity-qa-homesteads-new-elite-specs/">https://wccftech.com/guild-wars-2-visions-of-eternity-qa-homesteads-new-elite-specs/</a>
+        (September 3rd, 2025).
     </li>
 </ol>
 </div>
