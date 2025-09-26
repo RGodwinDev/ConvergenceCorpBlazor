@@ -49,5 +49,5 @@ app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
 app.UseAntiforgery();
-
+Groups.Startgroup();
 app.Run();
