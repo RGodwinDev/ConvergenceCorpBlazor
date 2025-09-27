@@ -1,0 +1,107 @@
+@using System.Collections
+@rendermode InteractiveServer
+
+<image src="/images/flags/usaflaground64px.png" style="width:32px;" alt="NA"/>
+@foreach(Tuple<GroupRun, Group> tup in Groups.GetRegionRunsTimeRange("NA", DateTime.Now.AddDays(-1), DateTime.Now.AddDays(7))){
+    Group g = tup.Item2;
+    GroupRun gr = tup.Item1;
+    List<Tuple<string,string>> links = @g.GetLinks();
+
+    int bosses = gr.GetBosses();
+    <div class="topgradient">
+        <span class="time NAtime scheduletimes"> @gr.GetTime().ToUniversalTime() UTC</span> - 
+        @if(@g.GetLogo() != "logo"){<img src = "@g.GetLogo()" style="width:32px;" alt="@g.GetName() logo"/>} 
+        @g.GetName() 
+        @if(@g.GetGuildTag().Length > 0){<span> [@g.GetGuildTag()]</span>}
+
+        @if(@links.Count() > 0){
+            @foreach(Tuple<string,string> link in @links){
+                @if(link.Item1 == "discord"){
+                    <a class="schedlinks" href="@link.Item2"><img src="/images/Brands/Discord/Discord-Symbol-White.svg" alt="@link.Item2" style="width:20px;"/></a>
+                }
+                @if(link.Item1 == "website"){
+                    <a class="schedlinks" href="@link.Item2"><img src="/images/Brands/Web/Web-Logo.png" alt="@link.Item2" style="width:20px;"/></a>
+                }
+                @if(link.Item1 == "twitch"){
+                    <a class="schedlinks" href="@link.Item2"><img src="/images/Brands/Twitch/glitch_flat_white.svg" alt="@link.Item2" style="width:20px;"/></a>
+                }
+            }
+        }
+    </div>
+    
+    @if(@bosses > 0){
+        <div class="botgradient">
+            @if( @bosses        % 2 == 1){<span> DK</span>}
+            @if((@bosses / 2)   % 2 == 1){<span> DW</span>}
+            @if((@bosses / 4)   % 2 == 1){<span> HS</span>}
+            @if((@bosses / 8)   % 2 == 1){<span> Sor</span>}
+            @if((@bosses / 16)  % 2 == 1){<span> Umb</span>}
+            @if((@bosses / 64)  % 2 == 1){<span> Dec</span>}
+            @if((@bosses / 128) % 2 == 1){<span> Gre</span>}
+            @if((@bosses / 256) % 2 == 1){<span> Ura</span>}
+            @if((@bosses / 1024)% 2 == 1){<span> VoE</span>}
+        </div>
+    }
+        
+
+    
+}
+
+<image src="/images/flags/euflaground64px.png" style="width:32px;" alt="EU"/>
+@foreach(Tuple<GroupRun, Group> tup in Groups.GetRegionRunsTimeRange("EU", DateTime.Now.AddDays(-1), DateTime.Now.AddDays(7))){
+    Group g = tup.Item2;
+    GroupRun gr = tup.Item1;
+    List<Tuple<string,string>> links = @g.GetLinks();
+    int bosses = gr.GetBosses();
+    <div class = "topgradient">
+        <span class="time EUtime scheduletimes"> @gr.GetTime().ToUniversalTime() UTC</span> - 
+        @g.GetName() 
+        @if(@g.GetGuildTag().Length > 0){<span> [@g.GetGuildTag()]</span>}
+        @if(@links.Count() > 0){
+            @foreach(Tuple<string,string> link in @links){
+                @if(link.Item1 == "discord"){
+                    <a class="schedlinks" href="@link.Item2"><img src="/images/Brands/Discord/Discord-Symbol-White.svg" alt="@link.Item2" style="width:20px;"/></a>
+                }
+                @if(link.Item1 == "website"){
+                    <a class="schedlinks" href="@link.Item2"><img src="/images/Brands/Web/Web-Logo.png" alt="@link.Item2" style="width:20px;"/></a>
+                }
+                @if(link.Item1 == "twitch"){
+                    <a class="schedlinks" href="@link.Item2"><img src="/images/Brands/Twitch/glitch_flat_white.svg" alt="@link.Item2" style="width:20px;"/></a>
+                }
+            }
+        }
+    </div>
+    
+    @if(@bosses > 0){
+        <div class="botgradient">
+            @if( @bosses        % 2 == 1){<span> DK</span>}
+            @if((@bosses / 2)   % 2 == 1){<span> DW</span>}
+            @if((@bosses / 4)   % 2 == 1){<span> HS</span>}
+            @if((@bosses / 8)   % 2 == 1){<span> Sor</span>}
+            @if((@bosses / 16)  % 2 == 1){<span> Umb</span>}
+            @if((@bosses / 64)  % 2 == 1){<span> Dec</span>}
+            @if((@bosses / 128) % 2 == 1){<span> Gre</span>}
+            @if((@bosses / 256) % 2 == 1){<span> Ura</span>}
+            @if((@bosses / 1024)% 2 == 1){<span> VoE</span>}
+        </div>
+    }
+   
+}
+
+
+<script>
+    
+    var natimes = document.getElementsByClassName("scheduletimes");
+    for(var time of natimes){
+        let d = new Date(time.innerText);
+        
+        time.innerText =
+            d.toLocaleTimeString([], {
+                weekday:'long',
+                day:'numeric',
+                hour:'numeric',
+                minute:'2-digit'
+            });
+    }
+    
+</script>

@@ -1,0 +1,15 @@
+.schedlinks{
+    padding-left:5px;
+}
+
+.topgradient{
+    padding-left: 5px;
+    border-left: solid 1px; 
+    border-image: linear-gradient(to top, rgb(128, 128, 128) 50%, transparent 50%) 1 100%;
+}
+
+.botgradient{
+    padding-left: 5px; 
+    border-left: solid 1px; 
+    border-image: linear-gradient(to bottom, rgb(128,128,128) 50%, transparent 50%) 1 100%;
+}

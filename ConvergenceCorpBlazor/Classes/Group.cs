@@ -4,9 +4,9 @@ public class Group
     private string logo;
     private string name;
     private string guildtag;
-    private List<string> links;
+    private List<Tuple<string, string>> links;
 
-    public Group(string logolink, string name, string guildtag, List<string> linklist)
+    public Group(string logolink, string name, string guildtag, List<Tuple<string,string>> linklist)
     {
         this.name = name;
         this.guildtag = guildtag;
@@ -40,7 +40,7 @@ public class Group
         Runs.Add(r);
     }
 
-    public List<string> GetLinks()
+    public List<Tuple<string,string>> GetLinks()
     {
         return this.links;
     }
