@@ -2,7 +2,7 @@
 @rendermode InteractiveServer
 
 <image src="/images/flags/usaflaground64px.png" style="width:32px;" alt="NA"/>
-@foreach(Tuple<GroupRun, Group> tup in Groups.GetRegionRunsTimeRange("NA", DateTime.Now.AddDays(-1), DateTime.Now.AddDays(7))){
+@foreach(Tuple<GroupRun, Group> tup in Groups.GetRegionRunsTimeRange("NA", DateTime.Now.AddHours(-5), DateTime.Now.AddDays(7))){
     Group g = tup.Item2;
     GroupRun gr = tup.Item1;
     List<Tuple<string,string>> links = @g.GetLinks();
@@ -48,7 +48,7 @@
 }
 
 <image src="/images/flags/euflaground64px.png" style="width:32px;" alt="EU"/>
-@foreach(Tuple<GroupRun, Group> tup in Groups.GetRegionRunsTimeRange("EU", DateTime.Now.AddDays(-1), DateTime.Now.AddDays(7))){
+@foreach(Tuple<GroupRun, Group> tup in Groups.GetRegionRunsTimeRange("EU", DateTime.Now.AddHours(-5), DateTime.Now.AddDays(7))){
     Group g = tup.Item2;
     GroupRun gr = tup.Item1;
     List<Tuple<string,string>> links = @g.GetLinks();
