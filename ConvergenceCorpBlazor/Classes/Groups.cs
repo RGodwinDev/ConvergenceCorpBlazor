@@ -86,7 +86,8 @@ public static class Groups
         Group Godlyarms = new Group("logo", "Godlyarms", "GDAM", []);
         Godlyarms.AddRun(new GroupRun("NA", new DateTime(2025, 9, 24, 12, 00, 00, DateTimeKind.Utc), 31));
         Godlyarms.AddRun(new GroupRun("NA", new DateTime(2025, 9, 25, 13, 30, 00, DateTimeKind.Utc), 448));
-
+        Godlyarms.AddRun(new GroupRun("NA", new DateTime(2025, 10, 02, 13, 30, 00, DateTimeKind.Utc), 448));
+        Godlyarms.AddRun(new GroupRun("NA", new DateTime(2025, 10, 03, 14, 00, 00, DateTimeKind.Utc),31));
 
         Group WFSleep = new Group("logo", "We Fight Sleep", "COFE", [
             new Tuple<string,string>("discord", "https://discord.gg/tS8D48HFAJ"),
@@ -102,9 +103,6 @@ public static class Groups
         WFSleep.AddRun(new GroupRun("NA", new DateTime(2025, 10, 23, 05, 00, 00, DateTimeKind.Utc), 448));
         WFSleep.AddRun(new GroupRun("NA", new DateTime(2025, 10, 29, 05, 00, 00, DateTimeKind.Utc), 31));
         WFSleep.AddRun(new GroupRun("NA", new DateTime(2025, 10, 30, 05, 00, 00, DateTimeKind.Utc), 448));
-
-
-
 
         Group SkeinGang = new Group("logo", "Skein Gang", "SG", [
             new Tuple<string,string>("discord","https://discord.gg/skeingang")
@@ -163,7 +161,7 @@ public static class Groups
 
         Group AllAboutCats = new Group("logo", "All About Cats", "", []);
 
-        Group UndergroundLegends = new Group("logo", "Underground Legends", "uL", [
+        Group UndergroundLegends = new Group("/images/groups/uL/uLBot.png", "Underground Legends", "uL", [
             new Tuple<string,string>("discord", "https://discord.gg/undergroundlegends"),
             new Tuple<string,string>("website","https://undergroundlegends.gg")
         ]);
