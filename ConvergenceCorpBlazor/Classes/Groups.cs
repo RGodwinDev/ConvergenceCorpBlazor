@@ -37,6 +37,7 @@ public static class Groups
         ConvergenceCorp.AddRun(new GroupRun("NA", new DateTime(2025, 10, 21, 01, 00, 00, DateTimeKind.Utc), 448));
         ConvergenceCorp.AddRun(new GroupRun("NA", new DateTime(2025, 10, 25, 18, 00, 00, DateTimeKind.Utc), 31));
         ConvergenceCorp.AddRun(new GroupRun("NA", new DateTime(2025, 10, 28, 01, 00, 00, DateTimeKind.Utc), 31));
+        ConvergenceCorp.AddRun(new GroupRun("NA", new DateTime(2025, 11, 01, 18, 00, 00, DateTimeKind.Utc), 448));
 
         Group ownly = new Group("logo", "Ownly", "FUN", [
             new Tuple<string, string>("discord", "https://discord.gg/vQ5asNhZYB")
@@ -52,6 +53,7 @@ public static class Groups
         Hella.AddRun(new GroupRun("NA", new DateTime(2025, 10, 09, 02, 00, 00, DateTimeKind.Utc)));
         Hella.AddRun(new GroupRun("NA", new DateTime(2025, 10, 18, 02, 00, 00, DateTimeKind.Utc)));
         Hella.AddRun(new GroupRun("NA", new DateTime(2025, 10, 25, 02, 00, 00, DateTimeKind.Utc)));
+        Hella.AddRun(new GroupRun("NA", new DateTime(2025, 11, 01, 02, 00, 00, DateTimeKind.Utc)));
 
         Group SaS = new Group("logo", "Silverwastes Anonymous", "SAS", []);
         SaS.AddRun(new GroupRun("NA", new DateTime(2025, 10, 02, 20, 00, 00, DateTimeKind.Utc)));
@@ -66,6 +68,10 @@ public static class Groups
         ]);
         Sleepy.AddRun(new GroupRun("NA", new DateTime(2025, 9, 27, 01, 00, 00, DateTimeKind.Utc)));
         Sleepy.AddRun(new GroupRun("NA", new DateTime(2025, 10, 04, 01, 00, 00, DateTimeKind.Utc)));
+        Sleepy.AddRun(new GroupRun("NA", new DateTime(2025, 10, 11, 01, 00, 00, DateTimeKind.Utc)));
+        Sleepy.AddRun(new GroupRun("NA", new DateTime(2025, 10, 18, 01, 00, 00, DateTimeKind.Utc)));
+        Sleepy.AddRun(new GroupRun("NA", new DateTime(2025, 10, 25, 01, 00, 00, DateTimeKind.Utc)));
+        Sleepy.AddRun(new GroupRun("NA", new DateTime(2025, 11, 01, 01, 00, 00, DateTimeKind.Utc)));
 
         Group Lily = new Group("logo", "Cabaret Velour", "LILY",
         [
@@ -76,6 +82,14 @@ public static class Groups
         Lily.AddRun(new GroupRun("NA", new DateTime(2025, 9, 30, 21, 00, 00, DateTimeKind.Utc), 448));
         Lily.AddRun(new GroupRun("NA", new DateTime(2025, 10, 04, 21, 00, 00, DateTimeKind.Utc), 31));
         Lily.AddRun(new GroupRun("NA", new DateTime(2025, 10, 07, 21, 00, 00, DateTimeKind.Utc), 31));
+        Lily.AddRun(new GroupRun("NA", new DateTime(2025, 10, 11, 21, 00, 00, DateTimeKind.Utc), 448));
+        Lily.AddRun(new GroupRun("NA", new DateTime(2025, 10, 14, 21, 00, 00, DateTimeKind.Utc), 448));
+        Lily.AddRun(new GroupRun("NA", new DateTime(2025, 10, 18, 21, 00, 00, DateTimeKind.Utc), 31));
+        Lily.AddRun(new GroupRun("NA", new DateTime(2025, 10, 21, 21, 00, 00, DateTimeKind.Utc), 31));
+        Lily.AddRun(new GroupRun("NA", new DateTime(2025, 10, 25, 21, 00, 00, DateTimeKind.Utc), 448));
+        Lily.AddRun(new GroupRun("NA", new DateTime(2025, 10, 28, 21, 00, 00, DateTimeKind.Utc), 448));
+        Lily.AddRun(new GroupRun("NA", new DateTime(2025, 11, 01, 21, 00, 00, DateTimeKind.Utc), 31));
+        Lily.AddRun(new GroupRun("NA", new DateTime(2025, 11, 04, 21, 00, 00, DateTimeKind.Utc), 31));
 
         Group Star = new Group("logo", "The Astral Sanctuary", "STAR", [
             new Tuple<string,string>("discord","https://discord.gg/Kcf62kejz6")
@@ -87,7 +101,7 @@ public static class Groups
         Godlyarms.AddRun(new GroupRun("NA", new DateTime(2025, 9, 24, 12, 00, 00, DateTimeKind.Utc), 31));
         Godlyarms.AddRun(new GroupRun("NA", new DateTime(2025, 9, 25, 13, 30, 00, DateTimeKind.Utc), 448));
         Godlyarms.AddRun(new GroupRun("NA", new DateTime(2025, 10, 02, 13, 30, 00, DateTimeKind.Utc), 448));
-        Godlyarms.AddRun(new GroupRun("NA", new DateTime(2025, 10, 03, 14, 00, 00, DateTimeKind.Utc),31));
+        Godlyarms.AddRun(new GroupRun("NA", new DateTime(2025, 10, 03, 14, 00, 00, DateTimeKind.Utc), 31));
 
         Group WFSleep = new Group("logo", "We Fight Sleep", "COFE", [
             new Tuple<string,string>("discord", "https://discord.gg/tS8D48HFAJ"),
@@ -156,6 +170,7 @@ public static class Groups
         LegendaryImpact.AddRun(new GroupRun("EU", new DateTime(2025, 10, 10, 18, 00, 00, DateTimeKind.Utc), 31));
         LegendaryImpact.AddRun(new GroupRun("EU", new DateTime(2025, 10, 17, 18, 00, 00, DateTimeKind.Utc), 31));
         LegendaryImpact.AddRun(new GroupRun("EU", new DateTime(2025, 10, 24, 18, 00, 00, DateTimeKind.Utc), 31));
+        LegendaryImpact.AddRun(new GroupRun("EU", new DateTime(2025, 10, 31, 18, 00, 00, DateTimeKind.Utc), 31));
 
         Group ODN = new Group("logo", "Orden der Nebel", "ODN", []);
 
@@ -165,9 +180,16 @@ public static class Groups
             new Tuple<string,string>("discord", "https://discord.gg/undergroundlegends"),
             new Tuple<string,string>("website","https://undergroundlegends.gg")
         ]);
-        UndergroundLegends.AddRun(new GroupRun("NA", new DateTime(2025,10,4,20,00,00, DateTimeKind.Utc), 448));
-        UndergroundLegends.AddRun(new GroupRun("NA", new DateTime(2025,10,5,17,00,00, DateTimeKind.Utc), 31));
-        
+        UndergroundLegends.AddRun(new GroupRun("NA", new DateTime(2025, 10, 4, 20, 00, 00, DateTimeKind.Utc), 448));
+        UndergroundLegends.AddRun(new GroupRun("NA", new DateTime(2025, 10, 5, 17, 00, 00, DateTimeKind.Utc), 31));
+        UndergroundLegends.AddRun(new GroupRun("NA", new DateTime(2025, 10, 11, 20, 00, 00, DateTimeKind.Utc), 448));
+        UndergroundLegends.AddRun(new GroupRun("NA", new DateTime(2025, 10, 12, 17, 00, 00, DateTimeKind.Utc), 31));
+        UndergroundLegends.AddRun(new GroupRun("NA", new DateTime(2025, 10, 18, 20, 00, 00, DateTimeKind.Utc), 448));
+        UndergroundLegends.AddRun(new GroupRun("NA", new DateTime(2025, 10, 19, 17, 00, 00, DateTimeKind.Utc), 31));
+        UndergroundLegends.AddRun(new GroupRun("NA", new DateTime(2025, 10, 25, 20, 00, 00, DateTimeKind.Utc), 448));
+        UndergroundLegends.AddRun(new GroupRun("NA", new DateTime(2025, 10, 26, 17, 00, 00, DateTimeKind.Utc), 31));
+        UndergroundLegends.AddRun(new GroupRun("NA", new DateTime(2025, 11, 01, 20, 00, 00, DateTimeKind.Utc), 448));
+        UndergroundLegends.AddRun(new GroupRun("NA", new DateTime(2025, 11, 02, 17, 00, 00, DateTimeKind.Utc), 31));
     }
     public static List<Group> getList()
     {
