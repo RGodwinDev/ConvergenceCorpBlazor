@@ -1,7 +1,9 @@
 @using System.Collections
 @rendermode InteractiveServer
 
+<div id="v2schedule">
 <image src="/images/flags/usaflaground64px.png" style="width:32px;" alt="NA"/>
+
 @foreach(Tuple<GroupRun, Group> tup in Groups.GetRegionRunsTimeRange("NA", DateTime.Now.AddHours(-5), DateTime.Now.AddDays(7))){
     Group g = tup.Item2;
     GroupRun gr = tup.Item1;
@@ -45,7 +47,7 @@
         
 
     
-}
+} <!-- end of foreach -->
 
 <image src="/images/flags/euflaground64px.png" style="width:32px;" alt="EU"/>
 @foreach(Tuple<GroupRun, Group> tup in Groups.GetRegionRunsTimeRange("EU", DateTime.Now.AddHours(-5), DateTime.Now.AddDays(7))){
@@ -87,19 +89,29 @@
     }
    
 }
-
+</div>
 
 <script>
     
     var natimes = document.getElementsByClassName("scheduletimes");
+    var prevday = -1;
     for(var time of natimes){
         let d = new Date(time.innerText);
-        
+        var day = d.getDate();
+        if(day != prevday){
+            var newDiv = document.createElement("h3");
+            newDiv.innerHTML = d.toLocaleDateString([],{
+                month:'2-digit',
+                day:'2-digit',
+                weekday:'long'
+            });
+            newDiv.className = "time";
+            document.getElementById("v2schedule").insertBefore(newDiv, time.parentNode);
+        }
+        prevday = day;
         time.innerText =
             d.toLocaleTimeString([], {
-                weekday:'long',
-                day:'numeric',
-                hour:'numeric',
+                hour:'2-digit',
                 minute:'2-digit'
             });
     }
