@@ -20,6 +20,17 @@
     <iframe width="560" height="315" src="https://www.youtube.com/embed/JTsj7PnlTgI?si=K8Mcb0-9CESzb1QL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 <h2>Visions of Eternity is coming <span id="VoERelease"></span>!</h2>
+<script>
+    document.getElementById("VoERelease").innerText = new Date("10/28/25 16:00:00 UTC-0").toLocaleDateString([], {
+        month:'long',
+        day:'numeric',
+        weekday:'long',
+        hour:'numeric',
+        minute:'2-digit',
+        timeZoneName:'short'
+    });
+</script>
+
 <p>
     Rumors are floating around that the Inquest has conspicously launched a voyage in a search of the legendary island of Castora!
     A perilous race against the Inquests ambitions will lead you through magical lands full of strange creatures! 
@@ -280,7 +291,8 @@
 </p>
 <p>
     The new overarching gamemode 'Raids' will have two smaller modes within it:
-    <ul style="list-style-type:disc;">
+</p>
+<ul style="list-style-type:disc;">
         <li>
             Raid Wings - The classic multi-encounter raid instances.
         </li>
@@ -288,18 +300,24 @@
             Raid Encounters - Strike Missions new name, single bosses.
         </li>
     </ul>
-</p>
 <p>
     A new Raid UI will also be introduced in the first major update!
-    
+    It will have a few features, including:
 </p>
-
+<ul style="list-style-type:disc;">
+    <li>List all raid wings and raid encounters.</li>
+    <li>Allow you to go directly to any boss.</li>
+    <li>Also includes difficulty ratings for each boss.</li>
+</ul>
+<image src="/images/VoE/Raids/raidUIPreview.jpg" style="width:100%;max-width:800px;"/>
 <h4>New Raid Encounters!</h4>
 <p>
     VoE will have two new raid encounters!
-    The first one will come with a challenge mode in the first major update in early 2026.
-    The second will come in a later update, with a challenge mode and legendary mode.
 </p>
+<ul>
+    <li>The first one will come with a challenge mode in the first major update in early 2026.</li>
+    <li>The second will come in a later update, with challenge and legendary modes.</li>
+</ul>
 <h4>New Convergence!</h4>
 <p>A new Convergence will come in a later update.</p>
 <h4>New Fractal!</h4>
@@ -454,18 +472,6 @@
     </li>
 </ul>
 <image src="/images/VoE/Ex6-Logo-Full-720.gif" style="width:100%;"/>
-
-<script>
-    var releaseTime = new Date("10/28/25 16:00:00 UTC-0").toLocaleDateString([], {
-        month:'long',
-        day:'numeric',
-        weekday:'long',
-        hour:'numeric',
-        minute:'2-digit',
-        timeZoneName:'short'
-    });
-    document.getElementById("VoERelease").innerText = releaseTime;
-</script>
 
 <h5>Sources</h5>
 <ol>

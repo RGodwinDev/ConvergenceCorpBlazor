@@ -103,7 +103,7 @@ public static class Groups
         Lily.AddRun(new GroupRun("NA", new DateTime(2025, 11, 04, 21, 00, 00, DateTimeKind.Utc), 31));
 
         Group Star = new Group("logo", "The Astral Sanctuary", "STAR", [
-            new Tuple<string,string>("discord","https://discord.gg/Kcf62kejz6")
+            new Tuple<string,string>("discord","https://discord.gg/astralsanctuary")
         ]);
 
         //NA SotO Sundays
