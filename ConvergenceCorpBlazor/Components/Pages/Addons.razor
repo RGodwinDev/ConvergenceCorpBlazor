@@ -24,93 +24,57 @@
         Some are more useful than others, and most are built around being used in an addon manager.
     </p>
 
-    <h3>Addon Managers:</h3>
+    <h2>Addon Managers:</h2>
     <ul>
         <li>
-            <h4><a href="https://blishhud.com/">Blish Hud</a></h4>
+            <h3><a href="https://blishhud.com/">Blish Hud</a></h3>
             <p>Guild Wars 2's largest and most powerful addon overlay.</p>
         </li>
         <li>
-            <h4><a href="https://burrito.orthogonalprojects.com/">Burrito</a></h4>
+            <h3><a href="https://burrito.orthogonalprojects.com/">Burrito</a></h3>
             <p>An overlay tool for Guild Wars 2. It is built to run on Linux with no awkward workarounds.</p>
         </li>
         <li>
-            <h4><a href="https://raidcore.gg/Nexus">Raidcore Nexus</a></h4>
+            <h3><a href="https://raidcore.gg/Nexus">Raidcore Nexus</a></h3>
             <p>Next-gen Addon Manager & Loader for Guild Wars 2.</p>
         </li>
 
     </ul>
-    <h3>Standalone Addons:</h3>
+    <h2>Standalone Addons:</h2>
     <ul>
         <li>
-            <h4><a href="https://www.deltaconnected.com/arcdps/">Arcdps</a></h4>
+            <h3><a href="https://www.deltaconnected.com/arcdps/">Arcdps</a></h3>
             <p>The most popular DPS meter for Guild Wars 2.</p>
         </li>
     </ul>
 
-    <h4>Convergence logging with arcdps</h4>
+    <h2>Convergence logging with arcdps</h2>
     <div class="caution">
         <h5>Caution:</h5>
         <p>
-            These convergence logs will NOT be nice.
-            You should become familiar with where your logs save to and how to use <a href="https://github.com/baaron4/GW2-Elite-Insights-Parser">Elite Insights</a> on your own computer.
-            They won't upload to <a href="https://gw2wingman.nevermindcreations.de/">gw2wingman</a>.
-            They're too big for <a href="https://dps.report">dps.report</a> to process.
-            They will also come in multiple parts, as convergences don't keep you in combat for the whole fight.
-             It's generally a bad decision to try and log convergences if you don't have experience handling logs.
+            Logging Convergences creates large files, often over 30MB each.
         </p>
     </div>
-    <figure style="max-width:500px;float:right;">
-        <image src="/images/arc/arcNPCID.png" alt="NPC Name and ID in ArcDPS" style="width:100%;"/>
-        <figcaption>Alt+Shift+S a selected NPC to get its Name and ID</figcaption>
-    </figure>
     <p>
-        Any mob in the world can be tracked and logged when you enter combat with it.
-        Raid and Strike bosses are automatically tracked.
-        For everything else, you need to manually input their mob ids.
-        To find this, with arcdps active, click on the mob and press alt+shift+S.
-        The window that pops up will have the ID in the top left. name (1234).
+        Logging Convergences requires map logging. 
+        Instead of logging a specific boss, you log the whole map from the moment you enter it to when you leave.
+        This allows you to have just 1 file for a Convergence, but it does become rather large.
     </p>
     <p>
-        From there, alt+shift+T brings up the arcdps options. 
-        Click the logging tab, and at the bottom right you can add new ids to track.
-        For most mobs, uncheck the gadget checkbox and click apply.
+        To log a map in ArcDPS, simply add the Map IDs to the Logging section, and check the 'save map logs' checkbox.
     </p>
-    <figure style="max-width:500px;float:right;clear:right;">
-        <image src="/images/arc/ArcLogging.png" alt="Logging location in ArcDPS options" style="width:100%;"/>
-        <figcaption>Click Logging and add IDs in the bottom right.</figcaption>
-    </figure>
+    <image src="/images/arc/maplogging.png" style="max-width:100%;"/>
     <p>
-    For Convergences, these are the IDs:
+        The Map IDs are:
     </p>
     <ul>
-        <li>
-            
-            <h4><image src="/images/SotO/Secrets_of_the_Obscure_logo.png" style="width:75px;"/>Secrets of the Obscure</h4>
-            <dl>
-                <dt>Demon Knight</dt>
-                <dd>26142(CM)</dd>
-                <dt>Dreadwing</dt>
-                <dd>26106(CM)</dd>
-                <dt>Hell Sister</dt> 
-                <dd>26146(CM)</dd>
-                <dt>Sorrow</dt>
-                <dd>26126(CM)</dd>
-                <dt>Umbriel</dt>
-                <dd>26196(normal) | 26681(CM)</dd>
-            </dl>
-        </li>
-        
-        <li>
-            <h4><image src="/images/JW/Janthir_Wilds_logo.png" style="width:75px;"/>Janthir Wilds</h4>
-            <dl >
-                <dt>Decima</dt>
-                <dd>26720(normal & CM)</dd>
-                <dt>Greer</dt>
-                <dd>26889(normal & CM)</dd>
-                <dt>Ura</dt>
-                <dd>27017(normal & CM)</dd>
-            </dl>
-        </li>
+        <li>1523 - Convergence: Outer Nayos (Public)</li>
+        <li>1527 - Convergence: Outer Nayos (Private Squad)</li>
+        <li>1562 - Convergence: Mount Balrior (Private Squad)</li>
+        <li>1571 - Convergence: Mount Balrior (Public)</li>
     </ul>
+    <p>
+        After the map completes, find the file on your computer.
+        You can then either process it yourself with <a href="https://github.com/baaron4/GW2-Elite-Insights-Parser">Elite Insights</a>, or upload it straight to <a href="https://dps.report">https://dps.report</a>.
+    </p>
 </section>
