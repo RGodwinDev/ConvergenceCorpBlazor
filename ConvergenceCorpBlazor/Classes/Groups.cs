@@ -11,15 +11,18 @@ public static class Groups
         [
             new Tuple<string,string>("twitch","https://twitch.tv/darenswiths")
         ]);
+        //Soto Mondays
         darens.AddRun(new GroupRun("NA", new DateTime(2025, 9, 29, 15, 00, 00, DateTimeKind.Utc), 31));
-        darens.AddRun(new GroupRun("NA", new DateTime(2025, 9, 30, 15, 00, 00, DateTimeKind.Utc), 448));
         darens.AddRun(new GroupRun("NA", new DateTime(2025, 10, 06, 15, 00, 00, DateTimeKind.Utc), 31));
-        darens.AddRun(new GroupRun("NA", new DateTime(2025, 10, 07, 15, 00, 00, DateTimeKind.Utc), 448));
         darens.AddRun(new GroupRun("NA", new DateTime(2025, 10, 13, 15, 00, 00, DateTimeKind.Utc), 31));
-        darens.AddRun(new GroupRun("NA", new DateTime(2025, 10, 14, 15, 00, 00, DateTimeKind.Utc), 448));
         darens.AddRun(new GroupRun("NA", new DateTime(2025, 10, 20, 15, 00, 00, DateTimeKind.Utc), 31));
-        darens.AddRun(new GroupRun("NA", new DateTime(2025, 10, 21, 15, 00, 00, DateTimeKind.Utc), 448));
         darens.AddRun(new GroupRun("NA", new DateTime(2025, 10, 27, 15, 00, 00, DateTimeKind.Utc), 31));
+
+        //JW Tuesdays
+        darens.AddRun(new GroupRun("NA", new DateTime(2025, 9, 30, 15, 00, 00, DateTimeKind.Utc), 448));
+        darens.AddRun(new GroupRun("NA", new DateTime(2025, 10, 07, 15, 00, 00, DateTimeKind.Utc), 448));
+        darens.AddRun(new GroupRun("NA", new DateTime(2025, 10, 14, 15, 00, 00, DateTimeKind.Utc), 448));
+        darens.AddRun(new GroupRun("NA", new DateTime(2025, 10, 21, 15, 00, 00, DateTimeKind.Utc), 448));
         darens.AddRun(new GroupRun("NA", new DateTime(2025, 10, 28, 15, 00, 00, DateTimeKind.Utc), 448));
 
         Group ConvergenceCorp = new("/favicon/favicon-32x32.png", "Convergence Corp", "CC",
@@ -53,13 +56,13 @@ public static class Groups
         ownly.AddRun(new GroupRun("NA", new DateTime(2025, 10, 20, 21, 30, 00, DateTimeKind.Utc)));
         ownly.AddRun(new GroupRun("NA", new DateTime(2025, 10, 27, 21, 30, 00, DateTimeKind.Utc)));
 
-        Group Hella = new Group("logo", "Hella", "UHHH", []);
+        Group Hella = new Group("logo", "Unfit Heroes Heroing Heroically", "UHHH", []);
         //NA Wednesday night
         Hella.AddRun(new GroupRun("NA", new DateTime(2025, 10, 02, 02, 00, 00, DateTimeKind.Utc)));
         Hella.AddRun(new GroupRun("NA", new DateTime(2025, 10, 09, 02, 00, 00, DateTimeKind.Utc)));
-        Hella.AddRun(new GroupRun("NA", new DateTime(2025, 10, 18, 02, 00, 00, DateTimeKind.Utc)));
-        Hella.AddRun(new GroupRun("NA", new DateTime(2025, 10, 25, 02, 00, 00, DateTimeKind.Utc)));
-        Hella.AddRun(new GroupRun("NA", new DateTime(2025, 11, 01, 02, 00, 00, DateTimeKind.Utc)));
+        Hella.AddRun(new GroupRun("NA", new DateTime(2025, 10, 16, 02, 00, 00, DateTimeKind.Utc)));
+        Hella.AddRun(new GroupRun("NA", new DateTime(2025, 10, 23, 02, 00, 00, DateTimeKind.Utc)));
+        Hella.AddRun(new GroupRun("NA", new DateTime(2025, 10, 30, 02, 00, 00, DateTimeKind.Utc)));
 
         Group SaS = new Group("logo", "Silverwastes Anonymous", "SAS", []);
         SaS.AddRun(new GroupRun("NA", new DateTime(2025, 10, 02, 20, 00, 00, DateTimeKind.Utc)));
@@ -110,6 +113,8 @@ public static class Groups
         Star.AddRun(new GroupRun("NA", new DateTime(2025, 9, 28, 22, 00, 00, DateTimeKind.Utc), 31));
         Star.AddRun(new GroupRun("NA", new DateTime(2025, 10, 5, 22, 00, 00, DateTimeKind.Utc), 31));
         //star on hiatus until after halloween events
+        Star.AddRun(new GroupRun("NA", new DateTime(2025, 10, 26, 20, 00, 00, DateTimeKind.Utc), 31));
+        Star.AddRun(new GroupRun("NA", new DateTime(2025, 11, 02, 22, 00, 00, DateTimeKind.Utc), 31));
 
         Group Godlyarms = new Group("logo", "Godlyarms", "GDAM", []);
         Godlyarms.AddRun(new GroupRun("NA", new DateTime(2025, 9, 24, 12, 00, 00, DateTimeKind.Utc), 31));
@@ -169,8 +174,8 @@ public static class Groups
         //EU Mondays
         MookChivalry.AddRun(new GroupRun("EU", new DateTime(2025, 9, 29, 13, 00, 00, DateTimeKind.Utc), 31));
         MookChivalry.AddRun(new GroupRun("EU", new DateTime(2025, 10, 06, 13, 00, 00, DateTimeKind.Utc), 479));
-        MookChivalry.AddRun(new GroupRun("EU", new DateTime(2025, 10, 13, 13, 00, 00, DateTimeKind.Utc), 31));
-        MookChivalry.AddRun(new GroupRun("EU", new DateTime(2025, 10, 20, 13, 00, 00, DateTimeKind.Utc), 31));
+        MookChivalry.AddRun(new GroupRun("EU", new DateTime(2025, 10, 13, 13, 00, 00, DateTimeKind.Utc), 479));
+        MookChivalry.AddRun(new GroupRun("EU", new DateTime(2025, 10, 20, 13, 00, 00, DateTimeKind.Utc), 479));
         MookChivalry.AddRun(new GroupRun("EU", new DateTime(2025, 10, 27, 13, 00, 00, DateTimeKind.Utc), 31));
 
         Group CUTE = new Group("logo", "Cruel Unending Tyrannic Entity", "CUTE", []);
@@ -178,15 +183,15 @@ public static class Groups
         CUTE.AddRun(new GroupRun("EU", new DateTime(2025, 10, 1, 18, 00, 00, DateTimeKind.Utc), 448));
         CUTE.AddRun(new GroupRun("EU", new DateTime(2025, 10, 8, 18, 00, 00, DateTimeKind.Utc), 448));
         CUTE.AddRun(new GroupRun("EU", new DateTime(2025, 10, 15, 18, 00, 00, DateTimeKind.Utc), 448));
-        CUTE.AddRun(new GroupRun("EU", new DateTime(2025, 10, 22, 18, 00, 00, DateTimeKind.Utc), 448));
-        CUTE.AddRun(new GroupRun("EU", new DateTime(2025, 10, 29, 18, 00, 00, DateTimeKind.Utc), 448));
+        //CUTE.AddRun(new GroupRun("EU", new DateTime(2025, 10, 22, 18, 00, 00, DateTimeKind.Utc), 448));
+        //CUTE.AddRun(new GroupRun("EU", new DateTime(2025, 10, 29, 18, 00, 00, DateTimeKind.Utc), 448));
 
         //EU SotO Thursdays
         CUTE.AddRun(new GroupRun("EU", new DateTime(2025, 10, 2, 18, 00, 00, DateTimeKind.Utc), 31));
         CUTE.AddRun(new GroupRun("EU", new DateTime(2025, 10, 9, 18, 00, 00, DateTimeKind.Utc), 31));
         CUTE.AddRun(new GroupRun("EU", new DateTime(2025, 10, 16, 18, 00, 00, DateTimeKind.Utc), 31));
         CUTE.AddRun(new GroupRun("EU", new DateTime(2025, 10, 23, 18, 00, 00, DateTimeKind.Utc), 31));
-        CUTE.AddRun(new GroupRun("EU", new DateTime(2025, 10, 30, 18, 00, 00, DateTimeKind.Utc), 31));
+        //CUTE.AddRun(new GroupRun("EU", new DateTime(2025, 10, 30, 18, 00, 00, DateTimeKind.Utc), 31));
 
 
         Group LegendaryImpact = new Group("logo", "Legendary Impact", "PACT", [
