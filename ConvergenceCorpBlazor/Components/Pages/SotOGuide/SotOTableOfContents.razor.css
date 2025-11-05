@@ -1,16 +1,16 @@
 ol{
     list-style:decimal;
+    padding-left:1rem;
 }
 li{
     margin:0px;
 }
 
 #SotOToC{
-    font-size:14px;
+    font-size:18px;
     width:100%;
-    max-width: 800px;
     padding:10px;
-    background-color:rgb(55,55,55);
+    background-color:rgb(18,18,18);
     justify-self: center;
 }
 #ToCListContain{
@@ -22,12 +22,12 @@ li{
     display:flex;
     flex-direction:row;
     flex-wrap:wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 #ToCBossesContainer{
     display: flex;
     flex-direction:row;
     flex-wrap:wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
