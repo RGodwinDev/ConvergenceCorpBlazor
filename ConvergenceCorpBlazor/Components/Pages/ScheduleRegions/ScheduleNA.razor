@@ -55,12 +55,12 @@
         <a href="https://twitch.tv/softbreadx">twitch.tv/softbreadx</a>
     </li>
     <li>
-        <span class="NAtime time">@hellatime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Unfit Heroes Heroing Heroically [UHHH] - Hella Crates
-    </li>
-    <li>
         <span class="NAtime time">@sastime.ToString("MM/dd/yy H:mm:ss zzz")</span> - The Silverwastes Anonymous [SAS] - 
         <a href="https://twitch.tv/jmdhouse05">twitch.tv/jmdhouse05</a> - 
         <a href="https://discord.gg/sasgw2">Discord</a>
+    </li>
+    <li>
+        <span class="NAtime time">@hellatime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Unfit Heroes Heroing Heroically [UHHH] - Hella Crates
     </li>
     <li>
         <span class="NAtime time">@cofetime2.ToString("MM/dd/yy H:mm:ss zzz")</span> - We Fight Sleep [COFE] -
@@ -115,24 +115,24 @@
 
 @code{
     //2025,6,8 is sunday
-    DateTime darenstime =   new DateTime(2025,6,9,15,00,00,DateTimeKind.Utc);
-    DateTime darenstime2 =   new DateTime(2025,6,10,15,00,00,DateTimeKind.Utc);
-    DateTime cctime2 =      new DateTime(2025,6,10,01,00,00,DateTimeKind.Utc);
-    DateTime ownlytime =    new DateTime(2025,6,9,21,30,00,DateTimeKind.Utc);
-    DateTime hellatime =    new DateTime(2025,6,12,02,00,00,DateTimeKind.Utc);
-    DateTime sastime =      new DateTime(2025,6,12,20,00,00,DateTimeKind.Utc);
-    DateTime slpytime =     new DateTime(2025,6,14,01,00,00,DateTimeKind.Utc);
-    DateTime cctime =       new DateTime(2025,6,14,18,00,00,DateTimeKind.Utc);
-    DateTime lilytime =     new DateTime(2025,6,14,21,00,00,DateTimeKind.Utc);
-    DateTime lilytime2 =    new DateTime(2025,6,10,21,00,00,DateTimeKind.Utc);
-    DateTime startime =     new DateTime(2025,6,8,22,00,00,DateTimeKind.Utc);
-    DateTime godlytime =    new DateTime(2025,6,7,13,00,00,DateTimeKind.Utc);
-    DateTime cofetime1 =    new DateTime(2025,6,11,05,00,00,DateTimeKind.Utc);
-    DateTime cofetime2 =    new DateTime(2025,6,13,05,00,00,DateTimeKind.Utc);
-    DateTime sgna =         new DateTime(2025,6,12,1,00,00,DateTimeKind.Utc);
-    DateTime sgnaSat =         new DateTime(2025,6,8,3,00,00,DateTimeKind.Utc);
-    DateTime uL1 =          new DateTime(2025,10,4,20,00,00, DateTimeKind.Utc); //sat
-    DateTime uL2 =          new DateTime(2025,10,5,17,00,00, DateTimeKind.Utc); //sun
+    DateTimeOffset darenstime =     new DateTimeOffset(2025,11,10,11,00,00,TimeSpan.FromHours(-4));
+    DateTimeOffset darenstime2 =    new DateTimeOffset(2025,11,11,11,00,00,TimeSpan.FromHours(-4));
+    DateTimeOffset cctime2 =        new DateTimeOffset(2025,11,10,20,00,00,TimeSpan.FromHours(-6));
+    DateTimeOffset ownlytime =      new DateTimeOffset(2025,11,10,18,00,00,TimeSpan.FromHours(-5));
+    DateTimeOffset hellatime =      new DateTimeOffset(2025,11,06,hour: 22,00,00,TimeSpan.FromHours(-5));
+    DateTimeOffset sastime =        new DateTimeOffset(2025,11,13,16,00,00,TimeSpan.FromHours(-5));
+    DateTimeOffset slpytime =       new DateTimeOffset(2025,11,14,19,00,00,TimeSpan.FromHours(-7));
+    DateTimeOffset cctime =         new DateTimeOffset(2025,11,15,13,00,00,TimeSpan.FromHours(-6));
+    DateTimeOffset lilytime =       new DateTimeOffset(2025,11,15,16,00,00,TimeSpan.FromHours(-6));
+    DateTimeOffset lilytime2 =      new DateTimeOffset(2025,11,11,16,00,00,TimeSpan.FromHours(-6));
+    DateTimeOffset startime =       new DateTimeOffset(2025,11,13,20,30,00,TimeSpan.FromHours(-5));
+    DateTimeOffset godlytime =      new DateTimeOffset(2025,11,10,08,00,00,TimeSpan.FromHours(-6));
+    DateTimeOffset cofetime1 =      new DateTimeOffset(2025,11,11,22,00,00,TimeSpan.FromHours(-8));
+    DateTimeOffset cofetime2 =      new DateTimeOffset(2025,11,13,22,00,00,TimeSpan.FromHours(-8));
+    DateTimeOffset sgna =           new DateTimeOffset(2025,11,12,hour: 21,00,00,TimeSpan.FromHours(-5));
+    DateTimeOffset sgnaSat =        new DateTimeOffset(2025,11,day: 15,23,00,00,TimeSpan.FromHours(-5));
+    DateTimeOffset uL1 =            new DateTimeOffset(2025,11,15,16,00,00, TimeSpan.FromHours(-5)); //sat
+    DateTimeOffset uL2 =             new DateTimeOffset(2025,11,16,13,00,00, TimeSpan.FromHours(-5)); //sun
 }
 
 <script>
