@@ -133,6 +133,9 @@ li {
 .jwborder{
     border: 1px solid darkblue;
 }
+.voeborder{
+    border: 1px solid orange;
+}
 
 figure{
     width:100%;
@@ -143,4 +146,8 @@ figure{
 }
 section{
     overflow:hidden;
+}
+
+p{
+    text-indent:50px;
 }
