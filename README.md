@@ -22,8 +22,21 @@ RestartSec=10
 Environment=ASPNETCORE_ENVIRONMENT=Production
 Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
 
+/snap/dotnet-runtime-100
+
 [Install]
 WantedBy=multi-user.target
+
+
+
+
+installing:
+make directory /var/www/ccblazor
+cd to it
+sudo git clone https://github.com/RGodwinDev/ConvergenceCorpBlazor.git
+sudo snap install dotnet-sdk-100
+sudo snap install dotnet-runtime-100
+sudo ln -s /snap/dotnet-sdk-100/current/usr/bin/dotnet /usr/local/bin/dotnet
 
 when updating:
 from the /var/www/ccblazor/ConvergenceCorpBlazor folder
