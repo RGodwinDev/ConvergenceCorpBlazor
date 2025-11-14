@@ -1,0 +1,51 @@
+﻿ol {
+    list-style: decimal;
+}
+
+li {
+    margin: 0px;
+}
+
+#jwtoc {
+    font-size: 18px;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(18,18,18);
+    justify-self: center;
+}
+#JWToCListContain{
+    display:flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+}
+#JWToCListPreContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+#JWToCBossesContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+
+
+#jwgreedectoc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#greandec{
+    width:65%;
+    height: fit-content;
+}
+
+
+@media(max-width: 1300px) {
+    #jwgreedectoc {
+        flex-direction: column;
+    }
+}

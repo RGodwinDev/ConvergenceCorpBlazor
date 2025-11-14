@@ -5,29 +5,3 @@ li{
     margin:0px;
 }
 
-#jwtoc{
-    font-size:14px;
-    width:fit-content;
-    padding:10px;
-    background-color:rgb(55,55,55);
-}
-
-#jwgreedectoc{
-    display:flex;
-    flex-direction:row;
-    justify-content: space-between;
-}
-
-#greandec{
-    width:65%;
-    height:fit-content;
-}
-
-@media(max-width: 1300px){
-    #jwgreedectoc{
-        flex-direction:column;
-    }
-    #greandec{
-        width:100%;
-    }
-}
