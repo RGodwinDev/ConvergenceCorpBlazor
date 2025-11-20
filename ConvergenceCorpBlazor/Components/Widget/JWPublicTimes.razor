@@ -4,11 +4,26 @@
     Janthir Wilds Public Convergence times
 </p>
 <p>
-<span class="jwtimes time">2015-03-25 00:00:00 UTC-0</span>, <span class="jwtimes time">2015-03-25 03:00:00 UTC-0</span>, 
-<span class="jwtimes time">2015-03-25 06:00:00 UTC-0</span>, <span class="jwtimes time">2015-03-25 9:00:00 UTC-0</span>, 
-<span class="jwtimes time">2015-03-25 12:00:00 UTC-0</span>, <span class="jwtimes time">2015-03-25 15:00:00 UTC-0</span>, 
-<span class="jwtimes time">2015-03-25 18:00:00 UTC-0</span>, <span class="jwtimes time">2015-03-25 21:00:00 UTC-0</span>
+        <span class="jwtimes time">@DTOs[0]</span>, <span class="jwtimes time">@DTOs[1]</span>,
+        <span class="jwtimes time">@DTOs[2]</span>, <span class="jwtimes time">@DTOs[3]</span>,
+        <span class="jwtimes time">@DTOs[4]</span>, <span class="jwtimes time">@DTOs[5]</span>,
+        <span class="jwtimes time">@DTOs[6]</span>, <span class="jwtimes time">@DTOs[7]</span>
 </p>
+
+    @code {
+        static DateTimeOffset now = DateTimeOffset.Now;
+        DateTimeOffset[] DTOs =
+        [
+            new DateTimeOffset(now.Year, now.Month, now.Day, 00, 00, 00, TimeSpan.Zero),
+            new DateTimeOffset(now.Year, now.Month, now.Day, 03, 00, 00, TimeSpan.Zero),
+            new DateTimeOffset(now.Year, now.Month, now.Day, 06, 00, 00, TimeSpan.Zero),
+            new DateTimeOffset(now.Year, now.Month, now.Day, 09, 00, 00, TimeSpan.Zero),
+            new DateTimeOffset(now.Year, now.Month, now.Day, 12, 00, 00, TimeSpan.Zero),
+            new DateTimeOffset(now.Year, now.Month, now.Day, 15, 00, 00, TimeSpan.Zero),
+            new DateTimeOffset(now.Year, now.Month, now.Day, 18, 00, 00, TimeSpan.Zero),
+            new DateTimeOffset(now.Year, now.Month, now.Day, 21, 00, 00, TimeSpan.Zero)
+        ];
+    }
 
 <script>
     var jwtimes = document.getElementsByClassName('jwtimes');
