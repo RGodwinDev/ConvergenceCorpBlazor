@@ -1,14 +1,14 @@
 <div style="text-align:center;">
-<p>
-    <image src="/images/JW/Janthir_Wilds_logo.png" alt="jw logo" style="width:50px;"/>
-    Janthir Wilds Public Convergence times
-</p>
-<p>
+    <div style="padding:10px;">
+        <image src="/images/JW/Janthir_Wilds_logo.png" alt="jw logo" style="width:50px;"/>
+        Janthir Wilds Public Convergence times
+    </div>
+    <div style="padding:10px;">
         <span class="jwtimes time">@DTOs[0]</span>, <span class="jwtimes time">@DTOs[1]</span>,
         <span class="jwtimes time">@DTOs[2]</span>, <span class="jwtimes time">@DTOs[3]</span>,
         <span class="jwtimes time">@DTOs[4]</span>, <span class="jwtimes time">@DTOs[5]</span>,
         <span class="jwtimes time">@DTOs[6]</span>, <span class="jwtimes time">@DTOs[7]</span>
-</p>
+    </div>
 
     @code {
         static DateTimeOffset now = DateTimeOffset.Now;
@@ -25,14 +25,14 @@
         ];
     }
 
-<script>
-    var jwtimes = document.getElementsByClassName('jwtimes');
-    for(var jt of jwtimes){
-        let jwnewdate = new Date(jt.innerText);
-        jt.innerText = jwnewdate.toLocaleString([], {
-            hour:'numeric',
-            minute:'2-digit'
-        });
-    }
-</script>
+    <script>
+        var jwtimes = document.getElementsByClassName('jwtimes');
+        for(var jt of jwtimes){
+            let jwnewdate = new Date(jt.innerText);
+            jt.innerText = jwnewdate.toLocaleString([], {
+                hour:'numeric',
+                minute:'2-digit'
+            });
+        }
+    </script>
 </div>
