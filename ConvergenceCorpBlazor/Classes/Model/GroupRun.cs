@@ -1,9 +1,6 @@
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
-
-
-[Table("Runs")]
-[PrimaryKey(nameof(Id))]
+/// <summary>
+/// A Run
+/// </summary>
 public class GroupRun
 {
     /// <summary>
@@ -24,12 +21,7 @@ public class GroupRun
         this.Bosses = bosses;
         Groups.FindGroupById(groupID).AddRun(this);
     }
-    
-    
-
-
-
-    
+   
     public string GetRegion()
     {
         return this.Region;

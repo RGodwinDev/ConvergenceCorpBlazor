@@ -1,11 +1,6 @@
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
-
 /// <summary>
 /// A Group object.
 /// </summary>
-[Table("Groups")]
-[PrimaryKey(nameof(Id))]
 public class Group
 {
     /// <summary>
@@ -32,8 +27,11 @@ public class Group
 
     /// <summary>
     /// List of the Groups Links
+    /// a link is a Tuple<string, string>
+    /// first is the actual link
+    /// second is the type (discord, twitch, etc...)
     /// </summary>
-    private List<Tuple<string, string>> links = new List<Tuple<string, string>>();
+    private readonly List<Tuple<string, string>> links = new List<Tuple<string, string>>();
 
     public Group(int id, string logo, string name, string guildtag)
     {

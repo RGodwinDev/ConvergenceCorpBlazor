@@ -1,11 +1,10 @@
 Convergence Corp!
 This is the website for Convergence Corp.
-See https://convergencecorp.net!
+See https://convergencecorp.net
 Written using C# Blazor and ASP.NET.
 Created by Ryan Godwin.
 
-Uses dotnet 8.0
-dotnet 9.0 isnt useable on linux yet.
+Uses dotnet 10.0
 
 Runs on linux using a systemd service in /etc/systemd/system called ccblazor.service
 
