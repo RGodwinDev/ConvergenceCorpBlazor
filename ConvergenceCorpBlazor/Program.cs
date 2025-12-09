@@ -36,6 +36,8 @@ else
 keyVaultName = builder.Configuration.GetValue<string>("KEY_VAULT_NAME");
 var vaultUri = "https://" + keyVaultName + ".vault.azure.net";
 Console.WriteLine("Getting Secrets");
+/*
+//need to use a better credential for live, not DefaultAzureCredential
 //SecretClient can access azure key vault at uri address with provided credentials
 var client = new SecretClient(new Uri(vaultUri), new DefaultAzureCredential());
 
@@ -55,7 +57,7 @@ while (y == null)
 }
 dbPass = y.Value.Value;
 Console.WriteLine("Secrets Achieved");
-
+*/
 /*
 builder.Services.AddAuthentication(
     CertificateAuthenticationDefaults.AuthenticationScheme
@@ -121,6 +123,7 @@ app.MapRazorComponents<App>()
 /*
  * Build the Connection String
  */
+/*
 Console.WriteLine("building connection");
 SqlConnectionStringBuilder sqlConnectionStringBuilder = new SqlConnectionStringBuilder();
 sqlConnectionStringBuilder.Authentication = (SqlAuthenticationMethod)1;
@@ -131,7 +134,6 @@ sqlConnectionStringBuilder.Encrypt = true;
 sqlConnectionStringBuilder.TrustServerCertificate = false;
 sqlConnectionStringBuilder.ConnectTimeout = 30;
 sqlConnectionStringBuilder["Server"] = "tcp:cvrg.database.windows.net,1433";
-
 
 SqlConnection sqlConnection = new SqlConnection(
         sqlConnectionStringBuilder.ConnectionString
@@ -148,5 +150,6 @@ SqlConnection runConnection = new SqlConnection(
 Console.WriteLine("Running the Runs");
 Groups.InitializeRuns(runConnection);
 Console.WriteLine("Group initialization Finished");
+*/
 app.Run();
 Console.WriteLine("Server Shutting Down!");
