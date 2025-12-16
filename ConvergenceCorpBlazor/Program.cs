@@ -1,5 +1,6 @@
 using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
+using Microsoft.Extensions.Azure;
 using ConvergenceCorpBlazor.Components;
 using ConvergenceCorpBlazor.Components.Pages;
 using Microsoft.Data.SqlClient;
@@ -11,9 +12,7 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-var keyVaultName = String.Empty;
-var dbUser = String.Empty;
-var dbPass = String.Empty;
+
 if (builder.Environment.IsDevelopment())
 {
     Console.WriteLine("DEV ENVIRONMENT!!!!!!!!!!!!!");
@@ -33,38 +32,14 @@ else
     Console.WriteLine("NOT DEV OR PRODUCTION, PROBABLY STAGING");
 }
 
-keyVaultName = builder.Configuration.GetValue<string>("KEY_VAULT_NAME");
-var vaultUri = "https://" + keyVaultName + ".vault.azure.net";
-Console.WriteLine("Getting Secrets");
-/*
-//need to use a better credential for live, not DefaultAzureCredential
-//SecretClient can access azure key vault at uri address with provided credentials
-var client = new SecretClient(new Uri(vaultUri), new DefaultAzureCredential());
 
-//get the db username
-var x = await client.GetSecretAsync("CVRG-DBUSER");
-while (x == null)
-{
-    x = await client.GetSecretAsync("CVRG-DBUSER");
-}
-dbUser = x.Value.Value;
-
-//get the db password
-var y = await client.GetSecretAsync("CVRG-DBPASS");
-while (y == null)
-{
-    y = await client.GetSecretAsync("CVRG-DBPASS");
-}
-dbPass = y.Value.Value;
-Console.WriteLine("Secrets Achieved");
-*/
 /*
 builder.Services.AddAuthentication(
     CertificateAuthenticationDefaults.AuthenticationScheme
 ).AddCertificate();
 */
 
-//redirects traffic to https
+//redirects traffic to https //this is removed because cloudflare. redirecting ourselves messes with the connection.
 /*
 builder.Services.AddHttpsRedirection(options =>{
     options.RedirectStatusCode = Status308PermanentRedirect;
@@ -80,6 +55,22 @@ RequestLocalizationOptions localizationOptions = new RequestLocalizationOptions(
     .AddSupportedCultures(supportedCultures)
     .AddSupportedUICultures(supportedCultures);
 
+//add azure clients to the builder
+builder.Services.AddAzureClients(clientBuilder =>
+{
+    clientBuilder.AddSecretClient(
+        new Uri("https://CVRGKeyVault.vault.azure.net"));
+
+    if (builder.Environment.IsProduction() || builder.Environment.IsStaging())
+    {   //add the vms managed identity as credential for client
+        ManagedIdentityCredential credential = new(ManagedIdentityId.SystemAssigned);
+        clientBuilder.UseCredential(credential);
+    }
+    else if (builder.Environment.IsDevelopment())
+    {   //just use defaultazureuser for development
+        clientBuilder.UseCredential(new DefaultAzureCredential());
+    }
+});
 
 /**
  * CREATE THE APP
@@ -88,6 +79,44 @@ WebApplication app = builder.Build();
 
 app.UseRequestLocalization(localizationOptions);
 
+Console.WriteLine("Getting Secrets");
+
+var dbUser = String.Empty;
+var dbPass = String.Empty;
+
+//do this after building the app?
+//need to use a better credential for live, not DefaultAzureCredential
+//SecretClient can access azure key vault at uri address with provided credentials
+
+SecretClient client = app.Services.GetRequiredService<SecretClient>();
+
+if (client == null)
+{
+    Console.WriteLine("client was null");
+}
+else
+{
+    //get the db username
+    var x = await client.GetSecretAsync("CVRG-DBUSER");
+    while (x == null)
+    {
+        x = await client.GetSecretAsync("CVRG-DBUSER");
+    }
+    dbUser = x.Value.Value;
+
+    //get the db password
+    var y = await client.GetSecretAsync("CVRG-DBPASS");
+    while (y == null)
+    {
+        y = await client.GetSecretAsync("CVRG-DBPASS");
+    }
+    dbPass = y.Value.Value;
+    Console.WriteLine("Secrets Achieved");
+}
+
+Console.WriteLine("dbUser: " + dbUser);
+Console.WriteLine("dbPass: " + dbPass);
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -95,7 +124,6 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     //app.UseHsts(); //HTTP Strict Transport Security Protocol
 }
-
 //app.UseAuthentication();  //should be after UseRouting and before UseEndpoints
 //app.UseHttpsRedirection(); //redirects traffic to https if possible EDIT: REMOVED so cloudflare can redirect, not origin server
 
@@ -123,7 +151,7 @@ app.MapRazorComponents<App>()
 /*
  * Build the Connection String
  */
-/*
+
 Console.WriteLine("building connection");
 SqlConnectionStringBuilder sqlConnectionStringBuilder = new SqlConnectionStringBuilder();
 sqlConnectionStringBuilder.Authentication = (SqlAuthenticationMethod)1;
@@ -150,6 +178,6 @@ SqlConnection runConnection = new SqlConnection(
 Console.WriteLine("Running the Runs");
 Groups.InitializeRuns(runConnection);
 Console.WriteLine("Group initialization Finished");
-*/
+
 app.Run();
 Console.WriteLine("Server Shutting Down!");
