@@ -2,13 +2,11 @@ using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
 using Microsoft.Extensions.Azure;
 using ConvergenceCorpBlazor.Components;
-using ConvergenceCorpBlazor.Components.Pages;
 using Microsoft.Data.SqlClient;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 
-// Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
@@ -16,20 +14,17 @@ builder.Services.AddRazorComponents()
 if (builder.Environment.IsDevelopment())
 {
     Console.WriteLine("DEV ENVIRONMENT!!!!!!!!!!!!!");
-
-    //USE DEV CONFIG FILE
     builder.Configuration.AddEnvironmentVariables().AddJsonFile("appsettings.Development.json");
 }
 else if (builder.Environment.IsProduction())
 {
     Console.WriteLine("PRODUCTION!!!!!!!!!!");
-    
-    //USE PRODUCTION CONFIG FILE
     builder.Configuration.AddEnvironmentVariables().AddJsonFile("appsettings.Production.json");
 }
 else
 {
     Console.WriteLine("NOT DEV OR PRODUCTION, PROBABLY STAGING");
+    builder.Configuration.AddEnvironmentVariables().AddJsonFile("appsettings.Production.json");
 }
 
 
@@ -42,7 +37,7 @@ builder.Services.AddAuthentication(
 //redirects traffic to https //this is removed because cloudflare. redirecting ourselves messes with the connection.
 /*
 builder.Services.AddHttpsRedirection(options =>{
-    options.RedirectStatusCode = Status308PermanentRedirect;
+    options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
     options.HttpsPort = 443;
 });
 */
@@ -55,7 +50,7 @@ RequestLocalizationOptions localizationOptions = new RequestLocalizationOptions(
     .AddSupportedCultures(supportedCultures)
     .AddSupportedUICultures(supportedCultures);
 
-//add azure clients to the builder
+//add azure SecretClient to the builder
 builder.Services.AddAzureClients(clientBuilder =>
 {
     clientBuilder.AddSecretClient(
@@ -67,7 +62,7 @@ builder.Services.AddAzureClients(clientBuilder =>
         clientBuilder.UseCredential(credential);
     }
     else if (builder.Environment.IsDevelopment())
-    {   //just use defaultazureuser for development
+    {   
         clientBuilder.UseCredential(new DefaultAzureCredential());
     }
 });
@@ -81,13 +76,11 @@ app.UseRequestLocalization(localizationOptions);
 
 Console.WriteLine("Getting Secrets");
 
+//get the dbUser and dbPass from the azure key vault
 var dbUser = String.Empty;
 var dbPass = String.Empty;
 
-//do this after building the app?
-//need to use a better credential for live, not DefaultAzureCredential
 //SecretClient can access azure key vault at uri address with provided credentials
-
 SecretClient client = app.Services.GetRequiredService<SecretClient>();
 
 if (client == null)
@@ -97,7 +90,7 @@ if (client == null)
 else
 {
     //get the db username
-    var x = await client.GetSecretAsync("CVRG-DBUSER");
+    Azure.Response<KeyVaultSecret>? x = null;
     while (x == null)
     {
         x = await client.GetSecretAsync("CVRG-DBUSER");
@@ -105,7 +98,7 @@ else
     dbUser = x.Value.Value;
 
     //get the db password
-    var y = await client.GetSecretAsync("CVRG-DBPASS");
+    Azure.Response<KeyVaultSecret>? y = null;
     while (y == null)
     {
         y = await client.GetSecretAsync("CVRG-DBPASS");
@@ -114,8 +107,10 @@ else
     Console.WriteLine("Secrets Achieved");
 }
 
+/*
 Console.WriteLine("dbUser: " + dbUser);
 Console.WriteLine("dbPass: " + dbPass);
+*/
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -144,6 +139,7 @@ app.UseAntiforgery();
 
 
 app.MapStaticAssets();
+//makes stuff in wwwroot useable.
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
@@ -166,7 +162,7 @@ sqlConnectionStringBuilder["Server"] = "tcp:cvrg.database.windows.net,1433";
 SqlConnection sqlConnection = new SqlConnection(
         sqlConnectionStringBuilder.ConnectionString
     );
-
+ 
 //init the groups
 Console.WriteLine("Creating Groups");
 Groups.StartGroup2(sqlConnection);
