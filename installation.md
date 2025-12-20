@@ -23,7 +23,6 @@ sudo systemctl restart ccblazor
 ```
 
 ## Creating the systemd service
-Creating the systemd service:  
 ```
 cd /etc/systemd/system
 sudo touch ccblazor.service

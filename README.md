@@ -3,7 +3,6 @@ See https://convergencecorp.net
 
 Created by Ryan Godwin.  
 
-Written using C# Blazor and ASP.NET.  
-Uses dotnet 10.0  
+Written in C# .NET 10 with Blazor Pages.  
 
-Runs on an azure linux vm using a systemd service
+Runs on an Azure Linux vm using a systemd service
