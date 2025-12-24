@@ -1,8 +1,9 @@
 using Azure.Identity;
-using Azure.Security.KeyVault.Secrets;
-using Microsoft.Extensions.Azure;
+//using Azure.Security.KeyVault.Secrets;
 using ConvergenceCorpBlazor.Components;
+using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Azure;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -51,6 +52,7 @@ RequestLocalizationOptions localizationOptions = new RequestLocalizationOptions(
     .AddSupportedUICultures(supportedCultures);
 
 //add azure SecretClient to the builder
+/*
 builder.Services.AddAzureClients(clientBuilder =>
 {
     clientBuilder.AddSecretClient(
@@ -66,14 +68,14 @@ builder.Services.AddAzureClients(clientBuilder =>
         clientBuilder.UseCredential(new DefaultAzureCredential());
     }
 });
-
+*/
 /**
  * CREATE THE APP
  */
 WebApplication app = builder.Build();
 
 app.UseRequestLocalization(localizationOptions);
-
+/*
 Console.WriteLine("Getting Secrets");
 
 //get the dbUser and dbPass from the azure key vault
@@ -106,7 +108,7 @@ else
     dbPass = y.Value.Value;
     Console.WriteLine("Secrets Achieved");
 }
-
+*/
 /*
 Console.WriteLine("dbUser: " + dbUser);
 Console.WriteLine("dbPass: " + dbPass);
@@ -150,9 +152,9 @@ app.MapRazorComponents<App>()
 
 Console.WriteLine("building connection");
 SqlConnectionStringBuilder sqlConnectionStringBuilder = new SqlConnectionStringBuilder();
-sqlConnectionStringBuilder.Authentication = (SqlAuthenticationMethod)1;
-sqlConnectionStringBuilder.UserID = dbUser;
-sqlConnectionStringBuilder.Password = dbPass;
+sqlConnectionStringBuilder.Authentication = (SqlAuthenticationMethod)9;
+//sqlConnectionStringBuilder.UserID = dbUser;
+//sqlConnectionStringBuilder.Password = dbPass;
 sqlConnectionStringBuilder.InitialCatalog = "CVRGFREEDB";
 sqlConnectionStringBuilder.Encrypt = true;
 sqlConnectionStringBuilder.TrustServerCertificate = false;
