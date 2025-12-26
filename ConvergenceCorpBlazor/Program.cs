@@ -1,15 +1,11 @@
-using Azure.Identity;
-using Azure.Security.KeyVault.Secrets;
-using Microsoft.Extensions.Azure;
 using ConvergenceCorpBlazor.Components;
-using Microsoft.Data.SqlClient;
+using ConvergenceCorpBlazor.Classes.DBControllers;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
-
 
 if (builder.Environment.IsDevelopment())
 {
@@ -50,67 +46,12 @@ RequestLocalizationOptions localizationOptions = new RequestLocalizationOptions(
     .AddSupportedCultures(supportedCultures)
     .AddSupportedUICultures(supportedCultures);
 
-//add azure SecretClient to the builder
-builder.Services.AddAzureClients(clientBuilder =>
-{
-    clientBuilder.AddSecretClient(
-        new Uri("https://CVRGKeyVault.vault.azure.net"));
-
-    if (builder.Environment.IsProduction() || builder.Environment.IsStaging())
-    {   //add the vms managed identity as credential for client
-        ManagedIdentityCredential credential = new(ManagedIdentityId.SystemAssigned);
-        clientBuilder.UseCredential(credential);
-    }
-    else if (builder.Environment.IsDevelopment())
-    {   
-        clientBuilder.UseCredential(new DefaultAzureCredential());
-    }
-});
-
 /**
  * CREATE THE APP
  */
 WebApplication app = builder.Build();
 
 app.UseRequestLocalization(localizationOptions);
-
-Console.WriteLine("Getting Secrets");
-
-//get the dbUser and dbPass from the azure key vault
-var dbUser = String.Empty;
-var dbPass = String.Empty;
-
-//SecretClient can access azure key vault at uri address with provided credentials
-SecretClient client = app.Services.GetRequiredService<SecretClient>();
-
-if (client == null)
-{
-    Console.WriteLine("client was null");
-}
-else
-{
-    //get the db username
-    Azure.Response<KeyVaultSecret>? x = null;
-    while (x == null)
-    {
-        x = await client.GetSecretAsync("CVRG-DBUSER");
-    }
-    dbUser = x.Value.Value;
-
-    //get the db password
-    Azure.Response<KeyVaultSecret>? y = null;
-    while (y == null)
-    {
-        y = await client.GetSecretAsync("CVRG-DBPASS");
-    }
-    dbPass = y.Value.Value;
-    Console.WriteLine("Secrets Achieved");
-}
-
-/*
-Console.WriteLine("dbUser: " + dbUser);
-Console.WriteLine("dbPass: " + dbPass);
-*/
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -147,32 +88,12 @@ app.MapRazorComponents<App>()
 /*
  * Build the Connection String
  */
-
-Console.WriteLine("building connection");
-SqlConnectionStringBuilder sqlConnectionStringBuilder = new SqlConnectionStringBuilder();
-sqlConnectionStringBuilder.Authentication = (SqlAuthenticationMethod)1;
-sqlConnectionStringBuilder.UserID = dbUser;
-sqlConnectionStringBuilder.Password = dbPass;
-sqlConnectionStringBuilder.InitialCatalog = "CVRGFREEDB";
-sqlConnectionStringBuilder.Encrypt = true;
-sqlConnectionStringBuilder.TrustServerCertificate = false;
-sqlConnectionStringBuilder.ConnectTimeout = 30;
-sqlConnectionStringBuilder["Server"] = "tcp:cvrg.database.windows.net,1433";
-
-SqlConnection sqlConnection = new SqlConnection(
-        sqlConnectionStringBuilder.ConnectionString
-    );
- 
 //init the groups
 Console.WriteLine("Creating Groups");
-Groups.StartGroup2(sqlConnection);
-
-SqlConnection runConnection = new SqlConnection(
-        sqlConnectionStringBuilder.ConnectionString
-    );
+DBGroup.GetAll();
 //add runs to the groups
 Console.WriteLine("Running the Runs");
-Groups.InitializeRuns(runConnection);
+DBGroupRun.GetAll();
 Console.WriteLine("Group initialization Finished");
 
 app.Run();
