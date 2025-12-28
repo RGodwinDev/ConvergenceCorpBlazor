@@ -40,7 +40,7 @@ builder.Services.AddHttpsRedirection(options =>{
 
 //Localization service
 builder.Services.AddLocalization();
-string[] supportedCultures = new[] { "en-US" }; //add more localization options here
+string[] supportedCultures = ["en-US"]; //add more localization options here
 RequestLocalizationOptions localizationOptions = new RequestLocalizationOptions()
     .SetDefaultCulture(supportedCultures[0])
     .AddSupportedCultures(supportedCultures)
@@ -91,9 +91,6 @@ app.MapRazorComponents<App>()
 //init the groups
 Console.WriteLine("Creating Groups");
 DBGroup.GetAll();
-//add runs to the groups
-Console.WriteLine("Running the Runs");
-DBGroupRun.GetAll();
 Console.WriteLine("Group initialization Finished");
 
 app.Run();
