@@ -84,4 +84,42 @@ public static class DBGroup
 
         return runs;
     }
+
+    public static void UseFakeData()
+    {
+        //link = ("actual link", "type of link")
+        //todo: enumerate link types
+        //discord, twitch, website
+
+        //runs = (id, groupid, time, region, bosses)
+        //group = (id, logo, name, tag, [links], [runs])
+        Groups.Add(new Group(1, "/favicon/favicon-32x32.png", "Convergence Corp", "CC",
+            [
+                ("https://discord.gg/TSNk9SH9kS", "discord"),
+                ("https://convergencecorp.net", "website")
+            ], 
+            [
+                new GroupRun(1, 1, DateTime.Now.AddHours(2), "NA", (Bosses)448),
+                new GroupRun(2, 1, DateTime.Now.AddHours(3), "NA", (Bosses)31),
+                new GroupRun(3, 1, DateTime.Now.AddHours(4), "EU", (Bosses)448)
+            ]));
+        Groups.Add(new Group(2, "", "ABCDEFG", "ABC", 
+            [
+
+            ], 
+            [
+                new GroupRun(4, 2, DateTime.Now.AddHours(2).AddMinutes(30), "NA", (Bosses)448),
+                new GroupRun(5, 2, DateTime.Now.AddHours(3).AddMinutes(30), "NA", (Bosses)448),
+                new GroupRun(6, 2, DateTime.Now.AddHours(4).AddMinutes(30), "NA", (Bosses)448)
+
+            ]));
+        Groups.Add(new Group(3, "", "Google", "GOGL", 
+            [
+                ("https://google.com", "website")
+            ],
+            [
+                new GroupRun(7, 3, DateTime.Now.AddHours(4).AddMinutes(30), "NA", (Bosses)448),
+                new GroupRun(8, 3, DateTime.Now.AddHours(4).AddMinutes(30), "EU", (Bosses)448)
+            ]));
+    }
 }

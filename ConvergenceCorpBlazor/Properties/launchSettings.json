@@ -6,8 +6,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "VaultUri": "https://cvrgkeyvault.vault.azure.net/"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "https": {
@@ -15,8 +14,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "VaultUri": "https://cvrgkeyvault.vault.azure.net/"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
   }

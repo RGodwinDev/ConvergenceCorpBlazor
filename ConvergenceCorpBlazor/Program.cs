@@ -86,12 +86,17 @@ app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
 /*
- * Build the Connection String
+ * init the groups
  */
-//init the groups
-Console.WriteLine("Creating Groups");
-DBGroup.GetAll();
-Console.WriteLine("Group initialization Finished");
+if (app.Environment.IsDevelopment())
+{   //use the fake data
+    DBGroup.UseFakeData();
+}
+else
+{   //get data from the DB
+    DBGroup.GetAll();
+}
+
 
 app.Run();
 Console.WriteLine("Server Shutting Down!");

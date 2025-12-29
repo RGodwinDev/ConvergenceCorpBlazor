@@ -1,3 +1,9 @@
+#local dev dependencies
+ServiceDependencies/local
+/ConvergenceCorpBlazor/Properties/serviceDependencies.local.json
+/ConvergenceCorpBlazor/Properties/ServiceDependencies.local.json.User
+/ConvergenceCorpBlazor/Properties/ServiceDependencies/local/mssql1.arm.json
+
 # Specific to the EFCore-Blazor sample app
 *.db
 *.db-shm
