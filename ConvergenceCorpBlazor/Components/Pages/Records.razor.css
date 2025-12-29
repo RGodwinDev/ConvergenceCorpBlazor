@@ -1,12 +1,15 @@
 td{
-    border-left:1px solid white;
-    border-right:1px solid white;
+    border:1px solid white;
     padding:10px;
 }
-tr{
-    border-bottom:1px solid white;
+table{
+    width:100%;
+    max-width: 1000px;
+    justify-self:center;
 }
-
+#recordsBlurb{
+    justify-self:center;
+}
 @media(max-width:640px)  {
     section{
         overflow-x:scroll;

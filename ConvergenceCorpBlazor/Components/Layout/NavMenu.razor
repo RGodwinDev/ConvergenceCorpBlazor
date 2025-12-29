@@ -1,72 +1,61 @@
 ﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
+    <div class="container-fluid" style="justify-content:center;">
         <a class="navbar-brand" href="" Match="NavLinkMatch.All">
             <image src="/favicon/android-chrome-192x192.png" alt="CC Favicon" style="width:50px;"/> Convergence Corp!
         </a>
     </div>
 </div>
 
-<!-- why is there an invis checkbox? -->
+<!-- the checkbox IS the hamburger menu button -->
 <input type="checkbox" title="Navigation menu" class="navbar-toggler" /> 
 
 <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="nav flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="schedule">
-                <span style="font-size:30px;">&#128197;</span> Schedule
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="soto">
-                <image src="/images/SotO/Secrets_of_the_Obscure_logo.png" style="width:50px;padding-right:5px;" alt="Secrets of the Obscure"/>Secrets of the Obscure
-            </NavLink>
-        </div>
-        <div class="nav-item px-3"> 
-            <NavLink class="nav-link" href="jw" style="padding-right:0px;">
-                <image src="/images/JW/Janthir_Wilds_logo.png" style="width:50px;padding-right:5px;" alt="Janthir Wilds"/>Janthir Wilds
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="voe">
-                <image src="/images/VoE/VoE_logo_gradient_800.png" style="width:50px;padding-right:5px;" alt="Visions of Eternity"/>Visions of Eternity
-            </NavLink>
-        </div>
 
-        <div class="nav-item px-3">
+    <nav class="nav">
+        
+        <div class="nav-item">
+            <NavLink class="nav-link" href="soto">
+                <image src="/images/SotO/Secrets_of_the_Obscure_logo.png" style="width:50px;padding-right:5px;" alt="Secrets of the Obscure"/>[Secrets of the Obscure]
+            </NavLink>
+        </div>
+        <div class="nav-item"> 
+            <NavLink class="nav-link" href="jw">
+                <image src="/images/JW/Janthir_Wilds_logo.png" style="width:50px;padding-right:5px;" alt="Janthir Wilds"/>[Janthir Wilds]
+            </NavLink>
+        </div>
+        <div class="nav-item">
+            <NavLink class="nav-link" href="voe">
+                <image src="/images/VoE/VoE_logo_gradient_800.png" style="width:50px;padding-right:5px;" alt="Visions of Eternity"/>[Visions of Eternity]
+            </NavLink>
+        </div>
+        </nav>
+        <nav class="nav">
+        <div class="nav-item">
+            <NavLink class="nav-link" href="schedule">
+                <span style="font-size:30px;">&#128197;</span> [Schedule]
+            </NavLink>
+        </div>
+        <div class="nav-item">
             <NavLink class="nav-link" href="records">
-                <image src="https://render.guildwars2.com/file/BDDD04A42D0AF79E9ED761083B032243F8E0C8CD/3630912.png" style="width:50px; padding-right:5px;" alt="Records"/> Records
+                <image src="https://render.guildwars2.com/file/BDDD04A42D0AF79E9ED761083B032243F8E0C8CD/3630912.png" style="width:50px; padding-right:5px;" alt="Records"/> [Records]
             </NavLink>
         </div>
-        <div class="nav-item px-3">
+        <div class="nav-item">
             <NavLink class="nav-link" href="builds">
-                <image src="https://render.guildwars2.com/file/A70C929E10EE010851B3FF5FCCBAE5630496B746/103427.png" style="width:50px;padding-right:5px;" alt="Builds"/> Builds
+                <image src="https://render.guildwars2.com/file/A70C929E10EE010851B3FF5FCCBAE5630496B746/103427.png" style="width:50px;padding-right:5px;" alt="Builds"/> [Builds]
             </NavLink>
         </div>
-        <div class="nav-item px-3">
+        <div class="nav-item">
             <NavLink class="nav-link" href="addons">
-                <span style="font-size:30px;">&#128187;</span>Addons
+                <span style="font-size:30px;">&#128187;</span>[Addons]
             </NavLink>
         </div>
         
-        <div class="nav-item px-3">
+        <div class="nav-item">
             <NavLink class="nav-link" href="movement">
-                <image src="https://render.guildwars2.com/file/2F4AAA52F573C5425BFCD7525FB70C9E6DCAD791/1766903.png" style="width:50px;padding-right:5px;" alt="Movement"/>Movement
+                <image src="https://render.guildwars2.com/file/2F4AAA52F573C5425BFCD7525FB70C9E6DCAD791/1766903.png" style="width:50px;padding-right:5px;" alt="Movement"/> [Movement]
             </NavLink>
         </div>
-        <!--
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="rewards">
-                <span class="bi" aria-hidden="true"></span> Rewards
-            </NavLink>
-        </div>
-        -->
-        <!--
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="rants">
-                <span class="bi" aria-hidden="true"></span> Rants
-            </NavLink>
-        </div>
-        -->
     </nav>
 </div>
 
