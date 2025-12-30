@@ -1,4 +1,21 @@
 #BeforeStart{
     text-align:center;
-    margin:20px;
+}
+
+#itemstobringul {
+    max-width:1000px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:center;
+}
+li{
+    width:300px;
+}
+#sotoEntrance {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items:center;
 }

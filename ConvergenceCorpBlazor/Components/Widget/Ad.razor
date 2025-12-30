@@ -1,0 +1,34 @@
+﻿<div class="adslotcontainer">
+    <ins class="adsbygoogle adslot @adClasses"
+        style=@adStyle
+        data-ad-client=@dataAdClient
+        data-ad-slot=@dataAdSlot
+        data-ad-format=@dataAdFormat
+        data-full-width-responsive="true"
+        adtest=@adtest             
+    >
+        
+    </ins>
+</div>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+@code {
+    private static readonly String dataAdClient = "ca-pub-9528830556914643";
+
+    /// <summary>
+    /// Tells adsense if we're testing ads or not.
+    /// Turning it on will make any action with the ad not count towards revenue.
+    /// </summary>
+    public static String adtest { get; set; } = "off";
+
+    [Parameter]
+    public string dataAdSlot { get; set; } = "2097337189";
+    [Parameter]
+    public string dataAdFormat {get; set;} = "auto";
+    [Parameter]
+    public string adStyle { get; set; } = "display:block;";
+    [Parameter]
+    public string adClasses { get; set; } = "";
+
+    
+}

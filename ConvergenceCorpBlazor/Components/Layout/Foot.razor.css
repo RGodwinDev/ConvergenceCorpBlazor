@@ -3,18 +3,3 @@ footer{
     color:darkgrey;
     box-shadow: 0 50vh 0 50vh #000;
 }
-
-#footerbannerad{
-    display:block;
-    width:100%;
-}
-#mobilefooterad{
-    display:none;
-    width:100%;
-}
-
-@media(max-width:700px){
-    #mobilefooterad{
-        display:block;
-    }
-}

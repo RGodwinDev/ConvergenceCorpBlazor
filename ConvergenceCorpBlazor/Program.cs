@@ -1,5 +1,6 @@
 using ConvergenceCorpBlazor.Components;
 using ConvergenceCorpBlazor.Classes.DBControllers;
+using ConvergenceCorpBlazor.Components.Widget;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddRazorComponents()
 if (builder.Environment.IsDevelopment())
 {
     Console.WriteLine("DEV ENVIRONMENT!!!!!!!!!!!!!");
+    Ad.adtest = "on"; //test ads don't count.
     builder.Configuration.AddEnvironmentVariables().AddJsonFile("appsettings.Development.json");
 }
 else if (builder.Environment.IsProduction())
@@ -58,7 +60,7 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    //app.UseHsts(); //HTTP Strict Transport Security Protocol
+    //app.UseHsts(); //HTTP Strict Transport Security Protocol. using this messes with cloudflare.
 }
 //app.UseAuthentication();  //should be after UseRouting and before UseEndpoints
 //app.UseHttpsRedirection(); //redirects traffic to https if possible EDIT: REMOVED so cloudflare can redirect, not origin server

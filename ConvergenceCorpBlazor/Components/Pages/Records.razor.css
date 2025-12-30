@@ -5,13 +5,24 @@ td{
 table{
     width:100%;
     max-width: 1000px;
-    justify-self:center;
+    
 }
 #recordsBlurb{
     justify-self:center;
 }
-@media(max-width:640px)  {
-    section{
-        overflow-x:scroll;
-    }  
+section {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+@media(max-width:800px)  {
+    section {
+        overflow-x: scroll;
+        align-items: baseline;
+    }
+}
+@media(min-width:1000px){
+    table{
+        justify-self:center;
+    }
 }
