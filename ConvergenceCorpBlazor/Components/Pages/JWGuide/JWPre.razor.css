@@ -1,0 +1,21 @@
+﻿#itemstobringul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+li {
+    width: 300px;
+}
+
+ol {
+    justify-self:center;
+}
+#jwentrance{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-evenly;
+}
+
