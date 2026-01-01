@@ -7,8 +7,8 @@
     <meta name="author" content="Ryan Godwin" />
     <meta name="keywords" content="convergence,guild wars 2,gw2,schedule,calendar,guides,pc games,rpg,mmorpg,builds,SotO,JW,group,obsidian armor,klobjarne geirr,legendary armor,kryptis, essence, unstable rift motivation"/>
     <base href="/" />
-    <link rel="stylesheet" href=@Assets["/app.css"] />
-    <link rel="stylesheet" href=@Assets["/ConvergenceCorpBlazor.styles.css"] />
+    <link rel="stylesheet" href=@Assets["/app.css?version="+version] />
+    <link rel="stylesheet" href=@Assets["/ConvergenceCorpBlazor.styles.css?version="+version] />
     <!--
         When upgrading to dotnet 9, the hrefs change to href="@Asset["lib/bootstrap/dist/css/bootstrap.min.ss"]"
 
@@ -38,3 +38,10 @@
 </body>
 
 </html>
+
+
+@code{
+    //https://semver.org/
+    //major.minor.patch
+    string version = "1.0.0";
+}
