@@ -1,0 +1,11 @@
+ul{
+    align-items:baseline;
+    flex-wrap:wrap;
+    flex-direction:row;
+    justify-content:center;
+    align-content:center;
+    max-width:1200px;
+}
+li{
+    width:300px;
+}

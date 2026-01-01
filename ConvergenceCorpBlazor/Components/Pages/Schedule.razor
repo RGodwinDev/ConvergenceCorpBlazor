@@ -14,9 +14,9 @@
     <meta property="og:site_name" content="Convergence Corp!"/>
 </HeadContent>
 <h1>Convergence Groups!</h1>
-<div>
+<p>
     Run a group? Message me on <DiscordLink disctype=1 /> or ingame at SunMatrix.4168 with what time(s) you run!
-</div>
+</p>
 <!-- CCScheduleBanner1 -->
 <Ad dataAdSlot="2101321590" dataAdFormat="horizontal"/>
 
@@ -25,14 +25,14 @@
     The groups shown here might decide to run at different times or days without notice, or even not at all.<br>
     I'm not on EU/CN. Any groups on there are just what I've been told.
 </p>
-<CurrentTime />
-<div>
+<p><CurrentTime /></p>
+<p>
     <a href="/schedulev2">Preview the new Schedule! (WIP)</a>
-</div>
+</p>
 <div class="tab">
-<button type="button" class="tablinks active" onclick="openTab(event, 'NA')" id ="defaultOpen">NA</button> <!-- id defaultOpen is deprecated -->
-<button type="button" class="tablinks" onclick="openTab(event, 'EU')">EU</button>
-<button type="button" class="tablinks" onclick="openTab(event, 'CN')">CN</button>
+    <button type="button" class="tablinks active" onclick="openTab(event, 'NA')" id ="defaultOpen">NA</button> <!-- id defaultOpen is deprecated -->
+    <button type="button" class="tablinks" onclick="openTab(event, 'EU')">EU</button>
+    <button type="button" class="tablinks" onclick="openTab(event, 'CN')">CN</button>
 </div>
 
 <!--NA is the default, if you wanna change default, just change it to display:none, and another to display:block -->
@@ -63,7 +63,7 @@ function openTab(evt, tabName){
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
 
-    document.getElementById(tabName).style.display = "block";
+    document.getElementById(tabName).style.display = "flex";
     evt.currentTarget.className += " active";
 }
 

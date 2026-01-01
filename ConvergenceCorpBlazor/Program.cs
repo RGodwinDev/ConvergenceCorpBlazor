@@ -25,7 +25,7 @@ else
     builder.Configuration.AddEnvironmentVariables().AddJsonFile("appsettings.Production.json");
 }
 
-
+Console.WriteLine("Ad test status: " + Ad.adtest);
 /*
 builder.Services.AddAuthentication(
     CertificateAuthenticationDefaults.AuthenticationScheme
