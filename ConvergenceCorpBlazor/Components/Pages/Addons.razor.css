@@ -1,0 +1,17 @@
+﻿ul{
+    align-items:baseline;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    max-width:1200px;
+}
+li{
+    width:300px;
+}
+#mapidslist{
+    flex-direction:column;
+}
+#mapidslist li{
+    width: 500px;
+    text-align:left;
+}

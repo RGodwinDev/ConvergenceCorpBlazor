@@ -3,6 +3,9 @@
   overflow: hidden;
   border: 1px solid darkred;
   background-color: darkred;
+  width:100%;
+  max-width:1000px;
+  justify-self:center;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -30,9 +33,13 @@
 
 /* Style the tab content */
 .tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid darkred;
-  border-top: none;
+    display: none;
+    border: 1px solid darkred;
+    border-top: none;
+    width: 100%;
+    max-width: 1000px;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
 }
 
