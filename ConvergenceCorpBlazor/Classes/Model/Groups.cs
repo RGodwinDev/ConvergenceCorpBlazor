@@ -35,4 +35,26 @@ public static class Groups
                 .Where(r => r.DateTime >= start && r.DateTime <= end)
                 .Select(run => (run, g)))
             .OrderBy(t => t.run.DateTime)];
+
+    public static Group? getGroupbyID(int groupID)
+    {
+        foreach(Group g in GroupList)
+        {
+            if(g.Id == groupID)
+            {
+                return g; 
+            }
+        }
+        return null;
+    }
+
+    internal static List<int> getAllGroupIDs()
+    {
+        List<int> result = new List<int>();
+        foreach(Group g in GroupList)
+        {
+            result.Add(g.Id);
+        }
+        return result;
+    }
 }
