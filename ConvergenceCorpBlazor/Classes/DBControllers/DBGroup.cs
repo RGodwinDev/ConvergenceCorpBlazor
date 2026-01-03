@@ -39,7 +39,7 @@ public static class DBGroup
         }
         catch (Exception ex) { Console.WriteLine(ex.Message); }
     }
-
+    
     private static Dictionary<int, List<(string, string)>> GetLinks(SqlConnection conn)
     {
         var links = new Dictionary<int, List<(string, string)>>();
@@ -48,7 +48,7 @@ public static class DBGroup
         using var linkReader = linkCommand.ExecuteReader();
         while (linkReader.Read())
         {
-            var id = linkReader.GetInt32(0);
+            var id = linkReader.GetInt32(0); //the groupID the link belongs to.
             var link = (linkReader.GetString(1), linkReader.GetString(2));
             if (!links.TryGetValue(id, out var currentLinks))
             {

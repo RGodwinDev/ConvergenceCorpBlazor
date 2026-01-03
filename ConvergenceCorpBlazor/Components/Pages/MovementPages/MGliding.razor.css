@@ -1,0 +1,9 @@
+﻿#glideskillsUL{
+    max-width:1200px;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+#glideskillsUL li {
+    max-width:400px;
+}

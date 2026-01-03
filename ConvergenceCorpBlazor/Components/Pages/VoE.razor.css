@@ -1,0 +1,7 @@
+﻿#voeupdates {
+    display:flex;
+    justify-self: center;
+    width: 100%;
+    max-width: 800px;
+    filter: brightness(75%)
+}

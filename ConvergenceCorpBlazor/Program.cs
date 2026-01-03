@@ -1,13 +1,24 @@
 using ConvergenceCorpBlazor.Components;
 using ConvergenceCorpBlazor.Classes.DBControllers;
 using ConvergenceCorpBlazor.Components.Widget;
+using Microsoft.OpenApi;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
+//adds the API controllers
+builder.Services.AddControllers(); 
 
+//add API Documentation Generation
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo { Title = "Convergence Corp API", Version = "v1" });
+});
+
+//add the razor components
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+//setup the environment
 if (builder.Environment.IsDevelopment())
 {
     Console.WriteLine("DEV ENVIRONMENT!!!!!!!!!!!!!");
@@ -48,12 +59,22 @@ RequestLocalizationOptions localizationOptions = new RequestLocalizationOptions(
     .AddSupportedCultures(supportedCultures)
     .AddSupportedUICultures(supportedCultures);
 
+
 /**
  * CREATE THE APP
  */
 WebApplication app = builder.Build();
 
+//localization
 app.UseRequestLocalization(localizationOptions);
+
+//generate the API Documentation
+app.UseSwagger();
+app.UseSwaggerUI(options =>
+{
+    //is second string just an internal name for the endpoint?
+    options.SwaggerEndpoint("v1/swagger.json", "Convergence Corp API V1"); 
+});
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -84,8 +105,12 @@ app.UseAntiforgery();
 app.MapStaticAssets();
 //makes stuff in wwwroot useable.
 
+//use the components
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
+
+//use the controllers
+app.MapControllers();
 
 /*
  * init the groups

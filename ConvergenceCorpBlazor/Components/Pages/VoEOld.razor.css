@@ -1,0 +1,14 @@
+﻿section{
+    width:100%;
+    max-width:1200px;
+    display:flex;
+    justify-self:center;
+    align-self:baseline;
+}
+
+
+@media(max-width:450px){
+    section{
+        overflow-x:scroll;
+    }
+}

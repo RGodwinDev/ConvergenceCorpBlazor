@@ -144,7 +144,30 @@ li {
 .voeborder{
     border: 1px solid orange;
 }
-
+.core{
+    color: red;
+}
+.hot{
+    color: green;
+}
+.pof{
+    color: purple;
+}
+.ibs{
+    color: blue;
+}
+.eod{
+    color: cyan;
+}
+.soto{
+    color: gold;
+}
+.jw{
+    color: darkblue;
+}
+.voe{
+    color: orange;
+}
 figure{
     width:100%;
     max-width:500px;
