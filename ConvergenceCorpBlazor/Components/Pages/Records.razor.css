@@ -1,28 +1,3 @@
-td{
-    border:1px solid white;
-    padding:10px;
-}
-table{
-    width:100%;
-    max-width: 1000px;
-    
-}
 #recordsBlurb{
     justify-self:center;
-}
-section {
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-}
-@media(max-width:800px)  {
-    section {
-        overflow-x: scroll;
-        align-items: baseline;
-    }
-}
-@media(min-width:1000px){
-    table{
-        justify-self:center;
-    }
 }

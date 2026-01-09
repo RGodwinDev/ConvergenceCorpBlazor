@@ -1,6 +1,7 @@
 using ConvergenceCorpBlazor.Components;
 using ConvergenceCorpBlazor.Classes.DBControllers;
 using ConvergenceCorpBlazor.Components.Widget;
+using ConvergenceCorpBlazor.Classes.Model.Rewards;
 using Microsoft.OpenApi;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -124,6 +125,7 @@ else
     DBGroup.GetAll();
 }
 
+RewardsList.InitRewards();
 
 app.Run();
 Console.WriteLine("Server Shutting Down!");

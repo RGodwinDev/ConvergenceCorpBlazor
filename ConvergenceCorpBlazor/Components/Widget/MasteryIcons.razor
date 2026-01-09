@@ -1,0 +1,29 @@
+﻿<image src="https://render.guildwars2.com/file/596E3442F5582FC64EED1DA5ABD69D1D427614F7/962063.png" style="@styles[area]; width:@width;"/>
+
+@code {
+    List<string> styles = [
+        "filter:hue-rotate(35deg) invert(1)", //core
+        "", //hot
+        "filter:hue-rotate(320deg) invert(1)", //pof
+        "filter:hue-rotate(70deg)", //ibs
+        "filter:hue-rotate(30deg) saturate(125%)", //eod
+        "filter:hue-rotate(260deg)", //soto
+        "filter:hue-rotate(260deg) invert(1)", //jw
+        "filter:hue-rotate(230deg) saturate(150%)"  //voe
+    ];
+
+    // 0 core
+    // 1 hot
+    // 2 pof
+    // 3 ibs
+    // 4 eod
+    // 5 soto
+    // 6 jw
+    // 7 voe
+    [Parameter]
+    public int area { get; set; } = 0;
+
+    [Parameter]
+    public string width { get; set; } = "64px";
+
+}
