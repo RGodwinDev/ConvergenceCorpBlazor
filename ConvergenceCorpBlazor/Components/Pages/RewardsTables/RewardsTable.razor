@@ -1,0 +1,41 @@
+﻿@using ConvergenceCorpBlazor.Classes.Model.Rewards;
+
+@code{
+    [Parameter]
+    public int tableNumber { get; set; } = 0;
+}
+
+<table>
+    <tr>
+        <th>Item Name</th>
+        <th>Quantity</th>
+        <th>Gold</th>
+        <th>Silver</th>
+        <th>Bronze</th>
+        <th>Participation</th>
+        <th>Note</th>
+    </tr>
+    @foreach (RewardRow y in ConvergenceCorpBlazor.Classes.Model.Rewards.RewardsList.getTableRows(tableNumber))
+    {
+        <tr>
+            <td>
+                <div class="NameColumn">
+                    <a href="@y.getWikiURL()" target="_blank">
+                        @if (y.IconURL.Length > 0)
+                        {
+                            <image src="@y.IconURL" style="width:25px;" alt="@y.Name Icon" />
+                        }
+                        @y.Name
+                    </a>
+                </div>
+            </td>
+            <td>@if (y.Quantity > 0) { @y.Quantity } </td>
+        <td>@if (y.Gold > 0) { @y.Gold } </td>
+        <td>@if (y.Silver > 0) {@y.Silver } </td>
+        <td>@if (y.Bronze > 0) {@y.Bronze} </td>
+        <td>@y.Participation</td>
+        <td>@y.Note</td>
+    </tr>
+        }
+</table>
+
