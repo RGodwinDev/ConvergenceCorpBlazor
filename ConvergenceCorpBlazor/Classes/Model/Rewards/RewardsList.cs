@@ -12,11 +12,36 @@ public static class RewardsList
 
     public static void InitRewards()
     {
+        //table 0 -> CM table
         //table 1 -> DAILY from each boss
         //table 2 -> Everytime rewards (even when dailys are done)
         //table 3 -> SotO only rewards
         //table 4 -> JW only rewards
         //table 5 -> VoE only rewards
+        /*
+         * Table 0 data
+         */
+        AddRow(new RewardRow(3, 0, "Experience",
+            "/icons/15px-Experience.png",
+            "https://wiki.guildwars2.com/wiki/Experience",
+            0, 64008, 48006, 32004, "", "Daily per boss."));
+        AddRow(new RewardRow(5, 0, "Convergence Challenge Mode: Gold",
+            "https://render.guildwars2.com/file/2D6DA36B3062DD261E4F382664039CCFA8B2C218/1201555.png",
+            "https://wiki.guildwars2.com/wiki/Convergence_Challenge_Mode:_Gold",
+            0, 1, 0, 0, "", "Daily per boss."));
+        AddRow(new RewardRow(6, 0, "Convergence Challenge Mode: Silver",
+            "https://render.guildwars2.com/file/EB06E07FD75BEBF77506A278402AC5B843315F4E/1201556.png",
+            "https://wiki.guildwars2.com/wiki/Convergence_Challenge_Mode:_Silver",
+            0, 1, 1, 0, "", "Daily per boss."));
+        AddRow(new RewardRow(7, 0, "Convergence Challenge Mode: Bronze",
+            "https://render.guildwars2.com/file/E280B3A05B14E5110F17323B282F99974602F2C2/1201554.png",
+            "https://wiki.guildwars2.com/wiki/Convergence_Challenge_Mode:_Bronze",
+            0, 1, 1, 1, "", "Daily per boss."));
+        AddRow(new RewardRow(71, 0, "Magnificent Convergence Extraction",
+           "https://render.guildwars2.com/file/46EC231103323FB5EEBBC1AEF74AE015050F013E/3122156.png",
+           "https://wiki.guildwars2.com/wiki/Magnificent_Convergence_Extraction",
+           1, 0, 0, 0, "",
+           "1 at 3 and 1 at 5 unique SotO CM bosses. 1 at 3 unique JW CM bosses. 3 total Weekly."));
 
         /*
          * TABLE 1 DATA -> DAILY from each boss 
@@ -33,23 +58,11 @@ public static class RewardsList
         AddRow(new RewardRow(3, 1, "Experience",
             "/icons/15px-Experience.png",
             "https://wiki.guildwars2.com/wiki/Experience",
-            53340, 64008, 48006, 32004, "", ""));
+            53340, 0, 0, 0, "", ""));
         AddRow(new RewardRow(4, 1, "Spirit Shard",
             "https://render.guildwars2.com/file/0AD608DE7FDEE0B909905C0AF9401321CF65CD94/1010701.png",
             "https://wiki.guildwars2.com/wiki/Spirit_Shard",
             1, 0, 0, 0, "", ""));
-        AddRow(new RewardRow(5, 1, "Convergence Challenge Mode: Gold",
-            "https://render.guildwars2.com/file/2D6DA36B3062DD261E4F382664039CCFA8B2C218/1201555.png",
-            "https://wiki.guildwars2.com/wiki/Convergence_Challenge_Mode:_Gold",
-            0, 1, 0, 0, "", "<20 min"));
-        AddRow(new RewardRow(6, 1, "Convergence Challenge Mode: Silver",
-            "https://render.guildwars2.com/file/EB06E07FD75BEBF77506A278402AC5B843315F4E/1201556.png",
-            "https://wiki.guildwars2.com/wiki/Convergence_Challenge_Mode:_Silver",
-            0, 1, 1, 0, "", "<25 min"));
-        AddRow(new RewardRow(7, 1, "Convergence Challenge Mode: Bronze",
-            "https://render.guildwars2.com/file/E280B3A05B14E5110F17323B282F99974602F2C2/1201554.png",
-            "https://wiki.guildwars2.com/wiki/Convergence_Challenge_Mode:_Bronze",
-            0, 1, 1, 1, "", "<30 min"));
         AddRow(new RewardRow(8, 1, "Supreme Rune of Holding",
             "https://render.guildwars2.com/file/15474D0D27B9E32F186A153511424A265717BF49/1765996.png",
             "https://wiki.guildwars2.com/wiki/Supreme_Rune_of_Holding",
@@ -144,10 +157,6 @@ public static class RewardsList
            "https://render.guildwars2.com/file/46EC231103323FB5EEBBC1AEF74AE015050F013E/3122156.png",
            "https://wiki.guildwars2.com/wiki/Convergence_Extraction",
            1, 0, 0, 0, "", "1 at 2nd weekly Convergence, 2 at 3rd weekly Convergence."));
-        AddRow(new RewardRow(49, 3, "Magnificent Convergence Extraction",
-           "https://render.guildwars2.com/file/46EC231103323FB5EEBBC1AEF74AE015050F013E/3122156.png",
-           "https://wiki.guildwars2.com/wiki/Magnificent_Convergence_Extraction",
-           1, 0, 0, 0, "", "Weekly. 1 at 3 unique CM bosses. 1 at 5 unique CM bosses."));
 
         /*
          * TABLE 4 DATA -> JW only rewards
@@ -197,10 +206,7 @@ public static class RewardsList
            "https://render.guildwars2.com/file/46EC231103323FB5EEBBC1AEF74AE015050F013E/3122156.png",
            "https://wiki.guildwars2.com/wiki/Convergence_Extraction",
            1, 0, 0, 0, "", "1 at 2nd weekly JW Convergence, 2 at 3rd weekly JW Convergence."));
-        AddRow(new RewardRow(71, 4, "Magnificent Convergence Extraction",
-           "https://render.guildwars2.com/file/46EC231103323FB5EEBBC1AEF74AE015050F013E/3122156.png",
-           "https://wiki.guildwars2.com/wiki/Magnificent_Convergence_Extraction",
-           1, 0, 0, 0, "", "Weekly. 1 at 3 unique JW CM bosses."));
+        
         /*
          * TABLE 5 DATA -> VoE only rewards
          * ID:80-99

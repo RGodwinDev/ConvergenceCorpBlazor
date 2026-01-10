@@ -1,6 +1,6 @@
 ﻿@using ConvergenceCorpBlazor.Classes.Model.Rewards;
 
-@code{
+@code {
     [Parameter]
     public int tableNumber { get; set; } = 0;
 }
@@ -8,8 +8,9 @@
 <table>
     <tr>
         <th>Item Name</th>
-        <th>Quantity</th>
-        <th>Participation</th>
+        <th>&lt;20 min Gold</th>
+        <th>&lt;25 min Silver</th>
+        <th>&lt;30 min Bronze</th>
         <th>Note</th>
     </tr>
     @foreach (RewardRow y in ConvergenceCorpBlazor.Classes.Model.Rewards.RewardsList.getTableRows(tableNumber))
@@ -26,10 +27,11 @@
                     </a>
                 </div>
             </td>
-            <td>@if (y.Quantity > 0) { @y.Quantity } </td>
-        <td>@y.Participation</td>
-        <td>@y.Note</td>
-    </tr>
+            
+            <td> @if (y.Gold > 0) { @y.Gold } </td>
+            <td> @if (y.Silver > 0) { @y.Silver } </td>
+            <td> @if (y.Bronze > 0) { @y.Bronze } </td>
+            <td> @y.Note </td>
+        </tr>
         }
 </table>
-
