@@ -3,3 +3,7 @@ footer{
     color:darkgrey;
     box-shadow: 0 50vh 0 50vh #000;
 }
+p{
+    margin-top:0px;
+    padding-top:20px;
+}
