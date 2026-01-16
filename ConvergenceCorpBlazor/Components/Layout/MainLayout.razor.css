@@ -1,7 +1,5 @@
 .page {
     position: relative;
-    display: flex;
-    flex-direction: column;
     font-family: 'Roboto', sans-serif;
     justify-content: center;
     background-color: black;
@@ -11,7 +9,9 @@ main {
     flex: 1;
     background-color: black;
     color: white;
-    float:left;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
 }
 
 .rightbar{
