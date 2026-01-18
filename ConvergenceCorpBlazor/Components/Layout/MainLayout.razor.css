@@ -1,38 +1,12 @@
-.page {
-    position: relative;
-    font-family: 'Roboto', sans-serif;
-    justify-content: center;
-    background-color: black;
-}
-
 main {
+    font-family: 'Roboto', sans-serif;
     flex: 1;
+    color:white;
     background-color: black;
-    color: white;
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
 }
-
-.rightbar{
-    background-color: black;
-    color: white;
-    float:right;
-    display: none;
-}
-
-@media (min-width: 641px) {
-    .page {
-        flex-direction: row;
-    }
-}
-@media (min-width: 1000px){
-    .rightbar{
-        display: block;
-        margin-left:5px;
-    }
-}
-
 #blazor-error-ui {
     color-scheme: light only;
     background: lightyellow;
