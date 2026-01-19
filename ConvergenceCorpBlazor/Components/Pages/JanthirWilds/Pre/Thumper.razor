@@ -25,7 +25,7 @@
         Fill this bar by turning in essence produced by the thumpers.
         Every time you get 40+ essence, you should turn it in to fill the bar.
     </p>
-    <div style="display:flex; flex-wrap:wrap;">
+    <div style="display:flex; flex-wrap:wrap; justify-content:center;">
     <figure style="max-width:600px;">
         <image src="/images/JW/Thumper/ThumperRightbar.png" alt="rightbar" style="width:100%;"/>
         <figcaption>Keep control of the <span style="color:rgb(171,205,50)">Base Camp</span> to prevent the Synchronization bar from falling.</figcaption>
@@ -36,14 +36,10 @@
     </figure>
     </div>
 
-    <figure style="max-width:700px;float:inline-end;clear:right;">
-        <image src="/images/JW/Thumper/ThumperRoutesv2.png" alt="Thumper Splits" style="width:100%;"/>
-        <figcaption>Shortest paths to each Thumper from the <span style="color:rgb(171,205,50)">Base Camp</span></figcaption>
-    </figure>
     <!--
     <figure>
         <image src="/images/JW/Thumper/TitanDisruptor.png" alt="disruptor" style="width:100%;max-width:500px;"/>
-        <figcaption><figcaption>
+        <figcaption></figcaption>
     </figure>
     -->
     <h3 id="splittingup">Splitting up the squad</h3>
@@ -52,76 +48,110 @@
         I suggest sending 1 subgroup to <span style="color:rgb(255, 196, 0);">Southeast</span> and designate 1 to defend <span style="color:rgb(171,205,50);">Base Camp</span>. 
         The other thumpers should all get 2 subgroups.
     </p>
+    <figure style="max-width:700px;justify-self:center;">
+        <image src="/images/JW/Thumper/ThumperRoutesv2.png" alt="Thumper Splits" style="width:100%;" />
+        <figcaption>Shortest paths to each Thumper from the <span style="color:rgb(171,205,50)">Base Camp</span></figcaption>
+    </figure>
     <h3 id="sideevents">Side Events</h3>
-    <ul>
-        <li>
-            <h4>Titanspawn Sapper</h4>
-            <p>
-                The sapper steals essence from the <span style="color:rgb(171,205,50);">main camp thumper</span>.
-                <figure style="width:50px;float:inline-start;clear:none;">
-                    <image src="/images/JW/Shared/Sniffa.png" alt="Sniffa" style="width:100%;"/>
-                    <figcaption>Sniffa</figcaption>
-                </figure>
-                Track it down with your warclaw's Sniff skill.
-                Break the sappers defiance bar to ping it on the map for everyone.
-                Upon dying, it drops a ton of essence. Bring everyone that's available so you can feed it all back to the thumper.
-            </p>
+    <p>
+        Side events spawn during the Thumper Phase. 
+        The first event spawns at 26:30. 
+        The second event spawns at 22:30.
+        If the Sapper spawns first then the Leader will spawn second and vice versa.
+    </p>
+    <h4>Titanspawn Sapper</h4>
+    <p>
+        The Sapper steals essence from the <span style="color:rgb(171,205,50);">Base Camp</span> thumper.
+        Use your warclaw's <image src="/images/JW/Shared/Sniffa.png" alt="Sniffa" style="width:25px;"/>Sniff skill to reveal the Sappers location on your minimap.
+        Break the sappers defiance bar with your warclaw's 3 skill to make it vulnerable to damage.
+    </p>
+    <p>
+        Once defeated, the Sapper will drop the essence that it stole. 
+        Distant Memory will create several projections around the map where you can turn in essence.
+    </p>
+    <p>
+        If the Sapper succeeds in walking all the way to one of the 3 courts, it will disappear, taking the stolen essence with it.
+    </p>
+           
             
-            <!--<image src="" alt="Titanspawn Sapper" style="width:100%;max-width:500px;"></image><br>-->
-            <figure style="max-width:500px;">
-                <image src="/images/JW/Thumper/SapperEssence.png" alt="Sapper essence" style="width:100%;"/>
-                <figcaption>Sappers and Leaders drop a ton of essence.</figcaption>
-            </figure>
-        </li>
-        <li>
-            <h4>Titanspawn Leaders</h4>
-            <p>During the thumper phase, one of three Titanspawn Leaders will spawn.</p>
-            <ul>
-                <li>
-                    <h5 style="color:rgb(0,242,255);">Northwest Titanspawn Leader</h5>
-                    <p>
-                        Starts at <span style="color:rgb(0,242,255);">Stormsinger's Court</span>.
-                        Walks south to the <span style="color:rgb(237,28,36);">West Thumper</span>.
-                        Continues on to the <span style="color:rgb(171,205,50);">Main Camp</span>.
-                    </p>
-                </li>
-                <li>
-                    <h5 style="color:rgb(145,82,255);">North Titanspawn Leader</h5>
-                    <p>
-                        Starts at <span style="color:rgb(145,82,255);">Steamshrieker's Court</span>.
-                        Walks west through the tunnel to the <span style="color:rgb(0,162,232);">Center Thumper</span>.
-                        Continues on to the <span style="color:rgb(171,205,50);">Main Camp</span>.
-                    </p>
-                </li>
-                <li>
-                    <h5 style="color:rgb(244,255,60);">Southeast Titanspawn Leader</h5>
-                    <p>
-                        Starts at <span style="color:rgb(244,255,60);">Blightbringer's Court</span>.
-                        Walks west to the <span style="color:rgb(255,127,39);">Southeast Thumper</span>.
-                        Continues on to the <span style="color:rgb(171,205,50);">Main Camp</span>.
-                    </p>
-                </li>
-            </ul>
-            <p>
-                Once the Titanspawn Leader is defeated, Distant Memory will create several projections around the map.
-                Collect the essence the leader dropped and turn it in to the nearest projection!
-            </p>
-            <figure>
-                <image src="/images/JW/Thumper/ThumperTSLeaders.png" alt="TitanspawnLeaderRoutes" style="width:100%;max-width:800px;"/>
-                <figcaption></figcaption>
-            </figure>
-        </li>
-    </ul>
+            
+    <h4>Titanspawn Leaders</h4>
+    <p>A Titanspawn Leader will spawn in one of the courts and walk toward the <span style="color:rgb(171,205,50);">Base Camp.</span></p>
+    <figure style="max-width:300px;">
+        <image src="/images/JW/Thumper/SapperEssence.png" alt="Leader essence" style="width:100%;" />
+        <figcaption>Titanspawn Leaders drop a full bar of essence for everyone around.</figcaption>
+    </figure>
+    <h5 style="color:rgb(0,242,255);">Stormsinger's Court</h5>
+    <p>
+        Walks south to the <span style="color:rgb(237,28,36);">West Thumper</span>.
+        Continues on to the <span style="color:rgb(171,205,50);">Base Camp</span>.
+    </p>
+    <h5 style="color:rgb(255,174,61);">Steamshrieker's Court</h5>
+    <p>
+        Walks west through the tunnel to the <span style="color:rgb(0,162,232);">Center Thumper</span>.
+        Continues on to the <span style="color:rgb(171,205,50);">Base Camp</span>.
+    </p>
+    <h5 style="color:rgb(244,255,60);">Blightbringer's Court</h5>
+    <p>
+        Walks west to the <span style="color:rgb(255,127,39);">Southeast Thumper</span>.
+        Continues on to the <span style="color:rgb(171,205,50);">Base Camp</span>.
+    </p>
+    <p>
+        Once defeated, the Titanspawn Leader will drop a full bar of essence for every person.
+        As many people as possible need to collect this essence for maximum efficiency.
+        Distant Memory will also create several projections around the map where you can turn in essence.
+    </p>
+    <div id="SapperLeaderPathsWrapper">
+        <svg id="SapperLeaderPathsSVG" viewBox="0 0 200 200"> <!-- defines the box. 0,0 to 200,200  -->
+            <image width="100%" height="100%" href="/images/JW/BalriorWithTunnelsBASEMAP.png" />
+            <!-- top right text -->
+            <rect x="116" y="0" fill-opacity=".75" width="84" height="9" fill="black" />
+            <text x="117" y="7" font-size="8px" fill="white">Sapper & Leader Paths</text>
+            <!-- Bottom left text -->
+            <rect x="0" y="191" fill-opacity=".75" width="103" height="9" fill="black" />
+            <text x="1" y="198" font-size="8px" fill="red">https://convergencecorp.net</text>
+            <!-- Base Camp -->
+            <circle cx="78" cy="135" r="15" stroke="rgb(171,205,50)" fill-opacity="0"/>
+            <rect x="58" y="150" fill-opacity=".75" width="44" height="9" fill="black" />
+            <text x="60" y="157" font-size="8px" fill="rgb(171,205,50)">Base Camp</text>
+            <!-- Central Thumper -->
+            <circle cx="80" cy="65" r="10" stroke="rgb(0,162,232)" fill-opacity="0"/>
+            <rect x="50" y="43" fill-opacity=".75" width="60" height="9" fill="black" />
+            <text x="50" y="50" font-size="8px" fill="rgb(0,162,232)">Central Thumper</text>
+
+            <!-- West Thumper -->
+            <circle cx="20" cy="93" r="12" stroke="rgb(237,28,36)" fill-opacity="0" />
+            <rect x="2" y="105" fill-opacity=".75" width="54" height="9" fill="black" />
+            <text x="3" y="112" font-size="8px" fill="rgb(237,28,36)">West Thumper</text>
+            <!-- SE Thumper -->
+            <circle cx="128" cy="165" r="10" stroke="rgb(255,127,39)" fill-opacity="0" />
+            <rect x="89" y="180" fill-opacity=".75" width="45" height="9" fill="black" />
+            <text x="90" y="187" font-size="8px" fill="rgb(255,127,39)">SE Thumper</text>
+            <!-- Western Path -->
+            <path stroke="rgb(0,162,232)" fill-opacity="0" stroke-width="2" 
+            d="M26 38 L19 60 L17 80 L20 90 L30 95 L40 100 L60 104 L68 104 L70 110 L68 120"/>
+            <!-- Central Path -->
+            <path stroke="rgb(145,82,255)" fill-opacity="0" stroke-width="2"
+            d="M125 60 L105 61 L100 61 L88 68 L89 75 L89 78 L90 80 L93 85 L94 87 L94 90 L82 100 L73 108 L72 110 L70 120"/>
+            <!-- SE Path -->
+            <path stroke="rgb(81,255,104)" fill-opacity="0" stroke-width="2"
+            d="M183 163 L166 177 L145 190 L134 180 L132 175 L130 170 L120 172 L118 170 L116 167 L114 140 L110 138 L108 137 L100 137 L95 134" />
+        </svg>
+    </div>
+    <!--<image src="" alt="Titanspawn Sapper" style="width:100%;max-width:500px;"></image><br>-->
+    
 
     <h3 id="weather">Weather</h3>
     <p>
-        When the Tectonic Thumper Synchronization bar is 30% full, Mt. Balrior will create one of four types of weather.
+        When the Tectonic Thumper Synchronization bar is 30% full, weather conditions will worsen around Mt. Balrior.
     </p>
-    <ul>
+    <ul id="weatherlist">
         <li>
             <h4>Sandstorm</h4>
-            Reduced Visibility.<br>
-            <span style="color:rgb(255,201,14);">Sand Swirls</span> - Knock up and blind.<br>
+            <p>
+                Reduced Visibility.<br/>
+                <span style="color:rgb(255,201,14);">Sand Swirls</span> - Knock up and blind.
+            </p>
             <figure>
                 <image src="/images/JW/Thumper/Sandswirl.png" alt="Sandswirl" style="width:100%;max-width:500px;"></image>
                 <figcaption>A sandswirl </figcaption>
@@ -129,15 +159,19 @@
         </li>
         <li>
             <h4>Snowstorm</h4>
-            <span style="color:rgb(0,162,232);">Blizzard</span> - Ice formations fall on the ground, damaging and chilling.<br>
-            <span style="color:rgb(153,217,234);">Snowballs</span> roll down the mountain.<br>
+            <p>
+                <span style="color:rgb(0,162,232);">Blizzard</span> - Ice formations fall on the ground, damaging and chilling.<br/>
+                <span style="color:rgb(153,217,234);">Snowballs</span> roll down the mountain.
+            </p>
             <figure>
                 <image src="/images/JW/Thumper/Snowstorm.png" alt="Snowball and Blizzard" style="width:100%;max-width:500px;"/>
             </figure>
         </li>
         <li>
             <h4>Thunderstorm</h4>
-            Lightning Strikes - Lightning hits all over the mountain.<br>
+            <p>
+                Lightning Strikes - Lightning hits all over the mountain.
+            </p>
         </li>
         <li>
             <h4>Volcano</h4>
@@ -160,7 +194,7 @@
     <h3 id="misttides">Mist Tides</h3>
     <p>
         When the Tectonic Thumper Synchonization bar reaches 70%, the Mists Tide rolls in.
-        Which Mist Tide depends on which boss is chosen.
+        Which Mist Tide depends on what the boss is.
     </p>
     <ul>
         <li>

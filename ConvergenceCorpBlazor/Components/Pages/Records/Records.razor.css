@@ -1,3 +1,17 @@
 #recordsBlurb{
     justify-self:center;
 }
+#recordssection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow:hidden;
+}
+
+@media(max-width:800px) {
+    #recordssection {
+        align-items:baseline;
+        overflow-x:scroll;
+    }
+}

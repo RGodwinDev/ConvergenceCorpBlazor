@@ -18,4 +18,15 @@ ol {
     align-items:center;
     justify-content:space-evenly;
 }
+@media(max-width:800px){
+    #jwentrance{
+        flex-direction:column;
+    }
+}
 
+#LEPurchase {
+    display:block;
+    justify-self:center;
+    width:100%;
+    max-width:486px;
+}
