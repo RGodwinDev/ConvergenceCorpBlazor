@@ -1,0 +1,94 @@
+﻿<!-- NA Table -->
+<table>
+    <tr>
+        <th><image src="/images/flags/usaflaground64px.png" style="width:32px;" /> North America</th>
+    </tr>
+    <tr style="text-align:center;">
+        <th>Boss</th>
+        <th>Time</th>
+        <th>Date</th>
+        <th></th>
+        <th>Commander</th>
+        <th>Guild</th>
+    </tr>
+    <tr>
+        <th>Secrets of the Obscure</th>
+    </tr>
+    <tr>
+        <td>Demon Knight</td>
+        <td>11:26.240</td>
+        <td class="recDate">11/20/2025</td>
+        <td></td>
+        <td>JMDHouse</td>
+        <td>Silverwastes Anonymous [SAS]</td>
+    </tr>
+    <tr>
+        <td>Dreadwing</td>
+        <td>12:21.360</td>
+        <td class="recDate">11/27/2025</td>
+        <td></td>
+        <td>JMDHouse</td>
+        <td>Silverwastes Anonymous [SAS]</td>
+    </tr>
+    <tr>
+        <td>Hell Sister</td>
+        <td>12:59.680</td>
+        <td class="recDate">11/27/2025</td>
+        <td></td>
+        <td>JMDHouse</td>
+        <td>Silverwastes Anonymous [SAS]</td>
+    </tr>
+    <tr>
+        <td>Sorrow</td>
+        <td>12:58.440</td>
+        <td class="recDate">12/04/2025</td>
+        <td></td>
+        <td>JMDHouse</td>
+        <td>Silverwastes Anonymous [SAS]</td>
+    </tr>
+    <tr>
+        <td>Umbriel</td>
+        <td>13:48.640</td>
+        <td class="recDate">12/04/2025</td>
+        <td></td>
+        <td>JMDHouse</td>
+        <td>Silverwastes Anonymous [SAS]</td>
+    </tr>
+    <tr>
+        <th>Janthir Wilds</th>
+    </tr>
+    <tr>
+        <td>Decima</td>
+        <td>16:01.320</td>
+        <td class="recDate">11/13/2025</td>
+        <td></td>
+        <td>Bread</td>
+        <td>We Fight Sleep [COFE]</td>
+    </tr>
+    <tr>
+        <td>Greer</td>
+        <td>16:03.000</td>
+        <td class="recDate">11/13/2025</td>
+        <td></td>
+        <td>Bread</td>
+        <td>We Fight Sleep [COFE]</td>
+    </tr>
+    <tr>
+        <td>Ura</td>
+        <td>15:35.400</td>
+        <td class="recDate">11/30/2025</td>
+        <td></td>
+        <td>Ohnage</td>
+        <td>Underground Legends [uL]</td>
+    </tr>
+</table>
+<script>
+    var x = document.getElementsByClassName("recDate");
+    for(var y of x){
+        let d = new Date(y.innerText);
+        let z = d.toLocaleDateString();
+        if(z != "Invalid Date"){
+            y.innerText = d.toLocaleDateString();
+        }
+    }
+</script>

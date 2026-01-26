@@ -1,0 +1,146 @@
+﻿@using ConvergenceCorpBlazor.Classes.Model;
+@using ConvergenceCorpBlazor.Components.Pages.Records.RegionTables;
+
+
+@if(region == Region.NA)
+{
+    <NARecords/>
+}
+@if(region == Region.EU)
+{
+    <EURecords/>
+}
+@if(region == Region.CN)
+{
+    <CNRecords/>
+}
+<!-- These are temporary until we can get the below table working -->
+
+
+
+<!-- Base Table for records. -->
+<!--
+@if(region == Region.CN)
+{
+    <p class="caution">Note: The Chinese version of Guild Wars 2 has different balance to the NA/EU version of the game.</p>
+}
+<table>
+    @if(region != Region.None)
+    {
+        <tr>
+            @if(region == Region.NA)
+            {
+                <th><image src="/images/flags/usaflaground64px.png" style="width:32px;" /> North America</th>
+            }
+            @if(region == Region.EU)
+            {
+                <th><image src="/images/flags/euflaground64px.png" style="width:32px;" /> Europe</th>
+            }
+            @if(region == Region.CN)
+            {
+                <th><image src="/images/flags/cnflaground64px.png" style="width:32px;" /> China</th>
+            }
+        </tr>
+    }
+    <tr style="text-align:center;">
+        <th>Boss</th>
+        <th>Time</th>
+        <th>Date</th>
+        <th></th>
+        <th>Commander</th>
+        <th>Guild</th>
+    </tr>
+    <tr>
+        <th>Secrets of the Obscure</th>
+    </tr>
+    <tr>
+        <td>Demon Knight</td>
+        <td>-</td>
+        <td class="recDate"></td>
+        <td></td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Dreadwing</td>
+        <td>-</td>
+        <td class="recDate"></td>
+        <td></td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Hell Sister</td>
+        <td>-</td>
+        <td class="recDate"></td>
+        <td></td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Sorrow</td>
+        <td>-</td>
+        <td class="recDate"></td>
+        <td></td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Umbriel</td>
+        <td>-</td>
+        <td class="recDate"></td>
+        <td></td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <th>Janthir Wilds</th>
+    </tr>
+    <tr>
+        <td>Decima</td>
+        <td>-</td>
+        <td class="recDate"></td>
+        <td></td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Greer</td>
+        <td>-</td>
+        <td class="recDate"></td>
+        <td></td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Ura</td>
+        <td>-</td>
+        <td class="recDate"></td>
+        <td></td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+</table>
+-->
+@code{
+
+    /// <summary>
+    /// NA, EU, CN
+    /// </summary>
+    [Parameter]
+    public Region region { get; set; } = Region.None;
+
+    
+}
+
+<script>
+    //Changes dates to local date formats
+    var x = document.getElementsByClassName("recDate");
+    for(var y of x){
+        let d = new Date(y.innerText);
+        let z = d.toLocaleDateString();
+        if(z != "Invalid Date"){
+            y.innerText = d.toLocaleDateString();
+        }
+    }
+</script>

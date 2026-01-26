@@ -11,7 +11,11 @@ public static class DBGroup
         try
         {
             using var conn = new SqlConnection(SQLDBC.ConnectionString);
+            //add retry logic to the connection
+            conn.RetryLogicProvider = SQLDBC.sqlRetryLogicBaseProvider;
+            Console.WriteLine("connection state: " + conn.State);
             conn.Open();
+            Console.WriteLine("connection state: " + conn.State);
 
             var links = GetLinks(conn);
             var runs = GetRuns(conn);
@@ -37,7 +41,9 @@ public static class DBGroup
                 Groups.Add(new Group(id, reader.GetString(1), reader.GetString(2), reader.GetString(3), groupLinks, groupRuns));
             }
         }
-        catch (Exception ex) { Console.WriteLine(ex.Message); }
+        catch (Exception ex) { 
+            Console.WriteLine(ex.Message);
+    }
     }
     
     private static Dictionary<int, List<(string, string)>> GetLinks(SqlConnection conn)
