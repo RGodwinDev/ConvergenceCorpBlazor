@@ -1,0 +1,97 @@
+﻿<div class="caution" style="justify-self:center">Note: The Chinese version of Guild Wars 2 has different balance than the NA/EU servers.</div>
+<!-- CN Table -->
+<table>
+    <tr>
+        <th><image src="/images/flags/cnflaground64px.png" style="width:32px;" /> China</th>
+    </tr>
+    <tr style="text-align:center;">
+        <th>Boss</th>
+        <th>Time</th>
+        <th class="recDate">Date</th>
+        <th></th>
+        <th>Commander</th>
+        <th>Guild</th>
+    </tr>
+    <tr>
+        <th>Secrets of the Obscure</th>
+
+    </tr>
+    <tr>
+        <td>Demon Knight</td>
+        <td>-</td>
+        <td class="recDate">-</td>
+        <td></td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Dreadwing</td>
+        <td>-</td>
+        <td class="recDate">-</td>
+        <td></td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Hell Sister</td>
+        <td>-</td>
+        <td class="recDate">-</td>
+        <td></td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Sorrow</td>
+        <td>-</td>
+        <td class="recDate">-</td>
+        <td></td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Umbriel</td>
+        <td>-</td>
+        <td class="recDate">-</td>
+        <td></td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <th>Janthir Wilds</th>
+
+    </tr>
+    <tr>
+        <td>Decima</td>
+        <td>10:37</td>
+        <td class="recDate">-</td>
+        <td></td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Greer</td>
+        <td>11:16</td>
+        <td class="recDate">-</td>
+        <td></td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Ura</td>
+        <td>10:17</td>
+        <td class="recDate">-</td>
+        <td></td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+</table>
+<script>
+    var x = document.getElementsByClassName("recDate");
+    for(var y of x){
+        let d = new Date(y.innerText);
+        let z = d.toLocaleDateString();
+        if(z != "Invalid Date"){
+            y.innerText = d.toLocaleDateString();
+        }
+    }
+</script>

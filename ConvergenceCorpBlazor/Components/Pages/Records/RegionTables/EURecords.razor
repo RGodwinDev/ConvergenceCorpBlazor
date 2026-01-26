@@ -1,0 +1,94 @@
+﻿<!-- EU table-->
+<table>
+    <tr>
+        <th><image src="/images/flags/euflaground64px.png" style="width:32px;" /> Europe</th>
+    </tr>
+    <tr style="text-align:center;">
+        <th>Boss</th>
+        <th>Time</th>
+        <th class="recDate">Date</th>
+        <th></th>
+        <th>Commander</th>
+        <th>Guild</th>
+    </tr>
+    <tr>
+        <th>Secrets of the Obscure</th>
+    </tr>
+    <tr>
+        <td>Demon Knight</td>
+        <td>9:53.880</td>
+        <td class="recDate">12/9/2024</td>
+        <td></td>
+        <td>Mike</td>
+        <td>Void Lounge [VL]</td>
+    </tr>
+    <tr>
+        <td>Dreadwing</td>
+        <td>10:20.640</td>
+        <td class="recDate">9/9/2024</td>
+        <td></td>
+        <td>Mike</td>
+        <td>Void Lounge [VL]</td>
+    </tr>
+    <tr>
+        <td>Hell Sister</td>
+        <td>11:59.640</td>
+        <td class="recDate">12/9/2024</td>
+        <td></td>
+        <td>Mike</td>
+        <td>Void Lounge [VL]</td>
+    </tr>
+    <tr>
+        <td>Sorrow</td>
+        <td>10:53.080</td>
+        <td class="recDate">11/4/2024</td>
+        <td></td>
+        <td>Mike</td>
+        <td>Void Lounge [VL]</td>
+    </tr>
+    <tr>
+        <td>Umbriel</td>
+        <td>12:08.000</td>
+        <td class="recDate">12/23/2024</td>
+        <td></td>
+        <td>Mike</td>
+        <td>Void Lounge [VL]</td>
+    </tr>
+    <tr>
+        <th>Janthir Wilds</th>
+    </tr>
+    <tr>
+        <td>Decima</td>
+        <td>12:08.400</td>
+        <td class="recDate">01/05/2026</td>
+        <td></td>
+        <td>Mike</td>
+        <td>Void Lounge [VL]</td>
+    </tr>
+    <tr>
+        <td>Greer</td>
+        <td>12:18.160</td>
+        <td class="recDate">12/01/2025</td>
+        <td></td>
+        <td>Mike</td>
+        <td>Void Lounge [VL]</td>
+    </tr>
+    <tr>
+        <td>Ura</td>
+        <td>11:59.720</td>
+        <td class="recDate">11/24/2025</td>
+        <td></td>
+        <td>Mike</td>
+        <td>Void Lounge [VL]</td>
+    </tr>
+</table>
+<script>
+    var x = document.getElementsByClassName("recDate");
+    for(var y of x){
+        let d = new Date(y.innerText);
+        let z = d.toLocaleDateString();
+        if(z != "Invalid Date"){
+            y.innerText = d.toLocaleDateString();
+        }
+    }
+</script>

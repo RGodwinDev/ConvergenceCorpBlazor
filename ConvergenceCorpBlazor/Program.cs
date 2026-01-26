@@ -7,8 +7,8 @@ using Microsoft.OpenApi;
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 //adds the API controllers
-builder.Services.AddControllers(); 
-
+builder.Services.AddControllers();
+//TimeSpan t = new TimeSpan(0).Add(TimeSpan.FromMilliseconds(234)).Add(TimeSpan.FromSeconds(15)).Add(TimeSpan.FromMinutes(10));
 //add API Documentation Generation
 builder.Services.AddSwaggerGen(options =>
 {
@@ -118,7 +118,10 @@ app.MapControllers();
  */
 if (app.Environment.IsDevelopment())
 {   //use the fake data
+    Console.WriteLine("Getting Fake Data");
     DBGroup.UseFakeData();
+    //Console.WriteLine("Getting Real Data");
+    //DBGroup.GetAll(); //only put in if youre testing the DB
 }
 else
 {   //get data from the DB
