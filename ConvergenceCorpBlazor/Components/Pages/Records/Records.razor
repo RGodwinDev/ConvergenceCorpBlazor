@@ -19,6 +19,11 @@
 </div>
 
 <div>
+        Season:
+        <InputSelect @bind-Value=selectSeason>
+            <option value="@Season.None">All Time</option>
+            <option value="@Season.Feb2026">February 2026 - Present</option>
+        </InputSelect>
         Region:
         <InputSelect @bind-Value=selectRegion>
             <option value=@Region.NA>NA</option>
@@ -26,9 +31,13 @@
             <option value=@Region.CN>CN</option>
         </InputSelect>
 </div>
-
-<RecordsTable region=@selectRegion/></section>
+    @if(selectRegion == Region.CN)
+    {
+        <div class="caution" style="justify-self:center">Note: The Chinese version of Guild Wars 2 has different balance than the NA/EU servers.</div>
+    }
+    <RecordsTable region=@selectRegion season=@selectSeason /></section>
 
 @code{
     Region selectRegion = Region.NA; //default set here
+    Season selectSeason = Season.None;
 }

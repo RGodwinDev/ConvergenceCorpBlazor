@@ -1,20 +1,48 @@
 ﻿@using ConvergenceCorpBlazor.Classes.Model;
 @using ConvergenceCorpBlazor.Components.Pages.Records.RegionTables;
+@using ConvergenceCorpBlazor.Components.Pages.Records.RegionTables.Feb2026;
+
+@if(season == Season.None)
+{
+    @if (region == Region.NA)
+    {
+        <NARecords />
+    }
+    @if (region == Region.EU)
+    {
+        <EURecords />
+    }
+    @if (region == Region.CN)
+    {
+        <CNRecords />
+    }
+}
+else if(season == Season.Feb2026)
+{
+    @if(region == Region.NA)
+    {
+        <Feb26NA />
+    }
+    @if(region == Region.EU)
+    {
+        <Feb26EU />
+    }
+    @if(region == Region.CN)
+    {
+        <Feb26CN />
+    }
+}
 
 
-@if(region == Region.NA)
-{
-    <NARecords/>
-}
-@if(region == Region.EU)
-{
-    <EURecords/>
-}
-@if(region == Region.CN)
-{
-    <CNRecords/>
-}
-<!-- These are temporary until we can get the below table working -->
+
+
+
+
+
+
+
+
+<!-- The above is temporary until we can get the below table working -->
 
 
 
@@ -130,7 +158,16 @@
     [Parameter]
     public Region region { get; set; } = Region.None;
 
-    
+    /// <summary>
+    /// What season do we want
+    /// </summary>
+    [Parameter]
+    public Season season { get; set; } = Season.None;
+
+
+
+
+    //Todo: Get Data for the table based on Region and Season.
 }
 
 <script>
