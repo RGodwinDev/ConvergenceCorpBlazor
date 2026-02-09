@@ -13,31 +13,32 @@
     <meta property="og:site_name" content="Convergence Corp!"/>    
 </HeadContent>
 <section id="recordssection">
-<h1 style="align-self:center;">Records!</h1>
-<div id="recordsBlurb">
-    Tracking the best times for each Convergence CM. If you achieve a new #1, send me a message in <DiscordLink disctype=1/> with proof and I'll update it :)
-</div>
+    <h1 style="align-self:center;">Records!</h1>
+    <div id="recordsBlurb">
+        Tracking the best times for each Convergence CM. If you achieve a new #1, send me a message in <DiscordLink disctype=1/> with proof and I'll update it :)
+    </div>
 
-<div>
-        Season:
-        <InputSelect @bind-Value=selectSeason>
-            <option value="@Season.None">All Time</option>
-            <option value="@Season.Feb2026">February 2026 - Present</option>
-        </InputSelect>
-        Region:
-        <InputSelect @bind-Value=selectRegion>
-            <option value=@Region.NA>NA</option>
-            <option value=@Region.EU>EU</option>
-            <option value=@Region.CN>CN</option>
-        </InputSelect>
-</div>
+    <div>
+            Season:
+            <InputSelect @bind-Value=selectSeason>
+                <option value="@Season.None">All Time</option>
+                <option value="@Season.Feb2026">February 2026 - Present</option>
+            </InputSelect>
+            Region:
+            <InputSelect @bind-Value=selectRegion>
+                <option value=@Region.NA>NA</option>
+                <option value=@Region.EU>EU</option>
+                <option value=@Region.CN>CN</option>
+            </InputSelect>
+    </div>
     @if(selectRegion == Region.CN)
     {
         <div class="caution" style="justify-self:center">Note: The Chinese version of Guild Wars 2 has different balance than the NA/EU servers.</div>
     }
-    <RecordsTable region=@selectRegion season=@selectSeason /></section>
+    <RecordsTable region=@selectRegion season=@selectSeason />
+</section>
 
 @code{
-    Region selectRegion = Region.NA; //default set here
+    Region selectRegion = Region.NA;
     Season selectSeason = Season.None;
 }

@@ -120,12 +120,14 @@ if (app.Environment.IsDevelopment())
 {   //use the fake data
     Console.WriteLine("Getting Fake Data");
     DBGroup.UseFakeData();
-    //Console.WriteLine("Getting Real Data");
-    //DBGroup.GetAll(); //only put in if youre testing the DB
+
+    //only put in if youre testing the DB
+    Console.WriteLine("Getting Real Data");
+    await DBGroup.GetAll(); 
 }
 else
 {   //get data from the DB
-    DBGroup.GetAll();
+    await DBGroup.GetAll();
 }
 
 RewardsList.InitRewards();

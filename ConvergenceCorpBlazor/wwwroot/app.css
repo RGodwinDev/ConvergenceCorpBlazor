@@ -216,3 +216,62 @@ table {
     align-items:center;
     flex-direction:row;
 }
+
+select {
+    background-color: #121212;
+    font-family: 'Cascadia Code', monospace;
+    color: #FF0000;
+    border-radius: 5px;
+    border: solid 1px #FF0000;
+    padding: 5px;
+}
+
+
+select, ::picker(select){
+   appearance:base-select;
+}
+
+select::picker-icon{
+    content: "l";
+    transition:0.4s rotate;
+}
+
+select:open::picker-icon{
+        rotate: 180deg;
+}
+option{
+    background-color:#121212;
+    color:#FF0000;
+}
+option::checkmark {
+    content: ">";
+}
+option:hover{
+    background-color:#202020;
+    color:#FF0000;
+}
+
+.sototreb{
+    color:rgb(255,0,165);
+}
+.sotonw{
+    color:rgb(0,255,255);
+}
+.sotone{
+    color:rgb(255,105,180);
+}
+.sotose{
+    color:rgb(0,128,0);
+}
+.sotosw{
+    color:rgb(154,205,50);
+}
+.sotomid{
+    color:rgb(255,255,0);
+}
+.zojja{
+    color:rgb(255,128,0);
+}
+.enemy{
+    color:rgb(255,0,0);
+}
