@@ -8,7 +8,7 @@
         North America
     </h2>
     <div id="naschedule">
-        @foreach(var (run, group) in Groups.GetRegionRunsTimeRange("NA", DateTime.Now.AddHours(-5), DateTime.Now.AddDays(7))){
+        @foreach(var (run, group) in Groups.GetRegionRunsTimeRange(Region.NA, DateTime.Now.AddHours(-5), DateTime.Now.AddDays(7))){
             var links = group.Links;
             var bosses = run.Bosses;
             <div class="topgradient">
@@ -52,7 +52,7 @@
     </h2>
     <div id="euschedule">
 
-        @foreach(var (run, group) in Groups.GetRegionRunsTimeRange("EU", DateTime.Now.AddHours(-5), DateTime.Now.AddDays(7))){
+        @foreach(var (run, group) in Groups.GetRegionRunsTimeRange(Region.EU, DateTime.Now.AddHours(-5), DateTime.Now.AddDays(7))){
             var links = group.Links;
             var bosses = run.Bosses;
             <div class = "topgradient">

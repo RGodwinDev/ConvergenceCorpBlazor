@@ -1,18 +1,20 @@
 ﻿using ConvergenceCorpBlazor.Classes.Helper;
 using ConvergenceCorpBlazor.Classes.Model;
 using Microsoft.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace ConvergenceCorpBlazor.Classes.DBControllers;
 
 public static class DBGroup
 {
-    public static void GetAll()
+    public static async Task GetAll()
     {
         try
         {
-            using var conn = new SqlConnection(SQLDBC.ConnectionString);
+            using SqlConnection conn = new SqlConnection(SQLDBC.ConnectionString);
             //add retry logic to the connection
             conn.RetryLogicProvider = SQLDBC.sqlRetryLogicBaseProvider;
+
             Console.WriteLine("connection state: " + conn.State);
             conn.Open();
             Console.WriteLine("connection state: " + conn.State);
@@ -20,17 +22,15 @@ public static class DBGroup
             var links = GetLinks(conn);
             var runs = GetRuns(conn);
 
-            using var command = conn.CreateCommand();
-            command.CommandText = "SELECT * FROM Groups;";
-
-            using var reader = command.ExecuteReader();
-            if(!reader.HasRows)
+            SqlDataReader reader = SQLDBC.ExecuteReader(conn, "SELECT id, logo, name, guildtag FROM Groups;", System.Data.CommandType.Text, []);
+            if (!reader.HasRows)
             {
                 Console.WriteLine("There were no rows");
                 return;
             }
             while (reader.Read())
             {
+                Console.WriteLine(reader.GetString(2));
                 var id = reader.GetInt32(0);
                 if (!links.TryGetValue(id, out var groupLinks))
                     groupLinks = [];
@@ -40,17 +40,18 @@ public static class DBGroup
 
                 Groups.Add(new Group(id, reader.GetString(1), reader.GetString(2), reader.GetString(3), groupLinks, groupRuns));
             }
+            reader.Close();
         }
         catch (Exception ex) { 
             Console.WriteLine(ex.Message);
-    }
+        }
     }
     
     private static Dictionary<int, List<(string, string)>> GetLinks(SqlConnection conn)
     {
         var links = new Dictionary<int, List<(string, string)>>();
         using var linkCommand = conn.CreateCommand();
-        linkCommand.CommandText = "SELECT * FROM Links";
+        linkCommand.CommandText = "SELECT groupID, link, linkType FROM Links";
         using var linkReader = linkCommand.ExecuteReader();
         while (linkReader.Read())
         {
@@ -72,12 +73,12 @@ public static class DBGroup
     {
         var runs = new Dictionary<int, List<GroupRun>>();
         using var runsCommand = conn.CreateCommand();
-        runsCommand.CommandText = "SELECT * FROM Runs";
+        runsCommand.CommandText = "SELECT id, groupID, datetime, region, bosses FROM Runs";
         using var reader = runsCommand.ExecuteReader();
         while (reader.Read())
         {
             var groupId = reader.GetInt32(1);
-            var run = new GroupRun(reader.GetInt32(0), groupId, reader.GetDateTimeOffset(2), reader.GetString(3), (Bosses)reader.GetInt32(4));
+            var run = new GroupRun(reader.GetInt32(0), groupId, reader.GetDateTimeOffset(2), (Region)reader.GetByte(3), (Bosses)reader.GetInt32(4));
             if(!runs.TryGetValue(groupId, out var currentRuns))
             {
                 runs.Add(groupId, [run]);
@@ -91,6 +92,8 @@ public static class DBGroup
         return runs;
     }
 
+
+    //Use this for testing/development so you don't have to hit the DB.
     public static void UseFakeData()
     {
         //link = ("actual link", "type of link")
@@ -105,18 +108,18 @@ public static class DBGroup
                 ("https://convergencecorp.net", "website")
             ], 
             [
-                new GroupRun(1, 1, DateTime.Now.AddHours(2), "NA", (Bosses)448),
-                new GroupRun(2, 1, DateTime.Now.AddHours(3), "NA", (Bosses)31),
-                new GroupRun(3, 1, DateTime.Now.AddHours(4), "EU", (Bosses)448)
+                new GroupRun(1, 1, DateTime.Now.AddHours(2), Region.NA, (Bosses)448),
+                new GroupRun(2, 1, DateTime.Now.AddHours(3), Region.NA, (Bosses)31),
+                new GroupRun(3, 1, DateTime.Now.AddHours(4), Region.EU, (Bosses)448)
             ]));
         Groups.Add(new Group(2, "", "ABCDEFG", "ABC", 
             [
 
             ], 
             [
-                new GroupRun(4, 2, DateTime.Now.AddHours(2).AddMinutes(30), "NA", (Bosses)448),
-                new GroupRun(5, 2, DateTime.Now.AddHours(3).AddMinutes(30), "NA", (Bosses)448),
-                new GroupRun(6, 2, DateTime.Now.AddHours(4).AddMinutes(30), "NA", (Bosses)448)
+                new GroupRun(4, 2, DateTime.Now.AddHours(2).AddMinutes(30), Region.NA, (Bosses)448),
+                new GroupRun(5, 2, DateTime.Now.AddHours(3).AddMinutes(30), Region.NA, (Bosses)448),
+                new GroupRun(6, 2, DateTime.Now.AddHours(4).AddMinutes(30), Region.NA, (Bosses)448)
 
             ]));
         Groups.Add(new Group(3, "", "Google", "GOGL", 
@@ -124,8 +127,8 @@ public static class DBGroup
                 ("https://google.com", "website")
             ],
             [
-                new GroupRun(7, 3, DateTime.Now.AddHours(4).AddMinutes(30), "NA", (Bosses)448),
-                new GroupRun(8, 3, DateTime.Now.AddHours(4).AddMinutes(30), "EU", (Bosses)448)
+                new GroupRun(7, 3, DateTime.Now.AddHours(4).AddMinutes(30), Region.NA, (Bosses)448),
+                new GroupRun(8, 3, DateTime.Now.AddHours(4).AddMinutes(30), Region.EU, (Bosses)448)
             ]));
     }
 }

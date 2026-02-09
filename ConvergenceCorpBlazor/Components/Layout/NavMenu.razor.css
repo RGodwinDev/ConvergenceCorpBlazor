@@ -18,6 +18,8 @@
 .top-row {
     min-height: 3.5rem;
     background-color: black;
+    display:flex;
+    justify-content:center;
 }
 
 .nav-link {
@@ -35,7 +37,6 @@
     font-size: 1.5rem;
     align-items:center;
     display:flex;
-    justify-self:center;
 }
 
 .nav-item {

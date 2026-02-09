@@ -14,7 +14,7 @@ public static class Groups
     /// </summary>
     /// <param name="region">The region you want the runs from.</param>
     /// <returns>List of GroupRuns from the given region</returns>
-    public static List<(GroupRun, Group)> GetALLRegionRuns(string region) =>
+    public static List<(GroupRun, Group)> GetALLRegionRuns(Region region) =>
         [.. GroupList
             .SelectMany(g => g
                 .GetRegionRuns(region)
@@ -28,7 +28,7 @@ public static class Groups
     /// <param name="start">The start date of the target date range.</param>
     /// <param name="end">The end date of the target date range.</param>
     /// <returns>List of GroupRuns from the given region</returns>
-    public static List<(GroupRun, Group)> GetRegionRunsTimeRange(string region, DateTime start, DateTime end) =>
+    public static List<(GroupRun, Group)> GetRegionRunsTimeRange(Region region, DateTime start, DateTime end) =>
         [.. GroupList
             .SelectMany(g => g
                 .GetRegionRuns(region)
