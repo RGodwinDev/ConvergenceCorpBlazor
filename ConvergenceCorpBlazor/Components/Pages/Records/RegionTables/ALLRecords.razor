@@ -1,0 +1,91 @@
+﻿<!-- ALL Table -->
+<table>
+    <tr style="text-align:center;">
+        <th>Boss</th>
+        <th>Time</th>
+        <th>Date</th>
+        <th>Region</th>
+        <th>Commander</th>
+        <th>Guild</th>
+    </tr>
+    <tr>
+        <th>Secrets of the Obscure</th>
+    </tr>
+    <tr>
+        <td>Demon Knight</td>
+        <td>9:53.880</td>
+        <td class="recDate">11/20/2025</td>
+        <td><image src="/images/flags/euflaground64px.png" style="width:24px;" /></td>
+        <td>Mike</td>
+        <td>Void Lounge [VL]</td>
+    </tr>
+    <tr>
+        <td>Dreadwing</td>
+        <td>10:20.640</td>
+        <td class="recDate">11/27/2025</td>
+        <td><image src="/images/flags/euflaground64px.png" style="width:24px;" /></td>
+        <td>Mike</td>
+        <td>Void Lounge [VL]</td>
+    </tr>
+    <tr>
+        <td>Hell Sister</td>
+        <td>11:08.320</td>
+        <td class="recDate">02/09/2026</td>
+        <td><image src="/images/flags/euflaground64px.png" style="width:24px;" /></td>
+        <td>Mike</td>
+        <td>Void Lounge [VL]</td>
+    </tr>
+    <tr>
+        <td>Sorrow</td>
+        <td>10:39.440</td>
+        <td class="recDate">02/09/2026</td>
+        <td><image src="/images/flags/euflaground64px.png" style="width:24px;" /></td>
+        <td>Mike</td>
+        <td>Void Lounge [VL]</td>
+    </tr>
+    <tr>
+        <td>Umbriel</td>
+        <td>11:58.800</td>
+        <td class="recDate">02/09/2026</td>
+        <td><image src="/images/flags/euflaground64px.png" style="width:24px;" /></td>
+        <td>Mike</td>
+        <td>Void Lounge [VL]</td>
+    </tr>
+    <tr>
+        <th>Janthir Wilds</th>
+    </tr>
+    <tr>
+        <td>Decima</td>
+        <td>10:37</td>
+        <td class="recDate">12/11/2025</td>
+        <td><image src="/images/flags/cnflaground64px.png" style="width:24px;" /></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Greer</td>
+        <td>11:16</td>
+        <td class="recDate">12/11/2025</td>
+        <td><image src="/images/flags/cnflaground64px.png" style="width:24px;" /></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Ura</td>
+        <td>10:17</td>
+        <td class="recDate">12/11/2025</td>
+        <td><image src="/images/flags/cnflaground64px.png" style="width:24px;" /></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<script>
+    var x = document.getElementsByClassName("recDate");
+    for(var y of x){
+        let d = new Date(y.innerText);
+        let z = d.toLocaleDateString();
+        if(z != "Invalid Date"){
+            y.innerText = d.toLocaleDateString();
+        }
+    }
+</script>

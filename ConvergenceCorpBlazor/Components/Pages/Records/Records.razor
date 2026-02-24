@@ -26,6 +26,7 @@
             </InputSelect>
             Region:
             <InputSelect @bind-Value=selectRegion>
+                <option value=@Region.None>ALL</option>
                 <option value=@Region.NA>NA</option>
                 <option value=@Region.EU>EU</option>
                 <option value=@Region.CN>CN</option>
@@ -39,6 +40,6 @@
 </section>
 
 @code{
-    Region selectRegion = Region.NA;
+    Region selectRegion = Region.None;
     Season selectSeason = Season.None;
 }
