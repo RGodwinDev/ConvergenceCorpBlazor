@@ -1,0 +1,63 @@
+﻿@using ConvergenceCorpBlazor.Classes.Model;
+@using ConvergenceCorpBlazor.Classes.Model.Game;
+
+
+@if(SotoTime < JWTime)
+{   
+    @if(SotoTime < DateTimeOffset.Now)
+    {
+        <div>
+            SOTO at <span class="time combtimes">@SotoTime</span> <span>OPEN NOW</span>
+            <span>Next: </span>
+        </div>
+    }
+    else{
+        <div>
+            <span>Next: </span>
+            SOTO at<span class= "time combtimes" > @SotoTime </span>
+        </div>
+    }
+    <p>
+        JW at  <span class="time combtimes" > @JWTime </span>
+    </p>
+}
+else if(JWTime < SotoTime)
+{
+    @if(JWTime < DateTimeOffset.Now)
+    {
+        <div>
+            JW at <span class="time combtimes"> @JWTime </span> <span>OPEN NOW</span>
+            <span>Next:</span>
+        </div>
+    }
+    else
+    {
+        <div>
+            <span>Next:</span>
+            JW at <span class="time combtimes">@JWTime</span>
+        </div>
+    }
+    <div>        
+        SOTO at <span class="time combtimes"> @SotoTime</span>
+    </div>
+}
+
+
+
+@code{
+    DateTimeOffset SotoTime = PublicTime.GetNextAreaTime(GameRegion.Sky);
+    DateTimeOffset JWTime = PublicTime.GetNextAreaTime(GameRegion.Wild);
+    DateTimeOffset VoETime = PublicTime.GetNextAreaTime(GameRegion.Magic);
+}
+
+<script>
+    //convert to local on client side
+           var sototimes = document.getElementsByClassName('combtimes');
+           for(var st of sototimes){
+               let sotonewdate = new Date(st.innerText);
+               st.innerText = sotonewdate.toLocaleString([], {
+                   hour:'numeric',
+                   minute:'2-digit'
+               });
+           }
+</script>

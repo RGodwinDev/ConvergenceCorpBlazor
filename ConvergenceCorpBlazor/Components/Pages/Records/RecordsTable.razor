@@ -4,6 +4,10 @@
 
 @if(season == Season.None)
 {
+    @if (region == Region.None)
+    {
+        <ALLRecords/>
+    }
     @if (region == Region.NA)
     {
         <NARecords />
@@ -19,6 +23,10 @@
 }
 else if(season == Season.Feb2026)
 {
+    @if(region == Region.None)
+    {
+        <Feb26ALL />
+    }
     @if(region == Region.NA)
     {
         <Feb26NA />
