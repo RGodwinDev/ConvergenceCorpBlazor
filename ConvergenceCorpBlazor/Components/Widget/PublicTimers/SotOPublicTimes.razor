@@ -1,30 +1,29 @@
+@using ConvergenceCorpBlazor.Classes.Model.Game; <!-- for GameRegion-->
+@using ConvergenceCorpBlazor.Classes.Model; <!-- for PublicTime-->
+
 <div style="text-align:center;padding-bottom:10px;">
     <h3>
         <image src="/images/SotO/Secrets_of_the_Obscure_logo.png" alt="soto logo" style="width:50px;"/>
         SotO Public Convergence Times
     </h3>
 
-    <div>
-            <span class="sototimes time">@DTOs[0]</span>, <span class="sototimes time">@DTOs[1]</span>,
-            <span class="sototimes time">@DTOs[2]</span>, <span class="sototimes time">@DTOs[3]</span>,
-            <span class="sototimes time">@DTOs[4]</span>, <span class="sototimes time">@DTOs[5]</span>,
-            <span class="sototimes time">@DTOs[6]</span>, <span class="sototimes time">@DTOs[7]</span>
-    </div>
-
-    @code{
-        static DateTimeOffset now = DateTimeOffset.Now;
-        DateTimeOffset[] DTOs =
-        [
-            new DateTimeOffset(now.Year, now.Month, now.Day, 01, 30, 00, TimeSpan.Zero),
-            new DateTimeOffset(now.Year, now.Month, now.Day, 04, 30, 00, TimeSpan.Zero),
-            new DateTimeOffset(now.Year, now.Month, now.Day, 07, 30, 00, TimeSpan.Zero),
-            new DateTimeOffset(now.Year, now.Month, now.Day, 10, 30, 00, TimeSpan.Zero),
-            new DateTimeOffset(now.Year, now.Month, now.Day, 13, 30, 00, TimeSpan.Zero),
-            new DateTimeOffset(now.Year, now.Month, now.Day, 16, 30, 00, TimeSpan.Zero),
-            new DateTimeOffset(now.Year, now.Month, now.Day, 19, 30, 00, TimeSpan.Zero),
-            new DateTimeOffset(now.Year, now.Month, now.Day, 22, 30, 00, TimeSpan.Zero)
-        ];
+    <p>
+        Public instances open every 3 hours.
+    </p>
+    @if (SotoTime < DateTimeOffset.Now)
+    {
+        <p>
+                The Secrets of the Obscure Public Convergence is open <span class="time">NOW</span>!
+        </p>
     }
+    else
+    {
+        <p>
+            Next one opens at <span class="time sototimes">@SotoTime</span> in 
+            <span class="time">@countdownTime.ToString(@"%h\:mm\:ss")</span>
+        </p>
+    }
+
 
 
     <script> //convert to local on client side
@@ -36,5 +35,31 @@
                 minute:'2-digit'
             });
         }
+        
     </script>
 </div>
+
+@code {
+    DateTimeOffset SotoTime = PublicTime.GetNextAreaTime(GameRegion.Sky);
+
+    TimeSpan countdownTime { get; set; } = TimeSpan.Zero;
+
+    public void CheckTime()
+    {
+        countdownTime = DateTimeOffset.Now - SotoTime;
+        InvokeAsync(() =>
+        {
+            StateHasChanged();
+        });
+    }
+
+    //After the component renders, setup a timer for the countdown.
+    protected override void OnAfterRender(bool firstRender)
+    {
+        Timer timerA = new Timer(new TimerCallback(_ =>
+        {
+            CheckTime();
+        }), null, 1000, 1000);
+    }
+        
+}
