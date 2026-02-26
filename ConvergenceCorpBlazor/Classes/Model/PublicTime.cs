@@ -4,26 +4,29 @@ namespace ConvergenceCorpBlazor.Classes.Model;
 
 public class PublicTime
 {
+    //day,hour,min,seconds
     private static TimeSpan[] SotOTimes = [
-            new TimeSpan(01, 30, 00),
-            new TimeSpan(04, 30, 00),
-            new TimeSpan(07, 30, 00),
-            new TimeSpan(10, 30, 00),
-            new TimeSpan(13, 30, 00),
-            new TimeSpan(16, 30, 00),
-            new TimeSpan(19, 30, 00),
-            new TimeSpan(22, 30, 00)
+            new TimeSpan(00, 01, 30, 00),
+            new TimeSpan(00, 04, 30, 00),
+            new TimeSpan(00, 07, 30, 00),
+            new TimeSpan(00, 10, 30, 00),
+            new TimeSpan(00, 13, 30, 00),
+            new TimeSpan(00, 16, 30, 00),
+            new TimeSpan(00, 19, 30, 00),
+            new TimeSpan(00, 22, 30, 00),
+            new TimeSpan(01, 01, 30, 00)
         ];
     private static TimeSpan[] JanthirTimes =
         [
-            new TimeSpan(0, 0, 0),
-            new TimeSpan(3, 0, 0),
-            new TimeSpan(6, 0, 0),
-            new TimeSpan(9, 0, 0),
-            new TimeSpan(12, 0, 0),
-            new TimeSpan(15, 0, 0),
-            new TimeSpan(18, 0, 0),
-            new TimeSpan(21, 0, 0),
+            new TimeSpan(00, 00, 00, 00),
+            new TimeSpan(00, 03, 00, 00),
+            new TimeSpan(00, 06, 00, 00),
+            new TimeSpan(00, 09, 00, 00),
+            new TimeSpan(00, 12, 00, 00),
+            new TimeSpan(00, 15, 00, 00),
+            new TimeSpan(00, 18, 00, 00),
+            new TimeSpan(00, 21, 00, 00),
+            new TimeSpan(01, 00, 00, 00)
         ];
     private static TimeSpan[] VoETimes =
         [
@@ -34,7 +37,7 @@ public class PublicTime
     //get the first available time for the specified area.
     public static DateTimeOffset GetNextAreaTime(GameRegion area)
     {
-
+    
         TimeSpan[] publicTimes;
         if (GameRegion.Sky == area)
         {
@@ -53,12 +56,21 @@ public class PublicTime
             throw new ArgumentException("Invalid area specified");
         }
 
-        DateTimeOffset now = DateTimeOffset.UtcNow;
-        DateTimeOffset nextTime = DateTimeOffset.Now.AddYears(1);
+        DateTimeOffset nextTime = DateTimeOffset.UtcNow.AddYears(1);
         for(int i = 0; i < publicTimes.Length; ++i)
         {
-            DateTimeOffset pub = new DateTimeOffset(now.Year, now.Month, now.Day, publicTimes[i].Hours, publicTimes[i].Minutes, publicTimes[i].Seconds, TimeSpan.Zero);
-            if (pub <= nextTime && pub >= now.AddMinutes(-15))
+            DateTimeOffset pub = 
+                new DateTimeOffset(
+                    DateTimeOffset.UtcNow.Year, 
+                    DateTimeOffset.UtcNow.Month, 
+                    DateTimeOffset.UtcNow.Day + publicTimes[i].Days, 
+                    publicTimes[i].Hours, 
+                    publicTimes[i].Minutes, 
+                    publicTimes[i].Seconds, 
+                    TimeSpan.Zero
+                    );
+
+            if (pub <= nextTime && pub >= DateTimeOffset.UtcNow.AddMinutes(-15))
             {
                 nextTime = pub;
             }

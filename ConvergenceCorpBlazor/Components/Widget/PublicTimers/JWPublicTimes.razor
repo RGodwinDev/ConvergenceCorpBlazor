@@ -1,28 +1,26 @@
+@using ConvergenceCorpBlazor.Classes.Model.Game; <!-- for GameRegion -->
+@using ConvergenceCorpBlazor.Classes.Model; <!-- for PublicTime -->
+
 <div style="text-align:center;padding-bottom:10px;">
     <h3>
         <image src="/images/JW/Janthir_Wilds_logo.png" alt="jw logo" style="width:50px;"/>
         Janthir Wilds Public Convergence times
     </h3>
-    <div >
-        <span class="jwtimes time">@DTOs[0]</span>, <span class="jwtimes time">@DTOs[1]</span>,
-        <span class="jwtimes time">@DTOs[2]</span>, <span class="jwtimes time">@DTOs[3]</span>,
-        <span class="jwtimes time">@DTOs[4]</span>, <span class="jwtimes time">@DTOs[5]</span>,
-        <span class="jwtimes time">@DTOs[6]</span>, <span class="jwtimes time">@DTOs[7]</span>
-    </div>
-
-    @code {
-        static DateTimeOffset now = DateTimeOffset.Now;
-        DateTimeOffset[] DTOs =
-        [
-            new DateTimeOffset(now.Year, now.Month, now.Day, 00, 00, 00, TimeSpan.Zero),
-            new DateTimeOffset(now.Year, now.Month, now.Day, 03, 00, 00, TimeSpan.Zero),
-            new DateTimeOffset(now.Year, now.Month, now.Day, 06, 00, 00, TimeSpan.Zero),
-            new DateTimeOffset(now.Year, now.Month, now.Day, 09, 00, 00, TimeSpan.Zero),
-            new DateTimeOffset(now.Year, now.Month, now.Day, 12, 00, 00, TimeSpan.Zero),
-            new DateTimeOffset(now.Year, now.Month, now.Day, 15, 00, 00, TimeSpan.Zero),
-            new DateTimeOffset(now.Year, now.Month, now.Day, 18, 00, 00, TimeSpan.Zero),
-            new DateTimeOffset(now.Year, now.Month, now.Day, 21, 00, 00, TimeSpan.Zero)
-        ];
+    <p>
+        Public instances open every 3 hours.
+    </p>
+    @if(JWTime < DateTimeOffset.Now)
+    {
+        <p>
+            The Janthir Wilds Public Convergence is open <span class="time">NOW</span>!
+        </p>
+    }
+    else
+    {
+        <p>
+            Next one opens at <span class="time jwtimes">@JWTime</span> in 
+            <span class="time">@countdownTime.ToString(@"%h\:mm\:ss")</span>
+        </p>
     }
 
     <script>
@@ -36,3 +34,25 @@
         }
     </script>
 </div>
+
+@code {
+    DateTimeOffset JWTime = PublicTime.GetNextAreaTime(GameRegion.Wild);
+    TimeSpan countdownTime { get; set; } = TimeSpan.Zero;
+
+    public void CheckTime()
+    {
+        countdownTime = DateTimeOffset.Now - JWTime;
+        InvokeAsync(() =>
+        {
+            StateHasChanged();
+        });
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        Timer timerA = new Timer(new TimerCallback(_ =>
+        {
+            CheckTime();
+        }), null, 1000, 1000);
+    }
+}
