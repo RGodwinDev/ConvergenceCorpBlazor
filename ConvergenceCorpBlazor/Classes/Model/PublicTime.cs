@@ -63,13 +63,14 @@ public class PublicTime
                 new DateTimeOffset(
                     DateTimeOffset.UtcNow.Year, 
                     DateTimeOffset.UtcNow.Month, 
-                    DateTimeOffset.UtcNow.Day + publicTimes[i].Days, 
+                    DateTimeOffset.UtcNow.Day, 
                     publicTimes[i].Hours, 
                     publicTimes[i].Minutes, 
                     publicTimes[i].Seconds, 
                     TimeSpan.Zero
                     );
 
+            pub.AddDays(publicTimes[i].Days);
             if (pub <= nextTime && pub >= DateTimeOffset.UtcNow.AddMinutes(-15))
             {
                 nextTime = pub;
