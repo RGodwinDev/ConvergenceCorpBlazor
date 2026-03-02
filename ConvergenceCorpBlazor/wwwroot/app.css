@@ -68,16 +68,19 @@ h1:focus {
     text-align: start;
 }
 
-.caution{
+.caution {
     border: 1px solid yellow;
-    border-radius: 3px;
+    border-radius: 5px;
     margin-bottom: 5px;
     padding: 5px;
+    background-color: rgba(157, 157, 0, 0.71);
 }
-.warning{
-    color:red;
+.warning {
     border: 1px solid red;
-    border-radius: 3px;
+    border-radius: 5px;
+    background-color: rgba(139, 0, 0, 0.71);
+    margin-bottom:5px;
+    padding: 5px;
 }
 
 ul {
@@ -275,4 +278,12 @@ option:hover{
 }
 .enemy{
     color:rgb(255,0,0);
+}
+
+.tableofcontents {
+    font-size: 18px;
+    width: 100%;
+    max-width: 800px;
+    padding: 10px 0px 10px 0px;
+    background-color: rgb(18,18,18);
 }
