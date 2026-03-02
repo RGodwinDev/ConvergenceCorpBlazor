@@ -2,13 +2,14 @@ using ConvergenceCorpBlazor.Components;
 using ConvergenceCorpBlazor.Classes.DBControllers;
 using ConvergenceCorpBlazor.Components.Widget;
 using ConvergenceCorpBlazor.Classes.Model.Rewards;
-using Microsoft.OpenApi;
+using Microsoft.OpenApi; //for SwaggerDocs 
+using static Microsoft.AspNetCore.Http.StatusCodes;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 //adds the API controllers
 builder.Services.AddControllers();
-//TimeSpan t = new TimeSpan(0).Add(TimeSpan.FromMilliseconds(234)).Add(TimeSpan.FromSeconds(15)).Add(TimeSpan.FromMinutes(10));
+
 //add API Documentation Generation
 builder.Services.AddSwaggerGen(options =>
 {
@@ -36,18 +37,18 @@ else
     Console.WriteLine("NOT DEV OR PRODUCTION, PROBABLY STAGING");
     builder.Configuration.AddEnvironmentVariables().AddJsonFile("appsettings.Production.json");
 }
-
-Console.WriteLine("Ad test status: " + Ad.adtest);
 /*
-builder.Services.AddAuthentication(
-    CertificateAuthenticationDefaults.AuthenticationScheme
-).AddCertificate();
+builder.Services.AddHsts(options =>
+{
+    options.Preload = true;
+    options.IncludeSubDomains = true;
+    options.MaxAge = TimeSpan.FromMinutes(15); //make this longer (15 days?) once we figure this out.
+});
 */
-
-//redirects traffic to https //this is removed because cloudflare. redirecting ourselves messes with the connection.
 /*
-builder.Services.AddHttpsRedirection(options =>{
-    options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
+builder.Services.AddHttpsRedirection(options =>
+{
+    options.RedirectStatusCode = Status307TemporaryRedirect;
     options.HttpsPort = 443;
 });
 */
@@ -78,21 +79,23 @@ app.UseSwaggerUI(options =>
 });
 
 // Configure the HTTP request pipeline.
+/*
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    //app.UseHsts(); //HTTP Strict Transport Security Protocol. using this messes with cloudflare.
+    //app.UseHsts(); //HTTP Strict Transport Security Protocol.
 }
-//app.UseAuthentication();  //should be after UseRouting and before UseEndpoints
-//app.UseHttpsRedirection(); //redirects traffic to https if possible EDIT: REMOVED so cloudflare can redirect, not origin server
+*/
+/*
+app.UseHttpsRedirection(); //redirects traffic to https if possible
+*/
 
 /** these are called explicitly by the WebApplicationBuilder, do not need to call them unless you want to control WHEN they're called.
- * app.Use                  Registers custom middleware that runs at the start of the pipelin
+ * app.Use                  Registers custom middleware that runs at the start of the pipeline
  * app.UseRouting();        runs after custom middleware
  * app.UseEndpoints();      runs at the end of the pipeline
  */
-
 
 app.UseAntiforgery();
 //prevents cross-site request forgery attacks (XSRF/CSRF)
@@ -101,7 +104,6 @@ app.UseAntiforgery();
 //must be after UseAuthentication and UseAuthorization
 //FOR MORE:
 //https://learn.microsoft.com/en-us/aspnet/core/blazor/security/?view=aspnetcore-10.0&tabs=visual-studio#antiforgery-support
-
 
 app.MapStaticAssets();
 //makes stuff in wwwroot useable.
@@ -122,15 +124,17 @@ if (app.Environment.IsDevelopment())
     DBGroup.UseFakeData();
 
     //only put in if youre testing the DB
-    Console.WriteLine("Getting Real Data");
-    await DBGroup.GetAll(); 
+    //Console.WriteLine("Getting Real Data");
+    //await DBGroup.GetAll(); 
 }
 else
 {   //get data from the DB
-    await DBGroup.GetAll();
+    Console.Write("CURRENTLY DISABLED ");
+    Console.WriteLine("Get Data from DB");
+    
+    //await DBGroup.GetAll();
 }
 
-RewardsList.InitRewards();
-
+//RewardsList.InitRewards();
 app.Run();
 Console.WriteLine("Server Shutting Down!");

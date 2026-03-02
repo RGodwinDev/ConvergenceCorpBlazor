@@ -70,7 +70,8 @@ public class PublicTime
                     TimeSpan.Zero
                     );
 
-            pub.AddDays(publicTimes[i].Days);
+            pub = pub.AddDays(publicTimes[i].Days);
+
             if (pub <= nextTime && pub >= DateTimeOffset.UtcNow.AddMinutes(-15))
             {
                 nextTime = pub;
