@@ -1,6 +1,8 @@
 @page "/schedule"
 @using ConvergenceCorpBlazor.Components.Pages.Schedule.ScheduleRegions;
+@using System.Collections.ObjectModel
 @rendermode InteractiveServer
+@inject IJSRuntime JS
 
 <PageTitle>Schedule | Convergence Corp!</PageTitle>
 <HeadContent>
@@ -38,7 +40,7 @@
 
 <!--NA is the default, if you wanna change default, just change it to display:none, and another to display:block -->
 <div id="NA" class="tabcontent" style="display:block;">
-    <ScheduleNA />
+    <ScheduleNA tzone=tziSelected/>
 </div>
 
 <div id="EU" class="tabcontent" style="display:none;">
@@ -87,3 +89,56 @@ setInterval(updateDateTime, 10000);
 <!--
 <Ad dataAdSlot="7724526827" dataAdFormat="horizontal" />
 -->
+
+TimeZone:
+<InputSelect id="timezoneSelect" @bind-Value=selectedTimezone @bind-Value:after="OnTZISelectChanged">
+    @foreach (TimeZoneInfo timeZone in tzilist)
+    {
+        <option value=@timeZone.Id>@timeZone.DisplayName</option>
+    }
+</InputSelect>
+
+<!-- convert to timezone and add daylight savings -->
+@dtoA.ToOffset(TimeZoneInfo.FindSystemTimeZoneById(selectedTimezone).BaseUtcOffset 
++new TimeSpan(Convert.ToInt32(TimeZoneInfo.FindSystemTimeZoneById(selectedTimezone).IsDaylightSavingTime(DateTime.Now)), 0,0));
+@dtoA
+<div>
+    time now: @DateTime.Now
+</div>
+<div>
+    daylight: @Convert.ToInt32(TimeZoneInfo.FindSystemTimeZoneById(selectedTimezone).IsDaylightSavingTime(DateTime.Now))
+</div>
+
+@tziSelected.BaseUtcOffset;
+<script>
+    window.setFirstTimeZone = () => {
+        var timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+        console.log("TimeZone: " + timeZone); // Example: "America/Anchorage"
+        var sel = document.getElementById("timezoneSelect");
+        sel.value=timeZone;
+    };
+
+</script>
+
+    @code{
+    ReadOnlyCollection<TimeZoneInfo> tzilist = TimeZoneInfo.GetSystemTimeZones();
+    string selectedTimezone = TimeZoneInfo.Utc.Id;
+    TimeZoneInfo tziSelected = TimeZoneInfo.Utc;
+    DateTimeOffset dtoA = new DateTimeOffset(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 20, 0, 0, new TimeSpan(-6, 0, 0));
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("setFirstTimeZone");
+        }
+
+    }
+
+    private void OnTZISelectChanged()
+    {
+        tziSelected = TimeZoneInfo.FindSystemTimeZoneById(selectedTimezone);
+    }
+}
+

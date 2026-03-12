@@ -5,30 +5,3 @@ ol{
 li{
     margin:0px;
 }
-
-#SotOToC{
-    font-size:18px;
-    width:100%;
-    max-width:800px;
-    padding: 10px 0px 10px 0px;
-    background-color:rgb(18,18,18);
-    justify-self: center;
-}
-#ToCListContain{
-    display:flex;
-    flex-direction: column;
-    flex-wrap:wrap;
-}
-#ToCListPreContainer{
-    display:flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-    justify-content: space-around;
-}
-
-#ToCBossesContainer{
-    display: flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-    justify-content: space-around;
-}

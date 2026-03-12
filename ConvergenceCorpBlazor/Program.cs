@@ -1,7 +1,6 @@
 using ConvergenceCorpBlazor.Components;
 using ConvergenceCorpBlazor.Classes.DBControllers;
 using ConvergenceCorpBlazor.Components.Widget;
-using ConvergenceCorpBlazor.Classes.Model.Rewards;
 using Microsoft.OpenApi; //for SwaggerDocs 
 using static Microsoft.AspNetCore.Http.StatusCodes;
 
@@ -128,13 +127,10 @@ if (app.Environment.IsDevelopment())
     //await DBGroup.GetAll(); 
 }
 else
-{   //get data from the DB
-    Console.Write("CURRENTLY DISABLED ");
+{   
     Console.WriteLine("Get Data from DB");
-    
-    //await DBGroup.GetAll();
+    await DBGroup.GetAll();
 }
 
-//RewardsList.InitRewards();
 app.Run();
 Console.WriteLine("Server Shutting Down!");

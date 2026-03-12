@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using ConvergenceCorpBlazor.Classes.Model;
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -17,8 +18,10 @@
     <link rel="icon" type="image/png" href="/favicon/favicon.ico" />
     <link rel="manifest" type="application/manifest+json" href="/favicon/site.webmanifest" />
     <!-- google ads -->
+    <!--
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9528830556914643"
      crossorigin="anonymous"></script>
+     -->
 
     <!-- Clarity tracking code for https://convergencecorp.net https://clarity.microsoft.com -->
     <script type="text/javascript">
@@ -43,5 +46,5 @@
 @code{
     //https://semver.org/
     //major.minor.patch
-    string version = "1.0.7";
+    string version = ConvergenceCorpBlazor.Classes.Model.Version.version;
 }

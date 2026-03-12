@@ -255,29 +255,29 @@ option:hover{
     color:#FF0000;
 }
 
-.sototreb{
-    color:rgb(255,0,165);
+.sototreb {
+    color: rgb(255,0,165) !important;
 }
-.sotonw{
-    color:rgb(0,255,255);
+.sotonw {
+    color: rgb(0,255,255) !important;
 }
-.sotone{
-    color:rgb(255,105,180);
+.sotone {
+    color: rgb(255,105,180) !important;
 }
-.sotose{
-    color:rgb(0,128,0);
+.sotose {
+    color: rgb(0,128,0) !important;
 }
-.sotosw{
-    color:rgb(154,205,50);
+.sotosw {
+    color: rgb(154,205,50) !important;
 }
-.sotomid{
-    color:rgb(255,255,0);
+.sotomid {
+    color: rgb(255,255,0) !important;
 }
-.zojja{
-    color:rgb(255,128,0);
+.zojja {
+    color: rgb(255,128,0) !important;
 }
 .enemy{
-    color:rgb(255,0,0);
+    color:rgb(255,0,0) !important;
 }
 
 .tableofcontents {
@@ -286,4 +286,30 @@ option:hover{
     max-width: 800px;
     padding: 10px 0px 10px 0px;
     background-color: rgb(18,18,18);
+}
+
+.ToCListContain {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.ToCListPreContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.ToCBossesContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+section {
+    display:flex; 
+    flex-direction:column; 
+    align-items:center;
 }
