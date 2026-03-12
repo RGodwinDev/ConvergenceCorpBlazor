@@ -33,10 +33,6 @@
         <a href="https://twitch.tv/DarensWithS">twitch.tv/DarensWithS</a>
     </li>
     <li>
-        <span class="NAtime time">@ownlytime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Ownly [FUN] - 
-        <a href="https://discord.gg/vQ5asNhZYB">Discord</a>
-    </li>
-    <li>
         <span class="NAtime time">@cctime2.ToString("MM/dd/yy H:mm:ss zzz")</span> - Convergence Corp [CC] - 
         <a href="https://discord.gg/HyVZqAuAQ2">Discord</a>
     </li>
@@ -57,12 +53,6 @@
         <a href="https://twitch.tv/jmdhouse05">twitch.tv/jmdhouse05</a> - 
         <a href="https://discord.gg/sasgw2">Discord</a>
     </li>
-    <!-- on hiatus until january at least.
-    <li>
-        <span class="NAtime time">@startime.ToString("MM/dd/yy H:mm:ss zzz")</span> - The Astral Sanctuary [STAR] - 
-        <a href="https://discord.gg/astralsanctuary">Discord</a>
-    </li>
-    -->
     <li>
         <span class="NAtime time">@hellatime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Unfit Heroes Heroing Heroically [UHHH] - Hella Crates
     </li>
@@ -90,54 +80,95 @@
         <a href="https://twitch.tv/lilyvelour">twitch.tv/lilyvelour</a> - 
         <a href="https://discord.gg/lilyvelour">Discord</a>
     </li>
-    <!--
-    <li>
-        <span class="NAtime time">@sgnaSat.ToString("MM/dd/yy H:mm:ss zzz")</span> - Skein Gang [SG] -
-        <a href="https://discord.gg/skeingang">Discord</a>
-    </li>
-    -->
     <li>
         <span class="NAtime time">@uL2.ToString("MM/dd/yy H:mm:ss zzz")</span> - Underground Legends [uL] -
         <a href="https://discord.gg/undergroundlegends">Discord</a> -
         <a href="https://undergroundlegends.gg">undergroundlegends.gg</a>
+        <span class="time">@uL2.ToOffset(tzone.BaseUtcOffset).ToString("h:mm")</span>
     </li>
-    <!--
-    <li>
-        <span class="NAtime time">@sgna.ToString("MM/dd/yy H:mm:ss zzz")</span> - Skein Gang [SG] -
-        <a href="https://discord.gg/skeingang">Discord</a>
-    </li>
-    -->
     <li>
         During the week
         <ul>
             <li>
                 <span class="NAAnytime time">@godlytime.ToString("MM/dd/yy H:mm:ss zzz")</span> - Godlyarms [GDAM], they do CMs in parts throughout the week.
+                <span class="time">@godlytime.ToOffset(tzone.BaseUtcOffset).ToString("h:mm tt")</span>
             </li>
         </ul>
     </li>
 </ul>
 
+<div>
+    @LocalToday &lt;- Local
+</div>
+<div>
+    @UTCToday &lt;- UTC
+</div>
 @code{
 
+    //Sunday = 0
+    DayOfWeek UTCToday = DateTimeOffset.UtcNow.DayOfWeek;
+    DayOfWeek LocalToday = DateTimeOffset.Now.DayOfWeek;
+
+
     DateTimeOffset darenstime =     new DateTimeOffset(2025,11,10,11,00,00,TimeSpan.FromHours(-4));
-    DateTimeOffset darenstime2 =    new DateTimeOffset(2025,11,11,11,00,00,TimeSpan.FromHours(-4));
     DateTimeOffset cctime2 =        new DateTimeOffset(2025,11,10,20,00,00,TimeSpan.FromHours(-6));
-    DateTimeOffset ownlytime =      new DateTimeOffset(2025,11,10,18,00,00,TimeSpan.FromHours(-5));
     DateTimeOffset hellatime =      new DateTimeOffset(2025,11,06,22,00,00,TimeSpan.FromHours(-5));
     DateTimeOffset sastime =        new DateTimeOffset(2025,11,13,16,00,00,TimeSpan.FromHours(-5));
     DateTimeOffset slpytime =       new DateTimeOffset(2025,11,14,19,00,00,TimeSpan.FromHours(-7));
     DateTimeOffset cctime =         new DateTimeOffset(2025,11,15,13,00,00,TimeSpan.FromHours(-6));
     DateTimeOffset lilytime =       new DateTimeOffset(2025,11,15,16,00,00,TimeSpan.FromHours(-6));
-    DateTimeOffset lilytime2 =      new DateTimeOffset(2025,11,11,19,00,00,TimeSpan.FromHours(-6));
-    DateTimeOffset startime =       new DateTimeOffset(2025,11,13,20,30,00,TimeSpan.FromHours(-5));
+    DateTimeOffset lilytime2 =      new DateTimeOffset(2025,11,11,20,00,00,TimeSpan.FromHours(-6));
     DateTimeOffset godlytime =      new DateTimeOffset(2025,11,10,21,00,00,TimeSpan.FromHours(8));
     DateTimeOffset cofetime1 =      new DateTimeOffset(2025,11,11,22,00,00,TimeSpan.FromHours(-8));
     DateTimeOffset cofetime2 =      new DateTimeOffset(2025,11,13,22,00,00,TimeSpan.FromHours(-8));
-    DateTimeOffset sgna =           new DateTimeOffset(2025,11,12,21,00,00,TimeSpan.FromHours(-5));
-    DateTimeOffset sgnaSat =        new DateTimeOffset(2025,11,15,22,00,00,TimeSpan.FromHours(-5));
     DateTimeOffset uL1 =            new DateTimeOffset(2025,11,15,16,00,00, TimeSpan.FromHours(-5)); //sat
     DateTimeOffset uL2 =            new DateTimeOffset(2025,11,16,13,00,00, TimeSpan.FromHours(-5)); //sun
 
+
+    struct BigRun{
+        TimeZoneInfo TimeZoneInfo = TimeZoneInfo.Utc;
+        String GuildName = "Default Guild";
+        String CommName = "Default Commander";
+        int Day = 0; //0 = monday
+        TimeSpan Time = new TimeSpan(0, 0, 0);
+
+        public BigRun(TimeZoneInfo timezone, String name, int d, TimeSpan t)
+        {
+            this.TimeZoneInfo = timezone;
+            this.CommName = name;
+            this.Day = d;
+            this.Time = t;
+        }
+    }
+
+    struct Guild
+    {
+        String GuildName;
+        List<BigRun> runList = [];
+
+        public Guild(string gname)
+        {
+            this.GuildName = gname;
+        }
+        public void AddRun(BigRun bigRun)
+        {
+            runList.Add(bigRun);
+        }
+    }
+
+    List<Guild> GuildList = [
+        new Guild("Convergence Corp[CC]")
+    ];
+    
+    
+    //GuildList[0].AddRun(new BigRun(TimeZoneInfo.FindSystemTimeZoneById("America/Central"), "SunMatrix", 1, new TimeSpan(0,0,0)));
+
+
+
+    [Parameter]
+    public TimeZoneInfo tzone { get; set; } = TimeZoneInfo.Utc;
+
+    
 }
 
 <script>
