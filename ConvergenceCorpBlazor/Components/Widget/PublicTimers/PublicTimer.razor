@@ -1,0 +1,139 @@
+﻿@using ConvergenceCorpBlazor.Classes.Model.Game; <!-- for GameRegion-->
+@using ConvergenceCorpBlazor.Classes.Model; <!-- for PublicTime-->
+@inject IJSRuntime JS
+
+@if (gameRegion == GameRegion.Sky || gameRegion == GameRegion.Wild)
+{
+    @if (TimerSize == "Large")
+    {
+        <h3>
+            <img src=@Assets["/images/" + @imagelinks[(int)gameRegion]] alt="@gameRegion logo" style="width:50px;" />
+            Public Convergence Times
+        </h3>
+
+        <p>
+            Public instances open every 3 hours.
+        </p>
+        @if (instanceopentime < DateTimeOffset.Now)
+        {
+            <p>
+                The Public Convergence is open <span class="time">NOW</span>!
+            </p>
+        }
+        else
+        {
+            <p>
+                Next one opens at <span class="time localtime">@instanceopentime</span> in
+                <span class="time">@countdownTime.ToString(@"%h\:mm\:ss")</span>
+            </p>
+        }
+        
+    }
+    else if (TimerSize == "Small")
+    {
+        <div class="PublicTimerContainSmall">
+            <img src=@Assets["/images/" + @imagelinks[(int)gameRegion]] alt="@gameRegion logo" style="width:50px;" />
+            @if (instanceopentime < DateTimeOffset.Now)
+            {
+
+                <div>
+                    Open <span class="time">NOW</span>!
+                </div>
+            }
+            else
+            {
+                <div>
+                    Open in <span class="time">@countdownTime.ToString(@"%h\:mm\:ss")</span>
+                </div>
+            }
+        </div>
+    }
+}
+<script>
+    function ConvertToLocal(){
+        var localtimes = document.getElementsByClassName('localtime');
+        var count = 0;
+        for(var time of localtimes){
+            let newdate = new Date(time.innerText);
+            time.innerText = newdate.toLocaleString([], {
+                hour:'numeric',
+                minute:'2-digit'
+            });
+        }
+    }
+</script>
+@if(gameRegion == GameRegion.Magic){
+    @if(TimerSize == "Large")
+    {
+        <h3>
+            <img src=@Assets["/images/" + @imagelinks[(int)gameRegion]] alt="@gameRegion logo" style="width:50px;" />
+            Public Convergence Times
+        </h3>
+        <p>The Visions of Eternity convergence is coming in <a href="/voe" class="time">Update 3</a>!</p>
+    }
+    else
+    {
+        <div class="PublicTimerContainSmall">
+            <img src=@Assets["/images/" + @imagelinks[(int)gameRegion]] alt="@gameRegion logo" style="width:50px;" />
+            <div>Coming in <a href="/voe" class="time">Update 3</a>!</div>
+        </div>
+    }
+}
+
+@code {
+    DateTimeOffset instanceopentime;
+
+    TimeSpan countdownTime { get; set; } = TimeSpan.Zero;
+
+    static List<string> imagelinks = [
+        "", //none
+        "", //tyria
+        "", //hot
+        "", //pof
+        "", //eod
+        "SotO/Secrets_of_the_Obscure_logo.png", //soto
+        "JW/Janthir_Wilds_logo.png", //jw
+        "VoE/VoE_logo_gradient_800.png" //voe
+    ];
+
+    [Parameter]
+    public String TimerSize { get; set; } = "Large";
+    [Parameter]
+    public required GameRegion gameRegion { get; set; } = GameRegion.None;
+
+    public void CheckTime()
+    {
+        countdownTime = DateTimeOffset.Now - instanceopentime;
+
+        //notify the component that it needs to update.
+        InvokeAsync(() =>
+        {
+            StateHasChanged();
+        });
+    }
+
+    //After the parameters are received, but before rendering.
+    protected override void OnInitialized()
+    {
+        instanceopentime = PublicTime.GetNextAreaTime(gameRegion);
+        CheckTime();
+        base.OnInitialized(); //idk if this is needed, but it was here by default.
+    }
+
+    //After the Component Renders
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            //setup a timer to check the time every 1 second.
+            Timer timerA = new Timer(new TimerCallback(_ =>
+            {
+                CheckTime();
+            }), null, 3000, 3000);
+
+            //Invoke the JS function "ConvertToLocal" on the client side.
+            await JS.InvokeVoidAsync("ConvertToLocal");
+        }
+    }
+        
+}
