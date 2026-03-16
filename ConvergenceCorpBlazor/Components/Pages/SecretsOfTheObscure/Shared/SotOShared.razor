@@ -1,47 +1,80 @@
-<section style="margin-top:20px;">
+<section>
     <h2 id="SharedMechs">Shared Boss Mechanics</h2>
-    <p style="text-align:center;text-indent:initial;">
-        These mechanics are the same, no matter what boss is chosen.
+    <p>
+        These mechanics are the same for every boss.
     </p>
 
     <h3 id="SharedZojja" class="zojja">Zojja</h3>
     <p>
-        During the boss phase, <span class="zojja">Zojja</span> is using her power to make the boss vulnerable.
-        She is constantly taking damage over time from the boss, that gets stronger the further it is into the fight.
-        If her health falls to 0, she will pull everyone back to the Wizard's Tower.
-        Once the boss spawns, <span class="zojja">Zojja</span> will no longer be able to receive healing from players, except for Essence.
-        Feed her the essence dropped by the boss to keep her healthy.
+        <span class="zojja">Zojja</span> is always taking damage from the boss. If her hp falls to 0 the Convergence fails.
+    </p>
+    <p>
+        Prior the boss appearing, you can heal <span class="zojja">Zojja</span> with any normal sources of healing.
+        The only way to heal <span class="zojja">Zojja</span> after the boss spawns is to give her the <span class="sotoessence">Kryptis Essence</span> that you've collected.
     </p>
 
-    <h3 id="SharedEssence" class="sotoessence">Kryptis Essence</h3>
+    <h3 id="SharedEssence" class="sotoessence"><img src="/images/SotO/Kryptis_Essence.png" style="width:32px;" />Kryptis Essence</h3>
     <p>
-        The bosses drop essence every 10% of their health and at the end of each phase.
-        DPS players should hold onto it as long as they can for a significant power boost.
-        Healers and boondps players should be feeding theirs to <span class="zojja"> Zojja</span> to keep her healthy.
-        Don't overfeed her when her HP is full, as the essence just gets wasted.
+        Kryptis Essence drops from most things in SotO convergences. 
+        Bosses will drop essence every 10% of their hp and at the end of each phase.
     </p>
-    <div style="justify-self:center;">
-        <h4>Effects of Kryptis Essence (per stack -> 25 stacks -> 50 stacks)</h4>
-        <ul>
-            <li>
-                Max HP: -1% -> -25% -> -50%
-            </li>
-            <li>
-                Concentration: 10 -> 250 -> 500
-            </li>
-            <li>
-                Power: 20 -> 500 -> 1000
-            </li>
-            <li>
-                Condition Damage: 20 -> 500 -> 1000
-            </li>
-        </ul>
-    </div>
+    <p>
+        Kryptis Essence has 2 purposes:
+    </p>
+    <ul style="list-style:decimal;margin-top:0px;">
+        <li>Healing <span class="zojja">Zojja</span></li>
+        <li>Boosting your stats</li>
+    </ul>
+    <p>
+        Healers and boonDPS should feed their essence to <span class="zojja">Zojja</span> to keep her above 0% hp.
+        Don't overfeed her when her HP is full as the essence just gets wasted.
+    </p>
+    <p>
+        DPS players should hold onto their essence for as long as possible to maximize the groups damage.
+        If you go down, a portion of your held essence will fall to the floor while the rest evaporates. Don't go down.
+    </p>
+    <table style="max-width:700px; text-align:center;">
+        <tr>
+            <th>Effects of Kryptis Essence</th>
+        </tr>
+        <tr>
+            <th>Stat</th>
+            <th>1 stack</th>
+            <th>25 stacks</th>
+            <th>50 stacks</th>
+        </tr>
+        <tr>
+            <td>Max HP</td>
+            <td>-1%</td>
+            <td>-25%</td>
+            <td>-50%</td>
+        </tr>
+        <tr>
+            <td>Concentration</td>
+            <td>10</td>
+            <td>250</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>Power</td>
+            <td>20</td>
+            <td>500</td>
+            <td>1000</td>
+        </tr>
+        <tr>
+            <td>Condition Damage</td>
+            <td>20</td>
+            <td>500</td>
+            <td>1000</td>
+        </tr>
+    </table>
 
     <h3 id="SharedPhasing">Phasing</h3>
     <p>
-        Every 25%, the boss will move to a new island.
-        Which island they go to is random, and they won't revisit an island they've already been to.
+        Every 25% of the bosses hp they will move to a new island.
+        Which island they move to is random and they won't go back to an island that they've been to already.
+    </p>
+    <p>
         The boss will always go to the <span class="sotomid">middle</span> island in the last phase.
     </p>
 </section>
