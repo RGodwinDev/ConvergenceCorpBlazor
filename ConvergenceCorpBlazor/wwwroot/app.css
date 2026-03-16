@@ -80,7 +80,7 @@ h1:focus {
     border-radius: 5px;
     background-color: rgba(139, 0, 0, 0.71);
     margin-bottom:5px;
-    padding: 5px;
+    padding: 5px 0px;
 }
 
 ul {
