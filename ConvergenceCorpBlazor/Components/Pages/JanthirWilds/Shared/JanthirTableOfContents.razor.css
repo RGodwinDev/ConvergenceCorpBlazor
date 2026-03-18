@@ -6,29 +6,3 @@
 li {
     margin: 0px;
 }
-
-#jwtoc {
-    font-size: 18px;
-    width: 100%;
-    max-width: 800px;
-    padding: 10px 0px 10px 0px;
-    background-color: rgb(18,18,18);
-    justify-self: center;
-}
-#JWToCListContain{
-    display:flex;
-    flex-direction: column;
-    flex-wrap:wrap;
-}
-#JWToCListPreContainer{
-    display: flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-    justify-content: space-around;
-}
-#JWToCBossesContainer{
-    display: flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-    justify-content: space-around;
-}

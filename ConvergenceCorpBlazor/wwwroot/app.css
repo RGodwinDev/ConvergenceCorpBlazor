@@ -72,8 +72,9 @@ h1:focus {
     border: 1px solid yellow;
     border-radius: 5px;
     margin-bottom: 5px;
-    padding: 5px;
+    padding: 5px 0px;
     background-color: rgba(157, 157, 0, 0.71);
+    width:fit-content;
 }
 .warning {
     border: 1px solid red;
@@ -81,6 +82,7 @@ h1:focus {
     background-color: rgba(139, 0, 0, 0.71);
     margin-bottom:5px;
     padding: 5px 0px;
+    width:fit-content;
 }
 
 ul {
@@ -308,4 +310,41 @@ section {
     display:flex;
     flex-direction:row;
     align-items:center;
+}
+
+.JWWarclawDoors {
+    color:rgb(34,177,76);
+}
+
+.JWBaseCamp {
+    color: rgb(171,205,50);
+}
+
+.JWDolyak {
+    color: rgb(255,215,0);
+}
+
+.JWNorth {
+    color:rgb();
+}
+.JWWest{
+    color:rgb(237,28,36);
+}
+.JWEast{
+    color:rgb();
+}
+.JWSE{
+    color:rgb(255,127,39);
+}
+.JWCenter{
+    color:rgb(0,162,232);
+}
+.JWSingersCourt{
+    color:rgb(0,242,255);
+}
+.JWShriekersCourt{
+    color:rgb(255,174,61);
+}
+.JWBringersCourt{
+    color:rgb(244,255,60);
 }

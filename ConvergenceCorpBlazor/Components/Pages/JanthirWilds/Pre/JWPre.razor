@@ -8,28 +8,31 @@
         The Convergence Portal is on the east side of the Bonfire Lodge (blue swirl on minimap).
     </p>
     <div id="jwentrance">
-    <figure style="max-width:600px;">
-        <image src="/images/JW/Shared/Lowland.png" alt="convergenceentrance" style="width:100%;max-width:600px;" />
-        <figcaption>JW Convergence Entrance</figcaption>
-    </figure>
-    <figure style="max-width:300px;">
-        <image src="/images/JW/Shared/LowlandWaypoint.png" alt="convergenceentrancemini" style="width:100%;" />
-        <figcaption>East side of the building</figcaption>
-    </figure>
+        <figure style="max-width:600px;">
+            <img src=@Assets["/images/JW/Shared/Lowland.png"] alt="convergenceentrance" style="width:100%;" />
+            <figcaption>JW Convergence Entrance</figcaption>
+        </figure>
+        <figure style="max-width:300px;">
+            <img src=@Assets["/images/JW/Shared/LowlandWaypoint.png"] alt="convergenceentrancemini" style="width:100%;" />
+            <figcaption>East side of the building</figcaption>
+        </figure>
     </div>
+    <h3>Public Convergences</h3>
     <p>
         Public Convergences can be entered for free at designated times. Public Convergences are always normal mode.
+        The public boss rotates each week.
     </p>
     <PublicTimer gameRegion="Classes.Model.Game.GameRegion.Wild" TimerSize="Large" />
+    <h3>Private Convergences</h3>
     <p>
         Private Convergences can be opened whenever you want.
-        To open one, it costs an <a href="https://wiki.guildwars2.com/wiki/Unstable_Rift_Motivation"><image src="https://render.guildwars2.com/file/56573075759450DD5112F1B4C7366AD85470DC2C/3187526.png" style="width:40px;"/>Unstable Rift Motivation</a>.
+        Opening costs an <a href="https://wiki.guildwars2.com/wiki/Unstable_Rift_Motivation" target="_blank"><image src="https://render.guildwars2.com/file/56573075759450DD5112F1B4C7366AD85470DC2C/3187526.png" style="width:20px;"/>Unstable Rift Motivation</a>.
         Private Convergences can choose between normal or challenge mode.
-        It's recommended you bring a full 50 man squad with you.
+        A full 50 man squad is recommended.
     </p>
-    <h3 id="Itemstobring">Items you should bring</h3>
+    <h2 id="Itemstobring">Items you should bring</h2>
     <p>
-        The Titans in Convergences are vulnerable to Demon Slaying items. 
+        The Titans in Janthir Wilds Convergences are vulnerable to Demon Slaying items. 
         Using the Force Sigil with the Demon Slaying Sigil and Potion gives you +25% damage for the entire fight. 
         The typical power build with Force and Impact Sigils with a Sharpening Stone comes in around 10-12%, 17-19% when the foe is stunned.
     </p>
@@ -85,17 +88,17 @@
         </li>
     </ul>
     
-    <h3 id="LowlandExpertise">
-        <image src="images/JW/Pre/Lowland_Expertise.png" alt="lowland expertise icon" style="width:40px;"/>Lowland Expertise
-    </h3>
+    <h2 id="LowlandExpertise">
+        <img src=@Assets["images/JW/Pre/Lowland_Expertise.png"] alt="lowland expertise icon" style="width:40px;"/>Lowland Expertise
+    </h2>
     
     <p>
-        Lowland Expertise is a buff you can purchase from each of the <image src="https://render.guildwars2.com/file/B3DEEC72BBEF0C6FC6FEF835A0E275FCB1151BB7/102439.png" alt="heart" style="width:20px;"/>hearts in Janthir Wilds.
+        Lowland Expertise is a buff you can purchase from each of the <image src="https://render.guildwars2.com/file/B3DEEC72BBEF0C6FC6FEF835A0E275FCB1151BB7/102439.png" alt="heart" style="width:20px;"/> hearts in Janthir Wilds.
         This buff is per character, so you'll need to do this for each character you plan to Converge with.
-        Each stack of Lowland Expertise gives a different buff:
     </p>
+    <p>Each stack of Lowland Expertise gives a different buff:</p>
     <ol>
-        <li>+10%  <image src="/icons/15px-Experience.png" alt="exp" style="width:15px;" /> Experience</li>
+        <li>+10%  <img src=@Assets["/icons/15px-Experience.png"] alt="exp" style="width:15px;" /> Experience</li>
         <li>+10% <image src="https://render.guildwars2.com/file/94953FA23D3E0D23559624015DFEA4CFAA07F0E5/155026.png" alt="karma" style="width:20px;"/> Karma </li>
         <li>+10% <image src="https://render.guildwars2.com/file/98457F504BA2FAC8457F532C4B30EDC23929ACF9/619316.png" alt="gold" style="width:20px;"/> Gold </li>
         <li>Gain additional map material from Kodan Caches</li>
@@ -107,12 +110,14 @@
         As far as Convergences go, we care only about the 5th and 7th stacks.
     </p>
     <p>
-        You can farm all 7 stacks in a single day. Each of the <image src="https://render.guildwars2.com/file/B3DEEC72BBEF0C6FC6FEF835A0E275FCB1151BB7/102439.png" alt="heart" style="width:20px;"/>hearts in Janthir Wilds sells it after completing that <image src="https://render.guildwars2.com/file/B3DEEC72BBEF0C6FC6FEF835A0E275FCB1151BB7/102439.png" alt="heart" style="width:20px;"/>heart.
+        You can farm all 7 stacks in a single day. Each of the <image src="https://render.guildwars2.com/file/B3DEEC72BBEF0C6FC6FEF835A0E275FCB1151BB7/102439.png" alt="heart" style="width:20px;"/>hearts in Janthir Wilds sells it after completing it every day.
     </p>
     <img id="LEPurchase" src="@Assets["/images/JW/Pre/LEPurchase.png"]" />
     <p>
-        Each time you buy <image src="images/JW/Pre/Lowland_Expertise.png" alt="lowland expertise icon" style="width:20px;"/>Lowland Expertise, it adds a stack. Additional purchases won't increase it past 7 stacks, but will increase the timer before it expires by 4 hours. This timer also caps at 24 hours.
+        Each time you buy <img src=@Assets["images/JW/Pre/Lowland_Expertise.png"] alt="lowland expertise icon" style="width:20px;"/>Lowland Expertise, it adds a stack. Additional purchases won't increase it past 7 stacks, but will increase the timer before it expires by 4 hours. This timer also caps at 24 hours.
+    </p>
+    <p>
         You should only need to do some <image src="https://render.guildwars2.com/file/B3DEEC72BBEF0C6FC6FEF835A0E275FCB1151BB7/102439.png" alt="heart" style="width:20px;"/>hearts every couple days to keep the buff up, as it doesn't count down unless you're logged in on that character. 
     </p>
-    <p class="caution">If you let it expire, you will need to redo all 7 stacks of <image src="images/JW/Pre/Lowland_Expertise.png" alt="lowland expertise icon" style="width:20px;"/>Lowland Expertise.</p>
+    <p class="caution">If you let it expire, you will need to redo all 7 stacks of <img src=@Assets["images/JW/Pre/Lowland_Expertise.png"] alt="lowland expertise icon" style="width:20px;"/>Lowland Expertise.</p>
 </section>
