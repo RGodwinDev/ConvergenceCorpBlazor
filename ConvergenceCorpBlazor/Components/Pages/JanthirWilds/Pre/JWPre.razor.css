@@ -1,7 +1,6 @@
 ﻿#itemstobringul {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    display: grid;
+    grid:auto / auto auto auto;
     justify-content: center;
 }
 
@@ -18,15 +17,26 @@ ol {
     align-items:center;
     justify-content:space-evenly;
 }
+
+#LEPurchase {
+    display: block;
+    justify-self: center;
+    width: 100%;
+    max-width: 486px;
+}
+
+@media(max-width:900px){
+    #itemstobringul{
+        grid:auto / auto auto;
+    }
+}
 @media(max-width:800px){
     #jwentrance{
         flex-direction:column;
     }
 }
-
-#LEPurchase {
-    display:block;
-    justify-self:center;
-    width:100%;
-    max-width:486px;
+@media(max-width:600px){
+    #itemstobringul{
+        grid:auto / auto;
+    }
 }
