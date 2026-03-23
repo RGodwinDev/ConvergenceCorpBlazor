@@ -15,71 +15,77 @@
     <meta property="og:description" content="Convergence Schedule, find a group converging soon&trade;"/>
     <meta property="og:site_name" content="Convergence Corp!"/>
 </HeadContent>
-<h1>Convergence Groups!</h1>
-<p>
-    Run a group? Message me on <DiscordLink disctype=1 /> or ingame at SunMatrix.4168 with what time(s) you run!
-</p>
+<article>
+    <section>
+        <h1>Convergence Groups!</h1>
+        <p>
+            Run a group? Message me on <DiscordLink disctype=1 /> or ingame at SunMatrix.4168 with what time(s) you run!
+        </p>
 
-<p class="caution">
-    Disclaimer: This list of groups is what I've gathered myself.<br>
-    The groups shown here might decide to run at different times or days without notice, or even not at all.<br>
-    I'm not on EU/CN. Any groups on there are just what I've been told.
-</p>
-<p><CurrentTime /></p>
-<p>
-    <a href="/schedulev2">Preview the new Schedule! (WIP)</a>
-</p>
-<div class="tab">
-    <button type="button" class="tablinks active" onclick="openTab(event, 'NA')" id ="defaultOpen">NA</button> <!-- id defaultOpen is deprecated -->
-    <button type="button" class="tablinks" onclick="openTab(event, 'EU')">EU</button>
-    <button type="button" class="tablinks" onclick="openTab(event, 'CN')">CN</button>
-</div>
+        <p class="caution">
+            Disclaimer: This list of groups is what I've gathered myself.<br>
+            The groups shown here might decide to run at different times or days without notice, or even not at all.<br>
+            I'm not on EU/CN. Any groups on there are just what I've been told.
+        </p>
+        <p><CurrentTime /></p>
+        <p>
+            <a href="/schedulev2">Preview the new Schedule! (WIP)</a>
+        </p>
+    </section>
+    <section>
+        <div class="tab">
+            <button type="button" class="tablinks active" onclick="openTab(event, 'NA')" id ="defaultOpen">NA</button> <!-- id defaultOpen is deprecated -->
+            <button type="button" class="tablinks" onclick="openTab(event, 'EU')">EU</button>
+            <button type="button" class="tablinks" onclick="openTab(event, 'CN')">CN</button>
+        </div>
 
-<!--NA is the default, if you wanna change default, just change it to display:none, and another to display:block -->
-<div id="NA" class="tabcontent" style="display:block;">
-    <ScheduleNA tzone=tziSelected/>
-</div>
+        <!--NA is the default, if you wanna change default, just change it to display:none, and another to display:block -->
+        <div id="NA" class="tabcontent" style="display:block;">
+            <ScheduleNA tzone=tziSelected/>
+        </div>
 
-<div id="EU" class="tabcontent" style="display:none;">
-    <ScheduleEU />
-</div>
+        <div id="EU" class="tabcontent" style="display:none;">
+            <ScheduleEU />
+        </div>
 
-<div id="CN" class="tabcontent" style="display:none;">
-   <ScheduleCN />
-</div>
+        <div id="CN" class="tabcontent" style="display:none;">
+           <ScheduleCN />
+        </div>
+    </section>
+</article>
 
 <script>
 
-function openTab(evt, tabName){
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; ++i){
-        tabcontent[i].style.display = "none";
+    function openTab(evt, tabName){
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; ++i){
+            tabcontent[i].style.display = "none";
+        }
+
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for(i = 0; i < tablinks.length; ++i){
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        document.getElementById(tabName).style.display = "flex";
+        evt.currentTarget.className += " active";
     }
 
-
-    tablinks = document.getElementsByClassName("tablinks");
-    for(i = 0; i < tablinks.length; ++i){
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    function updateDateTime(){
+        const now = new Date();
+        var curtime = document.getElementById("CurTime");
+        const currentDateTime = now.toLocaleString([], {
+            weekday:'long',
+            hour:'numeric',
+            minute:'2-digit',
+            timeZoneName:'short'
+        });
+        curtime.innerText = currentDateTime;
     }
-
-    document.getElementById(tabName).style.display = "flex";
-    evt.currentTarget.className += " active";
-}
-
-function updateDateTime(){
-    const now = new Date();
-    var curtime = document.getElementById("CurTime");
-    const currentDateTime = now.toLocaleString([], {
-        weekday:'long',
-        hour:'numeric',
-        minute:'2-digit',
-        timeZoneName:'short'
-    });
-    curtime.innerText = currentDateTime;
-}
-updateDateTime();
-setInterval(updateDateTime, 10000);
+    updateDateTime();
+    setInterval(updateDateTime, 10000);
 </script>
 
 TimeZone:

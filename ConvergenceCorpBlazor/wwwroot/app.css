@@ -1,6 +1,20 @@
 html, body {
     font-family: 'Montserrat','Roboto', Helvetica, Arial, sans-serif;
-    margin:0px;
+    margin: 0px;
+    background: black;
+    background-image: url("/favicon/apple-touch-icon.png");
+    background-repeat: repeat;
+    animation: moveBackground 60s infinite normal;
+    animation-timing-function: linear;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position:0px 0px;
+    }
+    100% {
+        background-position:180px 180px;
+    }
 }
 
 a:link {
@@ -13,6 +27,13 @@ a:visited {
 }
 a:hover{
     filter:brightness(.6);
+}
+
+article{
+    background-color:rgba(0,0,0,.9);
+    padding:10px;
+    width:100%;
+    max-width:1200px;
 }
 
 .btn-primary {
@@ -273,31 +294,34 @@ option:hover{
 }
 
 .tableofcontents {
-    font-size: 18px;
+    font-size: 14px;
     width: 100%;
-    max-width: 800px;
-    padding: 10px 0px 10px 0px;
+    max-width: fit-content;
+    padding: 10px;
     background-color: rgb(18,18,18);
+    border-radius:10px;
 }
-
+.ToCTitle{
+    font-size:25px;
+    margin:1rem;
+}
 .ToCListContain {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
 }
-
-.ToCListPreContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.ToCHeaders{
+    margin-left:.5rem;
+    font-size:18px;
 }
-
-.ToCBossesContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.ToCPhase {
+    width: fit-content;
+    padding: 0px 10px;
+    border-radius: 5px;
+    margin-left:2rem;
+}
+.ToCPhaseHeader{
+    font-size:16px;
+}
+.ToCPhasePart {
+    margin-left: 2rem;
 }
 
 section {
@@ -325,19 +349,19 @@ section {
 }
 
 .JWNorth {
-    color:rgb();
+    color: rgb(255, 238, 0);
 }
 .JWWest{
-    color:rgb(237,28,36);
+    color:rgb(255,00,00);
 }
-.JWEast{
-    color:rgb();
+.JWEast {
+    color: rgb(255, 0, 225);
 }
 .JWSE{
-    color:rgb(255,127,39);
+    color:rgb(255,136,0);
 }
-.JWCenter{
-    color:rgb(0,162,232);
+.JWCenter {
+    color: rgb(0, 123, 255);
 }
 .JWSingersCourt{
     color:rgb(0,242,255);
