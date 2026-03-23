@@ -52,55 +52,46 @@
         <img src=@Assets["/images/JW/Thumper/ThumperRoutesv2.png"] alt="Thumper Splits" style="width:100%;" />
         <figcaption>Shortest paths to each Thumper from the <span class="JWBaseCamp">Base Camp</span></figcaption>
     </figure>
-    <h3 id="sideevents">Side Events</h3>
+    <h2 id="sideevents">Side Events</h2>
     <p>
-        Side events spawn during the Thumper Phase. 
-        The first event spawns at 26:30. 
-        The second event spawns at 22:30.
-        If the Sapper spawns first then the Leader will spawn second and vice versa.
+        Side events spawn during the Thumper phase.
+        The first event will spawn around <span class="time">26:30</span>, and the second around <span class="time">22:30</span>.
+        If done correctly, the Thumper phase ends before the second event.
     </p>
-    <h4>Titanspawn Sapper</h4>
+    <p>
+        Completing a side event will spawn projections of Distant Memory around the map where you can turn in essence.
+    </p>
+    <!--todo: image of distant memory projection -->
+    <p>There are 2 possible side events: Titanspawn Sapper and Titanspawn Leader</p>
+
+    <h3>Titanspawn Sapper</h3>
     <p>
         The Sapper steals essence from the <span class="JWBaseCamp">Base Camp</span> thumper.
-        Use your warclaw's <img src=@Assets["/images/JW/Shared/Sniffa.png"] alt="Sniffa" style="width:25px;"/>Sniff skill to reveal the Sappers location on your minimap.
-        Break the sappers defiance bar with your warclaw's 3 skill to make it vulnerable to damage.
+        Use your warclaw's <img src=@Assets["/images/JW/Shared/Sniffa.png"] alt="Sniffa" style="width:20px;"/> Sniff skill to reveal the Sappers location on your minimap.
+        Break the Sapper's defiance bar with your Warclaw's Chain Pull (3) skill to make it vulnerable to damage.
     </p>
     <p>
-        Once defeated, the Sapper will drop the essence that it stole. 
-        Distant Memory will create several projections around the map where you can turn in essence.
+        Once defeated, the Sapper will drop the essence that it stole.
     </p>
     <p>
         If the Sapper succeeds in walking all the way to one of the 3 courts, it will disappear, taking the stolen essence with it.
     </p>
+    <!--todo: image of sapper-->
            
-            
-            
-    <h4>Titanspawn Leaders</h4>
-    <p>A Titanspawn Leader will spawn in one of the courts and walk toward the <span class="JWBaseCamp">Base Camp.</span></p>
+    <h3>Titanspawn Leader</h3>
+    <p>
+        A Titanspawn Leader will spawn in one of the 3 courts and walk toward the <span class="JWBaseCamp">Base Camp</span>.
+    </p>
     <figure style="max-width:300px;">
-        <image src=@Assets["/images/JW/Thumper/SapperEssence.png"] alt="Leader essence" style="width:100%;" />
+        <img src=@Assets["/images/JW/Thumper/SapperEssence.png"] alt="Leader essence" style="width:100%;" />
         <figcaption>Titanspawn Leaders drop a full bar of essence for everyone around.</figcaption>
     </figure>
-    <h5 class="JWSingersCourt">Stormsinger's Court</h5>
-    <p>
-        Walks south to the <span class="JWWest">West Thumper</span>.
-        Continues on to the <span class="JWBaseCamp">Base Camp</span>.
-    </p>
-    <h5 class="JWShriekersCourt">Steamshrieker's Court</h5>
-    <p>
-        Walks west through the tunnel to the <span class="JWCenter">Center Thumper</span>.
-        Continues on to the <span class="JWBaseCamp">Base Camp</span>.
-    </p>
-    <h5 class="JWBringersCourt">Blightbringer's Court</h5>
-    <p>
-        Walks west to the <span class="JWSE">Southeast Thumper</span>.
-        Continues on to the <span class="JWBaseCamp">Base Camp</span>.
-    </p>
     <p>
         Once defeated, the Titanspawn Leader will drop a full bar of essence for every person.
         As many people as possible need to collect this essence for maximum efficiency.
         Distant Memory will also create several projections around the map where you can turn in essence.
     </p>
+    <!-- todo: redo this image not as an svg, its cursed. -->
     <div id="SapperLeaderPathsWrapper">
         <svg id="SapperLeaderPathsSVG" viewBox="0 0 200 200"> <!-- defines the box. 0,0 to 200,200  -->
             <image width="100%" height="100%" href=@Assets["/images/JW/BalriorWithTunnelsBASEMAP.png"] />
@@ -141,13 +132,14 @@
     <!--<image src="" alt="Titanspawn Sapper" style="width:100%;max-width:500px;"></image><br>-->
     
 
-    <h3 id="weather">Weather</h3>
+    <h2 id="weather">Weather</h2>
     <p>
         When the Tectonic Thumper Synchronization bar is 30% full, weather conditions will worsen around Mt. Balrior.
+
     </p>
     <ul id="weatherlist">
         <li>
-            <h4>Sandstorm</h4>
+            <h3>Sandstorm</h3>
             <p>
                 Reduced Visibility.<br/>
                 <span style="color:rgb(255,201,14);">Sand Swirls</span> - Knock up and blind.
@@ -158,7 +150,7 @@
             </figure>
         </li>
         <li>
-            <h4>Snowstorm</h4>
+            <h3>Snowstorm</h3>
             <p>
                 <span style="color:rgb(0,162,232);">Blizzard</span> - Ice formations fall on the ground, damaging and chilling.<br/>
                 <span style="color:rgb(153,217,234);">Snowballs</span> roll down the mountain.
@@ -168,13 +160,13 @@
             </figure>
         </li>
         <li>
-            <h4>Thunderstorm</h4>
+            <h3>Thunderstorm</h3>
             <p>
                 Lightning Strikes - Lightning hits all over the mountain.
             </p>
         </li>
         <li>
-            <h4>Volcano</h4>
+            <h3>Volcano</h3>
             <span style="color:rgb(232,99,47)"></span>Rain of Fire - Meteors and Shockwaves.<br>
             <figure>
                 <img src=@Assets["/images/JW/Thumper/MeteorWarning.png"] alt="Meteor predict" style="width:100%;max-width:600px;"/>
@@ -191,7 +183,7 @@
             </figure>
         </li>
     </ul>
-    <h3 id="misttides">Mist Tides</h3>
+    <h2 id="misttides">Mist Tides</h2>
     <p>
         When the Tectonic Thumper Synchonization bar reaches 70%, the Mists Tide rolls in.
         Which Mist Tide depends on what the boss is.
@@ -209,10 +201,12 @@
         </li>
         <li>
             Ura - Titanspawn Gysers
+            <!--
             <figure>
                 <img src=@Assets["/images/JW/Thumper/Gyser.png"] alt="Titanspawn Gyser" style="width:100%;max-width:600px;"/>
                 <figcaption>Titanspawn Gyser</figcaption>
             </figure>
+            -->
         </li>
     </ul>
 </section>

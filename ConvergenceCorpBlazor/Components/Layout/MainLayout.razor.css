@@ -1,12 +1,13 @@
 main {
     font-family: 'Roboto', sans-serif;
     flex: 1;
-    color:white;
-    background-color: black;
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+
 #blazor-error-ui {
     color-scheme: light only;
     background: lightyellow;

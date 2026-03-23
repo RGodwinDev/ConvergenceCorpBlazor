@@ -12,33 +12,34 @@
     <meta property="og:description" content="Tracking the best Convergence CM times!"/>
     <meta property="og:site_name" content="Convergence Corp!"/>    
 </HeadContent>
-<section id="recordssection">
-    <h1 style="align-self:center;">Records!</h1>
-    <div id="recordsBlurb">
-        Tracking the best times for each Convergence CM. If you achieve a new #1, send me a message in <DiscordLink disctype=1/> with proof and I'll update it :)
-    </div>
+<article>
+    <section id="recordssection">
+        <h1>Records!</h1>
+        <div id="recordsBlurb">
+            Tracking the best times for each Convergence CM. If you achieve a new #1, send me a message in <DiscordLink disctype=1/> with proof and I'll update it :)
+        </div>
 
-    <div>
-            Season:
-            <InputSelect @bind-Value=selectSeason>
-                <option value="@Season.None">All Time</option>
-                <option value="@Season.Feb2026">February 2026 - Present</option>
-            </InputSelect>
-            Region:
-            <InputSelect @bind-Value=selectRegion>
-                <option value=@Region.None>ALL</option>
-                <option value=@Region.NA>NA</option>
-                <option value=@Region.EU>EU</option>
-                <option value=@Region.CN>CN</option>
-            </InputSelect>
-    </div>
-    @if(selectRegion == Region.CN)
-    {
-        <div class="caution" style="justify-self:center">Note: The Chinese version of Guild Wars 2 has different balance than the NA/EU servers.</div>
-    }
-    <RecordsTable region=@selectRegion season=@selectSeason />
-</section>
-
+        <div>
+                Season:
+                <InputSelect @bind-Value=selectSeason>
+                    <option value="@Season.None">All Time</option>
+                    <option value="@Season.Feb2026">February 2026 - Present</option>
+                </InputSelect>
+                Region:
+                <InputSelect @bind-Value=selectRegion>
+                    <option value=@Region.None>ALL</option>
+                    <option value=@Region.NA>NA</option>
+                    <option value=@Region.EU>EU</option>
+                    <option value=@Region.CN>CN</option>
+                </InputSelect>
+        </div>
+        @if(selectRegion == Region.CN)
+        {
+            <div class="caution">Note: The Chinese version of Guild Wars 2 has different balance than the NA/EU servers.</div>
+        }
+        <RecordsTable region=@selectRegion season=@selectSeason />
+    </section>
+</article>
 @code{
     Region selectRegion = Region.None;
     Season selectSeason = Season.None;
