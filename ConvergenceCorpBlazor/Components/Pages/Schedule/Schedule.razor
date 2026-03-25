@@ -31,6 +31,14 @@
         <p>
             <a href="/schedulev2">Preview the new Schedule! (WIP)</a>
         </p>
+        
+        TimeZone: (doesn't do anything yet)
+        <InputSelect id="timezoneSelect" @bind-Value=selectedTimezone @bind-Value:after="OnTZISelectChanged">
+            @foreach (TimeZoneInfo timeZone in tzilist)
+            {
+                <option value=@timeZone.Id>@timeZone.DisplayName</option>
+            }
+        </InputSelect>
     </section>
     <section>
         <div class="tab">
@@ -88,28 +96,18 @@
     setInterval(updateDateTime, 10000);
 </script>
 
-TimeZone:
-<InputSelect id="timezoneSelect" @bind-Value=selectedTimezone @bind-Value:after="OnTZISelectChanged">
-    @foreach (TimeZoneInfo timeZone in tzilist)
-    {
-        <option value=@timeZone.Id>@timeZone.DisplayName</option>
-    }
-</InputSelect>
 
-<!-- convert to timezone and add daylight savings -->
-@dtoA.ToOffset(TimeZoneInfo.FindSystemTimeZoneById(selectedTimezone).BaseUtcOffset 
-+new TimeSpan(Convert.ToInt32(TimeZoneInfo.FindSystemTimeZoneById(selectedTimezone).IsDaylightSavingTime(DateTime.Now)), 0,0));
-@dtoA
-<div>
-    time now: @DateTime.Now
-</div>
-<div>
-    daylight: @Convert.ToInt32(TimeZoneInfo.FindSystemTimeZoneById(selectedTimezone).IsDaylightSavingTime(DateTime.Now))
-</div>
-
-@tziSelected.BaseUtcOffset;
 <script>
     window.setFirstTimeZone = () => {
+        var timeZones = Intl.supportedValuesOf("timeZone");
+        timeZones.forEach((tz) => {
+            console.log(tz);
+            
+        });
+
+
+
+
         var timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
         console.log("TimeZone: " + timeZone); // Example: "America/Anchorage"
@@ -123,7 +121,6 @@ TimeZone:
     ReadOnlyCollection<TimeZoneInfo> tzilist = TimeZoneInfo.GetSystemTimeZones();
     string selectedTimezone = TimeZoneInfo.Utc.Id;
     TimeZoneInfo tziSelected = TimeZoneInfo.Utc;
-    DateTimeOffset dtoA = new DateTimeOffset(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 20, 0, 0, new TimeSpan(-6, 0, 0));
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
