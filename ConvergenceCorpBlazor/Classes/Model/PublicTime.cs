@@ -69,7 +69,7 @@ public class PublicTime
                     publicTimes[i].Seconds, 
                     TimeSpan.Zero
                     );
-
+            //used for overflow, if the next time is over 24 hours.
             pub = pub.AddDays(publicTimes[i].Days);
 
             if (pub <= nextTime && pub >= DateTimeOffset.UtcNow.AddMinutes(-15))
@@ -77,7 +77,6 @@ public class PublicTime
                 nextTime = pub;
             }
         }
-
         return nextTime;
     }
 }

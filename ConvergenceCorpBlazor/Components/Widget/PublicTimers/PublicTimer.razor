@@ -14,45 +14,39 @@
         <p>
             Public instances open every 3 hours.
         </p>
-        @if (instanceopentime < DateTimeOffset.Now)
-        {
-            <p>
-                The Public Convergence is open <span class="time">NOW</span>!
-            </p>
-        }
-        else
-        {
-            <p>
-                Next one opens at <span class="time localtime">@instanceopentime</span> in
-                <span class="time">@countdownTime.ToString(@"%h\:mm\:ss")</span>
-            </p>
-        }
-        
+        <p>
+            Next Public opens at <span class="time localtime">@instanceopentime</span> in
+            <span id="@(gameRegion)Timer" class="time"></span>
+        </p>
     }
     else if (TimerSize == "Small")
     {
         <div class="PublicTimerContainSmall">
             <img src=@Assets["/images/" + @imagelinks[(int)gameRegion]] alt="@gameRegion logo" style="width:50px;" />
-            @if (instanceopentime < DateTimeOffset.Now)
-            {
-
                 <div>
-                    Open <span class="time">NOW</span>!
+                    Open in <span id="@(gameRegion)Timer" class="time"></span>
                 </div>
-            }
-            else
-            {
-                <div>
-                    Open in <span class="time">@countdownTime.ToString(@"%h\:mm\:ss")</span>
-                </div>
-            }
         </div>
     }
 }
 <script>
+    var openTime@(gameRegion);
+
+    function SetCountdownTime@(gameRegion)(){
+        openTime@(gameRegion) = 
+        new Date(
+            Date.UTC(
+                @(instanceopentime.Year),
+                @(instanceopentime.Month-1),  //months are 0 based for Date.UTC, why????
+                @(instanceopentime.Day), 
+                @(instanceopentime.Hour), 
+                @(instanceopentime.Minute), 
+                @(instanceopentime.Second)
+            ));
+    }
+
     function ConvertToLocal(){
         var localtimes = document.getElementsByClassName('localtime');
-        var count = 0;
         for(var time of localtimes){
             let newdate = new Date(time.innerText);
             time.innerText = newdate.toLocaleString([], {
@@ -61,7 +55,26 @@
             });
         }
     }
+
+    var x = setInterval(function(){
+        var distance = openTime@(gameRegion).getTime() - Date.now();
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var second = Math.floor((distance % (1000*60)) / 1000);
+        
+        var t = document.getElementById("@(gameRegion)Timer");
+        if(distance < 0){
+            clearInterval(x);
+            t.innerHTML = "NOW";
+            return;
+        }
+
+        t.innerHTML = hours.toString().padStart(2,'0') + ":" + minutes.toString().padStart(2,'0') + ":" + second.toString().padStart(2,'0');
+    }, 1000);
+
 </script>
+
+<!-- VoE box, this will get erased when the VoE converge comes out. -->
 @if(gameRegion == GameRegion.Magic){
     @if(TimerSize == "Large")
     {
@@ -79,11 +92,10 @@
         </div>
     }
 }
+<!-- End of VoE box -->
 
 @code {
-    DateTimeOffset instanceopentime;
-
-    TimeSpan countdownTime { get; set; } = TimeSpan.Zero;
+    DateTimeOffset instanceopentime = DateTimeOffset.UtcNow + new TimeSpan(4, 0, 0);
 
     static List<string> imagelinks = [
         "", //none
@@ -101,22 +113,11 @@
     [Parameter]
     public required GameRegion gameRegion { get; set; } = GameRegion.None;
 
-    public void CheckTime()
-    {
-        countdownTime = DateTimeOffset.Now - instanceopentime;
-
-        //notify the component that it needs to update.
-        InvokeAsync(() =>
-        {
-            StateHasChanged();
-        });
-    }
-
     //After the parameters are received, but before rendering.
     protected override void OnInitialized()
     {
+        //get what time the instance opens for the region
         instanceopentime = PublicTime.GetNextAreaTime(gameRegion);
-        CheckTime();
         base.OnInitialized(); //idk if this is needed, but it was here by default.
     }
 
@@ -125,15 +126,11 @@
     {
         if (firstRender)
         {
-            //setup a timer to check the time every 1 second.
-            Timer timerA = new Timer(new TimerCallback(_ =>
-            {
-                CheckTime();
-            }), null, 3000, 3000);
+            //Invoke SetCountdownTime
+            await JS.InvokeVoidAsync("SetCountdownTime"+gameRegion);
 
             //Invoke the JS function "ConvertToLocal" on the client side.
             await JS.InvokeVoidAsync("ConvertToLocal");
         }
     }
-        
 }
