@@ -1,0 +1,67 @@
+﻿@using ConvergenceCorpBlazor.Classes.Model;
+@using ConvergenceCorpBlazor.Classes.Model.Game;
+<section>
+
+    <h2>@boss.Name's skills!</h2>
+    <div class="skill-box">
+        <div class="skill-list-contain">
+            @foreach(Skill skill in boss.SkillList)
+            {
+                <button class="skill-list-button" @onclick="() => SetSelectedSkill(skill.ID)">@skill.Name</button>
+            }
+        </div>
+        <!-- the skill selected in the skill list should show up in the skill area. -->
+        <div class="skill-details">
+            <h3>@selectedSkill.Name</h3>
+            <div class="video-container">
+                <iframe 
+                    width="560" 
+                    height="315"
+                    src=@("https://youtube.com/embed/" + Assets[selectedSkill.YTLink] + "?playlist=" + Assets[selectedSkill.YTLink] + "&loop=1&controls=0&mute=1&autoplay=1")
+                    frameborder="0"
+                    allow="accelerometer;encrypted-media;gyroscope;web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+
+            <pre class="skill-details-textbox">
+                @selectedSkill.Description
+            </pre>
+        </div>
+    </div>
+</section>
+
+
+
+@code {
+    [Parameter]
+    public Bosses bossID { get; set; } = Bosses.Umbriel;
+    Boss boss = null!;
+    Skill selectedSkill = null!;
+    String selectedSkillID = "";
+    protected override void OnInitialized()
+    {
+        boss = Boss.getBoss(bossID);
+        selectedSkill = boss.SkillList[0];
+        selectedSkillID = selectedSkill.ID;
+    }
+
+    private void SetSelectedSkill(string skillid)
+    {
+        Skill? newskill = boss.SkillList.Find(s => s.ID == skillid);
+        if (newskill == null)
+        {
+            selectedSkill = new Skill("404", "Skill not found.", "<span class=\"caution\">The ID of the selected skill is invalid, please select another.</span>", "");
+            return;
+        }
+        selectedSkill = newskill;
+        selectedSkillID = selectedSkill.ID;
+    }
+
+    RenderFragment StringToHtml(string htmlString)
+    {
+        return new RenderFragment(b => b.AddMarkupContent(0, htmlString));
+    }
+}
