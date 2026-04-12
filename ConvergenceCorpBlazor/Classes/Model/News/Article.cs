@@ -13,11 +13,8 @@
     {
         //add any functions for articles here.
         public static List<Article> Articles = [
-            new Article(1,"Most Edible Bunnies!", "/images/news/ediblebunny.jpeg",DateTimeOffset.UtcNow,"CatMatrix", 
-                "Bunnies taste of...","/News/bunnys" , ["bunnys", "animals", "recipes"]),
-            new Article(2,"Cats are EVIL!", "/images/news/evilcat.jpg", DateTimeOffset.UtcNow, "BunMatrix", 
-                "Cats see us as...", "/News/cats", ["cats", "animals", "conspiracy"])
-        ];
-
+            new Article(1,"April 14th patch preview!", "/images/news/SuperAdventureLogo.png", new DateTimeOffset(2026,4,12,15,00,00,new TimeSpan(-5,0,0)), "SunMatrix",
+                "Balance! SAB! MORE!","/News/april-2026-patch-preview",["patch", "news"])
+            ];
     }
 }
