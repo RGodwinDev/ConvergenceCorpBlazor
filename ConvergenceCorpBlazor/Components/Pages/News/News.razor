@@ -1,0 +1,41 @@
+﻿@using ConvergenceCorpBlazor.Classes.Model.News;
+
+@page "/News"
+<HeadContent>
+
+</HeadContent>
+<article>
+<h1>News</h1>
+<div style="display:flex;flex-direction:row;justify-content:center;flex-wrap:wrap;">
+    @foreach(Article article in Article.Articles)
+    {
+        
+            <div style="width:250px;overflow:hidden;border:var(--primary-brand-color) 2px solid; border-radius:10px;">
+            <a href="@article.Link">
+                <img src=@Assets[@article.ImageLink] style="width:100%;object-fit:contain;height:200px;"/>
+                <div>@article.Title</div>
+                <div>@article.Author</div>
+                <div class="articledates time">@article.PublishDate</div>
+                <p>
+                    @article.Snippet
+                </p>
+            </a>
+        </div>
+        
+    }
+</div>
+</article>
+
+<script>
+    var Dates = document.getElementsByClassName("articledates");
+    for(var d of Dates){
+        d.innerText = new Date(d.innerText).toLocaleString([], {
+            month:'long',
+            day:'numeric',
+            year:'numeric'
+        });
+    }
+</script>
+@code {
+    
+}
