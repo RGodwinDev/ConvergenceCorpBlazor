@@ -1,6 +1,7 @@
 ﻿@using ConvergenceCorpBlazor.Classes.Model;
 @using ConvergenceCorpBlazor.Components.Pages.Records.RegionTables;
 @using ConvergenceCorpBlazor.Components.Pages.Records.RegionTables.Feb2026;
+@using ConvergenceCorpBlazor.Components.Pages.Records.RegionTables.Apr2026;
 
 @if(season == Season.None)
 {
@@ -40,15 +41,25 @@ else if(season == Season.Feb2026)
         <Feb26CN />
     }
 }
-
-
-
-
-
-
-
-
-
+else if (season == Season.Apr2026)
+{
+    @if (region == Region.None)
+    {
+        <Apr26ALL />
+    }
+    @if (region == Region.NA)
+    {
+        <Apr26NA />
+    }
+    @if (region == Region.EU)
+    {
+        <Apr26EU />
+    }
+    @if (region == Region.CN)
+    {
+        <Apr26CN />
+    }
+}
 
 <!-- The above is temporary until we can get the below table working -->
 

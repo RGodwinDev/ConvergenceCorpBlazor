@@ -1,0 +1,94 @@
+﻿<!-- April 2026 CN Table -->
+<table>
+    <tr>
+        <th><image src="/images/flags/usaflaground64px.png" style="width:32px;" /> North America</th>
+    </tr>
+    <tr style="text-align:center;">
+        <th>Boss</th>
+        <th>Time</th>
+        <th>Date</th>
+        <th>Region</th>
+        <th>Commander</th>
+        <th>Guild</th>
+    </tr>
+    <tr>
+        <th>Secrets of the Obscure</th>
+    </tr>
+    <tr>
+        <td>Demon Knight</td>
+        <td></td>
+        <td class="recDate"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Dreadwing</td>
+        <td></td>
+        <td class="recDate"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Hell Sister</td>
+        <td></td>
+        <td class="recDate"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Sorrow</td>
+        <td></td>
+        <td class="recDate"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Umbriel</td>
+        <td></td>
+        <td class="recDate"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>Janthir Wilds</th>
+    </tr>
+    <tr>
+        <td>Decima</td>
+        <td></td>
+        <td class="recDate"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Greer</td>
+        <td></td>
+        <td class="recDate"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Ura</td>
+        <td></td>
+        <td class="recDate"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<script>
+    var x = document.getElementsByClassName("recDate");
+    for(var y of x){
+        let d = new Date(y.innerText);
+        let z = d.toLocaleDateString();
+        if(z != "Invalid Date"){
+            y.innerText = d.toLocaleDateString();
+        }
+    }
+</script>
