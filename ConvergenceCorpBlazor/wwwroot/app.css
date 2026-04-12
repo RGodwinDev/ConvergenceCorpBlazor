@@ -396,5 +396,5 @@ section {
     text-align:left;
     width:100%;
     text-wrap:stable;
-    text-indent:2rem;
+    margin:.2rem;
 }

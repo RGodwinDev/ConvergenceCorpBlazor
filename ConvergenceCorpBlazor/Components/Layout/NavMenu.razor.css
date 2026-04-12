@@ -31,7 +31,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    padding:0px 2px;
+    padding:2px 2px;
 }
 
 .nav-link-icon {
@@ -61,7 +61,7 @@
         height: 3rem;
         display: flex;
         align-items: center;
-        
+        padding:.2rem;
         width: 100%;
     }
 
