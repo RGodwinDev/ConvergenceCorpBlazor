@@ -2,10 +2,10 @@
 
 namespace ConvergenceCorpBlazor.Classes.Model;
 
-public class PublicTime
+public static class PublicTime
 {
     //day,hour,min,seconds
-    private static TimeSpan[] SotOTimes = [
+    private static readonly TimeSpan[] SotOTimes = [
             new TimeSpan(00, 01, 30, 00),
             new TimeSpan(00, 04, 30, 00),
             new TimeSpan(00, 07, 30, 00),
@@ -16,7 +16,7 @@ public class PublicTime
             new TimeSpan(00, 22, 30, 00),
             new TimeSpan(01, 01, 30, 00)
         ];
-    private static TimeSpan[] JanthirTimes =
+    private static readonly TimeSpan[] JanthirTimes =
         [
             new TimeSpan(00, 00, 00, 00),
             new TimeSpan(00, 03, 00, 00),
@@ -28,7 +28,7 @@ public class PublicTime
             new TimeSpan(00, 21, 00, 00),
             new TimeSpan(01, 00, 00, 00)
         ];
-    private static TimeSpan[] VoETimes =
+    private static readonly TimeSpan[] VoETimes =
         [
         //No VoE times for now
         ];
