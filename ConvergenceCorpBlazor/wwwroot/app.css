@@ -398,3 +398,52 @@ section {
     text-wrap:stable;
     margin:.2rem;
 }
+
+.festival-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+}
+.festival-article > section{
+    align-items:baseline;
+    width:100%;
+}
+    .festival-article > section > p {
+        text-align: left;
+        width: 100%;
+        text-wrap: stable;
+        margin: .2rem;
+    }
+
+    .festival-article > section > ul > li {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .festival-article > section > ul.achievelist {
+        display: none;
+        overflow: hidden;
+    }
+
+    .festival-article > section > ul.dragonbash-onetimeachieves > li {
+        background: linear-gradient(75deg,rgba(164, 75, 181, 1) 0%, rgba(164, 75, 181, 0) 100%);
+        border-radius: 5px;
+    }
+    .festival-article > section > ul.dragonbash-annuals > li {
+        background: linear-gradient(75deg,rgba(164, 75, 181, 1) 0%, rgba(164, 75, 181, 0) 100%);
+        border-radius: 5px;
+    }
+    .festival-article > section > ul.dragonbash-repeatables > li {
+        background: linear-gradient(75deg,rgba(164, 75, 181, 1) 0%, rgba(164, 75, 181, 0) 100%);
+        border-radius: 5px;
+    }
+.dragonbashcollapsebutton{
+    background-color:rgba(164, 75, 181, 1);
+    border-radius:10px;
+    font-family:'Cascadia Code';
+    font-size:1rem;
+    font-weight:400;
+    color:whitesmoke;
+}
