@@ -447,3 +447,17 @@ section {
     font-weight:400;
     color:whitesmoke;
 }
+
+.festivalpage {
+    align-items: baseline;
+}
+.festivalpage > p{
+    text-align:left;
+    margin:0px;
+}
+.festivalpage > h2{
+    margin:0px;
+}
+.festivalpage > img{
+    margin-bottom: 10px;
+}
