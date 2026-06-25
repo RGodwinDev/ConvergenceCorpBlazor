@@ -7,5 +7,6 @@ public enum Season : byte
 {
     None = 0,
     Feb2026 = 1,
-    Apr2026 = 2
+    Apr2026 = 2,
+    Jul2026 = 3
 }

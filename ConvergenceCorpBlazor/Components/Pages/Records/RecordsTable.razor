@@ -2,6 +2,7 @@
 @using ConvergenceCorpBlazor.Components.Pages.Records.RegionTables;
 @using ConvergenceCorpBlazor.Components.Pages.Records.RegionTables.Feb2026;
 @using ConvergenceCorpBlazor.Components.Pages.Records.RegionTables.Apr2026;
+@using ConvergenceCorpBlazor.Components.Pages.Records.RegionTables.July2026;
 
 @if(season == Season.None)
 {
@@ -58,6 +59,25 @@ else if (season == Season.Apr2026)
     @if (region == Region.CN)
     {
         <Apr26CN />
+    }
+}
+else if (season == Season.Jul2026)
+{
+    @if (region == Region.None)
+    {
+        <July26All />
+    }
+    @if (region == Region.NA)
+    {
+        <July26NA />
+    }
+    @if (region == Region.EU)
+    {
+        <July26EU />
+    }
+    @if (region == Region.CN)
+    {
+        <July26CN />
     }
 }
 
