@@ -16,7 +16,7 @@
         </p>
         <p>
             Next Public opens at <span class="time localtime">@instanceopentime</span> in
-            <span id="@(gameRegion)Timer" class="time"></span>
+            <span id="@(gameRegion)Timer" class="time">00:00:00</span>
         </p>
     }
     else if (TimerSize == "Small")
@@ -24,7 +24,7 @@
         <div class="PublicTimerContainSmall">
             <img src=@Assets["/images/" + @imagelinks[(int)gameRegion]] alt="@gameRegion logo" style="width:50px;" />
                 <div>
-                    Open in <span id="@(gameRegion)Timer" class="time"></span>
+                    Open in <span id="@(gameRegion)Timer" class="time">00:00:00</span>
                 </div>
         </div>
     }
@@ -71,6 +71,7 @@
 
         t.innerHTML = hours.toString().padStart(2,'0') + ":" + minutes.toString().padStart(2,'0') + ":" + second.toString().padStart(2,'0');
     }, 1000);
+
 
 </script>
 
