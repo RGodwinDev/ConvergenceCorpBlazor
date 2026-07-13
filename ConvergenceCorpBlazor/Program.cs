@@ -3,6 +3,7 @@ using ConvergenceCorpBlazor.Classes.DBControllers;
 using ConvergenceCorpBlazor.Components.Widget;
 using Microsoft.OpenApi; //for SwaggerDocs 
 using static Microsoft.AspNetCore.Http.StatusCodes;
+using ConvergenceCorpBlazor.Classes.TwitchApi;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -132,5 +133,25 @@ else
     await DBGroup.GetAll();
 }
 
+Timer StreamRefreshTimer = null;
+//connect to twitch
+bool twitchclientsetup = await TwitchAPIController.setupHttpClient();
+if (twitchclientsetup)
+{
+    bool tokenacquired = await TwitchAPIController.AcquireToken(); //sets up the credentials
+    if (tokenacquired)
+    {
+        //populate data about the streamers
+        await TwitchAPIController.GetUsers(); 
+        TwitchAPIController.RefreshStreams(null);
+        StreamRefreshTimer = new Timer(TwitchAPIController.RefreshStreams, null, 0, 60000);
+    }
+    
+}
+
 app.Run();
+
 Console.WriteLine("Server Shutting Down!");
+if(StreamRefreshTimer != null){
+    StreamRefreshTimer.Dispose();
+}

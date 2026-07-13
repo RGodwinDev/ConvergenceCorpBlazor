@@ -1,0 +1,22 @@
+﻿@using ConvergenceCorpBlazor.Classes.TwitchApi.Streamers;
+
+<h2>Streamer Division</h2>
+<div>
+    @for(int i = 0; i < 3 && i < live.Count; ++i)
+    {
+
+        <div>@live[i].display_name</div>
+    
+    }
+    @if(live.Count == 0)
+    {
+        <div>There are no streamers live at this time.</div>
+    }
+</div>
+
+
+
+
+@code {
+    List<Streamer> live = Streamer.GetLiveStreamers();
+}
