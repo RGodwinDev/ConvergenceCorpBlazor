@@ -131,7 +131,7 @@ namespace ConvergenceCorpBlazor.Classes.TwitchApi
                             streamer.tags = stream.tags;
                             streamer.is_mature = stream.is_mature;
                             streamer.IsLive = true;
-                            
+                            streamer.LastLive = DateTimeOffset.UtcNow;
                         }
                         else
                         {
