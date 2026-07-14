@@ -39,13 +39,10 @@
         private static readonly List<string> StreamerNames =
             [
                 "sunmatrix",
-                "lilyvelour",
-                "darenswiths",
-                "kanonxo",
-                "ayinmaiden",
                 "softbreadx",
-                "jayoddity",
-                "mookchivalry"
+                "mookchivalry",
+                "jmdhouse05",
+                "lilyvelour"
             ];
         public static List<string> GetStreamerNames() {
             return StreamerNames;
@@ -59,7 +56,7 @@
         }
         public static List<Streamer> GetALLStreamers()
         {
-            return AllStreamers;
+            return AllStreamers.OrderBy(s => s.LastLive).ToList();
         }
 
         public static void SetALLStreamers(Streamer[] streamers)
