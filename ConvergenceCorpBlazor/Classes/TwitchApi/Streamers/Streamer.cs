@@ -42,7 +42,10 @@
                 "softbreadx",
                 "mookchivalry",
                 "jmdhouse05",
-                "lilyvelour"
+                "lilyvelour",
+                "darenswiths",
+                "projektdyad",
+                "mcb_bolibear12"
             ];
         public static List<string> GetStreamerNames() {
             return StreamerNames;
