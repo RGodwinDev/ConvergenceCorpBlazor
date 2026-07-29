@@ -1,0 +1,69 @@
+﻿@using ConvergenceCorpBlazor.Classes.TwitchApi.Streamers;
+
+<PageTitle>@streamer.display_name | Convergence Corp!</PageTitle>
+<HeadContent>
+    <meta name="description" content="">
+    <link rel="canonical" href="https://convergencecorp.net/streams" />
+    <meta property="og:title" content="Streamer Division | Convergence Corp!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://convergencecorp.net/streams" />
+    <meta property="og:image" content="https://convergencecorp.net/favicon/android-chrome-512x512.png" />
+    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="Convergence Corp!" />
+</HeadContent>
+
+
+@page "/streams/{id}"
+<div style="width:100%;">
+    @if(streamer != null)
+    {
+        <div class="stream-and-chat-container">       
+            <div class="video-container">
+                <iframe width="854"
+                        height="480"
+                        src="https://player.twitch.tv/?channel=@streamer.login&parent=localhost&parent=convergencecorp.net&autoplay=true&muted=false"
+                        frameborder="0"
+                        allow="accelerometer;encrypted-media;gyroscope;web-share"
+                        scrolling="no"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="chat-container">
+                <iframe
+                    src="https://www.twitch.tv/embed/@streamer.login/chat?parent=localhost&parent=convergencecorp.net&darkpopout"
+                    height="100%"
+                    width="100%"
+                        sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-modals"
+                    style="border-width:0px;min-height:500px;">
+                </iframe>
+            </div>
+        </div>
+        <div>
+            @streamer.display_name
+        </div>
+        <div>
+            <a href="https://twitch.tv/@streamer.login">Watch on Twitch!</a>
+        </div>
+    }
+    else
+    {
+        <div>The given ID does not match any streamer that is on Convergence Corp!</div>
+        <div>If you think this is an error, please contact me on discord :)</div>
+        <a href="/streams">back to streams</a>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public String? id { get; set; } = "";
+    public Streamer? streamer = null;
+
+    protected override void OnParametersSet()
+    {
+        if(id != null)
+        {
+            streamer = Streamer.GetStreamer(id);
+        }
+    }
+}

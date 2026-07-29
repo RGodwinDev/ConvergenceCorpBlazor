@@ -1,8 +1,74 @@
 ﻿@using ConvergenceCorpBlazor.Classes.TwitchApi.Streamers;
 
 @page "/streams"
-<h1>Streamers!</h1>
-<p>Still working on this page :)</p>
+<PageTitle>Streamer Division | Convergence Corp!</PageTitle>
+<HeadContent>
+    <meta name="description" content="">
+    <link rel="canonical" href="https://convergencecorp.net/streams" />
+    <meta property="og:title" content="Streamer Division | Convergence Corp!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://convergencecorp.net/streams" />
+    <meta property="og:image" content="https://convergencecorp.net/favicon/android-chrome-512x512.png" />
+    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="Convergence Corp!" />
+</HeadContent>
+
+<h1>Streamer Division!</h1>
+<div style="display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;">
+    @foreach (Streamer s in StreamerList)
+    {
+        <div style="border-radius:5px; width:400px;">
+            <a href="/streams/@s.id">
+                @if (s.IsLive)
+                {
+                    <img src=@s.thumbnail_url.Replace("{width}x{height}", "640x360") style="width:100%;" />
+                }
+                else
+                {
+                    @if(s.offline_image_url.Length > 0)
+                    {
+                        <img src=@s.offline_image_url.Replace("{width}x{height}", "640x360") style="width:100%; filter:grayscale(90%);" />
+                    }
+                    else
+                    {
+                        <img src=@Assets["/images/Streamers/DefaultOffline.png"] style="width:100%; filter:grayscale(90%);"/>
+                    }
+                }
+            
+                <div style="display:flex;">
+                    <div style="padding:5px;">
+                        <img src=@s.profile_image_url style="border:2px solid @s.color;width:48px; border-radius:24px;" />
+                    </div>
+                    <div style="width:100%;">
+                        <div>@s.display_name</div>
+                        @if (s.IsLive)
+                        {
+                            @if (s.title.Length > 64)
+                            {
+                                <div>@s.title.Substring(0, 64)...</div>
+                            }
+                            else
+                            {
+                                <div>@s.title</div>
+                            }
+                        }
+                        <div style="width:100%;display:flex; flex-direction:row; justify-content:space-between;">
+                            @if (s.IsLive)
+                            {
+                                <span style="padding:3px; border-radius:10px; background-color:red;">Live!</span>
+                                <span> @s.viewer_count Viewers </span>
+                            }
+                            else
+                            {
+                                <span style="padding:3px; border-radius:10px; background-color:grey;">Offline!</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    }
+</div>
 
 @code {
     List<Streamer> StreamerList = Streamer.GetALLStreamers();
