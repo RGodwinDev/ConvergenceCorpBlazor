@@ -133,7 +133,7 @@ else
     await DBGroup.GetAll();
 }
 
-Timer StreamRefreshTimer = null;
+Timer? StreamRefreshTimer = null;
 //connect to twitch
 bool twitchclientsetup = await TwitchAPIController.setupHttpClient();
 if (twitchclientsetup)
@@ -145,6 +145,7 @@ if (twitchclientsetup)
         await TwitchAPIController.GetUsers(); 
         TwitchAPIController.RefreshStreams(null);
         StreamRefreshTimer = new Timer(TwitchAPIController.RefreshStreams, null, 0, 60000);
+        TwitchAPIController.GetUserColors();
     }
     
 }

@@ -461,3 +461,20 @@ section {
 .festivalpage > img{
     margin-bottom: 10px;
 }
+
+.stream-and-chat-container{
+    display:flex;
+    flex-direction:row;
+
+}
+.chat-container{
+    min-width:300px;
+    max-width:100%;
+    min-height:500px;
+}
+@media(max-width:900px){
+    .stream-and-chat-container{
+        flex-direction:column;
+        
+    }
+}
