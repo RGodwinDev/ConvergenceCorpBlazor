@@ -31,6 +31,28 @@ public static class PublicTime
     private static readonly TimeSpan[] VoETimes =
         [
         //No VoE times for now
+        /*
+            new TimeSpan(00, 00, 45, 00),
+            new TimeSpan(00, 03, 45, 00),
+            new TimeSpan(00, 06, 45, 00),
+            new TimeSpan(00, 09, 45, 00),
+            new TimeSpan(00, 12, 45, 00),
+            new TimeSpan(00, 15, 45, 00),
+            new TimeSpan(00, 18, 45, 00),
+            new TimeSpan(00, 21, 45, 00),
+            new TimeSpan(01, 00, 45, 00)
+        */
+        /*
+            new TimeSpan(00, 02, 15, 00),
+            new TimeSpan(00, 05, 15, 00),
+            new TimeSpan(00, 08, 15, 00),
+            new TimeSpan(00, 11, 15, 00),
+            new TimeSpan(00, 14, 15, 00),
+            new TimeSpan(00, 17, 15, 00),
+            new TimeSpan(00, 20, 15, 00),
+            new TimeSpan(00, 23, 15, 00),
+            new TimeSpan(01, 02, 15, 00)
+         */
         ];
 
 
@@ -49,6 +71,8 @@ public static class PublicTime
         }
         else if (GameRegion.Magic == area)
         {
+            //REMOVE THIS LINE ON 9/01/2026
+            return new DateTimeOffset(2026,09,01,11,00,00,new TimeSpan(0,-5,0,0)); 
             publicTimes = PublicTime.VoETimes;
         }
         else

@@ -2,51 +2,23 @@
 @using ConvergenceCorpBlazor.Classes.Model.Game;
 
 <h2>Public Convergences</h2>
-@if(SotoTime < JWTime)
-{    
-    if(VoETime < SotoTime)
-    {
-        <PublicTimer gameRegion="GameRegion.Magic" TimerSize="Small" />
-        <PublicTimer gameRegion="GameRegion.Sky" TimerSize="Small" />
-        <PublicTimer gameRegion="GameRegion.Wild" TimerSize="Small" />
-    }
-    else if(VoETime < JWTime)
-    {
-        <PublicTimer gameRegion="GameRegion.Sky" TimerSize="Small" />
-        <PublicTimer gameRegion="GameRegion.Magic" TimerSize="Small" />
-        <PublicTimer gameRegion="GameRegion.Wild" TimerSize="Small" />
-    }
-    else
-    {
-        <PublicTimer gameRegion="GameRegion.Sky" TimerSize="Small" />
-        <PublicTimer gameRegion="GameRegion.Wild" TimerSize="Small" />
-        <PublicTimer gameRegion="GameRegion.Magic" TimerSize="Small" />
-    }
-}
-else if(JWTime < SotoTime)
+
+@foreach(Tuple<GameRegion, DateTimeOffset> g in tuples)
 {
-    if (VoETime < JWTime)
-    {
-        <PublicTimer gameRegion="GameRegion.Magic" TimerSize="Small" />
-        <PublicTimer gameRegion="GameRegion.Wild" TimerSize="Small" />
-        <PublicTimer gameRegion="GameRegion.Sky" TimerSize="Small" />
-    }
-    else if (VoETime < SotoTime)
-    {
-        <PublicTimer gameRegion="GameRegion.Wild" TimerSize="Small" />
-        <PublicTimer gameRegion="GameRegion.Magic" TimerSize="Small" />
-        <PublicTimer gameRegion="GameRegion.Sky" TimerSize="Small" />
-    }
-    else
-    {
-        <PublicTimer gameRegion="GameRegion.Wild" TimerSize="Small" />
-        <PublicTimer gameRegion="GameRegion.Sky" TimerSize="Small" />
-        <PublicTimer gameRegion="GameRegion.Magic" TimerSize="Small" />
-    }
+    <PublicTimer gameRegion="@g.Item1" TimerSize="Small"/>
 }
 
 @code{
-    DateTimeOffset SotoTime = PublicTime.GetNextAreaTime(GameRegion.Sky);
-    DateTimeOffset JWTime = PublicTime.GetNextAreaTime(GameRegion.Wild);
-    DateTimeOffset VoETime = PublicTime.GetNextAreaTime(GameRegion.Magic);
+    List<Tuple<GameRegion, DateTimeOffset>> tuples = [
+        new Tuple<GameRegion, DateTimeOffset>(GameRegion.Sky, PublicTime.GetNextAreaTime(GameRegion.Sky)),
+        new Tuple<GameRegion, DateTimeOffset>(GameRegion.Wild, PublicTime.GetNextAreaTime(GameRegion.Wild)),
+        new Tuple<GameRegion, DateTimeOffset>(GameRegion.Magic, PublicTime.GetNextAreaTime(GameRegion.Magic))
+    ];
+
+    protected override void OnInitialized()
+    {
+        //sort the tuples by their times. Soonest first.
+        tuples = tuples.OrderBy(t => t.Item2).ToList();
+        base.OnInitialized();
+    }
 }

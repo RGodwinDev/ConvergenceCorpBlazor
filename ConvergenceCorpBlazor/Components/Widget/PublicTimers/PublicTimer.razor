@@ -2,7 +2,7 @@
 @using ConvergenceCorpBlazor.Classes.Model; <!-- for PublicTime-->
 @inject IJSRuntime JS
 
-@if (gameRegion == GameRegion.Sky || gameRegion == GameRegion.Wild)
+@if (gameRegion == GameRegion.Sky || gameRegion == GameRegion.Wild || gameRegion == GameRegion.Magic) //add new regions here when they get a convergence!
 {
     @if (TimerSize == "Large")
     {
@@ -21,12 +21,14 @@
     }
     else if (TimerSize == "Small")
     {
+        <a href="/@links[(int)gameRegion]">
         <div class="PublicTimerContainSmall">
             <img src=@Assets["/images/" + @imagelinks[(int)gameRegion]] alt="@gameRegion logo" style="width:50px;" />
                 <div>
                     Open in <span id="@(gameRegion)Timer" class="time">00:00:00</span>
                 </div>
         </div>
+        </a>
     }
 }
 <script>
@@ -61,6 +63,7 @@
         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var second = Math.floor((distance % (1000*60)) / 1000);
+        var days = Math.floor((distance % (1000 * 60 * 60 * 24 * 365))/ (1000 * 60 * 60 * 24));
         
         var t = document.getElementById("@(gameRegion)Timer");
         if(distance < 0){
@@ -68,14 +71,19 @@
             t.innerHTML = "NOW";
             return;
         }
+        if (days >= 1) {
+            t.innerHTML = days.toString() + " Days!";
+        }
+        else{
+            t.innerHTML = hours.toString().padStart(2, '0') + ":" + minutes.toString().padStart(2, '0') + ":" + second.toString().padStart(2, '0');
+        }
 
-        t.innerHTML = hours.toString().padStart(2,'0') + ":" + minutes.toString().padStart(2,'0') + ":" + second.toString().padStart(2,'0');
     }, 1000);
 
 
 </script>
-
 <!-- VoE box, this will get erased when the VoE converge comes out. -->
+<!--
 @if(gameRegion == GameRegion.Magic){
     @if(TimerSize == "Large")
     {
@@ -93,10 +101,11 @@
         </div>
     }
 }
+-->
 <!-- End of VoE box -->
 
 @code {
-    DateTimeOffset instanceopentime = DateTimeOffset.UtcNow + new TimeSpan(4, 0, 0);
+    public DateTimeOffset instanceopentime = DateTimeOffset.UtcNow + new TimeSpan(4, 0, 0);
 
     static List<string> imagelinks = [
         "", //none
@@ -107,6 +116,17 @@
         "SotO/Secrets_of_the_Obscure_logo.png", //soto
         "JW/Janthir_Wilds_logo.png", //jw
         "VoE/VoE_logo_gradient_800.png" //voe
+    ];
+
+    static List<string> links = [
+        "", //none
+        "", //tyria
+        "", //hot
+        "", //pof
+        "", //eod
+        "soto",
+        "jw",
+        "voe"
     ];
 
     [Parameter]
