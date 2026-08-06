@@ -2,22 +2,23 @@
 
 <PageTitle>@streamer.display_name | Convergence Corp!</PageTitle>
 <HeadContent>
-    <meta name="description" content="">
-    <link rel="canonical" href="https://convergencecorp.net/streams" />
-    <meta property="og:title" content="Streamer Division | Convergence Corp!" />
+    <meta name="description" content="Streaming on Convergence Corp! @streamer.display_name">
+    <link rel="canonical" href="https://convergencecorp.net/streams/@id" />
+    <meta property="og:title" content="@streamer.display_name | Convergence Corp!" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://convergencecorp.net/streams" />
+    <meta property="og:url" content="https://convergencecorp.net/streams/@id" />
     <meta property="og:image" content="https://convergencecorp.net/favicon/android-chrome-512x512.png" />
-    <meta property="og:description" content="" />
+    <meta property="og:description" content="Streaming on Convergence Corp! @streamer.display_name" />
     <meta property="og:site_name" content="Convergence Corp!" />
 </HeadContent>
 
 
 @page "/streams/{id}"
-<div style="width:100%;">
+<div style="width:100%; display:flex;flex-direction:column;align-items:center;">
     @if(streamer != null)
     {
-        <div class="stream-and-chat-container">       
+        @if(streamer.IsLive){
+            <div class="stream-and-chat-container">       
             <div class="video-container">
                 <iframe width="854"
                         height="480"
@@ -39,11 +40,52 @@
                 </iframe>
             </div>
         </div>
-        <div>
-            @streamer.display_name
+        }
+        else{
+            <div>
+                @if(streamer.offline_image_url.Length > 0)
+                {
+                    <img src=@streamer.offline_image_url style="width:400px;"/>
+                }
+                else
+                {
+                    <img src=@Assets["images/Streamers/DefaultOffline.png"] style="width:400px;"/>
+                }
+            </div>
+        }
+
+        <div class="streamer-first-box">
+            <div style="display:flex;flex-direction:row;align-items:center;">
+                <img src=@streamer.profile_image_url style="width:64px; border-radius:32px; border:solid 2px @streamer.color;" />
+                <div>@streamer.display_name</div>
+            </div>
+
+            <div>
+                <a target="_blank" href="https://twitch.tv/@streamer.login">Watch on Twitch! <img src=@Assets["images/Brands/Twitch/glitch_flat_white.png"] style="width:20px;" /></a>
+            </div>
         </div>
-        <div>
-            <a href="https://twitch.tv/@streamer.login">Watch on Twitch!</a>
+        @if (streamer.IsLive)
+        {
+            <div class="streamer-info-box">
+                <p>
+                    @streamer.title
+                </p>
+                <div style="display:flex; flex-wrap:wrap;">
+                    Tags:
+                    @foreach (string tag in streamer.tags)
+                    {
+                        <span style="border:2px solid var(--primary-brand-color);background-color:var(--secondary-brand-color); border-radius:10px; padding:3px;">@tag </span>
+                    }
+
+                </div>
+            </div>
+        }
+        <div class="streamer-info-box">
+            <h2>About</h2>
+            <p>
+                @streamer.description
+            </p>
+            
         </div>
     }
     else

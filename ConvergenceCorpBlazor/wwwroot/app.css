@@ -193,6 +193,9 @@ p {
     text-align:center;
     text-wrap:balance;
 }
+h1, h2{
+    text-decoration:underline;
+}
 
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
@@ -465,7 +468,8 @@ section {
 .stream-and-chat-container{
     display:flex;
     flex-direction:row;
-
+    max-width:100%;
+    width:1200px;
 }
 .chat-container{
     min-width:300px;
@@ -477,4 +481,21 @@ section {
         flex-direction:column;
         
     }
+}
+.streamer-info-box {
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--secondary-bg-color);
+    border-radius: 20px;
+    justify-items:center;
+}
+.streamer-first-box{
+    width:100%;
+    max-width:600px;
+    background-color: var(--secondary-bg-color);
+    border-radius:20px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-around;
 }

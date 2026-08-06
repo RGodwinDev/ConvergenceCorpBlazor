@@ -11,7 +11,7 @@ Live NOW!
                 <img src=@live[i].thumbnail_url.Replace("{width}x{height}", "640x360") style="width:100%;" />
                 <div style="display:flex;">
                     <div style="padding:5px;">
-                        <img src=@live[i].profile_image_url style="border:2px solid orange;width:32px; border-radius:16px;" />
+                        <img src=@live[i].profile_image_url style="border:2px solid @live[i].color;width:32px; border-radius:16px;" />
                     </div>
                     <div>
                         <div>@live[i].display_name</div>
