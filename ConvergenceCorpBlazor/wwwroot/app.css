@@ -319,10 +319,12 @@ section {
     align-items:center;
 }
 
-.PublicTimerContainSmall{
-    display:flex;
-    flex-direction:row;
-    align-items:center;
+.PublicTimerContainSmall {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 5px 0px 5px;
+    border-radius: 35px;
 }
 
 .JWWarclawDoors {
@@ -498,4 +500,37 @@ section {
     flex-direction:row;
     align-items:center;
     justify-content:space-around;
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1.0);
+    }
+    50%{
+        transform:scale(1.1);
+    }
+    100%{
+        transform:scale(1.0);
+    }
+}
+
+.pulsing{
+    animation: pulse 2s infinite;
+}
+@keyframes yellowborder{
+    0% {
+        border: solid 3px black;
+    }
+    50% {
+        border: solid 3px yellow;
+    }
+    100% {
+        border: solid 3px black;
+    }
+}
+.timersub5{
+    animation: yellowborder 2s infinite;
+}
+.timeropen{
+    border:solid 3px green;
 }
