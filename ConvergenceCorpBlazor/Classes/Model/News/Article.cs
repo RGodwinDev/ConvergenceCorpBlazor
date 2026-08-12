@@ -15,6 +15,8 @@
 
         //list of articles
         public static List<Article> Articles = [
+            new Article(5, "Festival of Four Winds 2026!", "/images/news/Fourwinds2026/fourwinds2026.png", new DateTimeOffset(2026, 8, 11, 11, 00, 00, new TimeSpan(-5,0,0)),"SunMatrix",
+                "Jimothy descends unto Tyria!", "/News/FourWinds2026", ["Four Winds", "Guild Wars 2"]),
             new Article(4, "State of Ectos June 2026!", "/images/news/stateofectos2026.png", new DateTimeOffset(2026, 6,25,18,00,00, new TimeSpan(-5,0,0)), "SunMatrix",
                 "Evaluating the state of Ectos!", "/News/ectosjune2026", ["Guild Wars 2", "Glob of Ectoplasm", "Ecto"]),
             new Article(3, "Anet Announces Guild Wars 3!", "/images/news/gw3announcement.png", new DateTimeOffset(2026, 6,7,15,00,00, new TimeSpan(-5,0,0)), "SunMatrix",

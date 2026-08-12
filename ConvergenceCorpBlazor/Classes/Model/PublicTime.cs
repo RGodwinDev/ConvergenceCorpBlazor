@@ -71,8 +71,8 @@ public static class PublicTime
         }
         else if (GameRegion.Magic == area)
         {
-            //REMOVE THIS LINE ON 9/01/2026
-            return new DateTimeOffset(2026,09,01,11,00,00,new TimeSpan(0,-5,0,0)); 
+            //REMOVE THIS LINE ON 9/15/2026
+            return new DateTimeOffset(2026,09,15,11,00,00,new TimeSpan(0,-5,0,0)); 
             publicTimes = PublicTime.VoETimes;
         }
         else
