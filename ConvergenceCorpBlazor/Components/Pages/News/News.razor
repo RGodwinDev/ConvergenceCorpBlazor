@@ -1,4 +1,6 @@
 ﻿@using ConvergenceCorpBlazor.Classes.Model.News;
+@rendermode InteractiveServer
+@inject IJSRuntime JS
 
 @page "/News"
 <HeadContent>
@@ -33,15 +35,21 @@
 </article>
 
 <script>
-    var Dates = document.getElementsByClassName("articledates");
-    for(var d of Dates){
-        d.innerText = new Date(d.innerText).toLocaleString([], {
-            month:'long',
-            day:'numeric',
-            year:'numeric'
-        });
+    
+
+    function ConvertNewsTimesToLocal(){
+        var Dates = document.getElementsByClassName("articledates");
+        for(var d of Dates){
+            ConvertToLongLocal(d);
+        }
     }
+    
 </script>
 @code {
-    
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        JS.InvokeVoidAsync("ConvertNewsTimesToLocal");
+        base.OnAfterRender(firstRender);
+    }
 }

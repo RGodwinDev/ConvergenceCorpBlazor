@@ -12,6 +12,9 @@ var openTimes = [
     new Date()  //VoE
 ];
 
+
+//an array of intervals so we don't make several intervals for the same thing.
+//the 0's are placeholders.
 var intervals = [
     0, //not any
     0, //Tyria
@@ -23,13 +26,27 @@ var intervals = [
     0  //VoE
 ]
 
-
+/*
+* Converts a time to hh:mm.
+*/
 function ConvertToLocal(element) {
     let newdate = new Date(element.innerText);
     element.innerText = newdate.toLocaleString([], {
         hour: 'numeric',
         minute: '2-digit'
     });
+}
+
+/*
+* Converts a time to Month day, year. e.g. 'June 8, 2026'
+*/
+function ConvertToLongLocal(element) {
+    let newdate = new Date(element.innerText);
+    element.innerText = newdate.toLocaleString([], {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric'
+    })
 }
 
 function SetOpenSoon(element) {
@@ -45,13 +62,11 @@ function UnsetOpenSoon(element) {
 
 function SetOpenNow(element) {
     if (!element.classList.contains("timeropen")) {
-        console.log("adding timeropen!");
         element.classList.add("timeropen");
     }
 }
 function UnsetOpenNow(element) {
     if (element.classList.contains("timeropen")) {
-        console.log("removing timeropen!");
         element.classList.remove("timeropen");
     }
 }
