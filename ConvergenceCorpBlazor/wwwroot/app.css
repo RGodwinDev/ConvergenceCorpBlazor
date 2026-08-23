@@ -1,8 +1,8 @@
 :root {
     --primary-bg-color: #000000;
-    --secondary-bg-color: #0d0d0d;
+    --secondary-bg-color: #050505;
     --primary-brand-color: #73060F;
-    --secondary-brand-color: #291113;
+    --secondary-brand-color: #120808;
     --primary-text-color: #f5f5f5;
 }
 
@@ -37,13 +37,18 @@ a:hover{
     filter:brightness(.6);
 }
 
-article{
-    padding:10px;
-    width:100%;
-    max-width:1200px;
+article {
+    padding: 10px;
+    width: 100%;
+    max-width: 1200px;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-radius: 20px;
+    background: linear-gradient(var(--secondary-bg-color), var(--secondary-bg-color)) padding-box, linear-gradient(90deg, var(--secondary-brand-color), var(--secondary-brand-color)) border-box;
+    background-clip: padding-box, border-box;
 }
 @media(max-width:1200px){
-    article{
+    article{ 
         padding:0px;
     }
 }
@@ -315,7 +320,7 @@ option:hover{
 
 section {
     display:flex; 
-    flex-direction:column; 
+    flex-direction:column;
     align-items:center;
 }
 
@@ -401,6 +406,15 @@ section {
     width:100%;
     text-wrap:stable;
     margin:.2rem;
+}
+.newsarticleimage {
+    width: 100%;
+    object-fit: contain;
+    height: 200px;
+}
+.newsarticleinfocontainer {
+    text-align: center;
+    align-content:end;
 }
 
 .festival-article {
@@ -532,4 +546,23 @@ section {
 }
 .timeropen{
     border:solid 3px green;
+}
+
+.BossBlitzBossContainer{
+    width:100%;
+    max-width:500px;
+}
+.BlitzBossPic{
+    width:100%;
+}
+.BossFigure {
+    padding: 10px;
+    background: #111;
+    border-radius: 20px;
+    border: solid #500 2px;
+}
+.BossSpecial {
+    background: #111;
+    border: solid #500 2px;
+    border-radius:20px;
 }

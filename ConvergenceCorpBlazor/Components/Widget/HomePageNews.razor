@@ -5,19 +5,9 @@
 <h2>News</h2>
 
 <div style="display:flex;flex-direction:row;justify-content:center;flex-wrap:wrap;">
-    @for(int i = 0; i < Article.Articles.Count && i < 3; ++i)
+    @for(int i = Article.Articles.Count-1; i >= 0 && i > Article.Articles.Count-4; --i)
     {
-        <div style="width:250px;overflow:hidden;border:var(--primary-brand-color) 2px solid; border-radius:10px;">
-            <a href="@Article.Articles[i].Link">
-                <img src=@Assets[@Article.Articles[i].ImageLink] style="width:100%;object-fit:contain;height:200px;" />
-                <div>@Article.Articles[i].Title</div>
-                <div>@Article.Articles[i].Author</div>
-                <div class="articledates time">@Article.Articles[i].PublishDate</div>
-                <p>
-                    @Article.Articles[i].Snippet
-                </p>
-            </a>
-        </div>
+        <SingleNewsBox NewsID=i/>
     }
 </div>
 <a href="/news">More news -></a>
