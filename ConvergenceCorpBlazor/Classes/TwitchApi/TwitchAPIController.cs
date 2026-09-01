@@ -104,52 +104,59 @@ public static class TwitchAPIController
         }
 
         HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, message);
-        HttpResponseMessage response = await TTVHttpClient.SendAsync(request);
-        if (response.IsSuccessStatusCode)
+        try
         {
-
-            StreamInfoFromAPI? value = await response.Content.ReadFromJsonAsync<StreamInfoFromAPI>();
-            if(value != null)
+            HttpResponseMessage response = await TTVHttpClient.SendAsync(request);
+            if (response.IsSuccessStatusCode)
             {
-                List<Streams> StreamList = value.Data.ToList();
 
-                //go through each streamer
-                foreach(Streamer streamer in Streamer.GetALLStreamers())
+                StreamInfoFromAPI? value = await response.Content.ReadFromJsonAsync<StreamInfoFromAPI>();
+                if (value != null)
                 {
-                    //check if theyre currently streaming
-                    Streams? stream = StreamList.Find(s => s.user_id == streamer.id);
-                    if(stream != null)
-                    {
-                        //if they are, update stream stuff and set them as live.
-                        streamer.game_id = stream.game_id;
-                        streamer.game_name = stream.game_name;
-                        streamer.title = stream.title;
-                        streamer.viewer_count = stream.viewer_count;
-                        
-                        streamer.thumbnail_url = stream.thumbnail_url;
-                        streamer.tag_ids = stream.tag_ids;
-                        streamer.tags = stream.tags;
-                        streamer.is_mature = stream.is_mature;
-                        streamer.IsLive = true;
-                        streamer.LastLive = DateTimeOffset.UtcNow;
+                    List<Streams> StreamList = value.Data.ToList();
 
-                        streamer.started_at = stream.started_at;
-                        
-                    }
-                    else
+                    //go through each streamer
+                    foreach (Streamer streamer in Streamer.GetALLStreamers())
                     {
-                        //mark the streamer as not live!
-                        streamer.IsLive = false;
+                        //check if theyre currently streaming
+                        Streams? stream = StreamList.Find(s => s.user_id == streamer.id);
+                        if (stream != null)
+                        {
+                            //if they are, update stream stuff and set them as live.
+                            streamer.game_id = stream.game_id;
+                            streamer.game_name = stream.game_name;
+                            streamer.title = stream.title;
+                            streamer.viewer_count = stream.viewer_count;
+
+                            streamer.thumbnail_url = stream.thumbnail_url;
+                            streamer.tag_ids = stream.tag_ids;
+                            streamer.tags = stream.tags;
+                            streamer.is_mature = stream.is_mature;
+                            streamer.IsLive = true;
+                            streamer.LastLive = DateTimeOffset.UtcNow;
+
+                            streamer.started_at = stream.started_at;
+
+                        }
+                        else
+                        {
+                            //mark the streamer as not live!
+                            streamer.IsLive = false;
+                        }
                     }
                 }
             }
+            else
+            {
+                //unsuccessful API call
+                Console.WriteLine(response.StatusCode);
+                string result = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(result);
+            }
         }
-        else
-        {
-            //unsuccessful API call
-            Console.WriteLine(response.StatusCode);
-            string result = await response.Content.ReadAsStringAsync();
-            Console.WriteLine(result);
+        catch(Exception ex) {
+            Console.WriteLine(ex.Message);
+            Console.WriteLine(ex.StackTrace);
         }
     }
 

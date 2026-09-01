@@ -1,4 +1,6 @@
 // JavaScript for App component
+// The App is the main component of the website.
+
 
 //times the public convergences open
 var openTimes = [
@@ -49,32 +51,41 @@ function ConvertToLongLocal(element) {
     })
 }
 
+//Adds a yellow flashing border to the element
 function SetOpenSoon(element) {
     if (!element.classList.contains("timersub5")) {
         element.classList.add("timersub5");
     }
 }
+
+//removes the yellow flashing border from the element
 function UnsetOpenSoon(element) {
     if (element.classList.contains("timersub5")) {
         element.classList.remove("timersub5");
     }
 }
 
+//adds a green border around the element
 function SetOpenNow(element) {
     if (!element.classList.contains("timeropen")) {
         element.classList.add("timeropen");
     }
 }
+
+//removes the green border around the element
 function UnsetOpenNow(element) {
     if (element.classList.contains("timeropen")) {
         element.classList.remove("timeropen");
     }
 }
 
+//set the date of when the regions Public Convergence Opens.
 function SetCountdownTime(region, date) {
     openTimes[region] = new Date(date);
 }
 
+//Creates an interval for the public timer of the given region.
+//The interval ticks the timer and manages the yellow/green border
 function StartInterval(region) {
     intervals[region] = setInterval(function () {
         var distance = openTimes[region].getTime() - Date.now();

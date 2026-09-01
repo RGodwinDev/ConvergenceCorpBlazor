@@ -1,0 +1,16 @@
+﻿@using ConvergenceCorpBlazor.Classes.Model.Game.Festivals.FourWinds;
+<div class="GauntletBossContainer">
+    <h3>@boss.Name</h3>
+    <p>@boss.About</p>
+    <h4>Skills:</h4>
+    <ul>
+        @foreach(string skill in boss.Skills){
+                <li>@skill</li>
+        }
+    </ul>
+</div>
+
+@code{
+    [Parameter]
+    public GauntletBosses boss { get; set; } = GauntletBosses.Bosses[0];
+}

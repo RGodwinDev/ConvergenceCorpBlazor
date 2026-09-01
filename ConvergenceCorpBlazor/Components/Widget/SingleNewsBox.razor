@@ -1,0 +1,44 @@
+﻿@using ConvergenceCorpBlazor.Classes.Model.News;
+
+@if(article != null)
+{
+    <a href="@article.Link" style="padding:5px;">
+        <div style="height:100%;width:250px;overflow:hidden;border:var(--primary-brand-color) 1px solid; border-radius:10px;background-color:var(--secondary-brand-color)">
+
+            <img class="newsarticleimage" src=@Assets[@article.ImageLink] />
+            <h2 style="text-decoration:none; text-align:center;">@article.Title</h2>
+            <div class="newsarticleinfocontainer">
+                <span class="articledates time">@article.PublishDate</span>
+                <p>
+                    @article.Snippet
+                </p>
+            </div>
+
+        </div>
+    </a>
+}
+else
+{
+    <div>
+        Article @NewsID not found!
+    </div>
+}
+
+
+@code {
+    [Parameter]
+    public int NewsID { get; set; } = 0;
+
+
+    Article? article;
+
+    protected override void OnParametersSet()
+    {
+        /*
+         * This code is fragile because it assumes the articles array does not have any empty gaps between IDs.
+         */
+        article = Article.Articles[NewsID];
+
+        base.OnParametersSet();
+    }
+}

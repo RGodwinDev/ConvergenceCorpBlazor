@@ -1,4 +1,6 @@
-﻿@page "/Festivals/CrownPavilion"
+﻿@using ConvergenceCorpBlazor.Classes.Model.Game.Festivals.FourWinds;
+
+@page "/Festivals/CrownPavilion"
 <HeadContent>
     <PageTitle>Festival of Four Winds: Crown Pavilion! | Convergence Corp!</PageTitle>
     <meta name="description" content="Festival of Four Winds: Crown Pavilion!">
@@ -11,9 +13,411 @@
 <article class="festival-article">
     
     <h1>CrownPavilion</h1>
-    <img src=@Assets["/images/Festivals/FourWinds/Pavilion/CrownPavilion-Banner.png"] style="width:100%;"/>
+    <section>
+        <img src=@Assets["/images/Festivals/FourWinds/Pavilion/CrownPavilion-Banner.png"] style="width:100%;"/>
+        <p>
+            Originally built in the huge sinkhole known as the Great Collapse, 
+            the Crown Pavilion was built to host the Queen's Jubilee, 
+            a celebration of Queen Jennah's 10th year of reign over Kryta.
+        </p>
+        <p>
+            The Crown Pavilion opens up during the Festival of the Four Winds,
+            which typically starts in Late July or August.
+        </p>
+    </section>
+    <figure style="width:100%; max-width:600px;">
+        <img src=@Assets["/images/Festivals/FourWinds/Pavilion/CrownPavilion-Center.png"]  style="width:100%;"/>
+        <figcaption>The central island of the Crown Pavilion</figcaption>
+    </figure>
+
+    <section>
+        <h2>Activities!</h2>
+
+        <!-- Boss Blitz -->
+        <h3 id="Blitz">Boss Blitz</h3>
+        <img src=@Assets["/images/Festivals/FourWinds/Pavilion/BossBlitz-Banner800x200.png"] style="width:100%;"/>
+        <p>
+            The Boss Blitz is the main event of the Crown Pavilion. 
+            Each section of the pavilion features a Legendary boss.
+        </p>
+        <p>
+            Killing one of the bosses will pass their special skill to all of the other bosses.
+        </p>
+        <p>
+            Blitz Organizer Grayford prepares the next Boss Blitz, the progress bar can be seen slowly filling in the active events.
+            You can donate gold to Grayford to speed up the process,
+            5% per 1 gold.
+        </p>
+        <h3>Bosses</h3>
+        <img src=@Assets["/images/Festivals/FourWinds/Pavilion/CrownPavilion-Blitz.png"] style="width:100%;" />
+        <div style="display:flex;flex-direction:column;align-items:center;width:100%;">
+            <div class="BossBlitzBossContainer">
+                <figure class="BossFigure">
+                    <img class="BlitzBossPic" src=@Assets["/images/Festivals/FourWinds/Pavilion/BlitzBosses/Baines.png"] />
+                    <figcaption>Boom-Boom Baines</figcaption>
+                    <blockquote>
+                        Working out of EarthLord's Gap, Baines proclivity for explosives and her fiery personality made her an infamous bandit across the human realm.
+                    </blockquote>
+                </figure>
+                <div class="BossSpecial">
+                    <h4>
+                        <img src=@Assets["/images/Festivals/FourWinds/Pavilion/BlitzSkills/Bandit_Boon.png"] />
+                        Explosive Powder Kegs
+                    </h4>
+                    <p>
+                        Explosive Kegs spawn randomly around the boss, explosively exploding after a few a seconds.
+                    </p>
+                </div>
+            </div>
+            <div class="BossBlitzBossContainer">
+                <figure class="BossFigure">
+                    <img class="BlitzBossPic" src=@Assets["/images/Festivals/FourWinds/Pavilion/BlitzBosses/Hablion.png"] />
+                    <figcaption>Justiciar Hablion</figcaption>
+                    <blockquote>
+                            One of the founding members of the White Mantle, Justiciar Hablion was a one of Saul D'Alessio's closest friends.
+                            After the bloodstone explosion in Bloodstone Fen, his soul now haunts the Colosseum of the Faithful.
+                    </blockquote>
+                </figure>
+                <div class="BossSpecial">
+                    <h4>
+                        <img src=@Assets["/images/Festivals/FourWinds/Pavilion/BlitzSkills/Spectral_Displacement.png"] />
+                        Spectral Displacement
+                    </h4>
+                    <p>
+                        AoEs on the ground randomly teleport players.
+                    </p>
+                </div>
+            </div>
+            <div class="BossBlitzBossContainer">
+                <figure class="BossFigure">
+                    <img class="BlitzBossPic" src=@Assets["/images/Festivals/FourWinds/Pavilion/BlitzBosses/Kuraii.png"] />
+                    <figcaption>Kuraii the Cruel</figcaption>
+                    <blockquote>
+                        A ruthless strategist from the Tamini Centaurs of the War King's Greatcamp,
+                        Kuraii the Cruel would shoot his enemies with debilitating arrows and retreat into a maze of his own making.
+                    </blockquote>
+                </figure>
+                <div class="BossSpecial">
+                    <h4>
+                        <img src=@Assets["/images/Festivals/FourWinds/Pavilion/BlitzSkills/Trample.png"] />
+                        Trample
+                    </h4>
+
+                    <p>
+                        Centuars swarm the arena, trampling anyone in their way.
+                    </p>
+                </div>
+            </div>
+            <div class="BossBlitzBossContainer">
+                <figure class="BossFigure">
+                    <img class="BlitzBossPic" src=@Assets["/images/Festivals/FourWinds/Pavilion/BlitzBosses/Pyroxis.png"] />
+                    <figcaption>Pyroxis</figcaption>
+
+                    <blockquote>
+                        Based on the destroyers that live in the lava floes of Mount Maelstrom,
+                        Pyroxis conjures Lava and spits fire.
+                    </blockquote>
+                </figure>
+                <div class="BossSpecial">
+                    <h4>
+                        <img src=@Assets["/images/Festivals/FourWinds/Pavilion/BlitzSkills/Firewave.png"] />
+                        Firewave
+                    </h4>
+                    <p>
+                        Fire scythes shoot out from the boss. They ricochet when hitting a wall.
+                    </p>
+                </div>
+            </div>
+
+            <div class="BossBlitzBossContainer">
+                <figure class="BossFigure">
+                    <img class="BlitzBossPic" src=@Assets["/images/Festivals/FourWinds/Pavilion/BlitzBosses/Sparcus.png"] />
+                    <figcaption>Sparcus Firesplash</figcaption>
+                    <blockquote>
+                        Sparcus Firesplash was a fearsome warrior of the Flame Legion who presided over the Provatum Castrum.
+                    </blockquote>
+                </figure>
+                <div class="BossSpecial">
+                    <h4>
+                        <img src=@Assets["/images/Festivals/FourWinds/Pavilion/BlitzSkills/Fiery_Tornado.png"] />
+                        Fiery Tornado
+                    </h4>
+                    <p>
+                        Fire Tornados roam around, knocking back and burning anyone it crosses paths with.
+                    </p>
+                </div>
+                
+                
+            </div>
+            <div class="BossBlitzBossContainer">
+                <figure class="BossFigure">
+                    <img class="BlitzBossPic" src=@Assets["/images/Festivals/FourWinds/Pavilion/BlitzBosses/Wiggin.png"] />
+                    <figcaption>Wiggin the Wicked</figcaption>
+                    <blockquote>
+                        Wiggin the Wicked was a versatile fighter of the Convington Pirates that have taken over Laughing Gull Island.
+                        His signature move was to throw a bomb at his opponents while dodging them.
+                    </blockquote>
+                </figure>
+                <div class="BossSpecial">
+                    <h4>
+                        <img src=@Assets["/images/Festivals/FourWinds/Pavilion/BlitzSkills/Bombs_Away.png"] />
+                        Bombs Away
+                    </h4>
+                    <p>
+                        Cannon shots drop from the sky in an X pattern.
+                    </p>
+                </div>
+                
+                
+            </div>
+        </div>
+        <!-- Pavilion Pursuit (race) -->
+        <h3 id="Pursuit">Pavilion Pursuit</h3>
+        <img src=@Assets["/images/Festivals/FourWinds/Pavilion/PavilionPursuit-Banner.png"] style="width:100%;" />
+        <p>
+            Race through each sector of the Crown Pavilion on your trusty mount as you avoid environmental traps and enemies!
+        </p>
+        <p>
+            The Pavilion Pursuit is a race that starts 2 minutes after the Boss Blitz finishes. 
+            You can signup for the race immediately after the last boss of the blitz is defeated.
+        </p>
+        <p>
+            There is also a time trial version that you can do at anytime.
+        </p>
+        <h4>Related Achievements:</h4>
+        <ul>
+            <li>
+                <img src="https://render.guildwars2.com/file/E8959D0B4C417C7207AC27D2D20A0FA67A11D95F/2015705.png" style="width:48px;" />
+                Pavilion Pursuer - Finish the race or time trial within 2 minutes.
+            </li>
+            <li>
+                <img src="https://render.guildwars2.com/file/9BED5B1BC4DC043E72CA9A6F07704D4EF875655E/2015706.png" style="width:48px;" />
+                (Annual) Practiced Pursuit - Complete 5 laps in the race event or the time trial. 
+                The race event grants extra progress.
+            </li>
+            <li>
+                <img src="https://render.guildwars2.com/file/9BED5B1BC4DC043E72CA9A6F07704D4EF875655E/2015706.png" style="width:48px;" />
+                (Repeatable) Ace Racer - Finish 3 festival races in the Labyrinthine Cliffs or Crown Pavilion.
+            </li>
+        </ul>
+
+        <!-- Queen's Gauntlet -->
+        <h3 id="Guantlet">Queen's Gauntlet</h3>
+        <img src=@Assets["/images/Festivals/FourWinds/Pavilion/Gauntlet-Banner.png"] style="width:100%;" />
+        <p>
+            The Queen's Guantlet is a series of fights that you must challenge solo.
+            To advance a tier of the gauntlet, you must defeat all of the champions within your current tier.
+        </p>
+        <h4><img src="https://render.guildwars2.com/file/4A0D55430A717CE5BA7F98BEC20B92053646520A/619594.png" style="width:48px;" />Queen's Gauntlet Entrance Tickets</h4>
+        <p>
+            Challenging a boss costs an Entrance Ticket.
+            Adding gambits also costs an additional ticket per gambit added.
+        </p>
+        <p>
+            Tickets are purchasable from the Gauntlet Ticket Vendor for 35 Festival Tokens and 20 silver per 5 tickets.
+            Doing the Boss Blitz also gives tickets.
+            Tickets also have a chance to drop from all the mobs in the pavilion.
+        </p>
+        <h4>Queen's Gauntlet Achievements (no specific tier):</h4>
+        <ul>
+            <li>
+                <img src="https://render.guildwars2.com/file/DC4FE57C1BD6DD0D3A4763FC1F31DAB94DFF4A09/619304.png" style="width:48px;"/>
+                First Blood - Defeat 1 Queen's Guantlet opponent.
+            </li>
+            <li>
+                <img src="https://render.guildwars2.com/file/DC4FE57C1BD6DD0D3A4763FC1F31DAB94DFF4A09/619304.png" style="width:48px;" />
+                Blood Sport Enthusiast - Complete 1 Combat Challenge.
+            </li>
+            <li>
+                <img src="https://render.guildwars2.com/file/DC4FE57C1BD6DD0D3A4763FC1F31DAB94DFF4A09/619304.png" style="width:48px;" />
+                Blood Sport Connoisseur - Complete 7 Combat Challenges.
+            </li>
+            <li>
+                <img src="https://render.guildwars2.com/file/DC4FE57C1BD6DD0D3A4763FC1F31DAB94DFF4A09/619304.png" style="width:48px;" />
+                Gauntlet Contender - Defeat 12 Queen's Gauntlet bosses.
+            </li>
+            <li>
+                <img src="https://render.guildwars2.com/file/DC4FE57C1BD6DD0D3A4763FC1F31DAB94DFF4A09/619304.png" style="width:48px;" />
+                Gauntlet Favorite - Defeat 12 Queen's Gauntlet bosses with at least one gambit active.
+            </li>
+            <li>
+                <img src="https://render.guildwars2.com/file/9BED5B1BC4DC043E72CA9A6F07704D4EF875655E/2015706.png" style="width:48px;" />
+                (Annual) Gauntlet Contender - Defeat 12 Queen's Gauntlet bosses.
+            </li>
+        </ul>
+        <h3>Tier 1</h3>
+        <GauntletBoss boss=GauntletBosses.Bosses[0]/>
+        <GauntletBoss boss=GauntletBosses.Bosses[1]/>
+        <GauntletBoss boss=GauntletBosses.Bosses[2]/>
+        <GauntletBoss boss=GauntletBosses.Bosses[3]/>
+        <h4>Tier 1 Achievements:</h4>
+        <ul>
+            <li>
+                <img src="https://render.guildwars2.com/file/DC4FE57C1BD6DD0D3A4763FC1F31DAB94DFF4A09/619304.png" style="width:48px;" />
+                Doobroosh Tranquilizer - Defeat Doobroosh after he gains max stacks of Hormonal Imbalance
+            </li>
+            <li>
+                <img src="https://render.guildwars2.com/file/DC4FE57C1BD6DD0D3A4763FC1F31DAB94DFF4A09/619304.png" style="width:48px;" />
+                Candle in the Wind - Defeat Windcaller Kieldia with On Fire gambit active.
+            </li>
+            <li>
+                <img src="https://render.guildwars2.com/file/DC4FE57C1BD6DD0D3A4763FC1F31DAB94DFF4A09/619304.png" style="width:48px;" />
+                Light Snuffer - Complete the first tier of the Queen's Guantlet.
+            </li>
+        </ul>
+
+        <h3>Tier 2</h3>
+        <GauntletBoss boss=GauntletBosses.Bosses[4] />
+        <GauntletBoss boss=GauntletBosses.Bosses[5] />
+        <GauntletBoss boss=GauntletBosses.Bosses[6] />
+
+        <!-- pirate ship crew is too complicated for the basic component -->
+        <div class="GauntletBossContainer">
+            <h3>The crew of the pirate ship Ravenous</h3>
+            <p>
+                The crew of the pirate ship Ravenous consists of 4 members. When one of them are killed, they pass on a skill to the rest of them.
+            </p>
+            <h4>Captain Barnicus</h4>
+            <ul>
+                <li>Swashbuckler's Daring - Periodically dodges attacks.</li>
+            </ul>
+            <h4>First Mate Gaets</h4>
+            <ul>
+                <li>Envenomed Blades - Attacks apply poison.</li>
+            </ul>
+            <h4>Stitches</h4>
+            <ul>
+                <li>Good Nutrition - Gain Health every second.</li>
+            </ul>
+            <h4>Master Gunner Adil</h4>
+            <ul>
+                <li>Ace in the Hole - Everyone gets pistols.</li>
+            </ul>
+        </div>
+        
+        <h4>Tier 2 Achievements:</h4>
+        <ul>
+            <li>
+                <img src="https://render.guildwars2.com/file/DC4FE57C1BD6DD0D3A4763FC1F31DAB94DFF4A09/619304.png" style="width:48px;" />
+                Savage Brute - Defeat Masticus with max stacks of Bloodlust active.
+            </li>
+            <li>
+                <img src="https://render.guildwars2.com/file/DC4FE57C1BD6DD0D3A4763FC1F31DAB94DFF4A09/619304.png" style="width:48px;" />
+                Pirate Punisher - Complete the second tier of the Queen's Gauntlet.
+            </li>
+        </ul>
+
+        <h3>Tier 3</h3>
+        <GauntletBoss boss=GauntletBosses.Bosses[8] />
+        <GauntletBoss boss=GauntletBosses.Bosses[9] />
+        <GauntletBoss boss=GauntletBosses.Bosses[10] />
+        <div class="GauntletBossContainer">
+            <h3>Liadri the Concealing Dark</h3>
+            <p>
+                Shrouded in darkness, Liadri is invulnerable to normal attacks. 
+            </p>
+            
+        </div>
+
+
+
+
+        <h4>Tier 3 Achievements:</h4>
+        <ul style="margin-top:0px;">
+            <li>
+                <img src="https://render.guildwars2.com/file/DC4FE57C1BD6DD0D3A4763FC1F31DAB94DFF4A09/619304.png" style="width:48px;" />
+                Risk Taker - Win 1 third tier match with an active gambit.
+            </li>
+            <li>
+                <img src="https://render.guildwars2.com/file/DC4FE57C1BD6DD0D3A4763FC1F31DAB94DFF4A09/619304.png" style="width:48px;" />
+                Triple Threat - Win 1 third tier match with three active gambits.
+            </li>
+            <li>
+                <img src="https://render.guildwars2.com/file/DC4FE57C1BD6DD0D3A4763FC1F31DAB94DFF4A09/619304.png" style="width:48px;" />
+                High Stackes Gambler - Win 1 third tier match with five active gambits.
+            </li>
+            <li>
+                <img src="https://render.guildwars2.com/file/DC4FE57C1BD6DD0D3A4763FC1F31DAB94DFF4A09/619304.png" style="width:48px;" />
+                Humble Victor - Win a third tier challenge with active Frailty and Squeamish gambits.
+            </li>
+            <li>
+                <img src="https://render.guildwars2.com/file/DC4FE57C1BD6DD0D3A4763FC1F31DAB94DFF4A09/619304.png" style="width:48px;" />
+                Blobs, Schmobs - Defeat Subject 7 without killing any oozes.
+            </li>
+            <li>
+                <img src="https://render.guildwars2.com/file/DC4FE57C1BD6DD0D3A4763FC1F31DAB94DFF4A09/619304.png" style="width:48px;" />
+                Meatless Murderer - Defeat Strugar and Chomper while denying Chomper any delicious meat.
+            </li>
+            <li>
+                <img src="https://render.guildwars2.com/file/DC4FE57C1BD6DD0D3A4763FC1F31DAB94DFF4A09/619304.png" style="width:48px;" />
+                Darkness Illuminator - Complete the third tier of the Queen's Gauntlet.
+            </li>
+            <li>
+                <img src="https://render.guildwars2.com/file/DC4FE57C1BD6DD0D3A4763FC1F31DAB94DFF4A09/619304.png" style="width:48px;" />
+                Light Up the Darkness - Defeat Liadri the Concealing Dark after striking her with eight orbs of blazing light.
+            </li>
+            
+        </ul>
+
+        <h3>Special Tier</h3>
+        <GauntletBoss boss=GauntletBosses.Bosses[12]/>
+        <GauntletBoss boss=GauntletBosses.Bosses[13]/>
+        <GauntletBoss boss=GauntletBosses.Bosses[14]/>
+        <GauntletBoss boss=GauntletBosses.Bosses[15]/>
+        <div class="GauntletBossContainer">
+            <h3>King Turai Ossa</h3>
+            <p>
+                A recreation of the legendary former King of Elona. 
+                Easily the hardest fight of the gauntlet, Turai Ossa wields his Eternal Blade and the Shield of Elona.
+            </p>
+            <p>
+                Survive his onslaught of attacks with blocks and dodges. 
+                After ~30 seconds, he jumps in the middle and will throw his shield at you.
+                If it hits, it will bounce back and empower him.
+                If it misses, he loses the shield and attempts to recall it. Break his breakbar to stop him.
+            </p>
+            <p>
+                He takes much more damage after losing his shield, continue to kite and block his sword skills until he jumps in the middle again.
+                Turai will then throw his sword at you, if it lands then both the sword and the shield will come back to him.
+                Break his breakbar again and he will also lose the sword.
+            </p>
+            <p>
+                After losing both his sword and shield, Turai will resort to kicks and punches. 
+                While he's much easier to deal with, don't get complacent or he'll take you out.
+            </p>
+            <p>Shield Skills</p>
+            <ul>
+                <li>Shield Bash - Turai slams his shield into you. Stuns.</li>
+                <li>Shield Throw - Turai throws his shield, if you get hit it bounces back and empowers him.</li>
+            </ul>
+            <p>Sword Skills</p>
+            <ul>
+                <li>Whirlwind Attack - A spinning attack in your direction.</li>
+                <li>Dragon Slash - Turai rolls into a stab from the side. Applys weakness and bleeding.</li>
+                <li>Savage Leap - Turai leaps forward with a powerful stab. Cripples.</li>
+                <li>Sever Artery - Bleeds.</li>
+                <li>Gash - After Sever Artery. Bleeds.</li>
+                <li>Hamstring - After Gash. Bleeds.</li>
+                <li>Lunging Slash - Turai lunges forward. </li>
+                <li>Pommel Bash - Turai hits you with the bottom of his sword. Stuns.</li>
+                <li>Stomp - Turai leaps and stomps on the ground with enough force to cause a small earthquake. Cripples. </li>
+            </ul>
+            <p>Unarmed Skills</p>
+            <ul>
+                <li>Power Punch - a charged punch.</li>
+                <li>Combo - The ol' one two punch.</li>
+                <li>Jab</li>
+                <li>Uppercut</li>
+                <li>Flying Knee</li>
+            </ul>
+        </div>
+        <h4>Special Tier Achievements:</h4>
+        <ul>
+            <li>
+                <img src="https://render.guildwars2.com/file/DC4FE57C1BD6DD0D3A4763FC1F31DAB94DFF4A09/619304.png" style="width:48px;" />
+                Kingslayer - Defeat King Turai Ossa.
+            </li>
+        </ul>
+    </section>
+
 </article>
-
-@code {
-
-}

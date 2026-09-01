@@ -1,8 +1,8 @@
 :root {
     --primary-bg-color: #000000;
-    --secondary-bg-color: #0d0d0d;
+    --secondary-bg-color: #050505;
     --primary-brand-color: #73060F;
-    --secondary-brand-color: #291113;
+    --secondary-brand-color: #120808;
     --primary-text-color: #f5f5f5;
 }
 
@@ -37,13 +37,17 @@ a:hover{
     filter:brightness(.6);
 }
 
-article{
-    padding:10px;
-    width:100%;
-    max-width:1200px;
+article {
+    padding: 10px;
+    width: 100%;
+    max-width: 1200px;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    background: linear-gradient(var(--secondary-bg-color), var(--secondary-bg-color)) padding-box, linear-gradient(90deg, var(--secondary-brand-color), var(--secondary-brand-color)) border-box;
+    background-clip: padding-box, border-box;
 }
 @media(max-width:1200px){
-    article{
+    article{ 
         padding:0px;
     }
 }
@@ -315,7 +319,7 @@ option:hover{
 
 section {
     display:flex; 
-    flex-direction:column; 
+    flex-direction:column;
     align-items:center;
 }
 
@@ -402,69 +406,17 @@ section {
     text-wrap:stable;
     margin:.2rem;
 }
-
-.festival-article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 800px;
+.newsarticleimage {
+    width: 100%;
+    object-fit: contain;
+    height: 200px;
 }
-.festival-article > section{
-    align-items:baseline;
-    width:100%;
-}
-    .festival-article > section > p {
-        text-align: left;
-        width: 100%;
-        text-wrap: stable;
-        margin: .2rem;
-    }
-
-    .festival-article > section > ul > li {
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-    }
-
-    .festival-article > section > ul.achievelist {
-        display: none;
-        overflow: hidden;
-    }
-
-    .festival-article > section > ul.dragonbash-onetimeachieves > li {
-        background: linear-gradient(75deg,rgba(164, 75, 181, 1) 0%, rgba(164, 75, 181, 0) 100%);
-        border-radius: 5px;
-    }
-    .festival-article > section > ul.dragonbash-annuals > li {
-        background: linear-gradient(75deg,rgba(164, 75, 181, 1) 0%, rgba(164, 75, 181, 0) 100%);
-        border-radius: 5px;
-    }
-    .festival-article > section > ul.dragonbash-repeatables > li {
-        background: linear-gradient(75deg,rgba(164, 75, 181, 1) 0%, rgba(164, 75, 181, 0) 100%);
-        border-radius: 5px;
-    }
-.dragonbashcollapsebutton{
-    background-color:rgba(164, 75, 181, 1);
-    border-radius:10px;
-    font-family:'Cascadia Code';
-    font-size:1rem;
-    font-weight:400;
-    color:whitesmoke;
+.newsarticleinfocontainer {
+    text-align: center;
+    align-content:end;
 }
 
-.festivalpage {
-    align-items: baseline;
-}
-.festivalpage > p{
-    text-align:left;
-    margin:0px;
-}
-.festivalpage > h2{
-    margin:0px;
-}
-.festivalpage > img{
-    margin-bottom: 10px;
-}
+
 
 .stream-and-chat-container{
     display:flex;
@@ -533,3 +485,141 @@ section {
 .timeropen{
     border:solid 3px green;
 }
+
+/*
+    Festivals!
+*/
+.festival-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+}
+
+    .festival-article > section {
+        align-items: baseline;
+        width: 100%;
+    }
+
+        .festival-article > section > p {
+            text-align: left;
+            width: 100%;
+            text-wrap: stable;
+            margin: .2rem;
+        }
+
+        .festival-article > section > ul{
+            margin-top:0px;
+        }
+        .festival-article > section > ul > li {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .festival-article > section > ul.achievelist {
+            display: none;
+            overflow: hidden;
+        }
+
+        .festival-article > section > ul.dragonbash-onetimeachieves > li {
+            background: linear-gradient(75deg,rgba(164, 75, 181, 1) 0%, rgba(164, 75, 181, 0) 100%);
+            border-radius: 5px;
+        }
+
+        .festival-article > section > ul.dragonbash-annuals > li {
+            background: linear-gradient(75deg,rgba(164, 75, 181, 1) 0%, rgba(164, 75, 181, 0) 100%);
+            border-radius: 5px;
+        }
+
+        .festival-article > section > ul.dragonbash-repeatables > li {
+            background: linear-gradient(75deg,rgba(164, 75, 181, 1) 0%, rgba(164, 75, 181, 0) 100%);
+            border-radius: 5px;
+        }
+
+/*
+    cc.net/Festivals
+*/
+.festivalpage {
+    align-items: baseline;
+}
+
+    .festivalpage > p {
+        text-align: left;
+        margin: 0px;
+    }
+
+    .festivalpage > h2 {
+        margin: 0px;
+    }
+
+    .festivalpage > a > img {
+        margin-bottom: 10px;
+        max-width:100%;
+    }
+
+/*
+    Dragon Bash
+*/
+.dragonbashcollapsebutton {
+    background-color: rgba(164, 75, 181, 1);
+    border-radius: 10px;
+    font-family: 'Cascadia Code';
+    font-size: 1rem;
+    font-weight: 400;
+    color: whitesmoke;
+}
+/*
+    Crown Pavilion
+*/
+.BossBlitzBossContainer{
+    width:100%;
+    max-width:500px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.BlitzBossPic{
+    width:100%;
+}
+.BossFigure {
+    padding: 10px;
+    background: #111;
+    border-radius: 20px;
+    border: solid #500 2px;
+    width:100%;
+}
+.BossSpecial {
+    background: #111;
+    border: solid #500 2px;
+    border-radius:20px;
+    width:100%;
+    max-width:400px;
+}
+
+.GauntletBossContainer {
+    background-color: var(--secondary-brand-color);
+    border: solid 2px #500;
+    border-radius: 5px;
+    align-items: baseline;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+    .GauntletBossContainer > h3, h4 {
+        margin:0px;
+    }
+    .GauntletBossContainer > p{
+        text-align:left;
+        width:100%;
+        text-wrap:stable;
+    }
+    .GauntletBossContainer > ul{
+        width:100%;
+    }
+        .GauntletBossContainer > ul > li{
+            width:100%;
+            margin:0px;
+            background-color:#500;
+            border:solid 2px var(--secondary-brand-color);
+        }
