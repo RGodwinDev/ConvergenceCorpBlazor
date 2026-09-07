@@ -2,7 +2,7 @@
 @rendermode InteractiveServer
 @inject IJSRuntime JS
 
-@page "/News"
+@page "/news"
 <HeadContent>
     <title>News! | Convergence Corp!</title>
     <meta name="description" content="The latest news from Convergence Corp!">
@@ -34,7 +34,6 @@
     
 </script>
 @code {
-
     protected override void OnAfterRender(bool firstRender)
     {
         JS.InvokeVoidAsync("ConvertNewsTimesToLocal");
