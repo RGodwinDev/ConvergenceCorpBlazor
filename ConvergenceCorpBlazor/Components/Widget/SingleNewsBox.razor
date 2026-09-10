@@ -3,10 +3,10 @@
 @if(article != null)
 {
     <a href="@article.Link" style="padding:5px;">
-        <div style="height:100%;width:250px;overflow:hidden;border:var(--primary-brand-color) 1px solid; border-radius:10px;background-color:var(--secondary-brand-color)">
+        <div class="news-article-box">
 
-            <img class="newsarticleimage" src=@Assets[@article.ImageLink] />
-            <h2 style="text-decoration:none; text-align:center;">@article.Title</h2>
+            <img src=@Assets[@article.ImageLink] />
+            <h2>@article.Title</h2>
             <div class="newsarticleinfocontainer">
                 <span class="articledates time">@article.PublishDate</span>
                 <p>
