@@ -1,4 +1,6 @@
 @page "/voe"
+@using ConvergenceCorpBlazor.Components.Pages.VisionsOfEternity.Pre;
+@using ConvergenceCorpBlazor.Components.Pages.VisionsOfEternity.Sections;
 @using ConvergenceCorpBlazor.Components.Widget.PublicTimers;
 @rendermode InteractiveServer
 
@@ -21,5 +23,7 @@
         <PublicTimer gameRegion="Classes.Model.Game.GameRegion.Magic" TimerSize="Large" />
         <img id="voeupdates" src=@Assets["/images/VoE/gw2-ex6-voe-feature-table.jpg"] alt="voe feature table" />
     </section>
-
+    <section>
+    <GettingIn></GettingIn>
+    </section>
 </article>
