@@ -1,29 +1,7 @@
-﻿ul{
-    align-items:baseline;
-    flex-direction:row;
-    flex-wrap:wrap;
-    justify-content:center;
-    max-width:1200px;
-}
-    @media(min-width:500px){
-        ul {
-            align-items:center;
-        }
-    }
-li{
-    width:300px;
-}
-#mapidslist{
+﻿#mapidslist{
     flex-direction:column;
 }
     #mapidslist > li {
-        max-width:100%;
-        text-wrap:nowrap;
-    }
-
-    @media(max-width:500px){
-        #mapidslist > li{
-            width:100%;
-            text-wrap:wrap;
-        }
+        width:100%;
+        text-wrap:wrap;
     }

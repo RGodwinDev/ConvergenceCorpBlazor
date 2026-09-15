@@ -1,4 +1,6 @@
 @page "/voe"
+@using ConvergenceCorpBlazor.Components.Pages.VisionsOfEternity.Pre;
+@using ConvergenceCorpBlazor.Components.Pages.VisionsOfEternity.Sections;
 @using ConvergenceCorpBlazor.Components.Widget.PublicTimers;
 @rendermode InteractiveServer
 
@@ -11,7 +13,7 @@
     <meta property="og:image" content="https://convergencecorp.net/favicon/android-chrome-512x512.png"/>
     <meta property="og:description" content="Guild Wars 2: Visions of Eternity, out now!"/>
 </HeadContent>
-<article>
+<article class="Convergence-Article">
     
     
     <h1><img src=@Assets["/images/VoE/VoE_logo_gradient_800.png"] alt="VoE Logo" style="width:100px;" />Visions of Eternity</h1>
@@ -21,5 +23,7 @@
         <PublicTimer gameRegion="Classes.Model.Game.GameRegion.Magic" TimerSize="Large" />
         <img id="voeupdates" src=@Assets["/images/VoE/gw2-ex6-voe-feature-table.jpg"] alt="voe feature table" />
     </section>
-
+    <section>
+    <GettingIn></GettingIn>
+    </section>
 </article>

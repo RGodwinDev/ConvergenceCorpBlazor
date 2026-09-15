@@ -1,5 +1,4 @@
 @page "/jw"
-@using ConvergenceCorpBlazor.Components.Pages.JanthirWilds;
 @using ConvergenceCorpBlazor.Components.Pages.JanthirWilds.Bosses.Decima;
 @using ConvergenceCorpBlazor.Components.Pages.JanthirWilds.Bosses.Greer;
 @using ConvergenceCorpBlazor.Components.Pages.JanthirWilds.Pre;
@@ -20,19 +19,19 @@
     <meta property="og:description" content="Guides for Guild Wars 2: Janthir Wilds Convergences"/>
     <meta property="og:site_name" content="Convergence Corp!"/>
 </HeadContent>
-<article>
-<h1><img src=@Assets["/images/JW/Janthir_Wilds_logo.png"] alt="JW Logo" style="width:100px;"/>Janthir Wilds</h1>
-<img src=@Assets["/images/JW/jw-banner.png"] style="width:100%;" />
+<article class="Convergence-Article">
+    <h1><img src=@Assets["/images/JW/Janthir_Wilds_logo.png"] alt="JW Logo" style="width:100px;"/>Janthir Wilds</h1>
+    <img src=@Assets["/images/JW/jw-banner.png"] style="width:100%;" />
     
-<section>
-        <JanthirTableOfContents />
-</section>
-<JWPre />
-<Dolyak />
-<Building/>
-<Thumper />
-<JWShared />
-<Decima />
-<Greer />
-<Ura />
+    <section>
+            <JanthirTableOfContents />
+    </section>
+    <JWPre />
+    <Dolyak />
+    <Building/>
+    <Thumper />
+    <JWShared />
+    <Decima />
+    <Greer />
+    <Ura />
 </article>
