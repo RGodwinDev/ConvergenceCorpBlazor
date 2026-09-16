@@ -22,5 +22,5 @@ public enum Bosses : int
     //Placeholder = 0b1000000000,
 
     // VoE
-    VoE         = 0b10000000000,
+    Vloxx         = 0b10000000000,
 }
