@@ -33,8 +33,8 @@ a:link {
 a:visited {
     color: var(--primary-text-color);
 }
-a:hover{
-    filter:brightness(.6);
+ a:hover {
+    filter: brightness(.6);
 }
 
 article {
@@ -47,7 +47,7 @@ article {
     background-clip: padding-box, border-box;
 }
 @media(max-width:1200px){
-    article{ 
+    article { 
         padding:0px;
     }
 }
@@ -524,6 +524,20 @@ option:hover{
     }
 
 
+.itemul {
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+    .itemul > li{
+        width: 300px;
+    }
+        .itemul > li > h4 > img {
+            width:50px;
+        }
+
 
 /*
     Festivals!
@@ -669,6 +683,7 @@ option:hover{
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    margin-bottom:50px;
 }
 
 /*Home Page*/

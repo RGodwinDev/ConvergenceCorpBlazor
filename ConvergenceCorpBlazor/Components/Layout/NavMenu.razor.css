@@ -1,4 +1,10 @@
-﻿.navbar-toggler {
+﻿.nav-container{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.navbar-toggler {
     appearance: none;
     cursor: pointer;
     width: 3.5rem;
@@ -20,6 +26,13 @@
     background-color: rgba(0,0,0,1);
     display: flex;
     justify-content: center;
+    padding: 10px;
+    width: 100%;
+    max-width: 1200px;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    background: linear-gradient(var(--secondary-bg-color), var(--secondary-bg-color)) padding-box, linear-gradient(90deg, var(--secondary-brand-color), var(--secondary-brand-color)) border-box;
+    background-clip:padding-box, border-box;
 }
 
 
@@ -48,6 +61,11 @@
     font-size: 1.5rem;
     align-items: center;
     display: flex;
+    flex-direction:column;
+    color:#F0000A;
+    background:var(--secondary-bg-color);
+    padding:10px;
+    width:100%;
 }
 
 
@@ -80,9 +98,12 @@
 
 .nav-scrollable {
     display: none;
-    background-color: #160b0c;
+    background-color: var(--secondary-brand-color);
     border-top: 1px solid #291113;
     border-bottom: 1px solid #291113;
+    width:100%;
+    max-width:1200px;
+    padding:10px;
 }
 
 .navbar-toggler:checked ~ .nav-scrollable {

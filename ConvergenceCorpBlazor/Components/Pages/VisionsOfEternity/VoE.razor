@@ -1,7 +1,5 @@
 @page "/voe"
-@using ConvergenceCorpBlazor.Components.Pages.VisionsOfEternity.Pre;
 @using ConvergenceCorpBlazor.Components.Pages.VisionsOfEternity.Sections;
-@using ConvergenceCorpBlazor.Components.Widget.PublicTimers;
 @rendermode InteractiveServer
 
 <PageTitle>VoE | Convergence Corp!</PageTitle>
@@ -14,15 +12,14 @@
     <meta property="og:description" content="Guild Wars 2: Visions of Eternity, out now!"/>
 </HeadContent>
 <article class="Convergence-Article">
-    
-    
     <h1><img src=@Assets["/images/VoE/VoE_logo_gradient_800.png"] alt="VoE Logo" style="width:100px;" />Visions of Eternity</h1>
-    <section><VoETableOfContents /></section>
+    <img src=@Assets["/images/VoE/Convergence/Convergence-Banner.png"] style="width:100%;"/>
     <section>
-    <GettingIn></GettingIn>
+        <VoETableOfContents />
     </section>
-    <section>
-        <PublicTimer gameRegion="Classes.Model.Game.GameRegion.Magic" TimerSize="Large" />
-    </section>
+    <GettingIn />
+    <InstanceTypes />
+    <ItemsToBring />
+
     
 </article>
