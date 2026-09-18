@@ -1,5 +1,5 @@
 footer {
-    background-color: #160b0c;
+    background-color: var(--secondary-brand-color);
     color: darkgrey;
     display: flex;
     flex-direction: column;
