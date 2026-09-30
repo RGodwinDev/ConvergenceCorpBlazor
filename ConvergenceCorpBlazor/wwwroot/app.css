@@ -727,6 +727,34 @@ option:hover{
     }
 }
 
+.Records-Table{
+
+}
+    .Records-Table > tr > td{
+        text-align:center;
+    }
+    .Records-Table > tr > td:first-child{
+        width:110px;
+    }
+    .Records-Table > tr > td:nth-child(2){
+        width:80px;
+    }
+    .Records-Table > tr > td:nth-child(3){
+        width:85px;
+    }
+    .Records-Table > tr > td:nth-child(4){
+        width:30px;
+        text-align: center;
+    }
+    .Records-Table > tr > td:nth-child(5){
+        width:150px;
+
+    }
+    .Records-Table > tr > td:nth-child(6){
+        width:300px;
+        text-align:center;
+    }
+
 /*Builds*/
 .Builds-Article{
 

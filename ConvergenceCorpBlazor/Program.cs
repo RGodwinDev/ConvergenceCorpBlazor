@@ -147,6 +147,7 @@ if (twitchclientsetup)
         StreamRefreshTimer = new Timer(TwitchAPIController.RefreshStreams, null, 0, 60000);
         TwitchAPIController.GetUserColors();
     }
+}
     
 }
 

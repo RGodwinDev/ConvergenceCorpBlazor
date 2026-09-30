@@ -1,0 +1,329 @@
+﻿@rendermode InteractiveServer
+@using ConvergenceCorpBlazor.Classes.Model;
+@using ConvergenceCorpBlazor.Classes.Model.Records;
+
+
+<table class="Records-Table">
+    <tr>
+        <th>Boss</th>
+        <th>Time</th>
+        <th>Date</th>
+        <th>Region</th>
+        <th>Commander</th>
+        <th>Guild</th>
+    </tr>
+    <tr>Outer Nayos</tr>
+    @if(DemonKnight.id < 0)
+    {
+        <tr>
+            <td>Demon Knight</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    }
+    else
+    {
+        <tr>
+            <td>Demon Knight</td>
+            <td>@DemonKnight.time.ToString(@"mm\:ss\.fff")</td>
+            <td class="recDate">@DemonKnight.Date.Date.ToShortDateString()</td>
+            <td>@DemonKnight.region</td>
+            <td>@DemonKnight.CommName</td>
+            <td>@DemonKnight.GroupName</td>
+        </tr>
+    }
+    @if(Dreadwing.id < 0)
+    {
+        <tr>
+            <td>Dreadwing</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    }
+    else
+    {
+        <tr>
+            <td>Dreadwing</td>
+            <td>@Dreadwing.time.ToString(@"mm\:ss\.fff")</td>
+            <td class="recDate">@Dreadwing.Date.Date.ToShortDateString()</td>
+            <td>@Dreadwing.region</td>
+            <td>@Dreadwing.CommName</td>
+            <td>@Dreadwing.GroupName</td>
+        </tr>
+    }
+    @if(Hellsister.id < 0)
+    {
+        <tr>
+            <td>Hell Sister</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    }
+    else
+    {
+        <tr>
+            <td>Hell Sister</td>
+            <td>@Hellsister.time.ToString(@"mm\:ss\.fff")</td>
+            <td class="recDate">@Hellsister.Date.Date.ToShortDateString()</td>
+            <td>@Hellsister.region</td>
+            <td>@Hellsister.CommName</td>
+            <td>@Hellsister.GroupName</td>
+        </tr>
+    }
+    @if(Sorrow.id < 0)
+    {
+        <tr>
+            <td>Sorrow</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    }
+    else
+    {
+        <tr>
+            <td>Sorrow</td>
+            <td>@Sorrow.time.ToString(@"mm\:ss\.fff")</td>
+            <td class="recDate">@Sorrow.Date.Date.ToShortDateString()</td>
+            <td>@Sorrow.region</td>
+            <td>@Sorrow.CommName</td>
+            <td>@Sorrow.GroupName</td>
+        </tr>
+    }
+    
+    @if (Umbriel.id < 0)
+    {
+        <tr>
+            <td>Umbriel</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    }
+    else
+    {
+        <tr>
+            <td>Umbriel</td>
+            <td>@Umbriel.time.ToString(@"mm\:ss\.fff")</td>
+            <td class="recDate">@Umbriel.Date.Date.ToShortDateString()</td>
+            <td>@Umbriel.region</td>
+            <td>@Umbriel.CommName</td>
+            <td>@Umbriel.GroupName</td>
+        </tr>
+    }
+    <tr>Mount Balrior</tr>
+    @if (Decima.id < 0)
+    {
+        <tr>
+            <td>Decima</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    }
+    else
+    {
+        <tr>
+            <td>Decima</td>
+            <td>@Decima.time.ToString(@"mm\:ss\.fff")</td>
+            <td class="recDate">@Decima.Date.Date.ToShortDateString()</td>
+            <td>@Decima.region</td>
+            <td>@Decima.CommName</td>
+            <td>@Decima.GroupName</td>
+        </tr>
+    }
+    
+    @if (Greer.id < 0)
+    {
+        <tr>
+            <td>Greer</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    }
+    else
+    {
+        <tr>
+            <td>Greer</td>
+            <td>@Greer.time.ToString(@"mm\:ss\.fff")</td>
+            <td class="recDate">@Greer.Date.Date.ToShortDateString()</td>
+            <td>@Greer.region</td>
+            <td>@Greer.CommName</td>
+            <td>@Greer.GroupName</td>
+        </tr>
+    }
+    
+    @if (Ura.id < 0)
+    {
+        <tr>
+            <td>Ura</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    }
+    else
+    {
+        <tr>
+            <td>Ura</td>
+            <td>@Ura.time.ToString(@"mm\:ss\.fff")</td>
+            <td class="recDate">@Ura.Date.Date.ToShortDateString()</td>
+            <td>@Ura.region</td>
+            <td>@Ura.CommName</td>
+            <td>@Ura.GroupName</td>
+        </tr>
+    }
+    <tr>
+        Nexus of Eternity
+    </tr>
+    @if (Vloxx.id < 0)
+    {
+        <tr>
+            <td>Vloxx</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    }
+    else
+    {
+        <tr>
+            <td>Vloxx</td>
+            <td>@Vloxx.time.ToString(@"mm\:ss\.fff")</td>
+            <td class="recDate">@Vloxx.Date.Date.ToShortDateString()</td>
+            <td>@Vloxx.region</td>
+            <td>@Vloxx.CommName</td>
+            <td>@Vloxx.GroupName</td>
+        </tr>
+    }
+    
+</table>
+<script>
+    function FormatRecordDates(){
+        var x = document.getElementsByClassName("recDate");
+        for (var y of x) {
+            let d = new Date(y.innerText);
+            let z = d.toLocaleDateString();
+            if (z != "Invalid Date") {
+                y.innerText = d.toLocaleDateString();
+            }
+        }
+    }
+</script>
+
+
+@code {
+    [Parameter]
+    public Region Region { get; set; } = Region.None;
+    [Parameter]
+    public Season Season { get; set; } = Season.None;
+
+    //this could be an array.
+    ConvergenceRun DemonKnight =    new ConvergenceRun(-1, Bosses.DemonKnight,  new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
+    ConvergenceRun Dreadwing =      new ConvergenceRun(-2, Bosses.Dreadwing,    new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
+    ConvergenceRun Hellsister =     new ConvergenceRun(-3, Bosses.HellSister,   new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
+    ConvergenceRun Sorrow =         new ConvergenceRun(-4, Bosses.Sorrow,       new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
+    ConvergenceRun Umbriel =        new ConvergenceRun(-5, Bosses.Umbriel,      new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
+    ConvergenceRun Decima =         new ConvergenceRun(-6, Bosses.Decima,       new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
+    ConvergenceRun Greer =          new ConvergenceRun(-7, Bosses.Greer,        new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
+    ConvergenceRun Ura =            new ConvergenceRun(-8, Bosses.Ura,          new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
+    ConvergenceRun Vloxx =          new ConvergenceRun(-9, Bosses.Vloxx,        new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
+
+    protected override void OnParametersSet()
+    {
+        DateTimeOffset Start = new DateTimeOffset(2024, 11, 11, 11, 11, 11, new TimeSpan(0, 0, 0));
+        DateTimeOffset End = DateTimeOffset.UtcNow;
+
+        if(Season == Season.Jul2026)
+        {
+            Start = new DateTimeOffset(2026, 07, 15, 11, 00, 00, new TimeSpan(-5, 0, 0));
+        }
+        if(Season == Season.Apr2026)
+        {
+            Start = new DateTimeOffset(2026, 04, 14, 11, 00, 00, new TimeSpan(-5, 0, 0));
+            End = new DateTimeOffset(2026, 07, 15, 10, 59, 59, new TimeSpan(-5, 0, 0));
+        }
+        else if (Season == Season.Feb2026)
+        {
+            Start = new DateTimeOffset(2026, 02, 04, 11, 00, 00, new TimeSpan(-5, 0, 0));
+            End = new DateTimeOffset(2026, 04, 14, 10, 59, 59, new TimeSpan(-5, 0, 0));
+        }
+
+        //RESET THE VALUES
+        DemonKnight = new ConvergenceRun(-1, Bosses.DemonKnight, new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
+        Dreadwing = new ConvergenceRun(-2, Bosses.Dreadwing, new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
+        Hellsister = new ConvergenceRun(-3, Bosses.HellSister, new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
+        Sorrow = new ConvergenceRun(-4, Bosses.Sorrow, new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
+        Umbriel = new ConvergenceRun(-5, Bosses.Umbriel, new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
+        Decima = new ConvergenceRun(-6, Bosses.Decima, new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
+        Greer = new ConvergenceRun(-7, Bosses.Greer, new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
+        Ura = new ConvergenceRun(-8, Bosses.Ura, new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
+        Vloxx = new ConvergenceRun(-9, Bosses.Vloxx, new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
+
+
+        List<ConvergenceRun> Runs = ConvergenceRun.GetRegionRuns(Region, Start, End);
+        for(int i = 0; i < Runs.Count; ++i)
+        {
+            ConvergenceRun r = Runs[i];
+            if(r.boss == Bosses.DemonKnight && r.time < DemonKnight.time)
+            {
+                DemonKnight = r;
+            }
+            else if(r.boss == Bosses.Dreadwing && r.time < Dreadwing.time)
+            {
+                Dreadwing = r;
+            }
+            else if(r.boss == Bosses.HellSister && r.time < Hellsister.time)
+            {
+                Hellsister = r;
+            }
+            else if(r.boss == Bosses.Sorrow && r.time < Sorrow.time)
+            {
+                Sorrow = r;
+            }
+            else if(r.boss == Bosses.Umbriel && r.time < Umbriel.time)
+            {
+                Umbriel = r;
+            }
+            else if(r.boss == Bosses.Decima && r.time < Decima.time)
+            {
+                Decima = r;
+            }
+            else if(r.boss == Bosses.Greer && r.time < Greer.time)
+            {
+                Greer = r;
+            }
+            else if(r.boss == Bosses.Ura && r.time < Ura.time)
+            {
+                Ura = r;
+            }
+            else if(r.boss == Bosses.Vloxx && r.time < Vloxx.time)
+            {
+                Vloxx = r;
+            }
+        }
+        base.OnParametersSet();
+    }
+}

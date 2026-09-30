@@ -7,7 +7,7 @@ public enum Bosses : int
 
     // SoTo
     DemonKnight = 0b1,
-    DeathWing   = 0b10,
+    Dreadwing   = 0b10,
     HellSister  = 0b100,
     Sorrow      = 0b1000,
     Umbriel     = 0b10000,
