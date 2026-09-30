@@ -1,0 +1,138 @@
+﻿namespace ConvergenceCorpBlazor.Classes.Model.Records;
+
+public record ConvergenceRun(int id, Bosses boss, TimeSpan time, string CommName, string GroupName, Region region, DateTimeOffset Date)
+{
+
+
+    public static List<ConvergenceRun> GetRegionRuns(Region r, DateTimeOffset Start, DateTimeOffset End)
+    {
+        if (r == Region.None) 
+        { 
+            return Runs.FindAll(Run => Run.Date > Start && Run.Date < End); 
+        }
+        else
+        {
+            return Runs.FindAll(Run => Run.region == r && Run.Date > Start && Run.Date < End);
+        }
+    }
+
+
+    public static List<ConvergenceRun> Runs =
+        [
+            new ConvergenceRun(1, Bosses.Vloxx,         new TimeSpan(00,00,16,44,960), "Mike", "Void Lounge [VL]", Region.EU,
+                new DateTimeOffset(2026,09,29,13,00,00, new TimeSpan(-5,0,0))),
+
+            //NA July and after
+            new ConvergenceRun(2, Bosses.Vloxx,         new TimeSpan(00,00,18,09,000), "Darens", "", Region.NA,
+                new DateTimeOffset(2026,09,29,13,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(3, Bosses.DemonKnight,   new TimeSpan(00,00,10,43,280),"MarshAll", "", Region.NA,
+                new DateTimeOffset(2026,09,19,21,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(4, Bosses.Dreadwing,     new TimeSpan(00,00,11,33,480), "JMDHouse", "The Silverwastes Anonymous [SAS]", Region.NA,
+                new DateTimeOffset(2026,09,10,16,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(5, Bosses.HellSister,    new TimeSpan(00,00,12,49,280), "Darens", "", Region.NA,
+                new DateTimeOffset(2026,08,17,09,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(6, Bosses.Sorrow,        new TimeSpan(00,00,12,34,880), "JMDHouse", "The Silverwastes Anonymous [SAS]", Region.NA,
+                new DateTimeOffset(2026,09,10,16,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(7, Bosses.Umbriel,       new TimeSpan(00,00,13,06,600), "JMDHouse", "The Silverwastes Anonymous [SAS]", Region.NA,
+                new DateTimeOffset(2026,09,10,16,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(8, Bosses.Decima,        new TimeSpan(00,00,14,30,840), "JMDHouse", "The Silverwastes Anonymous [SAS]", Region.NA,
+                new DateTimeOffset(2026,09,21,16,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(9, Bosses.Greer,         new TimeSpan(00,00,14,36,480), "SunMatrix", "Convergence Corp [CVRG]", Region.NA,
+                new DateTimeOffset(2026,08,08,13,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(10, Bosses.Ura,          new TimeSpan(00,00,13,56,520), "SunMatrix", "Convergence Corp [CVRG]", Region.NA,
+                new DateTimeOffset(2026,09,05,13,00,00, new TimeSpan(-5,0,0))),
+            
+            //EU July and after
+            new ConvergenceRun(11, Bosses.DemonKnight, new TimeSpan(00,00,10,00,720),"Mike", "Void Lounge [VL]", Region.EU,
+                new DateTimeOffset(2026,08,24,12,00,00,new TimeSpan(-5,0,0))),
+            new ConvergenceRun(12, Bosses.Dreadwing, new TimeSpan(00,00,10,04,240), "Mike", "Void Lounge [VL]", Region.EU,
+                new DateTimeOffset(2026,08,10,12,00,00,new TimeSpan(-5,0,0))),
+            new ConvergenceRun(13, Bosses.HellSister, new TimeSpan(00,00,11,13,320), "Mike", "Void Lounge [VL]", Region.EU,
+                new DateTimeOffset(2026,08,24,12,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(14, Bosses.Sorrow, new TimeSpan(00,00,10,44,640), "Mike", "Void Lounge [VL]", Region.EU,
+                new DateTimeOffset(2026,08,10,12,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(15, Bosses.Umbriel, new TimeSpan(00,00,13,25,200), "Mook Chivalry", "[REF]", Region.EU,
+                new DateTimeOffset(2026,08,31,09,00,00,new TimeSpan(-5,0,0))),
+            new ConvergenceRun(16, Bosses.Decima, new TimeSpan(00,00,11,11,200), "Mike", "Void Lounge [VL]", Region.EU,
+                new DateTimeOffset(2026,09,21,12,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(17, Bosses.Greer, new TimeSpan(00,00,11,49,720), "Mike", "Void Lounge [VL]", Region.EU,
+                new DateTimeOffset(2026,09,21,12,00,00,new TimeSpan(-5,0,0))),
+            new ConvergenceRun(18, Bosses.Ura, new TimeSpan(00,00,11,30,240), "Mike", "Void Lounge [VL]", Region.EU,
+                new DateTimeOffset(2026,09,21,12,00,00,new TimeSpan(-5,0,0))),
+
+            //NA April
+            new ConvergenceRun(19, Bosses.DemonKnight, new TimeSpan(00,00,11,49,600),"JMDHouse", "The Silverwastes Anonymous [SAS]", Region.NA,
+                new DateTimeOffset(2026,05,21,15,00,00,new TimeSpan(-5,0,0))),
+            new ConvergenceRun(20, Bosses.Dreadwing, new TimeSpan(00,00,12,20,800), "JMDHouse", "The Silverwastes Anonymous [SAS]", Region.NA,
+                new DateTimeOffset(2026,05,21,15,00,00,new TimeSpan(-5,0,0))),
+            new ConvergenceRun(21, Bosses.HellSister, new TimeSpan(00,00,12,53,360), "JMDHouse", "The Silverwastes Anonymous [SAS]", Region.NA,
+                new DateTimeOffset(2026, 05,21,15,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(22, Bosses.Sorrow, new TimeSpan(00,00,12,43,720), "Darens", "", Region.NA,
+                new DateTimeOffset(2026,05,18,15,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(23, Bosses.Umbriel, new TimeSpan(00,00,13,58,400), "Darens", "", Region.NA,
+                new DateTimeOffset(2026,04,27,10,00,00,new TimeSpan(-5,0,0))),
+            new ConvergenceRun(24, Bosses.Decima, new TimeSpan(00,00,16,50,280), "SunMatrix", "Convergence Corp [CVRG]", Region.NA,
+                new DateTimeOffset(2026,04,20,13,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(25, Bosses.Greer, new TimeSpan(00,00,15,08,800), "SunMatrix", "Convergence Corp [CVRG]", Region.NA,
+                new DateTimeOffset(2026,05,18,13,00,00,new TimeSpan(-5,0,0))),
+            new ConvergenceRun(26, Bosses.Ura, new TimeSpan(00,00,14,18,280), "SunMatrix", "Convergence Corp [CVRG]", Region.NA,
+                new DateTimeOffset(2026,05,18,13,00,00,new TimeSpan(-5,0,0))),
+
+
+            //EU April
+            new ConvergenceRun(27, Bosses.DemonKnight, new TimeSpan(00,00,12,19,520),"Mook Chivalry", "[REF]", Region.EU,
+                new DateTimeOffset(2026,07,06,12,00,00,new TimeSpan(-5,0,0))),
+            new ConvergenceRun(28, Bosses.Dreadwing, new TimeSpan(00,00,12,42,320), "Mook Chivalry", "[REF]", Region.EU,
+                new DateTimeOffset(2026,07,13,12,00,00,new TimeSpan(-5,0,0))),
+            new ConvergenceRun(29, Bosses.HellSister, new TimeSpan(00,00,13,20,320), "Mook Chivalry", "[REF]", Region.EU,
+                new DateTimeOffset(2026,07,13,12,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(30, Bosses.Sorrow, new TimeSpan(00,00,12,57,240), "Mook Chivalry", "[REF]", Region.EU,
+                new DateTimeOffset(2026,07,06,12,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(31, Bosses.Umbriel, new TimeSpan(00,00,13,09,720), "Mike", "Void Lounge [VL]", Region.EU,
+                new DateTimeOffset(2026,06,01,12,00,00,new TimeSpan(-5,0,0))),
+            new ConvergenceRun(32, Bosses.Decima, new TimeSpan(00,00,15,52,280), "Mook Chivalry", "[REF]", Region.EU,
+                new DateTimeOffset(2026,07,13,12,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(33, Bosses.Greer, new TimeSpan(00,00,15,10,720), "Mook Chivalry", "[REF]", Region.EU,
+                new DateTimeOffset(2026,07,13,12,00,00,new TimeSpan(-5,0,0))),
+            new ConvergenceRun(34, Bosses.Ura, new TimeSpan(00,00,15,32,240), "Mook Chivalry", "[REF]", Region.EU,
+                new DateTimeOffset(2026,07,13,12,00,00,new TimeSpan(-5,0,0))),
+
+            //NA Feb
+            new ConvergenceRun(35, Bosses.DemonKnight, new TimeSpan(00,00,12,14,360),"JMDHouse", "The Silverwastes Anonymous [SAS]", Region.NA,
+                new DateTimeOffset(2026,03,12,15,00,00,new TimeSpan(-5,0,0))),
+            new ConvergenceRun(36, Bosses.Dreadwing, new TimeSpan(00,00,12,01,520), "Darens", "", Region.NA,
+                new DateTimeOffset(2026,02,23,09,00,00,new TimeSpan(-5,0,0))),
+            new ConvergenceRun(37, Bosses.HellSister, new TimeSpan(00,00,12,38,200), "Darens", "", Region.NA,
+                new DateTimeOffset(2026,02,23,09,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(38, Bosses.Sorrow, new TimeSpan(00,00,12,54,520), "JMDHouse", "The Silverwastes Anonymouse [SAS]", Region.NA,
+                new DateTimeOffset(2026,03,12,15,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(39, Bosses.Umbriel, new TimeSpan(00,00,14,31,840), "JMDHouse", "The Silverwastes Anonymous [SAS]", Region.NA,
+                new DateTimeOffset(2026,03,19,15,00,00,new TimeSpan(-5,0,0))),
+            new ConvergenceRun(40, Bosses.Decima, new TimeSpan(00,00,15,29,160), "Fornalha", "The Silverwastes Anonymous [SAS]", Region.NA,
+                new DateTimeOffset(2026,03,09,15,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(41, Bosses.Greer, new TimeSpan(00,00,14,44,000), "Fornalha", "The Silverwastes Anonymouse [SAS]", Region.NA,
+                new DateTimeOffset(2026,03,09,15,00,00,new TimeSpan(-5,0,0))),
+            new ConvergenceRun(41, Bosses.Ura, new TimeSpan(00,00,13,15,760), "SunMatrix", "Convergence Corp [CVRG]", Region.NA,
+                new DateTimeOffset(2026,02,21,13,00,00,new TimeSpan(-5,0,0))),
+
+            //EU Feb
+            new ConvergenceRun(42, Bosses.DemonKnight, new TimeSpan(00,00,09,45,800), "Mike", "Void Lounge [VL]", Region.EU,
+                new DateTimeOffset(2026, 04,13,12,00,00,new TimeSpan(-5,0,0))),
+            new ConvergenceRun(43, Bosses.HellSister, new TimeSpan(00,00,11,08,320), "Mike", "Void Lounge [VL]", Region.EU,
+                new DateTimeOffset(2026, 02,09,12,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(44, Bosses.Sorrow, new TimeSpan(00,00,10,39,440), "Mike", "Void Lounge [VL]", Region.EU,
+                new DateTimeOffset(2026, 02,09,12,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(45, Bosses.Umbriel, new TimeSpan(00,00,11,48,360), "Mike", "Void Lounge [VL]", Region.EU,
+                new DateTimeOffset(2026, 04,13,12,00,00, new TimeSpan(-5,0,0))),
+
+           //CN
+            new ConvergenceRun(46, Bosses.Decima, new TimeSpan(00,00,10,37,000), "", "", Region.CN,
+                new DateTimeOffset(2025,12,11,12,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(47, Bosses.Greer, new TimeSpan(00,00,11,16,000), "","", Region.CN,
+                new DateTimeOffset(2025,12,11,12,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(48, Bosses.Ura, new TimeSpan(00,00,10,17,000), "","",Region.CN,
+                new DateTimeOffset(2025,12,11,12,00,00,new TimeSpan(-5,0,0)))
+
+            //everything after september
+        ];
+}

@@ -1,0 +1,87 @@
+﻿@page "/records"
+@rendermode InteractiveServer
+@using ConvergenceCorpBlazor.Classes.Model;
+
+
+<PageTitle>Records | Convergence Corp!</PageTitle>
+<HeadContent>
+    <meta name="description" content="Tracking the best Convergence CM times!" />
+    <link rel="canonical" href="https://convergencecorp.net/records" />
+    <meta property="og:title" content="Records | Convergence Corp!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://convergencecorp.net/records" />
+    <meta property="og:image" content="https://convergencecorp.net/favicon/android-chrome-512x512.png" />
+    <meta property="og:description" content="Tracking the best Convergence CM times!" />
+    <meta property="og:site_name" content="Convergence Corp!" />
+</HeadContent>
+
+<article class="Records-Article">
+    <section>
+        <h1>Records!</h1>
+        <div>Tracking the best times for each Convergence CM.</div>
+        
+        <div>
+            Season: 
+            <select @onchange="OnSeasonChange">
+                <option value=@Season.None>All Time</option>
+                <option value=@Season.Jul2026>July 2026 - Present</option>
+                <option value=@Season.Apr2026>April 2026</option>
+                <option value=@Season.Feb2026>February 2026</option>
+            </select>
+            Region: 
+            <select @onchange="OnRegionChange">
+                <option value=@Region.None>ALL</option>
+                <option value=@Region.NA>NA</option>
+                <option value=@Region.EU>EU</option>
+                <option value=@Region.CN>CN</option>
+            </select>
+        </div>
+        <RecordsTable2 Region=selectRegionv2 Season=selectSeasonv2 />
+        <div>If you achieve a new #1, send me a message in <DiscordLink disctype=1 /> with proof and I'll update it!</div>
+    </section>
+</article>
+
+@code {
+    Region selectRegionv2 { get; set; } = Region.None;
+    Season selectSeasonv2 { get; set; } = Season.None;
+
+    private void OnRegionChange(ChangeEventArgs e)
+    {
+        if((string?)e.Value == "None")
+        {
+            selectRegionv2 = Region.None;
+        }
+        else if ((string?)e.Value == "NA")
+        {
+            selectRegionv2 = Region.NA;
+        }
+        else if ((string?)e.Value == "EU")
+        {
+            selectRegionv2 = Region.EU;
+        }
+        else if ((string?)e.Value == "CN")
+        {
+            selectRegionv2 = Region.CN;
+        }
+    }
+
+    private void OnSeasonChange(ChangeEventArgs e)
+    {
+        if ((string?)e.Value == "None")
+        {
+            selectSeasonv2 = Season.None;
+        }
+        else if ((string?)e.Value == "Feb2026")
+        {
+            selectSeasonv2 = Season.Feb2026;
+        }
+        else if ((string?)e.Value == "Apr2026")
+        {
+            selectSeasonv2 = Season.Apr2026;
+        }
+        else if ((string?)e.Value == "Jul2026")
+        {
+            selectSeasonv2 = Season.Jul2026;
+        }
+    }
+}

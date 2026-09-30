@@ -61,7 +61,7 @@ public class Boss : EnemyNPC
                     ""
                     )
             ]) },
-        {Bosses.DeathWing, new Boss("Dreadwing", "A Dragon!", 9000000,
+        {Bosses.Dreadwing, new Boss("Dreadwing", "A Dragon!", 9000000,
             [
                 new Skill("DW-1","Branded Rain of Fire",
                     "Dreadwing flys up and shoots 5 fireballs in an arc. " +

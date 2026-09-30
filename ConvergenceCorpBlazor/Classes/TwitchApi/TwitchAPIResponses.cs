@@ -34,7 +34,7 @@ public class StreamInfoFromAPI
  * Get User Chat Color
  * GET https://api.twitch.tv/helix/chat/color
  */
-class UserColorFromAPI()
+class UserColorFromAPI
 {
     public UserColors[] Data { get; set; } = [];
 }
