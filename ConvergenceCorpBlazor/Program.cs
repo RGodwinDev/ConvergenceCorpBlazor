@@ -149,7 +149,7 @@ if (twitchclientsetup)
     }
 }
     
-}
+//await GW2APIController.GetAllTitles();
 
 app.Run();
 
