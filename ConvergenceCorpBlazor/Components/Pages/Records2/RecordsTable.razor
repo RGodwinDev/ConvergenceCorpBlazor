@@ -239,6 +239,10 @@
     public Region Region { get; set; } = Region.None;
     [Parameter]
     public Season Season { get; set; } = Season.None;
+    [Parameter]
+    public String Comm { get; set; } = "";
+    [Parameter]
+    public String SelectedGroup { get; set; } = "";
 
     //this could be an array.
     ConvergenceRun DemonKnight =    new ConvergenceRun(-1, Bosses.DemonKnight,  new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
@@ -256,9 +260,15 @@
         DateTimeOffset Start = new DateTimeOffset(2024, 11, 11, 11, 11, 11, new TimeSpan(0, 0, 0));
         DateTimeOffset End = DateTimeOffset.UtcNow;
 
+        /*
+        * if(Season == Season.Nov2026){
+            *  Start = new DateTimeOffset(2026, 11, 10, 11, 00, 00, new TimeSpan(-5,0,0));
+            * }
+        */
         if(Season == Season.Jul2026)
         {
             Start = new DateTimeOffset(2026, 07, 15, 11, 00, 00, new TimeSpan(-5, 0, 0));
+            End = new DateTimeOffset(2026, 11, 10, 10, 59, 59, new TimeSpan(-5, 0, 0));
         }
         if(Season == Season.Apr2026)
         {
@@ -271,7 +281,7 @@
             End = new DateTimeOffset(2026, 04, 14, 10, 59, 59, new TimeSpan(-5, 0, 0));
         }
 
-        //RESET THE VALUES
+        //RESET THE VALUES 
         DemonKnight = new ConvergenceRun(-1, Bosses.DemonKnight, new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
         Dreadwing = new ConvergenceRun(-2, Bosses.Dreadwing, new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
         Hellsister = new ConvergenceRun(-3, Bosses.HellSister, new TimeSpan(00, 00, 20, 00, 000), "n/a", "n/a", Region.None, new DateTimeOffset());
@@ -284,6 +294,18 @@
 
 
         List<ConvergenceRun> Runs = ConvergenceRun.GetRegionRuns(Region, Start, End);
+
+        //filter runs by commander
+        if(Comm != "")
+        {
+            Runs = Runs.FindAll(r => r.CommName.Equals(Comm));
+        }
+        //filter runs by group
+        if(SelectedGroup != "")
+        {
+            Runs = Runs.FindAll(r => r.GroupName.Equals(SelectedGroup));
+        }
+
         for(int i = 0; i < Runs.Count; ++i)
         {
             ConvergenceRun r = Runs[i];
