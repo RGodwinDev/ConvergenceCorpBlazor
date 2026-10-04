@@ -22,33 +22,35 @@
         
         <div>
             Season: 
-            <select @onchange="OnSeasonChange">
+            <select id="SeasonSelect" @onchange="OnSeasonChange">
                 <option value=@Season.None>All Time</option>
                 <option value=@Season.Jul2026>July 2026 - Present</option>
                 <option value=@Season.Apr2026>April 2026</option>
                 <option value=@Season.Feb2026>February 2026</option>
             </select>
             Region: 
-            <select @onchange="OnRegionChange">
+            <select id="RegionSelect" @onchange="OnRegionChange">
                 <option value=@Region.None>ALL</option>
                 <option value=@Region.NA>NA</option>
                 <option value=@Region.EU>EU</option>
                 <option value=@Region.CN>CN</option>
             </select>
             Commander:
-            <select @onchange="OnCommanderChange">
+            <select id="CommSelect" @bind="selectedCommander" @bind:after="CommSelected">
                 <option value="">ALL</option>
                 <option value="Darens">Darens</option>
                 <option value="Fornalha">Fornalha</option>
                 <option value="JMDHouse">JMDHouse</option>
+                <option value="Lily Velour">Lily Velour</option>
                 <option value="MarshAll">MarshAll</option>
                 <option value="Mike">Mike</option>
                 <option value="Mook Chivalry">Mook Chivalry</option>
                 <option value="SunMatrix">SunMatrix</option>
             </select>
             Group:
-            <select @onchange="OnGroupChange">
+            <select id="GroupSelect" @bind="selectedGroup" @bind:after="GroupSelected">
                 <option value="">All</option>
+                <option value="Cabaret Velour [LILY]">Cabaret Velour [LILY]</option>
                 <option value="Convergence Corp [CVRG]">Convergence Corp [CVRG]</option>
                 <option value="[REF]">[REF]</option>
                 <option value="The Silverwastes Anonymous [SAS]">The Silverwastes Anonymous [SAS]</option>
@@ -66,6 +68,21 @@
     Season selectSeasonv2 { get; set; } = Season.None;
     String? selectedCommander { get; set; } = "";
     String? selectedGroup { get; set; } = "";
+
+    private void GroupSelected()
+    {
+        if(selectedGroup != "")
+        {
+            selectedCommander = "";
+        }
+    }
+    private void CommSelected()
+    {
+        if(selectedCommander != "")
+        {
+            selectedGroup = "";
+        }
+    }
 
     private void OnRegionChange(ChangeEventArgs e)
     {
@@ -107,12 +124,4 @@
         }
     }
 
-    private void OnCommanderChange(ChangeEventArgs e)
-    {
-        selectedCommander = (String?)e.Value;
-    }
-    private void OnGroupChange(ChangeEventArgs e)
-    {
-        selectedGroup = (String?)e.Value;
-    }
 }
