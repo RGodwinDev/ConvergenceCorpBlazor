@@ -205,6 +205,18 @@ public record ConvergenceRun(int id, Bosses boss, TimeSpan time, string CommName
                 new DateTimeOffset(2026,10,03,18,00,00,new TimeSpan(-5,0,0))),
             new ConvergenceRun(84, Bosses.Decima, new TimeSpan(00,00,17,24,760), "Lily Velour", "Cabaret Velour [LILY]", Region.NA,
                 new DateTimeOffset(2026,10,03,18,00,00,new TimeSpan(-5,0,0))),
+            new ConvergenceRun(85, Bosses.DemonKnight, new TimeSpan(00,00,15,02,760), "Calmer", "The Grove [WILT]", Region.NA,
+                new DateTimeOffset(2026,10,03,21,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(86, Bosses.Dreadwing, new TimeSpan(00,00,15,34,880), "Calmer", "The Grove [WILT]", Region.NA,
+                new DateTimeOffset(2026,10,03,21,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(87, Bosses.HellSister, new TimeSpan(00,00,18,24,200), "Calmer", "The Grove [WILT]", Region.NA,
+                new DateTimeOffset(2026,10,03,21,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(88, Bosses.Sorrow, new TimeSpan(00,00,18,53,720), "Calmer", "The Grove [WILT]", Region.NA,
+                new DateTimeOffset(2026,10,03,21,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(89, Bosses.Vloxx, new TimeSpan(00,00,15,55,680), "Mike", "Void Lounge [VL]", Region.EU,
+                new DateTimeOffset(2026,10,05,16,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(90, Bosses.Vloxx, new TimeSpan(00,00,17,10,080), "Emidotexe", "Potatos Bath Water [Nyaa]", Region.NA,
+                new DateTimeOffset(2026,10,04,20,00,00, new TimeSpan(-5,0,0))),
 
 
         ];
