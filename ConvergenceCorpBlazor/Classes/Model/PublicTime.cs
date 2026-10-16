@@ -81,7 +81,7 @@ public static class PublicTime
             //used for overflow, if the next time is over 24 hours.
             pub = pub.AddDays(publicTimes[i].Days);
 
-            if (pub <= nextTime && pub >= DateTimeOffset.UtcNow.AddMinutes(-15))
+            if (pub <= nextTime && pub >= DateTimeOffset.UtcNow.AddMinutes(-10))
             {
                 nextTime = pub;
             }

@@ -241,6 +241,8 @@ public record ConvergenceRun(int id, Bosses boss, TimeSpan time, string CommName
                 new DateTimeOffset(2026,10,12,18,00,00, new TimeSpan(-5,0,0))),
             new ConvergenceRun(102, Bosses.Umbriel, new TimeSpan(00,00,13,38,880), "JMDHouse", "The Silverwastes Anonymouse [SAS]", Region.NA,
                 new DateTimeOffset(2026,10,12,18,00,00, new TimeSpan(-5,0,0))),
+            new ConvergenceRun(103, Bosses.Sorrow, new TimeSpan(00,00,14,23,600), "SunMatrix", "Convergence Corp [CVRG]", Region.NA,
+                new DateTimeOffset(2026,10,12,21,00,00, new TimeSpan(-5,0,0))),
 
 
         ];

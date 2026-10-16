@@ -4,6 +4,7 @@ using ConvergenceCorpBlazor.Components.Widget;
 using Microsoft.OpenApi; //for SwaggerDocs 
 using static Microsoft.AspNetCore.Http.StatusCodes;
 using ConvergenceCorpBlazor.Classes.TwitchApi;
+using ConvergenceCorpBlazor.Classes.Guildwars2API;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -148,7 +149,7 @@ if (twitchclientsetup)
         TwitchAPIController.GetUserColors();
     }
 }
-    
+
 //await GW2APIController.GetAllTitles();
 
 app.Run();

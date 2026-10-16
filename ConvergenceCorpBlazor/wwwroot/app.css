@@ -801,3 +801,29 @@ option:hover{
         align-items: center;
     }
 }
+
+/* VoE SAK Table */
+.VoESAKTABLE{
+}
+    .VoESAKTABLE > tbody > tr {
+    }
+    /*Class*/
+    .VoESAKTABLE > tbody > tr > td:first-child{
+        width:95px;
+        align-items:center;
+        text-align:center;
+    }
+        .VoESAKTABLE > tbody > tr > td:first-child > img {
+            width:48px;
+        }
+    /*Skill*/
+    .VoESAKTABLE > tbody > tr > td:nth-child(2){
+        align-items:center;
+        text-align:center;
+    }
+        .VoESAKTABLE > tbody > tr > td:nth-child(2) > img {
+            width:48px;
+        }
+    /*Description*/
+    .VoESAKTABLE > tbody > tr > td:nth-child(3) {
+    }
