@@ -13,13 +13,17 @@
     <meta property="og:description" content="The latest news from Convergence Corp!" />
 </HeadContent>
 <article>
-<h1>News</h1>
-<div style="display:flex;flex-direction:row;justify-content:center;flex-wrap:wrap;">
-    @for(int i = Article.Articles.Count-1; i >= 0; --i)
-    {
-        <SingleNewsBox NewsID=i />
-    }
-</div>
+    <section>
+
+    <h1>News</h1>
+    <div class="d-flex gap-5 flex-wrap ps-5 justify-content-evenly">
+        @for(int i = Article.Articles.Count-1; i >= 0; --i)
+        {
+            <SingleNewsBox NewsID=i />
+        }
+    </div>
+    
+    </section>
 </article>
 
 <script>

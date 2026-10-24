@@ -1,27 +1,53 @@
-@using ConvergenceCorpBlazor.Classes.Model;
 @rendermode InteractiveServer
 
 <footer> <!-- nothing here but us feet -->
-    <p>
-        <a href="/">Home</a> /
-        <a href="/Deprecated">Old Stuff</a>
-    </p>
-    
-    <p>
-        Like the website? Help support the server fees over on
-    </p>
-    <div>
-        <a href="https://www.patreon.com/cw/SunMatrix" target="_blank" style="display:inline-flex; flex-direction:row; align-items:center;">
-            <image src="/images/Brands/Patreon/PATREON_SYMBOL_1_WHITE_RGB.svg" style="height:24px;padding-right:10px;" />
-            <span style="font-size:20px;">Patreon</span>
-        </a>
+    <div class="container-fluid">
+
+        <div class="row">
+            <div>
+                <a href="/">Home</a> /
+                <a href="/Deprecated">Old Stuff</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src=@Assets["/favicon2/android-chrome-512x512.png"] style="width:80px;"/>
+                <div style="font-weight:bold;">
+                    More from Convergence Corp!
+                </div>
+                <div style="font-size:24px;">
+                    <a href="https://discord.convergencecorp.net" target="_blank">
+                        <i class="bi bi-discord" />
+                    </a>
+                    <a href="https://twitch.tv/sunmatrix" target="_blank">
+                        <i class="bi bi-twitch" />
+                    </a>
+                    <a href="https://www.patreon.com/cw/SunMatrix" target="_blank" style="display:inline-flex; flex-direction:row; align-items:center;">
+                        <image src="/images/Brands/Patreon/PATREON_SYMBOL_1_WHITE_RGB.svg" style="height:24px;" />
+                    </a>
+                    <a href="https://github.com/RGodwinDev/ConvergenceCorpBlazor" target="_blank">
+                        <i class="bi bi-github"></i>
+                    </a>
+                </div>
+                
+            </div>
+            <div class="col text-end">
+                <div>Version: @ConvergenceCorpBlazor.Classes.Model.Version.version</div>
+                <div>Bootstrap: @ConvergenceCorpBlazor.Classes.Model.Version.bootstrap</div>
+                <div>Dotnet: @ConvergenceCorpBlazor.Classes.Model.Version.dotnet</div>
+                <div>@ConvergenceCorpBlazor.Classes.Model.Version.serverOS</div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <p class="small">
+                © ArenaNet LLC. All rights reserved. NCSOFT, ArenaNet, Guild Wars, Guild Wars 2, GW2, Guild Wars 2: Heart of Thorns, Guild Wars 2: Path of Fire, Guild Wars 2: End of Dragons, Guild Wars 2: Secrets of the Obscure, Guild Wars 2: Janthir Wilds, and Guild Wars 2: Visions of Eternity and all associated logos, designs, and composite marks are trademarks or registered trademarks of NCSOFT Corporation.
+            </p>
+            <p class="small">
+                Convergence Corp is a fan site and is not associated in any way to ArenaNet and it's properties.
+            </p>
+        </div>
+        
+        
     </div>
-    <p>
-        Convergence Corp is a fan site and is not associated in any way to ArenaNet and it's properties.
-    </p>
-    <p>
-        © ArenaNet LLC. All rights reserved. NCSOFT, ArenaNet, Guild Wars, Guild Wars 2, GW2, Guild Wars 2: Heart of Thorns, Guild Wars 2: Path of Fire, Guild Wars 2: End of Dragons, Guild Wars 2: Secrets of the Obscure, Guild Wars 2: Janthir Wilds, and Guild Wars 2: Visions of Eternity and all associated logos, designs, and composite marks are trademarks or registered trademarks of NCSOFT Corporation.
-    </p>
-    Version: @ConvergenceCorpBlazor.Classes.Model.Version.version
 </footer>
 

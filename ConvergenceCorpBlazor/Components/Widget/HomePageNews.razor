@@ -4,7 +4,7 @@
 
 <h2>News</h2>
 
-<div style="display:flex;flex-direction:row;justify-content:center;flex-wrap:wrap;">
+<div class="d-flex flex-row flex-wrap gap-5">
     @for(int i = Article.Articles.Count-1; i >= 0 && i > Article.Articles.Count-4; --i)
     {
         <SingleNewsBox NewsID=i/>
