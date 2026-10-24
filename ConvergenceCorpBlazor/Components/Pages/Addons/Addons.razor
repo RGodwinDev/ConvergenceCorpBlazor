@@ -10,14 +10,15 @@
     <meta property="og:description" content="Addons for Guild Wars 2! Blish Hud, Raidcore Nexus, Arcdps, and more!"/>
     <meta property="og:site_name" content="Convergence Corp!"/>
 </HeadContent>
-<article class="Addons-Article">
+<article class="Addons-Article text-center">
     <section>
         <h1>Addons</h1>
-        <p class="warning">
+        <div class="alert warning">
             WARNING: MODIFYING GUILD WARS 2 THROUGH ANY 3RD PARTY TOOLS IS NOT SUPPORTED BY ARENANET OR NCSOFT.
             DO NOT CONTACT SUPPORT ABOUT GAME CLIENT ISSUES WHILE USING THESE TOOLS. THERE IS NO HELP OR WARRANTY.
             THIS IS ENTIRELY AT YOUR OWN RISK AND YOU ASSUME ALL RESPONSIBILITY.
-        </p>
+        </div>
+        
         <div>
             There are NO official addons for Guild Wars 2.
         </div>
@@ -33,71 +34,145 @@
     </section>
     <section>
         <h2>Addon Managers:</h2>
-        <ul>
-            <li>
-                <h3><a href="https://blishhud.com/" target="_blank">Blish Hud</a></h3>
-                <p>Guild Wars 2's largest and most powerful addon overlay.</p>
-            </li>
-            <li>
-                <h3><a href="https://raidcore.gg/Nexus" target="_blank">Raidcore Nexus</a></h3>
-                <p>Next-gen Addon Manager & Loader for Guild Wars 2.</p>
-            </li>
-
-        </ul>
+        <div class="d-flex">
+            <div class="card addons-card">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <img class="card-img" src=@Assets["/images/Brands/BlishHUD/blishhud.png"] style="width:50px;" />
+                        Blish HUD
+                    </h4>
+                    <p class="card-text">Guild Wars 2's largest and most powerful addon overlay.</p>
+                    <button type="button" class="btn w-fit"><a href="https://blishhud.com" target="_blank">link <i class="bi bi-box-arrow-up-right"></i></a></button>
+                </div>
+            </div>
+            <div class="card addons-card">
+                <div class="card-body">
+                    <h4 class="card-title"><img class="card-img" src=@Assets["/images/Brands/Raidcore/raidcore.png"] style="width:50px;" />
+                        Raidcore Nexus
+                    </h4>
+                    <p>Next-gen Addon Manager & Loader for Guild Wars 2.</p>
+                    <button type="button" class="btn w-fit"><a href="https://raidcore.gg/gw2/Nexus" target="_blank">link <i class="bi bi-box-arrow-up-right"></i></a></button>
+                </div>
+            </div>
+        </div>
     </section>
     <section>
         <h2>Notable Addons:</h2>
-        <ul>
-            <li>
-                <h3><a href="https://www.deltaconnected.com/arcdps/" target="_blank">Arcdps</a></h3>
-                <p>The most popular DPS meter for Guild Wars 2.</p>
-                <p>Standalone | Nexus | Blish</p>
-            </li>
-            <li>
-                <h3><a href="https://burrito.orthogonalprojects.com/" target="_blank">Burrito</a></h3>
-                <p>An overlay tool for Guild Wars 2. It is built to run on Linux with no awkward workarounds.</p>
-                <p>GW2 plugin | Arcdps | Standalone </p>
-            </li>
-            <li>
-                <h3><a href="https://en-forum.guildwars2.com/topic/153463-guide-how-to-easily-improve-fps-and-decrease-stuttering-on-windows-using-dxvk-greatly-helps-amd-gpus/" target="_blank">DXVK</a></h3>
-                <p>Translates DX11 into Vulkan, circumventing issues with DX11 and DXNavi</p>
-                <p>For AMD GPU cards ONLY</p>
-            </li>
-            <li>
-                <h3><a href="https://www.gw2taco.com/" target="_blank">GW2TacO</a></h3>
-                <p>Guild Wars 2 Tactical Overlay</p>
-                <p>Standalone</p>
-            </li>
-            <li>
-                <h3><a href="https://taimihud.com/" target="_blank">TaimiHUD</a></h3>
-                <p>A cross-platform Timers, Commander's Markers and Pathing addon, leveraging Raidcore Nexus or ArcDPS.</p>
-                <p>Nexus | Arcdps</p>
-            </li>
-            <li>
-                <h3><a href="https://github.com/server-imp/UnhideNPCs" target="_blank">UnhideNPCs</a></h3>
-                <p>Alters the maximum character limit so that NPCs are never hidden/invisible.</p>
-                <p>Standalone | Nexus | Arcdps</p>
-            </li>
-            <li>
-                <h3><a href="https://github.com/HasKha/VfxDenoiserReleases" target="_blank">VfxDenoiser</a></h3>
-                <p>Reduces combat visual effects.</p>
-                <p>Nexus</p>
-            </li>
-        </ul>
+        <div class="d-flex flex-wrap gap-3 justify-content-center">
+            <!-- ArcDPS-->
+            <div class="card addons-card">
+                <div class="card-body">
+                    <h4 class="card-title">Arcdps</h4>
+                    <p class="card-text">The most popular DPS meter for Guild Wars 2.</p>
+                    <div class="container">
+                        <button class="btn w-fit"><a href="https://www.deltaconnected.com/arcdps/" target="_blank">Standalone <i class="bi bi-box-arrow-up-right"></i></a></button>
+                        <button class="btn w-fit"><a href="https://raidcore.gg/gw2/addons/arcdps" target="_blank">Nexus <i class="bi bi-box-arrow-up-right"></i></a></button>
+                    </div>
+                </div>
+            </div>
+            <!-- DXVK-->
+            <div class="card addons-card">
+                <div class="card-body">
+                    <h4 class="card-title">DXVK</h4>
+                    <p class="card-text">Translates DX11 into Vulkan, circumventing issues with DX11 and DXNavi.</p>
+                    <div class="container">
+                        <button class="btn w-fit"><a href="https://en-forum.guildwars2.com/topic/153463-guide-how-to-easily-improve-fps-and-decrease-stuttering-on-windows-using-dxvk-greatly-helps-amd-gpus/" target="_blank">
+                            link <i class="bi bi-box-arrow-up-right"></i></a></button>
+                    </div>
+                    <p class="card-text alert warning w-fit p-1">This is for AMD GPU cards ONLY!</p>
+                    
+                </div>
+            </div>
+            <!-- GW2TacO -->
+            <div class="card addons-card">
+                <div class="card-body">
+                    <h4 class="card-title">GW2 Taco</h4>
+                    <p class="card-text">Guild Wars 2 Tactical Overlay.</p>
+                    <p class="card-text">Markers and Paths.</p>
+                    <div class="container">
+                        <button class="btn w-fit"><a href="https://www.gw2taco.com/" target="_blank">Standalone <i class="bi bi-box-arrow-up-right"></i></a></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Blish Pathing -->
+            <div class="card addons-card">
+                <div class="card-body">
+                    <h4 class="card-title">Pathing</h4>
+                    <p>Robust marker pack support to guide you through map completion, difficult story content, and tedious achievements.</p>
+                    <div class="container">
+                        <button class="btn w-fit">
+                            <a href="https://blishhud.com/modules/?module=bh.community.pathing" target="_blank">
+                                BlishHUD <i class="bi bi-box-arrow-up-right"></i>
+                            </a>
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- TaimiHUD -->
+            <div class="card addons-card">
+                <div class="card-body">
+                    <h4 class="card-title">TaimiHUD</h4>
+                    <p class="card-text">A cross-platform Timers, commander's Markers and Pathing addon, leveraging Raidcore Nexus or ArcDPS.</p>
+                    <div class="container">
+                        <button class="btn w-fit">
+                            <a href="https://taimihud.com/install-guide/#arcdps" target="_blank">ArcDPS <i class="bi bi-box-arrow-up-right"></i></a>
+                        </button>
+                        <button class="btn w-fit">
+                            <a href="https://taimihud.com/install-guide/#nexus" target="_blank">Nexus <i class="bi bi-box-arrow-up-right"></i></a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- UnhideNPCs -->
+            <div class="card addons-card">
+                <div class="card-body">
+                    <h4 class="card-title">UnhideNPCs</h4>
+                    <p class="card-text">Alters the maximum character limit so that NPCs are never hidden/invisible.</p>
+                    <div class="container">
+                        <button class="btn w-fit">
+                            <a href="https://github.com/server-imp/UnhideNPCs" target="_blank">Standalone <i class="bi bi-box-arrow-up-right"></i></a>
+                        </button>
+                        <button class="btn w-fit">
+                            <a href="https://raidcore.gg/gw2/addons/unhide-npcs" target="_blank">Nexus <i class="bi bi-box-arrow-up-right"></i></a>
+                        </button>
+                        <button class="btn w-fit">
+                            <a href="https://github.com/server-imp/UnhideNPCs" target="_blank">ArcDPS <i class="bi bi-box-arrow-up-right"></i></a>
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- VfxDenoiser -->
+            <div class="card addons-card">
+                <div class="card-body">
+                    <h4 class="card-title">VfxDenoiser</h4>
+                    <p class="card-text">Reduces combat visual effects.</p>
+                    <div class="container">
+                        <button class="btn w-fit">
+                            <a  href="https://github.com/HasKha/VfxDenoiserReleases" target="_blank">Github <i class="bi bi-box-arrow-up-right"></i></a>
+                        </button>
+                        <button class="btn w-fit">
+                            <a  href="https://raidcore.gg/gw2/addons/vfx-denoiser" target="_blank">Nexus <i class="bi bi-box-arrow-up-right"></i></a>
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
     </section>
 
     <section>
     <h2>Convergence logging with arcdps</h2>
-    <div class="caution">
-        <h3>Caution:</h3>
+    <div class="alert info">
         <p>
-            Logging Convergences creates large files, often over 30MB each.
+            Logging convergences creates large files, often over 30MB each.
         </p>
     </div>
     <p>
-        Logging Convergences requires map logging. 
+        Logging convergences requires map logging. 
         Instead of logging a specific boss, you log the whole map from the moment you enter it to when you leave.
-        This allows you to have just 1 file for a Convergence, but it does become rather large.
+        This allows you to have just 1 file for a convergence, but it does become rather large.
     </p>
     <p>
         To log a map in ArcDPS, simply add the Map ID to the Logging section, and check the 'save map logs' checkbox.
@@ -106,20 +181,34 @@
     <p>
         The Convergence Map IDs are:
     </p>
-    <ul id="mapidslist">
-        <li>1523 - Convergence: Outer Nayos (Public)</li>
-        <li>1527 - Convergence: Outer Nayos (Private Squad)</li>
-        <li>1562 - Convergence: Mount Balrior (Private Squad)</li>
-        <li>1571 - Convergence: Mount Balrior (Public)</li>
-        <li>1627 - Convergence: Nexus of Eternity (Public)</li>
-        <li>1629 - Convergence: Nexus of Eternity (Private Squad)</li>
-    </ul>
+    <table>
+        <tr>
+            <th>Map</th>
+            <th>Public ID</th>
+            <th>Private ID</th>
+        </tr>
+        <tr>
+            <td>Outer Nayos</td>
+            <td>1523</td>
+            <td>1527</td>
+        </tr>
+        <tr>
+            <td>Mount Balrior</td>
+            <td>1571</td>
+            <td>1562</td>
+        </tr>
+        <tr>
+            <td>Nexus of Eternity</td>
+            <td>1627</td>
+            <td>1629</td>
+        </tr>
+    </table>
     <p>
-        For other Map IDs, check the <a target="_blank" href="https://api.guildwars2.com/v2/maps?ids=all">official gw2 api</a>.
+        For other Map IDs, check the <a target="_blank" href="https://api.guildwars2.com/v2/maps?ids=all">official gw2 api <i class="bi bi-box-arrow-up-right"></i></a>.
     </p>
     <p>
         After the map completes, find the file on your computer.
-        You can then either process it yourself with <a href="https://github.com/baaron4/GW2-Elite-Insights-Parser">Elite Insights</a>, or upload it straight to <a href="https://dps.report">https://dps.report</a>.
+        You can then either process it yourself with <a href="https://github.com/baaron4/GW2-Elite-Insights-Parser" target="_blank">Elite Insights <i class="bi bi-box-arrow-up-right"></i></a>, or upload it straight to <a href="https://dps.report" target="_blank">https://dps.report <i class="bi bi-box-arrow-up-right"></i></a>.
     </p>
     </section>
 </article>

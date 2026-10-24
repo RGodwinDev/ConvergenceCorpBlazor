@@ -1,10 +1,4 @@
-﻿.nav-container{
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
-.navbar-toggler {
+﻿.navbar-toggler {
     appearance: none;
     cursor: pointer;
     width: 3.5rem;
@@ -12,23 +6,16 @@
     position: absolute;
     top: 0.5rem;
     right: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--primary-bg-color);
     
     background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") no-repeat center/1.75rem rgba(255, 255, 255, 0.1);
 }
 
 .navbar-toggler:checked {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--secondary-bg-color);
 }
 
 .top-row {
-    min-height: 3.5rem;
-    background-color: rgba(0,0,0,1);
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    width: 100%;
-    max-width: 1200px;
     border-left: 1px solid transparent;
     border-right: 1px solid transparent;
     background: linear-gradient(var(--secondary-bg-color), var(--secondary-bg-color)) padding-box, linear-gradient(90deg, var(--secondary-brand-color), var(--secondary-brand-color)) border-box;
@@ -37,7 +24,7 @@
 
 
 .nav-link {
-    color: white;
+    color: var(--secondary-text-color);
     background: none;
     border: none;
     border-radius: 4px;
@@ -62,9 +49,8 @@
     align-items: center;
     display: flex;
     flex-direction:column;
-    color:#F0000A;
     background:var(--secondary-bg-color);
-    padding:10px;
+    color:var(--secondary-text-color);
     width:100%;
 }
 
@@ -102,7 +88,6 @@
     border-top: 1px solid #291113;
     border-bottom: 1px solid #291113;
     width:100%;
-    max-width:1200px;
     padding:10px;
 }
 

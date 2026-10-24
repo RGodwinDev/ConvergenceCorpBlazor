@@ -2,18 +2,18 @@
 
 @if(article != null)
 {
-    <a href="@article.Link" style="padding:5px;">
-        <div class="news-article-box">
-
-            <img src=@Assets[@article.ImageLink] />
-            <h2>@article.Title</h2>
-            <div class="newsarticleinfocontainer">
-                <span class="articledates time">@article.PublishDate</span>
-                <p>
-                    @article.Snippet
-                </p>
+    <a href="@article.Link" style="text-decoration:none;">
+        <div class="card" 
+            style="width:250px;height:100%;
+            border:var(--primary-brand-color) 1px solid;
+            border-radius:10px;
+            background-color:var(--secondary-brand-color);">
+            <img class="card-img-top" src=@Assets[@article.ImageLink]/>
+            <div class="card-body">
+                <h4 class="card-title text-align-start">@article.Title</h4>
+                <p class="articledates time card-subtitle text-align-start">@article.PublishDate</p>
+                <p class="card-text text-align-start">@article.Snippet</p>
             </div>
-
         </div>
     </a>
 }
