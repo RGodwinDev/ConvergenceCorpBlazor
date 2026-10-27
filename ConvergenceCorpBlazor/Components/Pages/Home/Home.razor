@@ -15,19 +15,25 @@
     <meta property="og:site_name" content="Convergence Corp!"/>
 </HeadContent>
 <!-- home page text  -->
-<article class="container-fluid">
+<article class="d-flex flex-column align-items-center">
     <section>
-        <h1>Convergence Corp, a website for Convergences!</h1>
-        <p>
-            <DiscordLink />
-            <div>
-                Check out the <a href="/schedule">schedule</a> to find a convergence group running soon&trade;.
-            </div>
-            <CurrentTime />
-        </p>
+        <div class="d-flex gap-5 justify-content-evenly w-100" style="background-color:var(--primary-bg-color)">
+            <div><DiscordLink/></div>
+            <div>Check out the <a href="/schedule">schedule</a> to find a convergence group running soon&trade;!</div>
+            <div><CurrentTime/></div>
+        </div>
+    </section>
+    <section style="max-width:1200px; display:flex; flex-direction:column; max-width:1200px; align-items:baseline;">
+        <div class="d-flex flex-column  max-w-100" >
+            <CombinedTimer />
+        </div>
         
-        <CombinedTimer />
-        <HomePageNews />
-        <StreamerHub />
+        <div class="d-flex flex-column max-w-100" >
+            <HomePageNews />
+        </div>
+        <div class="d-flex flex-column max-w-100">
+            <StreamerHub />
+        </div>
+        
     </section>
 </article>

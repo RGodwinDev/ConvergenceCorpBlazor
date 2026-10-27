@@ -1,16 +1,14 @@
 ﻿@using ConvergenceCorpBlazor.Classes.Model.News;
 @rendermode InteractiveServer
 @inject IJSRuntime JS
-
-<h2>News</h2>
-
-<div class="d-flex flex-row flex-wrap gap-5">
+<h2>Latest News</h2>
+<a href="/news">More news <i class="bi bi-chevron-double-right"></i></a>
+<div class="d-flex flex-row gap-5 max-w-100 overflow-x-scroll" style="scrollbar-width:none;">
     @for(int i = Article.Articles.Count-1; i >= 0 && i > Article.Articles.Count-4; --i)
     {
         <SingleNewsBox NewsID=i/>
     }
 </div>
-<a href="/news">More news -></a>
 <script>
     function ConvertHomePageNewsTimes(){
         var Dates = document.getElementsByClassName("articledates");

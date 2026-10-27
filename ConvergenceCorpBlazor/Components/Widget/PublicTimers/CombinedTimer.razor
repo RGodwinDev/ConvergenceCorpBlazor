@@ -2,12 +2,12 @@
 @using ConvergenceCorpBlazor.Classes.Model.Game;
 
 <h2>Public Convergences</h2>
-
-@foreach(Tuple<GameRegion, DateTimeOffset> g in tuples)
-{
-    <PublicTimer gameRegion="@g.Item1" TimerSize="Small"/>
-}
-
+<div class="d-flex flex-row gap-5 max-w-100 overflow-x-scroll" style="scrollbar-width:none;">
+    @foreach(Tuple<GameRegion, DateTimeOffset> g in tuples)
+    {
+        <PublicTimer gameRegion="@g.Item1" TimerSize="Card"/>
+    }
+</div>
 @code{
     List<Tuple<GameRegion, DateTimeOffset>> tuples = [
         new Tuple<GameRegion, DateTimeOffset>(GameRegion.Sky, PublicTime.GetNextAreaTime(GameRegion.Sky)),

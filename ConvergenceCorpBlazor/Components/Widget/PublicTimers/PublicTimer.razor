@@ -30,6 +30,32 @@
             </div>
         </a>
     }
+    else if(TimerSize == "Card")
+    {
+        <div class="card" 
+            style=" width:300px;
+                    min-width:300px; 
+                    
+                    border:solid 2px transparent;
+                    border-image:linear-gradient(to right,@GameRegionData.Data[(int)gameRegion].Color1, @GameRegionData.Data[(int)gameRegion].Color2);
+                    border-image-slice:1;"
+            >
+            <img class="card-img-top" src=@Assets["/images/" + @imagelinks[(int)gameRegion]]/>
+            <div class="card-body">
+                <h4 class="card-title">@GameRegionData.Data[(int)gameRegion].MapName</h4>
+                <div class="card-text timercontain@((int)gameRegion)" style="border-radius:10px; padding:5px;">
+                    Opens in <span class="time Timer@((int)gameRegion)">00:00:00</span>
+                </div>
+                <button type="button" class="btn w-fit"
+                    style=" background-image:linear-gradient(to right,@GameRegionData.Data[(int)gameRegion].Color1, @GameRegionData.Data[(int)gameRegion].Color2);
+                            background-origin:border-box;"
+                    >
+                    <a href="/@links[(int)gameRegion]">Guide <i class="bi bi-chevron-double-right"></i></a>
+                </button>
+            </div>
+            
+        </div>
+    }
 }
 
 <script>
@@ -72,9 +98,9 @@
         "", //hot
         "", //pof
         "", //eod
-        "SotO/Secrets_of_the_Obscure_logo.png", //soto
-        "JW/Janthir_Wilds_logo.png", //jw
-        "VoE/VoE_logo_gradient_800.png" //voe
+        "SotO/sotoconverge.jpg", //soto
+        "JW/janthirconverge.jpg", //jw
+        "VoE/voeconverge.jpg" //voe
     ];
 
     static List<string> links = [

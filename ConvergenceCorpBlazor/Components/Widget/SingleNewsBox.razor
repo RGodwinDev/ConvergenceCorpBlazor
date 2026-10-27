@@ -4,15 +4,13 @@
 {
     <a href="@article.Link" style="text-decoration:none;">
         <div class="card" 
-            style="width:250px;height:100%;
-            border:var(--primary-brand-color) 1px solid;
-            border-radius:10px;
-            background-color:var(--secondary-brand-color);">
+            style="width:300px;height:100%;
+            border:var(--primary-brand-color) 2px solid;">
             <img class="card-img-top" src=@Assets[@article.ImageLink]/>
             <div class="card-body">
-                <h4 class="card-title text-align-start">@article.Title</h4>
-                <p class="articledates time card-subtitle text-align-start">@article.PublishDate</p>
-                <p class="card-text text-align-start">@article.Snippet</p>
+                <h4 class="card-title">@article.Title</h4>
+                <p class="articledates time card-subtitle">@article.PublishDate</p>
+                <p class="card-text">@article.Snippet</p>
             </div>
         </div>
     </a>
