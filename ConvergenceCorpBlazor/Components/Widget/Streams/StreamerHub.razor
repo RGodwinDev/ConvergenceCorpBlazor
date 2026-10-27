@@ -1,35 +1,40 @@
 ﻿@using ConvergenceCorpBlazor.Classes.TwitchApi.Streamers;
 
 <h2>Streamer Division</h2>
-Live NOW!
-<div style="display:flex; flex-direction:row; flex-wrap:wrap; justify-content:center;">
-   
-    @for(int i = 0; i < 3 && i < live.Count; ++i)
+@if(live.Count > 0){
+    <div>Live NOW!</div>
+}
+<div class="d-flex flex-row gap-5 max-w-100 overflow-x-scroll" style="scrollbar-width:none;">
+    <!-- dont need to limit because scrolling tech woo (do limit it again if we somehow grow to insane amounts of streamers. i<limit && i < live.Count) -->
+    @for(int i = 0; i < live.Count; ++i) 
     {
-        <div class="streamer-box">
-            <a href="streams/@live[i].id">
-                <img src=@live[i].thumbnail_url.Replace("{width}x{height}", "640x360") />
-                <div style="display:flex;">
-                    <div style="padding:5px;">
-                        <img src=@live[i].profile_image_url style="border:2px solid @live[i].color;width:32px; border-radius:16px;" />
-                    </div>
-                    <div>
-                        <div>@live[i].display_name</div>
-                            @if(live[i].title.Length > 64)
-                            {
-                                <div>@live[i].title.Substring(0,64)...</div>
-                            }
-                            else
-                            {
-                                <div>@live[i].title</div>
-                            }
-                        
-                        <div>@live[i].game_name</div>
-                        <div class="viewcount">o @live[i].viewer_count Viewers</div>
-                    </div>
+        <div class="card" style="width:300px; border:1px solid @live[i].color">
+            <img class="card-img-top" src=@live[i].thumbnail_url.Replace("{width}x{height}", "640x360") />
+            <div class="card-body">
+                <h4 class="card-title">
+                    <img src=@live[i].profile_image_url style="border:2px solid @live[i].color;width:32px; border-radius:16px;" />
+                    @live[i].display_name
+                </h4>
                 
-                </div>
-            </a>
+                
+                    @if(live[i].title.Length > 64)
+                    {
+                        <div class="card-text">@live[i].title.Substring(0,64)...</div>
+                    }
+                    else
+                    {
+                        <div class="card-text">
+                            @live[i].title
+                        </div>
+                    }
+                    <div class="card-text">@live[i].game_name</div>
+                    <div class="viewcount card-text">o @live[i].viewer_count Viewers</div>
+                    <a href="streams/@live[i].id"><button class="btn w-fit">Watch here!</button></a>
+                    <a href="https://twitch.tv/@live[i].display_name" class="w-fit"><button class="btn w-fit">Watch on Twitch! <i class="bi bi-twitch"></i></button></a>
+            </div>
+                           
+                        
+                        
         </div>
     
     }
