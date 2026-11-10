@@ -21,7 +21,8 @@
     Season: 
     <select id="SeasonSelect" @onchange="OnSeasonChange">
         <option value=@Season.None>All Time</option>
-        <option value=@Season.Jul2026>July 2026 - Present</option>
+        <option value=@Season.Nov2026>November 2026 - Present</option>
+        <option value=@Season.Jul2026>July 2026</option>
         <option value=@Season.Apr2026>April 2026</option>
         <option value=@Season.Feb2026>February 2026</option>
     </select>
@@ -125,6 +126,9 @@
         {
             selectSeasonv2 = Season.Jul2026;
         }
+        else if ((string?)e.Value == "Nov2026")
+        {
+            selectSeasonv2 = Season.Nov2026;
+        }
     }
-
 }
