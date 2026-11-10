@@ -46,12 +46,12 @@
                 <div class="card-text timercontain@((int)gameRegion)" style="border-radius:10px; padding:5px;">
                     Opens in <span class="time Timer@((int)gameRegion)">00:00:00</span>
                 </div>
-                <button type="button" class="btn w-fit"
-                    style=" background-image:linear-gradient(to right,@GameRegionData.Data[(int)gameRegion].Color1, @GameRegionData.Data[(int)gameRegion].Color2);
-                            background-origin:border-box;"
-                    >
-                    <a href="/@links[(int)gameRegion]">Guide <i class="bi bi-chevron-double-right"></i></a>
-                </button>
+                <a href="/@links[(int)gameRegion]" class="btn w-fit"
+                style=" background-image:linear-gradient(to right,@GameRegionData.Data[(int)gameRegion].Color1, @GameRegionData.Data[(int)gameRegion].Color2);
+                        background-origin:border-box;"
+                >
+                    Guide <i class="bi bi-chevron-double-right"></i>
+                </a>
             </div>
             
         </div>
@@ -59,9 +59,12 @@
 }
 
 <script>
+    //converts all 'localtime' class objects to local time
     function ConvertLocalToLocal(){
         var times = document.getElementsByClassName("localtime");
         for(var t of times){
+            //ConvertToLocal is in App.razor.js
+            //it takes an element and tried to make a date with the inner text, then replaces it.
             ConvertToLocal(t);
         }
     }
@@ -90,6 +93,8 @@
 <!-- End of VoE box -->
 
 @code {
+
+    //default is NOW plus 4 hours!
     DateTimeOffset instanceopentime = DateTimeOffset.UtcNow + new TimeSpan(4, 0, 0);
 
     static List<string> imagelinks = [
@@ -116,6 +121,7 @@
 
     [Parameter]
     public String TimerSize { get; set; } = "Large";
+
     [Parameter]
     public required GameRegion gameRegion { get; set; } = GameRegion.None;
 
@@ -123,7 +129,11 @@
     {
         instanceopentime = PublicTime.GetNextAreaTime(gameRegion);
 
+        //SetCountdownTime is in App.razor.js
+        //countdowntime is what time we are counting down to.
         JS.InvokeVoidAsync("SetCountdownTime", (int)gameRegion, instanceopentime);
+
+        //this should be 'start countdown interval'
         JS.InvokeVoidAsync("StartInterval", (int)gameRegion);
         base.OnParametersSet();
     }

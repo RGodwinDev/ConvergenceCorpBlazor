@@ -14,60 +14,57 @@
     <meta property="og:description" content="Tracking the best Convergence CM times!" />
     <meta property="og:site_name" content="Convergence Corp!" />
 </HeadContent>
-
-<article class="Records-Article">
-    <section>
-        <h1>Records!</h1>
-        <div>Tracking the best times for each Convergence CM.</div>
+<h1>Records!</h1>
+<div>Tracking the best times for each Convergence CM.</div>
         
-        <div>
-            Season: 
-            <select id="SeasonSelect" @onchange="OnSeasonChange">
-                <option value=@Season.None>All Time</option>
-                <option value=@Season.Jul2026>July 2026 - Present</option>
-                <option value=@Season.Apr2026>April 2026</option>
-                <option value=@Season.Feb2026>February 2026</option>
-            </select>
-            Region: 
-            <select id="RegionSelect" @onchange="OnRegionChange">
-                <option value=@Region.None>ALL</option>
-                <option value=@Region.NA>NA</option>
-                <option value=@Region.EU>EU</option>
-                <option value=@Region.CN>CN</option>
-            </select>
-            Commander:
-            <select id="CommSelect" @bind="selectedCommander" @bind:after="CommSelected">
-                <option value="">ALL</option>
-                <option value="Bolibear">Bolibear</option>
-                <option value="Calmer">Calmer</option>
-                <option value="Darens">Darens</option>
-                <option value="Emidotexe">Emidotexe</option>
-                <option value="Fornalha">Fornalha</option>
-                <option value="JMDHouse">JMDHouse</option>
-                <option value="Lily Velour">Lily Velour</option>
-                <option value="MarshAll">MarshAll</option>
-                <option value="Mike">Mike</option>
-                <option value="Mook Chivalry">Mook Chivalry</option>
-                <option value="SunMatrix">SunMatrix</option>
-            </select>
-            Group:
-            <select id="GroupSelect" @bind="selectedGroup" @bind:after="GroupSelected">
-                <option value="">All</option>
-                <option value="Cabaret Velour [LILY]">Cabaret Velour [LILY]</option>
-                <option value="Convergence Corp [CVRG]">Convergence Corp [CVRG]</option>
-                <option value="Firebranders [FB]">Firebranders [FB]</option>
-                <option value="[REF]">[REF]</option>
-                <option value="Potatos Bath Water [Nyaa]">Potato's Bath Water [Nyaa]</option>
-                <option value="The Grove [WILT]">The Grove [WILT]</option>
-                <option value="The Silverwastes Anonymous [SAS]">The Silverwastes Anonymous [SAS]</option>
-                <option value="Void Lounge [VL]">Void Lounge [VL]</option>
-                
-            </select>
-        </div>
-        <RecordsTable Region=selectRegionv2 Season=selectSeasonv2 Comm=@selectedCommander SelectedGroup=@selectedGroup />
-        <div>If you achieve a new #1, send me a message in <DiscordLink disctype=1 /> with proof and I'll update it!</div>
-    </section>
-</article>
+<div>
+    Season: 
+    <select id="SeasonSelect" @onchange="OnSeasonChange">
+        <option value=@Season.None>All Time</option>
+        <option value=@Season.Jul2026>July 2026 - Present</option>
+        <option value=@Season.Apr2026>April 2026</option>
+        <option value=@Season.Feb2026>February 2026</option>
+    </select>
+    Region: 
+    <select id="RegionSelect" @onchange="OnRegionChange">
+        <option value=@Region.None>ALL</option>
+        <option value=@Region.NA>NA</option>
+        <option value=@Region.EU>EU</option>
+        <option value=@Region.CN>CN</option>
+    </select>
+    Commander:
+    <select id="CommSelect" @bind="selectedCommander" @bind:after="CommSelected">
+        <option value="">ALL</option>
+        <option value="Bolibear">Bolibear</option>
+        <option value="Calmer">Calmer</option>
+        <option value="Darens">Darens</option>
+        <option value="Emidotexe">Emidotexe</option>
+        <option value="Fornalha">Fornalha</option>
+        <option value="JMDHouse">JMDHouse</option>
+        <option value="Lily Velour">Lily Velour</option>
+        <option value="MarshAll">MarshAll</option>
+        <option value="Mike">Mike</option>
+        <option value="Mook Chivalry">Mook Chivalry</option>
+        <option value="SunMatrix">SunMatrix</option>
+    </select>
+    Group:
+    <select id="GroupSelect" @bind="selectedGroup" @bind:after="GroupSelected">
+        <option value="">All</option>
+        <option value="Cabaret Velour [LILY]">Cabaret Velour [LILY]</option>
+        <option value="Convergence Corp [CVRG]">Convergence Corp [CVRG]</option>
+        <option value="Firebranders [FB]">Firebranders [FB]</option>
+        <option value="[REF]">[REF]</option>
+        <option value="Potatos Bath Water [Nyaa]">Potato's Bath Water [Nyaa]</option>
+        <option value="The Grove [WILT]">The Grove [WILT]</option>
+        <option value="The Silverwastes Anonymous [SAS]">The Silverwastes Anonymous [SAS]</option>
+        <option value="Void Lounge [VL]">Void Lounge [VL]</option>
+    </select>
+</div>
+<div class="overflow-x-scroll max-w-100" style="scrollbar-width:none;">
+    <RecordsTable Region=selectRegionv2 Season=selectSeasonv2 Comm=@selectedCommander SelectedGroup=@selectedGroup />
+</div>
+
+<div>If you achieve a new #1, send me a message in <DiscordLink disctype=1 /> with proof and I'll update it!</div>
 
 @code {
     Region selectRegionv2 { get; set; } = Region.None;

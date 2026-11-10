@@ -1,4 +1,5 @@
 ﻿@using ConvergenceCorpBlazor.Classes.TwitchApi.Streamers;
+@using ConvergenceCorpBlazor.Components.Widget.Streams;
 
 @page "/streams"
 <PageTitle>Streamer Division | Convergence Corp!</PageTitle>
@@ -15,59 +16,9 @@
 
 <h1>Streamer Division!</h1>
 <div class="d-flex flex-row flex-wrap gap-5 justify-content-center">
-    @foreach (Streamer s in StreamerList)
+    @foreach (Streamer S in StreamerList)
     {
-        <div class="card" style="width:400px;">
-            <a href="/streams/@s.id" style="text-decoration:none;">
-                @if (s.IsLive)
-                {
-                    <img class="card-img-top" src=@s.thumbnail_url.Replace("{width}x{height}", "640x360") style="width:100%;" />
-                }
-                else
-                {
-                    @if(s.offline_image_url.Length > 0)
-                    {
-                        <img class="card-img-top" src=@s.offline_image_url.Replace("{width}x{height}", "640x360") style="width:100%; filter:grayscale(90%);" />
-                    }
-                    else
-                    {
-                        <img class="card-img-top" src=@Assets["/images/Streamers/DefaultOffline.png"] style="width:100%; filter:grayscale(90%);"/>
-                    }
-                }
-            
-                <div style="card-body">
-                    <div class="card-title">@s.display_name</div>
-                    <div style="padding:5px;">
-                        <img src=@s.profile_image_url style="border:2px solid @s.color;width:48px; border-radius:24px;" />
-                    </div>
-                    <div class="card-text">
-                        
-                        @if (s.IsLive)
-                        {
-                            @if (s.title.Length > 64)
-                            {
-                                <div>@s.title.Substring(0, 64)...</div>
-                            }
-                            else
-                            {
-                                <div>@s.title</div>
-                            }
-                        }
-                        <div style="width:100%;display:flex; flex-direction:row; justify-content:space-between;">
-                            @if (s.IsLive)
-                            {
-                                <span style="padding:3px; border-radius:10px; background-color:red;">Live!</span>
-                                <span class="viewcount"> @s.viewer_count Viewers </span>
-                            }
-                            else
-                            {
-                                <span style="padding:3px; border-radius:10px; background-color:grey;">Offline!</span>
-                            }
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
+        <SingleStreamerBox Streamer=@S/>
     }
 </div>
 
