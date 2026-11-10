@@ -29,7 +29,8 @@ var intervals = [
 ]
 
 /*
-* Converts a time to hh:mm.
+* Takes in an element and attempts to convert it into a date.
+* Formats it as hh:mm.
 */
 function ConvertToLocal(element) {
     let newdate = new Date(element.innerText);
@@ -86,6 +87,8 @@ function SetCountdownTime(region, date) {
 
 //Creates an interval for the public timer of the given region.
 //The interval ticks the timer and manages the yellow/green border
+//this should be 'StartCountdown(s)'
+//we should also make it handle ALL intervals at once, rather than by each region.
 function StartInterval(region) {
     intervals[region] = setInterval(function () {
         var distance = openTimes[region].getTime() - Date.now();

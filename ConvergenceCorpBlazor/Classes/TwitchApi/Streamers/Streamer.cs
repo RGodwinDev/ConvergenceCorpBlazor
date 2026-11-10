@@ -53,7 +53,7 @@
         private static readonly List<string> StreamerNames =
             [
                 "sunmatrix",
-                "softbreadx",
+                "softbreadvt",
                 "mookchivalry",
                 "jmdhouse05",
                 "lilyvelour",

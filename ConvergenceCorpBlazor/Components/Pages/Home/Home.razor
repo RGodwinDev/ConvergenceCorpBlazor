@@ -14,26 +14,19 @@
     <meta property="og:description" content="Convergence Corp! A website for all things Convergences in Guild Wars 2!"/>
     <meta property="og:site_name" content="Convergence Corp!"/>
 </HeadContent>
-<!-- home page text  -->
-<article class="d-flex flex-column align-items-center">
-    <section>
-        <div class="d-flex gap-5 justify-content-evenly w-100" style="background-color:var(--primary-bg-color)">
-            <div><DiscordLink/></div>
-            <div>Check out the <a href="/schedule">schedule</a> to find a convergence group running soon&trade;!</div>
-            <div><CurrentTime/></div>
-        </div>
-    </section>
-    <section style="max-width:1200px; display:flex; flex-direction:column; max-width:1200px; align-items:baseline;">
-        <div class="d-flex flex-column  max-w-100" >
-            <CombinedTimer />
-        </div>
-        
-        <div class="d-flex flex-column max-w-100" >
-            <HomePageNews />
-        </div>
-        <div class="d-flex flex-column max-w-100">
-            <StreamerHub />
-        </div>
-        
-    </section>
-</article>
+
+<!-- home page -->
+
+<!-- under nav text -->
+<div class="d-flex gap-5 justify-content-evenly w-100" style="background-color:var(--primary-bg-color)">
+    <div><DiscordLink/></div>
+    <div>Check out the <a href="/schedule">schedule</a> to find a convergence group running soon&trade;!</div>
+    <div><CurrentTime/></div>
+</div>
+
+<!-- homepage content cards -->
+<section style="max-width:1200px; display:flex; flex-direction:column; max-width:1200px; align-items:baseline;">
+    <CombinedTimer />
+    <HomePageNews />
+    <StreamerHub />
+</section>

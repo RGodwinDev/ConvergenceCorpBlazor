@@ -1,0 +1,50 @@
+﻿@using ConvergenceCorpBlazor.Classes.TwitchApi.Streamers;
+@if(Streamer != null)
+{
+    if (Streamer.IsLive) //Live
+    {
+        <div class="card" style="width:300px; min-width:300px; border:1px solid @Streamer.color">
+            <img class="card-img-top" src=@Streamer.thumbnail_url.Replace("{width}x{height}", "640x360") />
+            <div class="card-body">
+                <h4 class="card-title">
+                    <img src=@Streamer.profile_image_url style="border:2px solid @Streamer.color;width:32px; border-radius:16px;" />
+                    @Streamer.display_name
+                </h4>
+                <div class="card-text overflow-hidden" title=@Streamer.title style="text-wrap:nowrap;">
+                        @Streamer.title
+                </div>
+                <div class="card-text" title=@Streamer.game_name>@Streamer.game_name</div>
+                <div class="viewcount card-text"><i class="bi bi-record-fill"></i> @Streamer.viewer_count viewers</div>
+                <a href="streams/@Streamer.id" target="_blank" class="btn w-fit">Watch here!</a>
+                <a href="https://twitch.tv/@Streamer.display_name" target="_blank" class="btn w-fit">Watch on Twitch! <i class="bi bi-twitch"></i></a>
+            </div>
+        </div>
+    }
+    else //Not Live
+    {
+        <div class="card" style="width:300px; min-width:300px; border:1px solid @Streamer.color">
+            @if(Streamer.offline_image_url.Length > 0)
+            {
+                <img class="card-img-top" src=@Streamer.offline_image_url.Replace("{width}x{height}", "640x360")/>
+            }
+            else
+            {
+                <img class="card-img-top" src=@Assets["/images/streamers/DefaultOffline.png"]/>
+            }
+            <div class="card-body">
+                <h4 class="card-title">
+                    <img src=@Streamer.profile_image_url style="border:2px solid @Streamer.color;width:32px; border-radius:16px;" />
+                    @Streamer.display_name
+                </h4>
+                <a href="streams/@Streamer.id" target="_blank" class="btn w-fit">Watch here!</a>
+                <a href="https://twitch.tv/@Streamer.display_name" target="_blank" class="btn w-fit">Watch on Twitch! <i class="bi bi-twitch"></i></a>
+            </div>
+        </div>
+    }
+}
+
+
+@code{
+    [Parameter]
+    public Streamer Streamer { get; set; } = null;
+}

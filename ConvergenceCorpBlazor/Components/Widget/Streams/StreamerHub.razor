@@ -1,49 +1,24 @@
 ﻿@using ConvergenceCorpBlazor.Classes.TwitchApi.Streamers;
-
+@using ConvergenceCorpBlazor.Components.Widget.Streams;
 <h2>Streamer Division</h2>
-@if(live.Count > 0){
-    <div>Live NOW!</div>
-}
+<div class="d-flex flex-row gap-5">
+    @if(live.Count > 0)
+    {
+        <div>Live NOW!</div>
+    }
+    <a href="/streams">All Streamers <i class="bi bi-chevron-double-right"></i></a>
+</div>
 <div class="d-flex flex-row gap-5 max-w-100 overflow-x-scroll" style="scrollbar-width:none;">
     <!-- dont need to limit because scrolling tech woo (do limit it again if we somehow grow to insane amounts of streamers. i<limit && i < live.Count) -->
     @for(int i = 0; i < live.Count; ++i) 
     {
-        <div class="card" style="width:300px; border:1px solid @live[i].color">
-            <img class="card-img-top" src=@live[i].thumbnail_url.Replace("{width}x{height}", "640x360") />
-            <div class="card-body">
-                <h4 class="card-title">
-                    <img src=@live[i].profile_image_url style="border:2px solid @live[i].color;width:32px; border-radius:16px;" />
-                    @live[i].display_name
-                </h4>
-                
-                
-                    @if(live[i].title.Length > 64)
-                    {
-                        <div class="card-text">@live[i].title.Substring(0,64)...</div>
-                    }
-                    else
-                    {
-                        <div class="card-text">
-                            @live[i].title
-                        </div>
-                    }
-                    <div class="card-text">@live[i].game_name</div>
-                    <div class="viewcount card-text">o @live[i].viewer_count Viewers</div>
-                    <a href="streams/@live[i].id"><button class="btn w-fit">Watch here!</button></a>
-                    <a href="https://twitch.tv/@live[i].display_name" class="w-fit"><button class="btn w-fit">Watch on Twitch! <i class="bi bi-twitch"></i></button></a>
-            </div>
-                           
-                        
-                        
-        </div>
-    
+        <SingleStreamerBox Streamer=@live[i] />
     }
     @if(live == null || live.Count == 0)
     {
         <div>There are no streamers live at this time.</div>
     }
 </div>
-<div><a href="/streams">All Streamers -></a></div>
 
 
 
