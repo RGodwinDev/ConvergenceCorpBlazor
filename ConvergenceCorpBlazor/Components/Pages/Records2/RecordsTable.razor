@@ -288,10 +288,18 @@
         DateTimeOffset End = DateTimeOffset.UtcNow;
 
         /*
-        * if(Season == Season.Nov2026){
-            *  Start = new DateTimeOffset(2026, 11, 10, 11, 00, 00, new TimeSpan(-5,0,0));
-            * }
-        */
+         * NEXT SEASON (totally will be in 3 months)
+         * if(Season == Season.Feb2027){
+         *  Start = new DateTimeOffset(2027, 02, 04, 11, 00, 00, new TimeSpan(-6, 0, 0));
+         *  End = new DateTimeOffset(2027, 06, 01, 01, 00, 00, new TimeSpan(-5, 0, 0));
+         * }
+         * 
+         */
+        if(Season == Season.Nov2026){
+            Start = new DateTimeOffset(2026, 11, 10, 11, 00, 00, new TimeSpan(-6,0,0));
+            End = new DateTimeOffset(2030, 11, 10, 11, 00, 00, new TimeSpan(-6, 0, 0)); //change this when the next season is announced.
+        }
+        
         if(Season == Season.Jul2026)
         {
             Start = new DateTimeOffset(2026, 07, 15, 11, 00, 00, new TimeSpan(-5, 0, 0));
@@ -304,8 +312,8 @@
         }
         else if (Season == Season.Feb2026)
         {
-            Start = new DateTimeOffset(2026, 02, 04, 11, 00, 00, new TimeSpan(-5, 0, 0));
-            End = new DateTimeOffset(2026, 04, 14, 10, 59, 59, new TimeSpan(-5, 0, 0));
+            Start = new DateTimeOffset(2026, 02, 04, 11, 00, 00, new TimeSpan(-6, 0, 0));
+            End = new DateTimeOffset(2026, 04, 14, 10, 59, 59, new TimeSpan(-6, 0, 0));
         }
 
         //RESET THE VALUES 
